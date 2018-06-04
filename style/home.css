@@ -1,0 +1,65 @@
+/* === GENERAL DESIGN RULES === */
+/* Erases default 8px border */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* === NAVIGATION === */
+/* General style links for navigation */
+.navbar {
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+    background-color: #739069;
+    font-family: "Georgia", serif;
+}
+
+/* List-styles  */
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.nav-list li {
+    padding-right: 60px;
+}
+
+/* Style for navigation-links (not when hovering) */
+.nav-list li a {
+    text-decoration: none;
+    color: #4d6744;
+}
+
+/* Hover over non-active navigation links */
+.nav-list li a:hover:not(.active) {
+    animation-name: navigation-animation;
+    animation-duration: 0.5s;
+    color: #e9f5e5;
+}
+
+/* Animation for navigation-links */
+@keyframes navigation-animation {
+    from {color: #4d6744;}
+    to {color: #e9f5e5;}
+}
+
+/* Style only for active navigation-link */
+.active {
+    color: #e9f5e5 !important;
+}
+
+/* "Control panel" for brand-logo */
+.nav-list img {
+    height: 90px;
+    margin-top: -10px;
+}
+
+/* Changes vertical alignment on everything except logo */
+.nav-list li:not(#logo) {
+    margin-top: -34px;
+}
