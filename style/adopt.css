@@ -15,7 +15,7 @@ body {
     font-family: "Georgia", serif;
 }
 
-/* List-styles  */
+/* List-styles and some placing for navigation */
 .nav-list {
     margin: 0;
     padding: 0;
@@ -70,8 +70,9 @@ body {
     margin-top: -34px;
 }
 
-/* === SECONDARY NAVIGATION === */
 
+/* === SECONDARY NAVIGATION === */
+/* General style links for secondary navigation */
 .second-navbar {
     width: 100%;
     height: 30px;
@@ -80,6 +81,7 @@ body {
     font-family: "Georgia", serif;
 }
 
+/* List-styles and some placing for secondary navigation */
 .second-nav-list {
     height: 30px;
     margin: 0;
@@ -89,6 +91,7 @@ body {
     justify-content: space-evenly;
 }
 
+/* Style for secondary navigation-links (not when hovering) */
 .second-nav-list li a {
     text-decoration: none;
     color: #4d6744;
