@@ -69,3 +69,45 @@ body {
 .nav-list li:not(#logo) {
     margin-top: -34px;
 }
+
+/* === SECONDARY NAVIGATION === */
+
+.second-navbar {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #739069;
+    font-family: "Georgia", serif;
+}
+
+.second-nav-list {
+    height: 30px;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.second-nav-list li a {
+    text-decoration: none;
+    color: #4d6744;
+}
+
+/* Hover over non-active navigation links */
+.second-nav-list li a:hover:not(.active) {
+    animation-name: navigation-animation;
+    animation-duration: 0.5s;
+    color: #e9f5e5;
+}
+
+/* Animation for navigation-links */
+@keyframes navigation-animation {
+    from {color: #4d6744;}
+    to {color: #e9f5e5;}
+}
+
+/* Style only for active navigation-link */
+.active {
+    color: #e9f5e5 !important;
+}
