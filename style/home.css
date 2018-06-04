@@ -99,3 +99,67 @@ body {
     font-family: "Calibri", sans-serif;
 }
 
+.random {
+    height: 475px;
+}
+
+/* === FOOTER === */
+/* General footer styling */
+.footer {
+    width: 100%;
+    height: 150px;
+    background-color: #739069;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 150px;
+    justify-items: center;
+    grid-column-gap: 10px;
+    color: #e9f5e5;
+}
+
+/* Styles the heading for footer */
+.footer h2 {
+    font-size: 18px;
+    font-family: "Georgia", serif;
+    margin-bottom: 0;
+}
+
+/* Styles the general text in footer */
+.footer p {
+    font-family: "Calibri", sans-serif;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* All these 3 down there handles the different sections in footer */
+.contact {
+    grid-column: 2;
+}
+.social-media {
+    grid-column: 3;
+}
+.explore {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Handles the links in footer */
+.explore a {
+    text-decoration: none;
+    color: #4d6744;
+    font-size: 15px;
+}
+
+/* Hover over non-active footer-links */
+.footer a:hover:not(.active) {
+    animation-name: footer-animation;
+    animation-duration: 0.5s;
+    color: #e9f5e5;
+}
+
+/* Animation for footer-links */
+@keyframes footer-animation {
+    from {color: #4d6744;}
+    to {color: #e9f5e5;}
+}
