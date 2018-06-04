@@ -15,7 +15,7 @@ body {
     font-family: "Georgia", serif;
 }
 
-/* List-styles  */
+/* List-styles and some placing for navigation */
 .nav-list {
     margin: 0;
     padding: 0;
@@ -69,3 +69,33 @@ body {
 .nav-list li:not(#logo) {
     margin-top: -34px;
 }
+
+/* === HEADER === */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styling for heading in Header */
+.header h1 {
+    height: 20px;
+    width: 240px;
+    font-family: "Georiga", serif;
+    color: #6a1111;
+
+    /* Changing the size of the font */
+    -ms-transform: scale(1.5, 4); /* IE 9 */
+    -webkit-transform: scale(1.5, 4); /* Safari */
+    transform: scale(1.5, 4);
+
+}
+
+/* Styling for the general text in Header */
+.header p {
+    color: #6a1111;
+    width: 50%;
+    font-family: "Calibri", sans-serif;
+}
+
