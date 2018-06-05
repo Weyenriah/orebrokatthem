@@ -97,8 +97,90 @@ body {
     margin-left: 20%;
 }
 
-.random {
-    height: 475px;
+/* === CAROUSEL AT HOMEPAGE === */
+.carousel-container {
+    margin-top: 30px;
+    height: 554px;
+    background-color: #6a1111;
+    display: grid;
+    grid-template-columns: 50px auto auto 50px;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "previous content content next";
+}
+
+.slide {
+    grid-area: content;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.image img {
+    height: 450px;
+    margin-right: 26px;
+    border: 1px solid #feefef;
+}
+
+.carousel-text {
+    display: grid;
+    grid-template-rows: 40px 20px auto 30px;
+}
+
+.carousel-text h3 {
+    grid-row: 1;
+    margin-top: 0;
+    font-family: "Georgia", serif;
+    color: #feefef;
+    font-size: 33px;
+}
+
+.carousel-text small {
+    grid-row: 2;
+    color: #feefef;
+    font-family: "Calibri", sans-serif;
+}
+
+.carousel-text p {
+    grid-row: 3;
+    color: #feefef;
+    font-family: "Calibri", sans-serif;
+    width: 300px;
+}
+
+.carousel-text a {
+    grid-row: 4;
+    font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #e57e7e;
+}
+
+/* Hover over link in carousel */
+.carousel-text a:hover {
+    animation-name: carousel-link-animation;
+    animation-duration: 0.5s;
+    color: #feefef;
+}
+
+/* Animation for link in carousel */
+@keyframes carousel-link-animation {
+    from {color: #e57e7e;}
+    to {color: #feefef;}
+}
+
+.previous {
+    grid-area: previous;
+    align-self: center;
+    justify-self: center;
+    color: #feefef;
+}
+
+.next {
+    grid-area: next;
+    align-self: center;
+    justify-self: center;
+    color: #feefef;
 }
 
 /* === FOOTER === */
