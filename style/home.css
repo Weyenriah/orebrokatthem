@@ -73,30 +73,28 @@ body {
 /* === HEADER === */
 .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     margin-top: 20px;
 }
 
 /* Styling for heading in Header */
 .header h1 {
-    height: 20px;
-    width: 240px;
+    margin: 0;
+    width: 100%;
     font-family: "Georiga", serif;
     color: #6a1111;
-
-    /* Changing the size of the font */
-    -ms-transform: scale(1.5, 4); /* IE 9 */
-    -webkit-transform: scale(1.5, 4); /* Safari */
-    transform: scale(1.5, 4);
-
+    text-align: center;
+    font-size: 260%;
 }
 
 /* Styling for the general text in Header */
 .header p {
     color: #6a1111;
-    width: 50%;
+    width: 65%;
     font-family: "Calibri", sans-serif;
+    margin: 0;
+    margin-left: 20%;
 }
 
 .random {
