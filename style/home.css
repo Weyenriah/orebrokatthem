@@ -83,7 +83,7 @@ body {
     margin: 0;
     width: 100%;
     font-family: "Georiga", serif;
-    color: #6a1111;
+    color: #76292a;
     text-align: center;
     font-size: 260%;
 }
@@ -101,7 +101,7 @@ body {
 .carousel-container {
     margin-top: 30px;
     height: 554px;
-    background-color: #762a2a;
+    background-image: url("../images/background.png");
     color: #faf3f3;
     display: grid;
     grid-template-columns: 50px auto auto 50px;
@@ -128,14 +128,18 @@ body {
 
 .carousel-text {
     display: grid;
-    grid-template-rows: 40px 15px 367px 30px;
+    grid-template-rows: 55px 12px 347px 30px;
 }
 
 .carousel-text h3 {
     grid-row: 1;
-    margin-top: 0;
+    margin-top: 17px;
     font-family: "Georgia", serif;
     font-size: 33px;
+}
+
+.carousel-text h3 img {
+    height: 27px;
 }
 
 .carousel-text small {
