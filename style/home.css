@@ -101,7 +101,8 @@ body {
 .carousel-container {
     margin-top: 30px;
     height: 554px;
-    background-color: #6a1111;
+    background-color: #591818;
+    color: #fbf5f5;
     display: grid;
     grid-template-columns: 50px auto auto 50px;
     grid-template-rows: 100%;
@@ -113,8 +114,10 @@ body {
     grid-area: content;
     justify-self: center;
     align-self: center;
-    display: flex;
-    flex-direction: row;
+}
+
+.image {
+    float: left;
 }
 
 .image img {
@@ -125,26 +128,23 @@ body {
 
 .carousel-text {
     display: grid;
-    grid-template-rows: 40px 20px auto 30px;
+    grid-template-rows: 40px 20px 362px 30px;
 }
 
 .carousel-text h3 {
     grid-row: 1;
     margin-top: 0;
     font-family: "Georgia", serif;
-    color: #feefef;
     font-size: 33px;
 }
 
 .carousel-text small {
     grid-row: 2;
-    color: #feefef;
     font-family: "Calibri", sans-serif;
 }
 
 .carousel-text p {
     grid-row: 3;
-    color: #feefef;
     font-family: "Calibri", sans-serif;
     width: 300px;
 }
@@ -153,7 +153,7 @@ body {
     grid-row: 4;
     font-family: "Georgia", serif;
     text-decoration: none;
-    color: #e57e7e;
+    color: #bf7979;
 }
 
 /* Hover over link in carousel */
@@ -181,6 +181,24 @@ body {
     align-self: center;
     justify-self: center;
     color: #feefef;
+}
+
+/* Fading animation for slideshow */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
 }
 
 /* === FOOTER === */

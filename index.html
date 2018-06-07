@@ -30,7 +30,7 @@
     </header>
 
     <section class="carousel-container">
-        <div class="slide">
+        <div class="slide fade">
             <div class="image"> <img src="images/dollar.jpg"> </div>
             <div class="carousel-text">
                 <h3> Dollar </h3>
@@ -40,8 +40,30 @@
             </div>
         </div>
 
-        <div class="previous"> <p> < </p> </div>
-        <div class="next"> <p> > </p> </div>
+        <div class="slide fade">
+            <div class="image"> <img src="images/mollyblom.jpg"> </div>
+            <div class="carousel-text">
+                <h3> Molly Blom </h3>
+                <small> Född 2006 | Hona | Svart och vit </small>
+                <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
+                    Vill ha samma hem som sitt syskon Mimmi Blom. </p>
+                <a href="#">Läs mer om mig!</a>
+            </div>
+        </div>
+
+        <div class="slide fade">
+            <div class="image"> <img src="images/ashild.jpg"> </div>
+            <div class="carousel-text">
+                <h3> Åshild </h3>
+                <small> Troligen född 2017 | Hona | Bruntigré med lite vitt </small>
+                <p> Blyg och försiktig och behöver tid på sig att bli bekväm med människor.
+                    Gått hemlös i Åmmeberg utanför Askersund. </p>
+                <a href="#">Läs mer om mig!</a>
+            </div>
+        </div>
+
+        <a onclick="changeSlide(-1)" class="previous"> < </a>
+        <a onclick="changeSlide(1)" class="next"> > </a>
     </section>
 
     <footer class="footer">
@@ -66,5 +88,37 @@
             <a href="#"> Stöd Oss </a>
         </section>
     </footer>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    setInterval(() => {
+        // if (!hasMoved){
+        showSlides(slideIndex++);
+    }, 3000);
+
+    // Next/Previous controls
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slide = document.getElementsByClassName("slide");
+
+        for(i = 0; i < slide.length; i++) {
+            slide[i].style.display = "none";
+        }
+
+        if(slideIndex > slide.length) {
+            slideIndex = 1;
+        }
+        if(slideIndex < 1) {
+            slideIndex = slide.length;
+        }
+
+        slide[slideIndex - 1].style.display = "block";
+    }
+</script>
 </body>
 </html>
