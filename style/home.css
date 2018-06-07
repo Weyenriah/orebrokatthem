@@ -101,8 +101,8 @@ body {
 .carousel-container {
     margin-top: 30px;
     height: 554px;
-    background-color: #591818;
-    color: #fbf5f5;
+    background-color: #762a2a;
+    color: #faf3f3;
     display: grid;
     grid-template-columns: 50px auto auto 50px;
     grid-template-rows: 100%;
@@ -128,7 +128,7 @@ body {
 
 .carousel-text {
     display: grid;
-    grid-template-rows: 40px 20px 362px 30px;
+    grid-template-rows: 40px 15px 367px 30px;
 }
 
 .carousel-text h3 {
@@ -153,7 +153,7 @@ body {
     grid-row: 4;
     font-family: "Georgia", serif;
     text-decoration: none;
-    color: #bf7979;
+    color: #ca8a8a;
 }
 
 /* Hover over link in carousel */
@@ -174,6 +174,13 @@ body {
     align-self: center;
     justify-self: center;
     color: #feefef;
+    cursor: pointer;
+}
+
+.previous img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    height: 100px;
 }
 
 .next {
@@ -181,6 +188,11 @@ body {
     align-self: center;
     justify-self: center;
     color: #feefef;
+    cursor: pointer;
+}
+
+.next img {
+    height: 100px;
 }
 
 /* Fading animation for slideshow */
