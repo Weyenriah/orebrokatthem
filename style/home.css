@@ -101,8 +101,11 @@ body {
 /* === CAROUSEL AT HOMEPAGE === */
 .carousel-container {
     margin-top: 30px;
-    height: 554px;
-    background-image: url("../images/background.png");
+    height: 450px;
+    padding-top: 3px;
+    border-top: 50px solid #76292a;
+    border-bottom: 50px solid #76292a;
+    background-color: #591c1c;
     color: #faf3f3;
     display: grid;
     grid-template-columns: 50px auto auto 50px;
