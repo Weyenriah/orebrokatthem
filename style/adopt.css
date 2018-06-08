@@ -171,6 +171,71 @@ body {
     font-family: "Calibri", sans-serif;
 }
 
+/* === OUR CATS STYLING === */
+.our-cats {
+    height: 500px;
+    display: grid;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.top {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+}
+
+.cats {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.cat img {
+    height: 300px;
+}
+
+.cat-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.cat-text {
+    display: grid;
+    grid-template-rows: 32px 25px 213px 30px;
+    grid-template-columns: 100%;
+    width: 250px;
+    margin-left: 20px;
+}
+
+.cat-text h3 {
+    grid-row: 1;
+    grid-column: 1;
+    margin-top: 0;
+    font-family: "Georgia", serif;
+    font-size: 28px;
+}
+
+.cat-text small {
+    grid-row: 2;
+    grid-column: 1;
+    font-family: "Calibri", sans-serif;
+}
+
+.cat-text p {
+    grid-row: 3;
+    grid-column: 1;
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+}
+
+.cat-text a {
+    grid-row: 4;
+    grid-column: 1;
+    font-family: "Georgia", serif;
+}
+
 /* === FOOTER === */
 /* General footer styling */
 .footer {
