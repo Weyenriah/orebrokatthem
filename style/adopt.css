@@ -121,6 +121,8 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-top: 20px;
+    margin-right: 20%;
+    margin-left: 20%;
 }
 
 /* Styling for heading in Header */
@@ -136,14 +138,34 @@ body {
 /* Styling for the general text in Header */
 .header p {
     color: #6a1111;
-    width: 65%;
     font-family: "Calibri", sans-serif;
     margin: 0;
-    margin-left: 20%;
+
 }
 
-.random {
-    height: 475px;
+/* === HOW TO ADOPT STYLING === */
+.how-to-adopt {
+    margin-top: 30px;
+    height: 544px;
+    background-color: #762a2a;
+    display: grid;
+    grid-template-rows: 20px 40px auto;
+    grid-template-columns: 20% 60% 20%;
+    color: #faf3f3;
+}
+
+.how-to-adopt h2 {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    font-family: "Georgia", serif;
+}
+
+.how-to-adopt p {
+    grid-row: 3;
+    grid-column: 2;
+    margin: 0;
+    font-family: "Calibri", sans-serif;
 }
 
 /* === FOOTER === */
