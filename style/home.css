@@ -221,6 +221,30 @@ body {
     to {opacity: 1}
 }
 
+/* === LINKS TO OUTSIDE "COMPANIES" === */
+/* General styling */
+.outsiders {
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* All the sizing to images */
+.svekatt {
+    height: 150px;
+}
+.vilse {
+    height: 30%;
+}
+.skk {
+    height: 130px;
+}
+.sverak {
+    height: 135px;
+}
+
 /* === FOOTER === */
 /* General footer styling */
 .footer {
