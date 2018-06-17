@@ -142,6 +142,77 @@ body {
     margin: 0;
 }
 
+/* === HOW WHITE PARTS LOOK AT WEBPAGE === */
+.white-background {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.white-background h2 {
+    grid-column: 2 / span 2;
+    color: #76292a;
+    font-family: "Georgia", serif;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.white-background p {
+    grid-column: 2;
+    color: #76292a;
+    font-family: "Calibri", sans-serif;
+    margin-top: 13px;
+}
+
+.right-img{
+    height: 350px;
+    float: right;
+    margin-left: 15px;
+    border: 1px solid #76292a;
+}
+
+.left-img {
+    float: left;
+    height: 350px;
+    margin-right: 15px;
+    border: 1px solid #76292a;
+}
+
+.left-num {
+    float: left;
+    font-size: 350%;
+    margin-right: 13px;
+    margin-left: 5px;
+    font-family: "Georgia", serif;
+}
+
+/* === HOW RED PARTS LOOK AT WEBPAGE === */
+.red-background {
+    margin-top: 30px;
+    border-top: 50px solid #76292a;
+    border-bottom: 50px solid #76292a;
+    height: auto;
+    background-color: #591c1c;
+    color: #faf3f3;
+    display: grid;
+    grid-template-rows: 20px 40px auto;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.red-background h2 {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    font-family: "Georgia", serif;
+}
+
+.red-background p {
+    grid-row: 3;
+    grid-column: 2;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: "Calibri", sans-serif;
+}
+
 /* === LINKS TO OUTSIDE "COMPANIES" === */
 /* General styling */
 .outsiders {
