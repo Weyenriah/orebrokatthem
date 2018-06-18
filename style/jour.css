@@ -431,8 +431,15 @@ body {
     to {color: #e9f5e5;}
 }
 
-.first-footer i {
+/* Styling for the icons */
+.social-media i {
     font-size: 17px;
+    margin-right: 6px;
+}
+
+.contact i {
+    font-size: 13px;
+    margin-right: 6px;
 }
 
 /* === THE SECOND FOOTER STYLING === */
