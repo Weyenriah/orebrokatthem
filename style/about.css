@@ -5,6 +5,22 @@ body {
     padding: 0;
 }
 
+.red-background {
+    margin-top: 30px;
+    border-top: 50px solid #76292a;
+    border-bottom: 50px solid #76292a;
+    height: auto;
+    background-color: #591c1c;
+    color: #faf3f3;
+}
+
+.second-row-heading-red {
+    text-transform: uppercase;
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+    font-size: 17px;
+}
+
 .second-row-heading {
     font-family: "Calibri", sans-serif;
     text-transform: uppercase;
@@ -150,15 +166,6 @@ body {
 }
 
 /* === THE WORKERS-PAGE STYLING === */
-.red-background {
-    margin-top: 30px;
-    border-top: 50px solid #76292a;
-    border-bottom: 50px solid #76292a;
-    height: auto;
-    background-color: #591c1c;
-    color: #faf3f3;
-}
-
 .workers {
     display: grid;
     grid-template-rows: 20px 61px auto;
@@ -339,6 +346,73 @@ body {
 .another-info small {
     font-family: "Calibri", sans-serif;
     color: #76292a;
+}
+
+/* VOLONTEAR PAGE STYLING */
+.volonteer {
+    display: grid;
+    grid-template-rows: 20px 61px auto;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.volonteer h2 {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    font-family: "Georgia", serif;
+}
+
+.become-info {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.become-info p {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: "Calibri", sans-serif;
+    color: #f0dfdf;
+}
+
+.become-info img {
+    height: 300px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border: 1px solid white;
+    float: right;
+}
+
+.become-info ul {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+}
+
+.become-info li {
+    margin-top: 3px;
+    color: #f0dfdf;
+}
+
+.contact-become {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-become div a {
+    text-decoration: none;
+    color: #ca8a8a;
+    font-family: "Calibri", sans-serif;
+}
+
+.contact-become div a:hover {
+    color: #faf3f3;
+    animation-name: contact-animation;
+    animation-duration: 0.5s;
+}
+
+/* Animation for contact-links */
+@keyframes contact-animation {
+    from {color: #ca8a8a;}
+    to {color: #faf3f3;}
 }
 
 /* === LINKS TO OUTSIDE "COMPANIES" === */
