@@ -5,6 +5,13 @@ body {
     padding: 0;
 }
 
+.second-row-heading {
+    font-family: "Calibri", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0;
+}
+
 /* === PRIMARY NAVIGATION === */
 /* General style links for navigation */
 .navbar {
@@ -221,12 +228,118 @@ body {
 }
 
 .employee-info i {
-    font-size: 15px;
+    font-size: 13px;
     margin-right: 6px;
     margin-top: 5px;
 }
 
 /* === CONTACT US STYLING === */
+.white-background {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+.contact-us {
+    display: grid;
+    grid-template-rows: 20px 61px auto;
+    grid-template-columns: 20% 40% 20% 20%;
+}
+
+.contact-us h2 {
+    grid-column: 2;
+    color: #76292a;
+    font-family: "Georgia", serif;
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.contact-us form {
+    grid-row: 3;
+    grid-column: 2;
+    margin-bottom: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us label {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #76292a;
+    font-size: 17px;
+}
+
+.contact-us textarea, .contact-us input:not(:last-child) {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #762a2a;
+    padding-left: 7px;
+    font-family: "Calibri", sans-serif;
+    font-size: 15px;
+}
+
+.contact-us textarea {
+    height: 200px;
+}
+
+.contact-us input:not(:last-child) {
+    height: 26px;
+}
+
+.submit-button {
+    height: 40px;
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #2d0707;
+    color: #e9f5e5;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #4e1414;
+    animation-name: submit-animation;
+    animation-duration: 0.5s;
+}
+
+/* Animation for submit-button */
+@keyframes submit-animation {
+    from {background-color: #2d0707;}
+    to {background-color: #4e1414;}
+}
+
+.another-info {
+    grid-row: 1 / span 3;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+    justify-content: center;
+}
+
+.another-info section:not(:last-child) {
+    margin-bottom: 30%;
+}
+
+.another-info h5 {
+    color: #76292a;
+}
+
+.another-info p {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+    color: #76292a;
+}
+
+.another-info i {
+    font-size: 15px;
+}
+
+.another-info small {
+    font-family: "Calibri", sans-serif;
+    color: #76292a;
+}
 
 /* === LINKS TO OUTSIDE "COMPANIES" === */
 /* General styling */
