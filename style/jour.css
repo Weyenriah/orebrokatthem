@@ -372,7 +372,7 @@ body {
 
 /* === FOOTER === */
 /* General footer styling */
-.footer {
+.first-footer {
     width: 100%;
     height: 150px;
     background-color: #739069;
@@ -385,14 +385,14 @@ body {
 }
 
 /* Styles the heading for footer */
-.footer h2 {
+.first-footer h2 {
     font-size: 18px;
     font-family: "Georgia", serif;
     margin-bottom: 0;
 }
 
 /* Styles the general text in footer */
-.footer p {
+.first-footer p {
     font-family: "Calibri", sans-serif;
     margin-top: 5px;
     font-size: 16px;
@@ -412,14 +412,14 @@ body {
 }
 
 /* Handles the links in footer */
-.explore a {
+.first-footer a {
     text-decoration: none;
     color: #4d6744;
     font-size: 15px;
 }
 
 /* Hover over non-active footer-links */
-.footer a:hover:not(.active) {
+.first-footer a:hover:not(.active) {
     animation-name: footer-animation;
     animation-duration: 0.5s;
     color: #e9f5e5;
@@ -429,4 +429,24 @@ body {
 @keyframes footer-animation {
     from {color: #4d6744;}
     to {color: #e9f5e5;}
+}
+
+.first-footer i {
+    font-size: 17px;
+}
+
+/* === THE SECOND FOOTER STYLING === */
+.second-footer {
+    font-family: "Calibri", sans-serif;
+    height: 35px;
+    background-color: #3f5737;
+    color: #e9f5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-footer p {
+    margin: 0;
+    font-size: 15px;
 }
