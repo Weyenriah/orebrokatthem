@@ -30,10 +30,9 @@
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
         <ul class="second-nav-list">
-            <li><a class="active" href="#"> Hur </a></li>
-            <li><a href="#"> Våra Katter </a></li>
-            <li><a href="#"> Tips </a></li>
-            <li><a href="#"> Pris </a></li>
+            <li><a class="active" href="#how"> Hur </a></li>
+            <li><a href="#tips"> Tips </a></li>
+            <li><a href="#report"> Anmälning </a></li>
         </ul>
     </nav>
 
@@ -46,7 +45,7 @@
         </p>
     </header>
 
-    <section class="red-background">
+    <section class="red-background how-is-it" id="how">
         <h2> Hur är det att vara jourhem? </h2>
         <div>
             <h5 class="second-row-heading-red">
@@ -100,7 +99,7 @@
         </div>
     </section>
 
-    <section class="white-background">
+    <section class="white-background" id="tips">
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div> <img class="right-img" src="../images/ashild.jpg">
             <ol>
@@ -210,9 +209,31 @@
         </div>
     </section>
 
-    <section class="red-background">
+    <section class="red-background report" id="report">
         <h2>Anmälning</h2>
-        <p> Här ska det finnas ett anmälningsformulär </p>
+        <form>
+            <label for="firstname" class="second-row-heading">
+                Ditt namn
+            </label>
+            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+
+            <label for="firstname" class="second-row-heading">
+                Din emailadress
+            </label>
+            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+
+            <label for="subject" class="second-row-heading">
+                Meddelande
+            </label>
+            <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
+
+            <input type="submit" value="Skicka" class="submit-button">
+        </form>
+        <div class="another-info">
+            <h5 class="second-row-heading"> Eller ring till </h5>
+            <p> 0580-125 69 </p>
+            <small> Kikki </small>
+        </div>
     </section>
 
     <!-- The outside companies that ÖKH linked on their first page -->
