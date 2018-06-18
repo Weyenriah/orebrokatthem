@@ -1,41 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="sv">
 
-    <!-- Fontawesome-required CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<!-- Calls for head -->
+<?php include('../components/head.php') ?>
 
-    <!-- Specific stylesheet for jour-page -->
-    <link rel="stylesheet" type="text/css" href="../style/about.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
-
-    <!-- Webpage title -->
-    <title>Örebro Katthem</title>
-</head>
 <body>
-    <!-- General navigation -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li id="logo"> <img src="../images/logo.png"> </li>
-            <li><a href="../index.html"> Hem </a></li>
-            <li><a href="adopt.html"> Adoptera </a></li>
-            <li><a href="jour.html"> Bli Jourhem </a></li>
-            <li><a class="active" href="#"> Om Oss </a></li>
-            <li><a href="#"> Stöd Oss </a></li>
-        </ul>
-    </nav>
+    <!-- Calls for main navigation -->
+    <?php include('../components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
         <ul class="second-nav-list">
-            <li><a class="active" href="#"> Vi som jobbar här </a></li>
-            <li><a href="#"> Kontakta oss </a></li>
-            <li><a href="#"> Bli volontär </a></li>
+            <li><a class="active" href="#workers"> Vi som jobbar här </a></li>
+            <li><a href="#contact"> Kontakta oss </a></li>
+            <li><a href="#volonteer"> Bli volontär </a></li>
         </ul>
     </nav>
 
@@ -47,7 +25,7 @@
         </p>
     </header>
 
-    <section class="workers red-background">
+    <section class="workers red-background" id="workers">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <article class="employee-card">
@@ -100,7 +78,7 @@
         </div>
     </section>
 
-    <section class="contact-us white-background">
+    <section class="contact-us white-background" id="contact">
         <h2>Kontakta oss</h2>
         <form>
             <label for="firstname" class="second-row-heading">
@@ -143,7 +121,7 @@
         </div>
     </section>
 
-    <section class="volonteer red-background">
+    <section class="volonteer red-background" id="volonteer">
         <h2> Bli volontär </h2>
         <div class="become-info">
             <img src="../images/ashild.jpg">
@@ -201,32 +179,7 @@
         </a>
     </section>
 
-    <!-- Footer for the whole page -->
-    <footer class="first-footer">
-        <section class="contact">
-            <h2>Kontakt</h2>
-            <p>Örebro Katthem <br/>
-                Sockengatan 5 <br/>
-                702 16 Örebro <br/>
-                <i class="fas fa-envelope"></i> info@orebrokatthem.com <br/>
-                <i class="fas fa-phone"></i> 019-26 00 86</p>
-        </section>
-        <section class="social-media">
-            <h2>Hitta oss på sociala medier!</h2>
-            <a href="#"> <i class="fab fa-facebook-square"></i> </a>
-            <a href="#"> <i class="fab fa-instagram"></i> </a>
-        </section>
-        <section class="explore">
-            <h2>Utforska</h2>
-            <a class="active" href="#"> Hem </a>
-            <a href="#"> Adoptera </a>
-            <a href="#"> Bli Jourhem </a>
-            <a href="#"> Om Oss </a>
-            <a href="#"> Stöd Oss </a>
-        </section>
-    </footer>
-    <footer class="second-footer">
-        <p> Copyright © av Örebro Katthem 2018 |  </p>
-    </footer>
+    <!-- Calls for footer -->
+    <?php include('../components/footer.php') ?>
 </body>
 </html>

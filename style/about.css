@@ -28,72 +28,6 @@ body {
     margin: 0;
 }
 
-/* === PRIMARY NAVIGATION === */
-/* General style links for navigation */
-.navbar {
-    width: 100%;
-    height: 50px;
-    margin-top: 25px;
-    background-color: #739069;
-    font-family: "Georgia", serif;
-}
-
-/* List-styles and some placing for navigation */
-.nav-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-}
-
-/* Changes padding on the first child (logo) */
-.nav-list li:first-child {
-    padding-right: 30px;
-}
-
-/* Changes padding on every other child except first (logo) */
-.nav-list li:not(:first-child) {
-    padding-right: 100px;
-}
-
-/* Style for navigation-links (not when hovering) */
-.nav-list li a {
-    text-decoration: none;
-    color: #4d6744;
-}
-
-/* Hover over non-active navigation links */
-.nav-list li a:hover:not(.active) {
-    animation-name: navigation-animation;
-    animation-duration: 0.5s;
-    color: #e9f5e5;
-}
-
-/* Animation for navigation-links */
-@keyframes navigation-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
-}
-
-/* Style only for active navigation-link */
-.active {
-    color: #e9f5e5 !important;
-}
-
-/* "Control panel" for brand-logo */
-.nav-list img {
-    height: 90px;
-    margin-top: -10px;
-}
-
-/* Changes vertical alignment on everything except logo */
-.nav-list li:not(#logo) {
-    margin-top: -34px;
-}
-
-
 /* === SECONDARY NAVIGATION === */
 /* General style links for secondary navigation */
 .second-navbar {
@@ -224,6 +158,7 @@ body {
 .employee-info p {
     display: flex;
     font-family: "Calibri", sans-serif;
+    color: #f0dfdf;
 }
 
 .tele {
@@ -437,92 +372,4 @@ body {
 }
 .sverak {
     height: 135px;
-}
-
-/* === FOOTER === */
-/* General footer styling */
-.first-footer {
-    width: 100%;
-    height: 150px;
-    background-color: #739069;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: 150px;
-    justify-items: center;
-    grid-column-gap: 10px;
-    color: #e9f5e5;
-}
-
-/* Styles the heading for footer */
-.first-footer h2 {
-    font-size: 18px;
-    font-family: "Georgia", serif;
-    margin-bottom: 0;
-}
-
-/* Styles the general text in footer */
-.first-footer p {
-    font-family: "Calibri", sans-serif;
-    margin-top: 5px;
-    font-size: 16px;
-}
-
-/* All these 3 down there handles the different sections in footer */
-.contact {
-    grid-column: 2;
-}
-.social-media {
-    grid-column: 3;
-}
-.explore {
-    grid-column: 4;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Handles the links in footer */
-.first-footer a {
-    text-decoration: none;
-    color: #4d6744;
-    font-size: 15px;
-}
-
-/* Hover over non-active footer-links */
-.first-footer a:hover:not(.active) {
-    animation-name: footer-animation;
-    animation-duration: 0.5s;
-    color: #e9f5e5;
-}
-
-/* Animation for footer-links */
-@keyframes footer-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
-}
-
-/* Styling for the icons */
-.social-media i {
-    font-size: 17px;
-    margin-right: 6px;
-}
-
-.contact i {
-    font-size: 13px;
-    margin-right: 6px;
-}
-
-/* === THE SECOND FOOTER STYLING === */
-.second-footer {
-    font-family: "Calibri", sans-serif;
-    height: 35px;
-    background-color: #3f5737;
-    color: #e9f5e5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.second-footer p {
-    margin: 0;
-    font-size: 15px;
 }
