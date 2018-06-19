@@ -1,34 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Fontawesome-required CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<!-- Calls for head -->
+<?php include('../components/head.php') ?>
 
-    <!-- Specific stylesheet for jour-page -->
-    <link rel="stylesheet" type="text/css" href="../style/jour.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
-
-    <!-- Webpage title -->
-    <title>Örebro Katthem</title>
-</head>
 <body>
-    <!-- General navigation -->
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li id="logo"> <img src="../images/logo.png"> </li>
-            <li><a href="../index.php"> Hem </a></li>
-            <li><a href="adopt.php"> Adoptera </a></li>
-            <li><a class="active" href="jour.php"> Bli Jourhem </a></li>
-            <li><a href="about.php"> Om Oss </a></li>
-            <li><a href="#"> Stöd Oss </a></li>
-        </ul>
-    </nav>
+    <!-- Calls for main navigation -->
+    <?php include('../components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
@@ -48,63 +26,36 @@
         </p>
     </header>
 
-    <section class="red-background how-is-it" id="how">
+    <section class="red-background general-grid" id="how">
         <h2> Hur är det att vara jourhem? </h2>
-        <div>
-            <h5 class="second-row-heading-red">
-            Jourhem innebär ett tillfälligt hem
-        </h5>
-            <p>
-                för en eller fler hemlösa katter som inte kan tas in på katthemmet eller som är i behov av extra omsorg.
-            </p>
+        <div class="red-paragraph"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
+            <p> för en eller fler hemlösa katter som inte kan tas in på katthemmet eller som är i behov av extra omsorg. </p>
 
-            <h5 class="second-row-heading-red">
-                Det handlar ofta om lite rädda/skygga katter
-            </h5>
-            <p>
-                som behöver lugn och ro samt en stabil människokontakt för att få förtroende för människor igen. Det kan också vara katter som akut behöver någonstans att ta vägen.
-            </p>
+            <h5 class="second-row-heading"> Det handlar ofta om lite rädda/skygga katter </h5>
+            <p> som behöver lugn och ro samt en stabil människokontakt för att få förtroende för människor igen. Det kan också vara katter som akut behöver någonstans att ta vägen. </p>
 
-            <h5 class="second-row-heading-red">
-                Som jourhem kommer du att få en kontaktperson
-            </h5>
-            <p>
-                som kan ge dig råd, hjälp och stöd. I samråd med din kontaktperson tas alla beslut gällande katten. Du kommer att få så mycket information som möjligt av oss om kattens bakgrund för att ge er de bästa förutsättningarna inför den nya bekantskapen.
-            </p>
+            <h5 class="second-row-heading"> Som jourhem kommer du att få en kontaktperson </h5>
+            <p> som kan ge dig råd, hjälp och stöd. I samråd med din kontaktperson tas alla beslut gällande katten. Du kommer att få så mycket information som möjligt av oss om kattens bakgrund för att ge er de bästa förutsättningarna inför den nya bekantskapen. </p>
 
-            <h5 class="second-row-heading-red">
-                Vi kommer att tilldela dig en katt som passar
-            </h5>
-            <p>
-                den kattvana du har, eftersom vissa katter kan vara mycket skygga och kan upplevas som lite aggressiva. I vissa fall behövs någon som är hemma hela dagarna för vård av sjukdom eller andra behov.
-            </p>
+            <h5 class="second-row-heading"> Vi kommer att tilldela dig en katt som passar </h5>
+            <p> den kattvana du har, eftersom vissa katter kan vara mycket skygga och kan upplevas som lite aggressiva. I vissa fall behövs någon som är hemma hela dagarna för vård av sjukdom eller andra behov. </p>
 
-            <h5 class="second-row-heading-red">
-                Katterna behöver mer eller mindre veterinärvård.
-            </h5>
-            <p>
-                Alla könsmogna katter kastreras, ID-märks och vaccineras. Örebro Katthem samarbetar med veterinär Karin Simonsson i Fjugesta och kommer att stå för de kostnaderna. De flesta katter är i behov av behandling mot öronskabb samt avmaskas, något som sköts i jourhemmen. Är du ovan med att utföra detta kan du kontakta din respektive kontaktperson för att få råd, handledning och eventuell hjälp med åtgärden. All medicin som behövs står Örebro Katthem för.
-            </p>
+            <h5 class="second-row-heading"> Katterna behöver mer eller mindre veterinärvård. </h5>
+            <p> Alla könsmogna katter kastreras, ID-märks och vaccineras. Örebro Katthem samarbetar med veterinär Karin Simonsson i Fjugesta och kommer att stå för de kostnaderna. De flesta katter är i behov av behandling mot öronskabb samt avmaskas, något som sköts i jourhemmen. Är du ovan med att utföra detta kan du kontakta din respektive kontaktperson för att få råd, handledning och eventuell hjälp med åtgärden. All medicin som behövs står Örebro Katthem för. </p>
 
-            <h5 class="second-row-heading-red">
-                Som jourhem får du vid behov bidrag
-            </h5>
-            <p>
-                med kattmat och kattströ från katthemmet. Detta gäller först och främst dig som tagit hand om många katter. På grund av vår ansträngda ekonomi kan vi inte erbjuda dig något ekonomiskt stöd. Kattmaten kommer från våra sponsorer.
-            </p>
 
-            <h5 class="second-row-heading-red">
-                Katten tillhör Örebro Katthem
-            </h5>
-            <p>
-                och det är genom oss som all utplacering i varaktiga hem sker. De bestämmelser som gäller för katter bosatta på katthemmet gäller även för katter placerade i jourhem. Din kontaktperson kommer att informera dig mer om detta och se till att missförstånd inte uppstår. (Du får mer än gärna leta efter permanenta hem till katten, eller kanske rentav adoptera den själv, men adoptionen måste godkännas av din kontaktperson.)
-            </p>
+            <h5 class="second-row-heading"> Som jourhem får du vid behov bidrag </h5>
+            <p> med kattmat och kattströ från katthemmet. Detta gäller först och främst dig som tagit hand om många katter. På grund av vår ansträngda ekonomi kan vi inte erbjuda dig något ekonomiskt stöd. Kattmaten kommer från våra sponsorer. </p>
+
+            <h5 class="second-row-heading"> Katten tillhör Örebro Katthem </h5>
+            <p> och det är genom oss som all utplacering i varaktiga hem sker. De bestämmelser som gäller för katter bosatta på katthemmet gäller även för katter placerade i jourhem. Din kontaktperson kommer att informera dig mer om detta och se till att missförstånd inte uppstår. (Du får mer än gärna leta efter permanenta hem till katten, eller kanske rentav adoptera den själv, men adoptionen måste godkännas av din kontaktperson.) </p>
         </div>
     </section>
 
-    <section class="white-background" id="tips">
+    <section class="white-background general-grid" id="tips">
         <h2> Tips för dig med skygg jourhemskatt </h2>
-        <div> <img class="right-img" src="../images/ashild.jpg">
+        <div class="white-paragraph">
+            <img class="right-img" src="../images/ashild.jpg">
             <ol>
                 <li>
                     <span class="left-num">
@@ -212,7 +163,7 @@
         </div>
     </section>
 
-    <section class="red-background report" id="report">
+    <section class="red-background double-sided-grid" id="report">
         <h2>Anmälning</h2>
         <form>
             <label for="firstname" class="second-row-heading">
@@ -232,55 +183,14 @@
 
             <input type="submit" value="Skicka" class="submit-button">
         </form>
-        <div class="another-info">
+        <div class="red-double">
             <h5 class="second-row-heading"> Eller ring till </h5>
-            <p> 0580-125 69 </p>
+            <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
             <small> Kikki </small>
         </div>
     </section>
 
-    <!-- The outside companies that ÖKH linked on their first page -->
-    <section class="outsiders">
-        <a href="http://www.svekatt.se/">
-            <img class="svekatt" src="../images/svekatt-etisk.png">
-        </a>
-        <a href="http://www.vilse.nu/">
-            <img class="vilse" src="../images/vilse.png">
-        </a>
-        <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
-            <img class="skk"  src="../images/skk.gif">
-        </a>
-        <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
-            <img class="sverak" src="../images/sverak.png">
-        </a>
-    </section>
-
-    <!-- Footer for the whole page -->
-    <footer class="first-footer">
-        <section class="contact">
-            <h2>Kontakt</h2>
-            <p>Örebro Katthem <br/>
-                Sockengatan 5 <br/>
-                702 16 Örebro <br/>
-                <i class="fas fa-envelope"></i> info@orebrokatthem.com <br/>
-                <i class="fas fa-phone"></i> 019-26 00 86</p>
-        </section>
-        <section class="social-media">
-            <h2>Hitta oss på sociala medier!</h2>
-            <a href="#"> <i class="fab fa-facebook-square"></i> </a>
-            <a href="#"> <i class="fab fa-instagram"></i> </a>
-        </section>
-        <section class="explore">
-            <h2>Utforska</h2>
-            <a class="active" href="#"> Hem </a>
-            <a href="#"> Adoptera </a>
-            <a href="#"> Bli Jourhem </a>
-            <a href="#"> Om Oss </a>
-            <a href="#"> Stöd Oss </a>
-        </section>
-    </footer>
-    <footer class="second-footer">
-        <p> Copyright © av Örebro Katthem 2018 |  </p>
-    </footer>
+    <!-- Calls for footer -->
+    <?php include('../components/footer.php') ?>
 </body>
 </html>

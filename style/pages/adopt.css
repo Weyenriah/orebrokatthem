@@ -1,10 +1,3 @@
-/* === GENERAL DESIGN RULES === */
-/* Erases default 8px border */
-body {
-    margin: 0;
-    padding: 0;
-}
-
 /* === PRIMARY NAVIGATION === */
 /* General style links for navigation */
 .navbar {
@@ -140,210 +133,72 @@ body {
     color: #6a1111;
     font-family: "Calibri", sans-serif;
     margin: 0;
+
 }
 
-/* === HOW RED PARTS LOOK AT WEBPAGE === */
-.red-background {
-    margin-top: 30px;
-    border-top: 50px solid #76292a;
-    border-bottom: 50px solid #76292a;
-    height: auto;
-    background-color: #591c1c;
-    color: #faf3f3;
-}
-
-.second-row-heading-red {
-    text-transform: uppercase;
-    margin: 0;
-    font-family: "Calibri", sans-serif;
-    font-size: 17px;
-}
-
-/* === HOW IS IT-STYLING === */
-.how-is-it {
+/* === OUR CATS STYLING === */
+.our-cats {
+    height: 500px;
     display: grid;
-    grid-template-rows: 20px 61px auto;
+    grid-template-rows: 100px auto;
     grid-template-columns: 20% 60% 20%;
 }
 
-.how-is-it h2 {
+.top {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+}
+
+.cats {
     grid-row: 2;
     grid-column: 2;
-    margin: 0;
-    font-family: "Georgia", serif;
+    display: flex;
+    flex-direction: row;
 }
 
-.how-is-it div {
-    grid-row: 3;
-    grid-column: 2;
-}
-
-.how-is-it p {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-family: "Calibri", sans-serif;
-    color: #f0dfdf;
-}
-
-/* === HOW WHITE PARTS LOOK AT WEBPAGE === */
-.white-background {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
-
-/* Styling to heading */
-.white-background h2 {
-    grid-column: 2;
-    color: #76292a;
-    font-family: "Georgia", serif;
-    margin-top: 30px;
-    margin-bottom: 0;
-}
-
-.white-background div {
-    grid-column: 2;
-    color: #76292a;
-    font-family: "Calibri", sans-serif;
-    width: 100%;
-    margin-top: 13px;
-}
-
-/* Styling to list */
-.white-background ol {
-    list-style: none;
-    padding: 0;
-}
-.white-background ol li {
-    position: relative;
-    margin-bottom: 40px;
-}
-.adjust-main-left {
-    padding-left: 60px;
-}
-
-.white-background ol li p {
-    margin-top: 0;
-}
-
-.second-row-heading {
-    font-family: "Calibri", sans-serif;
-    text-transform: uppercase;
-    font-size: 17px;
-    margin: 0;
-}
-
-/* Styling to the numbers in list */
-.left-num {
-    position: absolute;
-    line-height: 25px;
-    font-size: 350%;
-    font-family: "Georgia", serif;
-    margin-top: 5px;
-}
-
-/* Tiny adjustments on the numbers that do not fit the standard */
-.adjusting-num-down {
-    margin-top: 18px;
-}
-.adjusting-num-left {
-    margin-left: -20px;
-}
-
-/* Adjusting the image */
-.right-img {
+.cat img {
     height: 300px;
-    float: right;
-    margin-left: 15px;
-    border: 1px solid #76292a;
 }
 
-/* === REPORT-FORM AND STUFF STYLING === */
-.report {
+.cat-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.cat-text {
     display: grid;
-    grid-template-rows: 20px 61px auto;
-    grid-template-columns: 20% 40% 20% 20%;
+    grid-template-rows: 32px 25px 213px 30px;
+    grid-template-columns: 100%;
+    width: 250px;
+    margin-left: 20px;
 }
 
-.report h2 {
-    grid-row: 2;
-    grid-column: 2 / span 2;
-    margin: 0;
+.cat-text h3 {
+    grid-row: 1;
+    grid-column: 1;
+    margin-top: 0;
     font-family: "Georgia", serif;
+    font-size: 28px;
 }
 
-.report form {
+.cat-text small {
+    grid-row: 2;
+    grid-column: 1;
+    font-family: "Calibri", sans-serif;
+}
+
+.cat-text p {
     grid-row: 3;
-    grid-column: 2;
-    margin-bottom: 30px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-}
-
-.report label {
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-size: 17px;
-}
-
-.report textarea, .report input:not(:last-child) {
-    margin-bottom: 10px;
-    background-color: #faf3f3;
-    border: none;
-    padding-left: 7px;
-    font-family: "Calibri", sans-serif;
-    font-size: 15px;
-}
-
-.report textarea {
-    height: 200px;
-}
-
-.report input:not(:last-child) {
-    height: 26px;
-}
-
-.submit-button {
-    height: 40px;
-    font-family: "Calibri", sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    background-color: #2d0707;
-    color: #e9f5e5;
-    border: none;
-    cursor: pointer;
-}
-
-.submit-button:hover {
-    background-color: #4e1414;
-    animation-name: submit-animation;
-    animation-duration: 0.5s;
-}
-
-/* Animation for submit-button */
-@keyframes submit-animation {
-    from {background-color: #2d0707;}
-    to {background-color: #4e1414;}
-}
-
-.another-info {
-    grid-row: 1 / span 3;
-    grid-column: 3;
-    display: flex;
-    flex-direction: column;
-    margin-left: 40%;
-    justify-content: center;
-}
-
-.another-info p {
+    grid-column: 1;
     margin: 0;
     font-family: "Calibri", sans-serif;
-    color: #f0dfdf;
 }
 
-.another-info small {
-    font-family: "Calibri", sans-serif;
-    color: #f0dfdf;
+.cat-text a {
+    grid-row: 4;
+    grid-column: 1;
+    font-family: "Georgia", serif;
 }
 
 /* === LINKS TO OUTSIDE "COMPANIES" === */

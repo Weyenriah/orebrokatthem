@@ -78,7 +78,7 @@
         </div>
     </section>
 
-    <section class="contact-us white-background" id="contact">
+    <section class="contact-us" id="contact">
         <h2>Kontakta oss</h2>
         <form>
             <label for="firstname" class="second-row-heading">
@@ -128,7 +128,7 @@
             <p>
                 Vill du ha någon sysselsättning på din fritid så har Örebro Katthem drygt 30 katter som väldigt gärna vill ha sällskap och omvårdnad! Vi har ont om volontärer och behöver ha mer arbetskraft. En perfekt sysselsättning för dig som älskar katter och lärorikt för dig som vill lära dig mer om beteende, hälsa, skötsel och skygga katter.
             </p>
-            <h5 class="second-row-heading-red"> Krav </h5>
+            <h5 class="second-row-heading"> Krav </h5>
             <ul>
                 <li>
                     Du är myndig, ska helst ha fyllt 20 år.
@@ -151,32 +151,16 @@
                 Om du inte varit på katthemmet tidigare är det jättebra att börja med att komma dit någon dag och se hur det ser ut och prata med personalen där. Antingen att du hoppar in på öppet hus (söndagar eller onsdagar) eller så bestämmer du med någon som jobbar att du kommer dit någon annan tid när det kanske är lite lugnare. </p>
             <div class="contact-become">
                 <div>
-                    <h5 class="second-row-heading-red"> Ring till katthemmet </h5>
+                    <h5 class="second-row-heading"> Ring till katthemmet </h5>
                     <p> 019-26 00 86 </p>
                 </div>
 
                 <div>
-                    <h5 class="second-row-heading-red"> Mejla personalansvarige </h5>
+                    <h5 class="second-row-heading"> Mejla personalansvarige </h5>
                     <a href="#"> intro@orebrokatthem.com </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- The outside companies that ÖKH linked on their first page -->
-    <section class="outsiders">
-        <a href="http://www.svekatt.se/">
-            <img class="svekatt" src="../images/svekatt-etisk.png">
-        </a>
-        <a href="http://www.vilse.nu/">
-            <img class="vilse" src="../images/vilse.png">
-        </a>
-        <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
-            <img class="skk"  src="../images/skk.gif">
-        </a>
-        <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
-            <img class="sverak" src="../images/sverak.png">
-        </a>
     </section>
 
     <!-- Calls for footer -->

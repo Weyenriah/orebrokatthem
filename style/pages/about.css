@@ -1,33 +1,3 @@
-/* === GENERAL DESIGN RULES === */
-/* Erases default 8px border */
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.red-background {
-    margin-top: 30px;
-    border-top: 50px solid #76292a;
-    border-bottom: 50px solid #76292a;
-    height: auto;
-    background-color: #591c1c;
-    color: #faf3f3;
-}
-
-.second-row-heading-red {
-    text-transform: uppercase;
-    margin: 0;
-    font-family: "Calibri", sans-serif;
-    font-size: 17px;
-}
-
-.second-row-heading {
-    font-family: "Calibri", sans-serif;
-    text-transform: uppercase;
-    font-size: 17px;
-    margin: 0;
-}
-
 /* === SECONDARY NAVIGATION === */
 /* General style links for secondary navigation */
 .second-navbar {
@@ -176,11 +146,6 @@ body {
 }
 
 /* === CONTACT US STYLING === */
-.white-background {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
-
 .contact-us {
     display: grid;
     grid-template-rows: 20px 61px auto;

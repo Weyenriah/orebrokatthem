@@ -1,0 +1,171 @@
+/* === SECONDARY NAVIGATION === */
+/* General style links for secondary navigation */
+.second-navbar {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #739069;
+    font-family: "Georgia", serif;
+}
+
+/* List-styles and some placing for secondary navigation */
+.second-nav-list {
+    height: 30px;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Style for secondary navigation-links (not when hovering) */
+.second-nav-list li a {
+    text-decoration: none;
+    color: #4d6744;
+}
+
+/* Hover over non-active navigation links */
+.second-nav-list li a:hover:not(.active) {
+    animation-name: navigation-animation;
+    animation-duration: 0.5s;
+    color: #e9f5e5;
+}
+
+/* Animation for navigation-links */
+@keyframes navigation-animation {
+    from {color: #4d6744;}
+    to {color: #e9f5e5;}
+}
+
+/* Style only for active navigation-link */
+.active {
+    color: #e9f5e5 !important;
+}
+
+/* === Styling for advice-page === */
+/* Styling to list */
+.white-background ol {
+    list-style: none;
+    padding: 0;
+}
+.white-background ol li {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.adjust-main-left {
+    padding-left: 60px;
+}
+
+.white-background ol li p {
+    margin-top: 0;
+}
+
+/* Styling to the numbers in list */
+.left-num {
+    position: absolute;
+    line-height: 25px;
+    font-size: 350%;
+    font-family: "Georgia", serif;
+    margin-top: 5px;
+}
+
+/* Tiny adjustments on the numbers that do not fit the standard */
+.adjusting-num-down {
+    margin-top: 18px;
+}
+.adjusting-num-left {
+    margin-left: -20px;
+}
+
+/* Adjusting the image */
+.right-img {
+    height: 300px;
+    float: right;
+    margin-left: 15px;
+    border: 1px solid #76292a;
+}
+
+/* === REPORT-FORM AND STUFF STYLING === */
+#report h2 {
+    grid-column: 2 / span 2;
+}
+
+#report form {
+    grid-row: 3;
+    grid-column: 2;
+    margin-bottom: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#report label {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+#report textarea, .report input:not(:last-child) {
+    margin-bottom: 10px;
+    background-color: #faf3f3;
+    border: none;
+    padding-left: 7px;
+    font-family: "Calibri", sans-serif;
+    font-size: 15px;
+}
+
+#report textarea {
+    height: 200px;
+}
+
+#report input:not(:last-child) {
+    height: 26px;
+}
+
+.submit-button {
+    height: 40px;
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #2d0707;
+    color: #e9f5e5;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #4e1414;
+    animation-name: submit-animation;
+    animation-duration: 0.5s;
+}
+
+/* Animation for submit-button */
+@keyframes submit-animation {
+    from {background-color: #2d0707;}
+    to {background-color: #4e1414;}
+}
+
+/* The other side of this page styling */
+.red-double {
+    grid-row: 1 / span 3;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+    justify-content: center;
+}
+
+.red-double p {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+}
+
+.red-double i {
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+.red-double small {
+    font-family: "Calibri", sans-serif;
+}

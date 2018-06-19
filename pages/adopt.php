@@ -24,9 +24,9 @@
         </p>
     </header>
 
-    <section>
-        <div class="background">
-            <h2> Hur adopterar jag? </h2>
+    <section class="red-background general-grid">
+        <h2> Hur adopterar jag? </h2>
+        <div class="red-paragraph">
             <p> Om du vill adoptera en katt, ta kontakt med kontaktperson/katthemmet om att få komma på besök. Vi hjälper dig att finna rätt katt som passar dig och din vardag. Bestämmer du dig för att adoptera katten gör du en överenskommelse med kontaktpersonen alt. fyller i vår adoptionsansökan på katthemmet. Detta för att bestämma om du verkar vara det rätta hemmet för katten. När du blivit godkänd som adoptivhem sätter du in adoptionsavgiften på vårt postgirokonto; 288867-5, Swishkonto; 123 082 215 5 eller i undantagsfall betalar kontant. Köpeavtal skrivs när katten hämtas och detta avtal gäller även som kvitto.<br/>
                 <br/>
                 När katten är leveransklar (färdigvaccinerad, avmaskad och ID-märkt, samt kastrerad om katten är könsmogen) hämtas den när det passar bäst enligt överenskommelse mellan nya ägaren och ansvarig för katten.<br/>
@@ -67,22 +67,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- The outside companies that ÖKH linked on their first page -->
-    <section class="outsiders">
-        <a href="http://www.svekatt.se/">
-            <img class="svekatt" src="../images/svekatt-etisk.png">
-        </a>
-        <a href="http://www.vilse.nu/">
-            <img class="vilse" src="../images/vilse.png">
-        </a>
-        <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
-            <img class="skk"  src="../images/skk.gif">
-        </a>
-        <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
-            <img class="sverak" src="../images/sverak.png">
-        </a>
     </section>
 
     <!-- Calls for footer -->

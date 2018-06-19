@@ -1,3 +1,19 @@
+<!-- The outside companies that ÖKH linked on their first page -->
+<section class="outsiders">
+    <a href="http://www.svekatt.se/">
+        <img class="svekatt" src="../images/svekatt-etisk.png">
+    </a>
+    <a href="http://www.vilse.nu/">
+        <img class="vilse" src="../images/vilse.png">
+    </a>
+    <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
+        <img class="skk"  src="../images/skk.gif">
+    </a>
+    <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
+        <img class="sverak" src="../images/sverak.png">
+    </a>
+</section>
+
 <!-- Footer for the whole page -->
 <footer class="first-footer">
     <section class="contact">
