@@ -20,14 +20,15 @@
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Om Oss </h1>
-        <p>
-            Örebro Katthem drivs helt och hållet ideellt med privata medel och alla föreningsaktiva har mycket att göra och har höga telefonräkningar. Alla utom Christina använder helst mailkontakt i första hand. Vi ber er därför att sköta så mycket som möjligt av ärendet med mail i den mån ni har möjlighet till det. Välkommen att ta kontakt med oss!
+        <p> Örebro Katthem drivs helt och hållet ideellt med privata medel och alla föreningsaktiva har mycket att göra och har höga telefonräkningar. Alla utom Christina använder helst mailkontakt i första hand. Vi ber er därför att sköta så mycket som möjligt av ärendet med mail i den mån ni har möjlighet till det. Välkommen att ta kontakt med oss!
         </p>
     </header>
 
-    <section class="workers red-background" id="workers">
+    <!-- Section for employees -->
+    <section class="red-background general-grid" id="workers">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
+            <!-- Employee cards -->
             <article class="employee-card">
                 <div class="employee-pic">
                     <img src="../images/human.jpg">
@@ -36,7 +37,7 @@
                     <h3> Namn </h3>
                     <small> Ordförande </small>
                     <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p class="email"><i class="fas fa-envelope"></i> namn@oh.se</p>
+                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
 
@@ -48,7 +49,7 @@
                     <h3> Namn </h3>
                     <small> Ordförande </small>
                     <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p class="email"><i class="fas fa-envelope"></i> namn@oh.se</p>
+                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
 
@@ -60,7 +61,7 @@
                     <h3> Namn </h3>
                     <small> Ordförande </small>
                     <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p class="email"><i class="fas fa-envelope"></i> namn@oh.se</p>
+                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
 
@@ -72,13 +73,14 @@
                     <h3> Namn </h3>
                     <small> Ordförande </small>
                     <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p class="email"><i class="fas fa-envelope"></i> namn@oh.se</p>
+                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
         </div>
     </section>
 
-    <section class="contact-us" id="contact">
+    <!-- Contact section -->
+    <section class="white-background double-sided-grid" id="contact">
         <h2>Kontakta oss</h2>
         <form>
             <label for="firstname" class="second-row-heading">
@@ -98,7 +100,9 @@
 
             <input type="submit" value="Skicka" class="submit-button">
         </form>
-        <div class="another-info">
+
+        <!-- Information where to contact otherwise -->
+        <div class="contact-info">
             <section>
                 <h5 class="second-row-heading"> Besök oss </h5>
                 <p> Örebro Katthem <br/>
@@ -110,7 +114,7 @@
 
             <section>
                 <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
-                <p> 0580-125 69 </p>
+                <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
                 <small> Christina "Kicki" Åbladh </small>
             </section>
 
@@ -121,34 +125,31 @@
         </div>
     </section>
 
-    <section class="volonteer red-background" id="volonteer">
+    <!-- Section for how to apply to be a volonteer -->
+    <section class="red-background general-grid" id="volonteer">
         <h2> Bli volontär </h2>
-        <div class="become-info">
+        <div class="red-paragraph">
             <img src="../images/ashild.jpg">
-            <p>
-                Vill du ha någon sysselsättning på din fritid så har Örebro Katthem drygt 30 katter som väldigt gärna vill ha sällskap och omvårdnad! Vi har ont om volontärer och behöver ha mer arbetskraft. En perfekt sysselsättning för dig som älskar katter och lärorikt för dig som vill lära dig mer om beteende, hälsa, skötsel och skygga katter.
+            <p> Vill du ha någon sysselsättning på din fritid så har Örebro Katthem drygt 30 katter som väldigt gärna vill ha sällskap och omvårdnad! Vi har ont om volontärer och behöver ha mer arbetskraft. En perfekt sysselsättning för dig som älskar katter och lärorikt för dig som vill lära dig mer om beteende, hälsa, skötsel och skygga katter.
             </p>
             <h5 class="second-row-heading"> Krav </h5>
             <ul>
-                <li>
-                    Du är myndig, ska helst ha fyllt 20 år.
+                <li> Du är myndig, ska helst ha fyllt 20 år.
                 </li>
-                <li>
-                    Du är ansvarstagande. Det är oerhört viktigt, eftersom du ska ta hand om levande djur.
+                <li> Du är ansvarstagande. Det är oerhört viktigt, eftersom du ska ta hand om levande djur.
                 </li>
-                <li>
-                    Du kan ta minst ett arbetspass var 14:e dag. Helst fasta pass (samma pass varje gång).
+                <li> Du kan ta minst ett arbetspass var 14:e dag. Helst fasta pass (samma pass varje gång).
                 </li>
-                <li>
-                    Du är inte rädd att slita lite - det är mycket städning.
+                <li> Du är inte rädd att slita lite - det är mycket städning.
                 </li>
-                <li>
-                    Du har kattvana, och är lugn och sansad. Det är viktigt, eftersom vi ständigt har många olika katter, varav många är skygga/blyga som behöver ha lugna och trygga människor omkring sig.
+                <li> Du har kattvana, och är lugn och sansad. Det är viktigt, eftersom vi ständigt har många olika katter, varav många är skygga/blyga som behöver ha lugna och trygga människor omkring sig.
                 </li>
             </ul>
             <p> <br/>
                 Varje dag har vi morgonpass och kvällspass på katthemmet och du bestämmer själv när och hur ofta du kan hjälpa till.
                 Om du inte varit på katthemmet tidigare är det jättebra att börja med att komma dit någon dag och se hur det ser ut och prata med personalen där. Antingen att du hoppar in på öppet hus (söndagar eller onsdagar) eller så bestämmer du med någon som jobbar att du kommer dit någon annan tid när det kanske är lite lugnare. </p>
+
+            <!-- Contact information -->
             <div class="contact-become">
                 <div>
                     <h5 class="second-row-heading"> Ring till katthemmet </h5>

@@ -1,88 +1,4 @@
-/* === SECONDARY NAVIGATION === */
-/* General style links for secondary navigation */
-.second-navbar {
-    width: 100%;
-    height: 30px;
-    margin-top: 20px;
-    background-color: #739069;
-    font-family: "Georgia", serif;
-}
-
-/* List-styles and some placing for secondary navigation */
-.second-nav-list {
-    height: 30px;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-/* Style for secondary navigation-links (not when hovering) */
-.second-nav-list li a {
-    text-decoration: none;
-    color: #4d6744;
-}
-
-/* Hover over non-active navigation links */
-.second-nav-list li a:hover:not(.active) {
-    animation-name: navigation-animation;
-    animation-duration: 0.5s;
-    color: #e9f5e5;
-}
-
-/* Animation for navigation-links */
-@keyframes navigation-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
-}
-
-/* Style only for active navigation-link */
-.active {
-    color: #e9f5e5 !important;
-}
-
-/* === HEADER === */
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 20px;
-    margin-right: 20%;
-    margin-left: 20%;
-}
-
-/* Styling for heading in Header */
-.header h1 {
-    margin: 0;
-    width: 100%;
-    font-family: "Georiga", serif;
-    color: #76292a;
-    text-align: center;
-    font-size: 260%;
-}
-
-/* Styling for the general text in Header */
-.header p {
-    color: #6a1111;
-    font-family: "Calibri", sans-serif;
-    margin: 0;
-}
-
 /* === THE WORKERS-PAGE STYLING === */
-.workers {
-    display: grid;
-    grid-template-rows: 20px 61px auto;
-    grid-template-columns: 20% 60% 20%;
-}
-
-.workers h2 {
-    grid-row: 2;
-    grid-column: 2;
-    margin: 0;
-    font-family: "Georgia", serif;
-}
-
 .employee-cards {
     grid-row: 3;
     grid-column: 2;
@@ -91,76 +7,63 @@
     flex-wrap: wrap;
 }
 
+/* Separate card styling */
 .employee-card {
     display: flex;
     margin-bottom: 30px;
 }
 
+/* Styling for picture in employee-card */
 .employee-pic {
     height: 210px;
     width: 190px;
     overflow: hidden;
     border: 1px solid white;
 }
-
 .employee-pic img {
     height: 210px;
     width: auto;
 }
 
+/* Info-box styling */
 .employee-info {
     width: 30%;
     margin-left: 15px;
     margin-right: 15px;
 }
 
+/* Text styling for employee-card */
 .employee-info h3 {
     font-family: "Georgia", serif;
     font-size: 28px;
     margin: 0;
 }
-
 .employee-info small {
     font-family: "Calibri", sans-serif;
     color: #f0dfdf;
 }
-
 .employee-info p {
     display: flex;
     font-family: "Calibri", sans-serif;
     color: #f0dfdf;
 }
 
+/* Styling that overrides general.css (p) */
 .tele {
-    margin-bottom: 0;
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
 }
 
-.email {
-    margin-top: 0;
-}
-
+/* Icon styling for employee-card */
 .employee-info i {
     font-size: 13px;
     margin-right: 6px;
     margin-top: 5px;
 }
 
+
 /* === CONTACT US STYLING === */
-.contact-us {
-    display: grid;
-    grid-template-rows: 20px 61px auto;
-    grid-template-columns: 20% 40% 20% 20%;
-}
-
-.contact-us h2 {
-    grid-column: 2;
-    color: #76292a;
-    font-family: "Georgia", serif;
-    margin-top: 30px;
-    margin-bottom: 0;
-}
-
-.contact-us form {
+.white-background form {
     grid-row: 3;
     grid-column: 2;
     margin-bottom: 30px;
@@ -169,14 +72,15 @@
     flex-direction: column;
 }
 
-.contact-us label {
+.white-background label {
     margin-bottom: 5px;
     text-transform: uppercase;
     color: #76292a;
     font-size: 17px;
 }
 
-.contact-us textarea, .contact-us input:not(:last-child) {
+/* Change areas except submit-button (input:last-child) */
+.white-background textarea, .white-background input:not(:last-child) {
     margin-bottom: 10px;
     background-color: #ffffff;
     border: 1px solid #762a2a;
@@ -184,15 +88,14 @@
     font-family: "Calibri", sans-serif;
     font-size: 15px;
 }
-
-.contact-us textarea {
+.white-background textarea {
     height: 200px;
 }
-
-.contact-us input:not(:last-child) {
+.white-background input:not(:last-child) {
     height: 26px;
 }
 
+/* Submit button styling */
 .submit-button {
     height: 40px;
     font-family: "Calibri", sans-serif;
@@ -203,20 +106,19 @@
     border: none;
     cursor: pointer;
 }
-
 .submit-button:hover {
     background-color: #4e1414;
     animation-name: submit-animation;
     animation-duration: 0.5s;
 }
-
 /* Animation for submit-button */
 @keyframes submit-animation {
     from {background-color: #2d0707;}
     to {background-color: #4e1414;}
 }
 
-.another-info {
+/* The other side of this page styling */
+.contact-info {
     grid-row: 1 / span 3;
     grid-column: 3;
     display: flex;
@@ -225,56 +127,34 @@
     justify-content: center;
 }
 
-.another-info section:not(:last-child) {
+/* Styling for every section except last one */
+.contact-info section:not(:last-child) {
     margin-bottom: 30%;
 }
 
-.another-info h5 {
+/* Text styling */
+.contact-info h5 {
     color: #76292a;
 }
-
-.another-info p {
+.contact-info p {
     margin: 0;
     font-family: "Calibri", sans-serif;
     color: #76292a;
 }
+.contact-info small {
+    font-family: "Calibri", sans-serif;
+    color: #76292a;
+}
 
-.another-info i {
+/* Icon styling */
+.contact-info i {
     font-size: 15px;
 }
 
-.another-info small {
-    font-family: "Calibri", sans-serif;
-    color: #76292a;
-}
 
-/* VOLONTEAR PAGE STYLING */
-.volonteer {
-    display: grid;
-    grid-template-rows: 20px 61px auto;
-    grid-template-columns: 20% 60% 20%;
-}
-
-.volonteer h2 {
-    grid-row: 2;
-    grid-column: 2;
-    margin: 0;
-    font-family: "Georgia", serif;
-}
-
-.become-info {
-    grid-row: 3;
-    grid-column: 2;
-}
-
-.become-info p {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-family: "Calibri", sans-serif;
-    color: #f0dfdf;
-}
-
-.become-info img {
+/* === VOLONTEER PAGE STYLING === */
+/* Image styling */
+.red-paragraph img {
     height: 300px;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -282,27 +162,28 @@
     float: right;
 }
 
-.become-info ul {
+/* List styling */
+.red-paragraph ul {
     margin: 0;
     font-family: "Calibri", sans-serif;
 }
-
-.become-info li {
+.red-paragraph li {
     margin-top: 3px;
     color: #f0dfdf;
 }
 
+/* Styling for contact information */
 .contact-become {
     display: flex;
     justify-content: space-between;
 }
 
+/* Contact information link styling */
 .contact-become div a {
     text-decoration: none;
     color: #ca8a8a;
     font-family: "Calibri", sans-serif;
 }
-
 .contact-become div a:hover {
     color: #faf3f3;
     animation-name: contact-animation;
@@ -313,28 +194,4 @@
 @keyframes contact-animation {
     from {color: #ca8a8a;}
     to {color: #faf3f3;}
-}
-
-/* === LINKS TO OUTSIDE "COMPANIES" === */
-/* General styling */
-.outsiders {
-    height: 150px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/* All the sizing to images */
-.svekatt {
-    height: 150px;
-}
-.vilse {
-    height: 30%;
-}
-.skk {
-    height: 130px;
-}
-.sverak {
-    height: 135px;
 }

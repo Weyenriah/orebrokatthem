@@ -13,11 +13,11 @@ body {
     margin: 0;
 }
 
+/* Grid styling */
 .general-grid {
     display: grid;
     grid-template-columns: 20% 60% 20%;
 }
-
 .double-sided-grid {
     display: grid;
     grid-template-rows: 20px 61px auto;
@@ -65,6 +65,7 @@ body {
     grid-template-columns: ;
 }
 
+/* H2 headings styling */
 .red-background h2 {
     grid-row: 2;
     grid-column: 2;
@@ -72,11 +73,13 @@ body {
     font-family: "Georgia", serif;
 }
 
+/* Grid positioning for "main"-content */
 .red-paragraph {
     grid-row: 3;
     grid-column: 2;
 }
 
+/* P styling */
 .red-background p {
     margin-top: 0;
     margin-bottom: 25px;
@@ -93,6 +96,7 @@ body {
     margin-bottom: 0;
 }
 
+/* Styling for "main"-content */
 .white-paragraph {
     grid-column: 2;
     color: #76292a;

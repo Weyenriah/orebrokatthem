@@ -13,7 +13,7 @@
         </p>
     </header>
 
-    <section class="carousel-container">
+    <section class="carousel-container red-background">
         <div class="slide fade">
             <div class="image"> <img src="../images/dollar.jpg"> </div>
             <div class="carousel-text">
