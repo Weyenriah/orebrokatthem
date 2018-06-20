@@ -9,6 +9,14 @@
     <!-- Calls for navigation -->
     <?php include('../components/navigation.php') ?>
 
+    <!-- Specific navigation for this page -->
+    <nav class="second-navbar">
+        <ul class="second-nav-list">
+            <li><a class="active" href="#carousel"> Spotlight </a></li>
+            <li><a href="#newsflow"> Nyheter </a></li>
+        </ul>
+    </nav>
+
     <!-- Specific heading to this page -->
     <header class="header">
         <h1>Välkommen</h1>
@@ -17,7 +25,7 @@
     </header>
 
     <!-- Carousel -->
-    <section class="carousel-container red-background">
+    <section class="carousel-container red-background" id="carousel">
         <div class="slide fade">
             <div class="image"> <img src="../images/dollar.jpg"> </div>
             <div class="carousel-text">
