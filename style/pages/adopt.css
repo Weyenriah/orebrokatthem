@@ -1,63 +1,94 @@
 /* === OUR CATS STYLING === */
-.our-cats {
-    display: grid;
-    grid-template-rows: 100px auto;
-    grid-template-columns: 20% 60% 20%;
-}
-
-.top {
-    grid-row: 1;
-    grid-column: 2;
-    display: grid;
-}
-
-.cats {
-    grid-row: 2;
-    grid-column: 2;
+#cats {
+    height: 400px;
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.cat img {
+#cats.expanded {
+    height: auto;
+}
+
+.cat {
+    margin-bottom: 30px;
+}
+
+.cat-img {
+    margin-right: 15px;
     height: 300px;
+    width: 250px;
+    overflow: hidden;
+    float: left;
+    border: 1px solid #762a2a;
 }
 
-.cat-info {
-    display: flex;
-    flex-direction: row;
+.cat-img img {
+    height: auto;
+    width: 250px;
 }
 
 .cat-text {
-    display: grid;
-    grid-template-rows: 32px 25px 213px 30px;
-    grid-template-columns: 100%;
-    width: 250px;
-    margin-left: 20px;
+    width: 100%;
 }
 
 .cat-text h3 {
-    grid-row: 1;
-    grid-column: 1;
-    margin-top: 0;
+    margin: 0;
     font-family: "Georgia", serif;
-    font-size: 28px;
+    font-size: 33px;
+}
+
+.cat-text h3 img {
+    height: 27px;
 }
 
 .cat-text small {
-    grid-row: 2;
-    grid-column: 1;
-    font-family: "Calibri", sans-serif;
+    margin: 0;
 }
 
 .cat-text p {
-    grid-row: 3;
-    grid-column: 1;
-    margin: 0;
-    font-family: "Calibri", sans-serif;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 .cat-text a {
-    grid-row: 4;
-    grid-column: 1;
     font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #ca8a8a;
+}
+
+/* Hover over link in cat-card */
+.cat-text a:hover {
+    animation-name: cat-link;
+    animation-duration: 0.5s;
+    color: #762a2a;
+}
+
+/* Animation for link in cat-card */
+@keyframes cat-link {
+    from {color: #ca8a8a;}
+    to {color: #762a2a;}
+}
+
+/* === ADVICE SECTION STYLING === */
+#advice {
+    margin-top: 0;
+}
+
+/* === PRICES SECTION STYLING === */
+#prices {
+    margin-bottom: 30px;
+}
+
+.prices {
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-paragraph ul {
+    margin: 0;
+}
+
+.white-paragraph ul li {
+    margin-top: 3px;
 }

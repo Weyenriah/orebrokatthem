@@ -101,5 +101,15 @@ body {
     color: #76292a;
     font-family: "Calibri", sans-serif;
     width: 100%;
-    margin-top: 13px;
+}
+
+.white-paragraph p {
+    margin: 0;
+}
+
+.white-paragraph hr {
+    margin-bottom: 30px;
+    margin-top: 0;
+    border: 0.5px solid #f0dfdf;
+    width: 100%;
 }

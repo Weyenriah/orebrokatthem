@@ -162,13 +162,7 @@ body {
     margin-top: 0;
 }
 
-.white-paragraph hr {
-    margin-bottom: 20px;
-    height: 1px;
-    border: none;
-    background-color: #f0dfdf;
-}
-
+/* Styling for hide-show button */
 #hide-show {
     grid-column: 2;
     width: 100%;
