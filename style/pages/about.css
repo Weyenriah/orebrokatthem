@@ -63,7 +63,7 @@
 
 
 /* === CONTACT US STYLING === */
-.white-background form {
+#contact form {
     grid-row: 3;
     grid-column: 2;
     margin-bottom: 30px;
@@ -72,7 +72,7 @@
     flex-direction: column;
 }
 
-.white-background label {
+#contact label {
     margin-bottom: 5px;
     text-transform: uppercase;
     color: #76292a;
@@ -80,7 +80,7 @@
 }
 
 /* Change areas except submit-button (input:last-child) */
-.white-background textarea, .white-background input:not(:last-child) {
+#contact textarea, #contact input:not(:last-child) {
     margin-bottom: 10px;
     background-color: #ffffff;
     border: 1px solid #762a2a;
@@ -88,10 +88,10 @@
     font-family: "Calibri", sans-serif;
     font-size: 15px;
 }
-.white-background textarea {
+#contact textarea {
     height: 200px;
 }
-.white-background input:not(:last-child) {
+#contact input:not(:last-child) {
     height: 26px;
 }
 
@@ -154,12 +154,18 @@
 
 /* === VOLONTEER PAGE STYLING === */
 /* Image styling */
-.red-paragraph img {
+.volonteer-img {
     height: 300px;
+    width: 250px;
+    overflow: hidden;
     margin-left: 15px;
     margin-bottom: 15px;
     border: 1px solid white;
     float: right;
+}
+.volonteer-img img {
+    height: auto;
+    width: 250px;
 }
 
 /* List styling */

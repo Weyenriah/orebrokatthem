@@ -20,8 +20,7 @@
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Bli Jourhem </h1>
-        <p>
-           Ett sätt att hjälpa vår verksamhet är att anmäla sig som jourhem. Då tar du hand om en katt ifrån oss i väntan på att katten hittar ett permanent hem. Ett jourhem kan behövas för alla sorts katter, både keliga som rädda katter men störst är behovet av hem till katter som behöver tid på sig att lära sig att lita på människor. Detta tar i genomsnitt ca 3-4 månader. En fördel (ej krav) är om du har andra katter. Glöm inte att vaccinera dina egna katter. Örebro Katthem betalar vaccinering, ev. veterinärvård och kastrering av den omhändertagna katten. Mat och kattsand kan vi tyvärr inte bidra med, såvida du inte tagit hand om många katter.
+        <p> Ett sätt att hjälpa vår verksamhet är att anmäla sig som jourhem. Då tar du hand om en katt ifrån oss i väntan på att katten hittar ett permanent hem. Ett jourhem kan behövas för alla sorts katter, både keliga som rädda katter men störst är behovet av hem till katter som behöver tid på sig att lära sig att lita på människor. Detta tar i genomsnitt ca 3-4 månader. En fördel (ej krav) är om du har andra katter. Glöm inte att vaccinera dina egna katter. Örebro Katthem betalar vaccinering, ev. veterinärvård och kastrering av den omhändertagna katten. Mat och kattsand kan vi tyvärr inte bidra med, såvida du inte tagit hand om många katter.
             Hör av dig så hjälper vi dig att hitta den katt eller de katter som passar bäst i ditt hem!
         </p>
     </header>
@@ -57,7 +56,9 @@
     <section class="white-background general-grid" id="tips">
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div class="white-paragraph">
-            <img class="right-img" src="../images/ashild.jpg">
+            <div class="tips-img">
+                <img src="../images/ashild.jpg">
+            </div>
             <ol>
                 <li>
                     <span class="left-num"> 1 </span>

@@ -40,7 +40,6 @@
                     <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
-
             <article class="employee-card">
                 <div class="employee-pic">
                     <img src="../images/human.jpg">
@@ -52,7 +51,6 @@
                     <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
-
             <article class="employee-card">
                 <div class="employee-pic">
                     <img src="../images/human.jpg">
@@ -64,7 +62,6 @@
                     <p><i class="fas fa-envelope"></i> namn@oh.se</p>
                 </div>
             </article>
-
             <article class="employee-card">
                 <div class="employee-pic">
                     <img src="../images/human.jpg">
@@ -111,13 +108,11 @@
                     <i class="fas fa-phone"></i> 019-26 00 86
                 </p>
             </section>
-
             <section>
                 <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
                 <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
                 <small> Christina "Kicki" Åbladh </small>
             </section>
-
             <section>
                 <h5 class="second-row-heading"> Adoptera katt </h5>
                 <p> Kontakta respektive kontaktperson i kattens annons. </p>
@@ -129,7 +124,9 @@
     <section class="red-background general-grid" id="volonteer">
         <h2> Bli volontär </h2>
         <div class="red-paragraph">
-            <img src="../images/ashild.jpg">
+            <div class="volonteer-img">
+                <img src="../images/ashild.jpg">
+            </div>
             <p> Vill du ha någon sysselsättning på din fritid så har Örebro Katthem drygt 30 katter som väldigt gärna vill ha sällskap och omvårdnad! Vi har ont om volontärer och behöver ha mer arbetskraft. En perfekt sysselsättning för dig som älskar katter och lärorikt för dig som vill lära dig mer om beteende, hälsa, skötsel och skygga katter.
             </p>
             <h5 class="second-row-heading"> Krav </h5>
@@ -155,7 +152,6 @@
                     <h5 class="second-row-heading"> Ring till katthemmet </h5>
                     <p> 019-26 00 86 </p>
                 </div>
-
                 <div>
                     <h5 class="second-row-heading"> Mejla personalansvarige </h5>
                     <a href="#"> intro@orebrokatthem.com </a>

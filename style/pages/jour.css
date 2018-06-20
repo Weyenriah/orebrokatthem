@@ -35,11 +35,17 @@
 }
 
 /* Adjusting the image */
-.right-img {
+.tips-img {
     height: 300px;
+    width: 250px;
+    overflow: hidden;
     float: right;
     margin-left: 15px;
     border: 1px solid #76292a;
+}
+.tips-img img {
+    height: auto;
+    width: 250px;
 }
 
 
