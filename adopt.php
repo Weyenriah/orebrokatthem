@@ -1,12 +1,13 @@
+<?php require_once 'components/settings.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('../components/head.php') ?>
+<?php include('components/head.php') ?>
 
 <body>
     <!-- Calls for main navigation -->
-    <?php include('../components/navigation.php') ?>
+    <?php include('components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
@@ -44,10 +45,10 @@
         <div class="white-paragraph" id="cats">
             <article class="cat">
                 <div class="cat-img">
-                    <img src="../images/ashild.jpg">
+                    <img src="images/ashild.jpg">
                 </div>
                 <div class="cat-text">
-                    <h3> <img src="../images/paw-icon-darker.png"> Åshild </h3>
+                    <h3> <img src="images/paw-icon-darker.png"> Åshild </h3>
                     <small> Troligen född 2017 | Hona | Bruntigré med lite vitt </small>
                     <p> Blyg och försiktig och behöver tid på sig att bli bekväm med människor.
                         Gått hemlös i Åmmeberg utanför Askersund.  </p>
@@ -59,10 +60,10 @@
 
             <article class="cat">
                 <div class="cat-img">
-                    <img src="../images/mollyblom.jpg">
+                    <img src="images/mollyblom.jpg">
                 </div>
                 <div class="cat-text">
-                    <h3> <img src="../images/paw-icon-darker.png"> Molly Blom </h3>
+                    <h3> <img src="images/paw-icon-darker.png"> Molly Blom </h3>
                     <small> Född 2006 | Hona | Svart och vit </small>
                     <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
                         Vill ha samma hem som sitt syskon Mimmi Blom.
@@ -112,7 +113,7 @@
     </section>
 
     <!-- Calls for footer -->
-    <?php include('../components/footer.php') ?>
+    <?php include('components/footer.php') ?>
 
     <script>
     // === HIDE AND SHOW CONTENT ===

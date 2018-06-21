@@ -1,12 +1,13 @@
+<?php require_once 'components/settings.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('../components/head.php') ?>
+<?php include('components/head.php') ?>
 
 <body>
 <!-- Calls for main navigation -->
-<?php include('../components/navigation.php') ?>
+<?php include('components/navigation.php') ?>
 
 <!-- Specific navigation for this page -->
 <nav class="second-navbar">
@@ -32,7 +33,7 @@
     <h2> Försäkra din katt </h2>
     <div class="white-paragraph insurance">
         <div class="insurance-img">
-            <img src="../images/ashild.jpg">
+            <img src="images/ashild.jpg">
         </div>
         <p> Ska du försäkra din katt? Om du tecknar försäkringen via vårt ombud på Agria och uppger att du vill stödja Örebro Katthem så får vi en viss provision. Katten behöver inte vara adopterad från oss!</p>
         <br/>
@@ -84,7 +85,7 @@
 </section>
 
 <!-- Calls for footer -->
-<?php include('../components/footer.php') ?>
+<?php include('components/footer.php') ?>
 
 </body>
 </html>

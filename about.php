@@ -1,12 +1,13 @@
+<?php require_once 'components/settings.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('../components/head.php') ?>
+<?php include('components/head.php') ?>
 
 <body>
     <!-- Calls for main navigation -->
-    <?php include('../components/navigation.php') ?>
+    <?php include('components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
@@ -31,7 +32,7 @@
             <!-- Employee cards -->
             <article class="employee-card">
                 <div class="employee-pic">
-                    <img src="../images/human.jpg">
+                    <img src="images/human.jpg">
                 </div>
                 <div class="employee-info">
                     <h3> Namn </h3>
@@ -42,7 +43,7 @@
             </article>
             <article class="employee-card">
                 <div class="employee-pic">
-                    <img src="../images/human.jpg">
+                    <img src="images/human.jpg">
                 </div>
                 <div class="employee-info">
                     <h3> Namn </h3>
@@ -53,7 +54,7 @@
             </article>
             <article class="employee-card">
                 <div class="employee-pic">
-                    <img src="../images/human.jpg">
+                    <img src="images/human.jpg">
                 </div>
                 <div class="employee-info">
                     <h3> Namn </h3>
@@ -64,7 +65,7 @@
             </article>
             <article class="employee-card">
                 <div class="employee-pic">
-                    <img src="../images/human.jpg">
+                    <img src="images/human.jpg">
                 </div>
                 <div class="employee-info">
                     <h3> Namn </h3>
@@ -125,7 +126,7 @@
         <h2> Bli volontär </h2>
         <div class="red-paragraph">
             <div class="volonteer-img">
-                <img src="../images/ashild.jpg">
+                <img src="images/ashild.jpg">
             </div>
             <p> Vill du ha någon sysselsättning på din fritid så har Örebro Katthem drygt 30 katter som väldigt gärna vill ha sällskap och omvårdnad! Vi har ont om volontärer och behöver ha mer arbetskraft. En perfekt sysselsättning för dig som älskar katter och lärorikt för dig som vill lära dig mer om beteende, hälsa, skötsel och skygga katter.
             </p>
@@ -161,6 +162,6 @@
     </section>
 
     <!-- Calls for footer -->
-    <?php include('../components/footer.php') ?>
+    <?php include('components/footer.php') ?>
 </body>
 </html>

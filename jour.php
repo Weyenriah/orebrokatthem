@@ -1,12 +1,13 @@
+<?php require_once 'components/settings.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('../components/head.php') ?>
+<?php include('components/head.php') ?>
 
 <body>
     <!-- Calls for main navigation -->
-    <?php include('../components/navigation.php') ?>
+    <?php include('components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
@@ -57,7 +58,7 @@
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div class="white-paragraph">
             <div class="tips-img">
-                <img src="../images/ashild.jpg">
+                <img src="images/ashild.jpg">
             </div>
             <ol>
                 <li>
@@ -173,6 +174,6 @@
     </section>
 
     <!-- Calls for footer -->
-    <?php include('../components/footer.php') ?>
+    <?php include('components/footer.php') ?>
 </body>
 </html>

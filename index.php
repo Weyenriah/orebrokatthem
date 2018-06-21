@@ -1,13 +1,14 @@
+<?php require_once 'components/settings.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('../components/head.php') ?>
+<?php include('components/head.php') ?>
 
 <body>
 
     <!-- Calls for navigation -->
-    <?php include('../components/navigation.php') ?>
+    <?php include('components/navigation.php') ?>
 
     <!-- Specific navigation for this page -->
     <nav class="second-navbar">
@@ -27,9 +28,9 @@
     <!-- Carousel -->
     <section class="carousel-container red-background" id="carousel">
         <div class="slide fade">
-            <div class="image"> <img src="../images/dollar.jpg"> </div>
+            <div class="image"> <img src="images/dollar.jpg"> </div>
             <div class="carousel-text">
-                <h3> <img src="../images/paw-icon.png"> Dollar </h3>
+                <h3> <img src="images/paw-icon.png"> Dollar </h3>
                 <small> Född 2010 | Hane | Svart </small>
                 <p>  Stor katt. Innekatt. Vill ha tryggt, snällt kattsällskap. Behöver mycket tid och tålamod. Kommer från samma hem som Dagmar och Disney. Kommer från Kumla.  </p>
                 <a href="#">Läs mer om mig!</a>
@@ -37,9 +38,9 @@
         </div>
 
         <div class="slide fade">
-            <div class="image"> <img src="../images/mollyblom.jpg"> </div>
+            <div class="image"> <img src="images/mollyblom.jpg"> </div>
             <div class="carousel-text">
-                <h3> <img src="../images/paw-icon.png"> Molly Blom </h3>
+                <h3> <img src="images/paw-icon.png"> Molly Blom </h3>
                 <small> Född 2006 | Hona | Svart och vit </small>
                 <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
                     Vill ha samma hem som sitt syskon Mimmi Blom. </p>
@@ -48,9 +49,9 @@
         </div>
 
         <div class="slide fade">
-            <div class="image"> <img src="../images/ashild.jpg"> </div>
+            <div class="image"> <img src="images/ashild.jpg"> </div>
             <div class="carousel-text">
-                <h3> <img src="../images/paw-icon.png"> Åshild </h3>
+                <h3> <img src="images/paw-icon.png"> Åshild </h3>
                 <small> Troligen född 2017 | Hona | Bruntigré med lite vitt </small>
                 <p> Blyg och försiktig och behöver tid på sig att bli bekväm med människor.
                     Gått hemlös i Åmmeberg utanför Askersund. </p>
@@ -58,8 +59,8 @@
             </div>
         </div>
 
-        <a onclick="changeSlide(-1)" class="previous"> <img src="../images/arrow.png"> </a>
-        <a onclick="changeSlide(1)" class="next"> <img src="../images/arrow.png"> </a>
+        <a onclick="changeSlide(-1)" class="previous"> <img src="images/arrow.png"> </a>
+        <a onclick="changeSlide(1)" class="next"> <img src="images/arrow.png"> </a>
     </section>
 
     <!-- News flow -->
@@ -68,7 +69,7 @@
         <article class="white-paragraph" id="news-container">
             <section class="news-card">
                 <div class="news-img">
-                    <img src="../images/larissa.jpg">
+                    <img src="images/larissa.jpg">
                 </div>
                 <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
                 <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
@@ -81,21 +82,21 @@
             <hr/>
             <section class="news-card">
                 <div class="news-img">
-                    <img src="../images/larissa.jpg">
+                    <img src="images/larissa.jpg">
                 </div>
                 <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
                 <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
             </section>
             <section class="news-card">
                 <div class="news-img">
-                    <img src="../images/larissa.jpg">
+                    <img src="images/larissa.jpg">
                 </div>
                 <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
                 <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
             </section>
             <section class="news-card">
                 <div class="news-img">
-                    <img src="../images/larissa.jpg">
+                    <img src="images/larissa.jpg">
                 </div>
                 <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
                 <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
@@ -107,7 +108,7 @@
     </section>
 
     <!-- Calls for footer -->
-    <?php include('../components/footer.php') ?>
+    <?php include('components/footer.php') ?>
 
 <script>
     // === CAROUSEL ===
