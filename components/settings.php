@@ -1,2 +1,2 @@
 <?php
-define("BASE_URL", "/orebrokatthem/");
+define("BASE_URL", "/");
