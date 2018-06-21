@@ -1,0 +1,60 @@
+/* === === */
+.insurance {
+    margin-bottom: 30px;
+}
+
+.insurance p i {
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+.insurance a {
+    text-decoration: none;
+    color: #ca8a8a;
+}
+
+.insurance a:hover {
+    color: #762a2a;
+    animation-name: link-animation;
+    animation-duration: 0.5s;
+}
+
+/* Animation for link */
+@keyframes link-animation {
+    from {color: #ca8a8a;}
+    to {color: #762a2a;}
+}
+
+
+.insurance-img {
+    float: right;
+    height: 300px;
+    width: 250px;
+    overflow: hidden;
+    border: 1px solid #762a2a;
+    margin-left: 15px;
+}
+
+.insurance-img img {
+    height: auto;
+    width: 250px;
+}
+
+/* === === */
+.needs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.need:last-child {
+    margin-left: 20px;
+}
+
+.need ul {
+    margin-top: 0;
+}
+
+.need ul li {
+    margin-top: 3px;
+}

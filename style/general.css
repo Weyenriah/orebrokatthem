@@ -85,6 +85,10 @@ body {
     font-family: "Calibri", sans-serif;
 }
 
+.red-background small {
+    font-style: italic;
+}
+
 /* === DESIGN RULES: WHITE PAGES === */
 /* Styling to heading */
 .white-background h2 {

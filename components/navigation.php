@@ -6,6 +6,6 @@
         <li><a href="../pages/adopt.php"> Adoptera </a></li>
         <li><a href="../pages/jour.php"> Bli Jourhem </a></li>
         <li><a class="active" href="../pages/about.php"> Om Oss </a></li>
-        <li><a href="#"> Stöd Oss </a></li>
+        <li><a href="../pages/support.php"> Stöd Oss </a></li>
     </ul>
 </nav>

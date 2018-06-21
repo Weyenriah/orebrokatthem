@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <!-- Calls for head -->
 <?php include('../components/head.php') ?>
