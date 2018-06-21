@@ -39,9 +39,23 @@
 
     <section class="white-background general-grid" id="our-cats">
         <h2> Våra katter </h2>
-        <div class="filter">
-
+        <!-- Filter -->
+        <div class="filter white-paragraph">
+            <div class="searches">
+                <label for="search"> <i class="fas fa-search"></i> </label>
+                <input type="text" name="search" id="search" value="Sök efter katt...">
+                <button type="button" id="filters" onclick="filter()">
+                    Filter
+                </button>
+            </div>
+            <div id="filter-choices">
+                <div class="choices"> Hanar </div>
+                <div class="choices"> Honor </div>
+                <div class="choices"> 0 - 10 år </div>
+                <div class="choices"> 10+ år </div>
+            </div>
         </div>
+        <!-- Cat-cards -->
         <div class="white-paragraph" id="cats">
             <article class="cat">
                 <div class="cat-img">
@@ -67,17 +81,19 @@
                     <small> Född 2006 | Hona | Svart och vit </small>
                     <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
                         Vill ha samma hem som sitt syskon Mimmi Blom.
-                        <br/>
-                        <h5 class="second-row-heading">180223:</h5> "Mimmi och Molly söker ett hem där blivande husse eller matte är hemma om dagarna då de är väldigt sociala och vill ha mycket närhet. De tycker mycket om att ligga i knät eller på magen. De behöver en trygg och lugn miljö, så ett hem utan små barn är att föredra. De är utekatter och vill gärna ha tillgång till många små träd att klättra i." /Tidigare ägare  </p>
+                        <br/> </p>
+                        <h5 class="second-row-heading">180223:</h5> <p> "Mimmi och Molly söker ett hem där blivande husse eller matte är hemma om dagarna då de är väldigt sociala och vill ha mycket närhet. De tycker mycket om att ligga i knät eller på magen. De behöver en trygg och lugn miljö, så ett hem utan små barn är att föredra. De är utekatter och vill gärna ha tillgång till många små träd att klättra i." /Tidigare ägare  </p>
                     <a href="#"> Adoptera mig! </a>
                 </div>
             </article>
         </div>
+        <!-- Hide/show content -->
         <div id="hide-show">
             <button id="my-button" onclick="show()"> Visa mer </button>
         </div>
     </section>
 
+    <!-- Advice section -->
     <section class="red-background general-grid" id="advice">
         <h2> Tips </h2>
         <div class="red-paragraph">
@@ -85,6 +101,7 @@
         </div>
     </section>
 
+    <!-- Prices section -->
     <section class="white-background general-grid" id="prices">
         <h2> Adoptionspriser </h2>
         <div class="white-paragraph">
@@ -116,7 +133,18 @@
     <?php include('components/footer.php') ?>
 
     <script>
-    // === HIDE AND SHOW CONTENT ===
+    // HIDE AND SHOW FILTER CHOICES
+    let element = document.getElementById('filter-choices');
+
+    function filter() {
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+
+    // === HIDE AND SHOW CATS ===
     let button = document.getElementById('hide-show');
     let container = document.getElementById('cats');
     let buttonText = document.getElementById('my-button');

@@ -1,19 +1,90 @@
-/* === OUR CATS STYLING === */
+/* === FILTER STYLING === */
+/* The search part of page */
+.filter {
+    height: 60px;
+    width: 100%;
+    z-index: 20000;
+}
+
+.searches {
+    display: flex;
+}
+
+/* Layout for search input/label */
+.searches input {
+    width: 66%;
+    padding-left: 3px;
+}
+.searches label {
+    width: 4%;
+    padding-top: 5px;
+    text-align: center;
+}
+
+/* Layout for filters-button */
+#filters {
+    height: 30px;
+    width: 30%;
+    background-color: #762a2a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 16px;
+}
+
+/* Filter choices */
+#filter-choices {
+    height: 100px;
+    width: 30%;
+    background-color: #2d0707;
+    display: none;
+    float: right;
+}
+
+/* Not displaying when not onclick */
+.not-display {
+    display: none;
+}
+
+/* Layout for individual choices in filter */
+.choices {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 16px;
+}
+.choices:hover {
+    background-color: #762a2a;
+}
+
+/* === OUR CATS FLOW === */
+/* Layout when not expanded */
 #cats {
     height: 400px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
+/* Layout when expanded */
 #cats.expanded {
     height: auto;
 }
 
+/* Layout for cat-cards */
 .cat {
     margin-bottom: 30px;
 }
-
 .cat-img {
     margin-right: 15px;
     height: 300px;
@@ -22,35 +93,28 @@
     float: left;
     border: 1px solid #762a2a;
 }
-
 .cat-img img {
     height: auto;
     width: 250px;
 }
-
 .cat-text {
     width: 100%;
 }
-
 .cat-text h3 {
     margin: 0;
     font-family: "Georgia", serif;
     font-size: 33px;
 }
-
 .cat-text h3 img {
     height: 27px;
 }
-
 .cat-text small {
     margin: 0;
 }
-
 .cat-text p {
     height: auto;
     margin-bottom: 10px;
 }
-
 .cat-text a {
     font-family: "Georgia", serif;
     text-decoration: none;
@@ -85,10 +149,10 @@
     justify-content: space-between;
 }
 
+/* Layout for list */
 .white-paragraph ul {
     margin: 0;
 }
-
 .white-paragraph ul li {
     margin-top: 3px;
 }

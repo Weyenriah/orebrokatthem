@@ -123,6 +123,10 @@ body {
 
 
 /* === GENERAL STYLING FOR NEWSFLOW === */
+.white-background h2 {
+    margin-bottom: 30px !important;
+}
+
 #news-container {
     height: 400px;
     overflow: hidden;
