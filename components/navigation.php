@@ -26,18 +26,43 @@ $navigationLinks = array(
 
 <!-- General navigation -->
 <nav class="navbar">
-    <ul class="nav-list">
+    <button type="button" id="collapsing" onclick="collapse(); addSize()"> <i class="fas fa-bars"></i> </button>
+    <ul class="nav-list responsive">
         <li id="logo"> <img src="images/logo.png"> </li>
         <?php
         foreach ($navigationLinks as $navigationPage) {
             $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
             $activeString = $active ? ' active ' : '';
         ?>
-        <li>
+        <li class="list-item">
             <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri']); ?>">
                 <?php echo($navigationPage['name']); ?>
             </a>
         </li>
         <?php } ?>
     </ul>
+
 </nav>
+
+<script>
+    function addSize() {
+        let needsSize = document.getElementsByClassName('navbar')[0];
+
+        console.log(needsSize);
+
+        if(needsSize.classList.contains('add-size')) {
+            needsSize.classList.remove('add-size');
+        } else {
+            needsSize.classList.add('add-size');
+        }
+    }
+
+    function collapse() {
+        let collapseElements = document.getElementsByClassName("list-item");
+
+        for (let i = 0; i < collapseElements.length; i++) {
+            collapseElements[i].classList.toggle('display');
+        }
+    }
+
+</script>

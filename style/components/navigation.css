@@ -11,11 +11,10 @@
 /* List-styles and some placing for navigation */
 .nav-list {
     margin: 0;
-    padding: 0;
     list-style-type: none;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding: 0 0 0 20px;
 }
 
 /* Changes padding on the first child (logo) */
@@ -61,4 +60,61 @@
 /* Changes vertical alignment on everything except logo */
 .nav-list li:not(#logo) {
     margin-top: -34px;
+}
+
+#collapsing {
+    display: none;
+}
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 1032px) {
+    /* Changes padding on every other child except first (logo) */
+    .nav-list li:not(:first-child) {
+        padding-right: 80px;
+    }
+}
+
+@media screen and (max-width: 933px) {
+    /* Changes padding on every other child except first (logo) */
+    .nav-list li:not(:first-child) {
+        padding-right: 60px;
+    }
+}
+
+@media screen and (max-width: 868px) {
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list li:not(#logo) {
+        margin-top: 10px;
+    }
+
+    .nav-list li:last-child {
+        margin-bottom: 20px;
+    }
+
+    #collapsing {
+        display: block;
+        font-size: 40px;
+        background-color: transparent;
+        border: none;
+        float: right;
+        margin-top: 3px;
+        margin-right: 20px;
+    }
+
+    .list-item {
+        display: none;
+    }
+
+    .display {
+        display: block;
+    }
+
+    .add-size {
+        height: auto;
+    }
 }

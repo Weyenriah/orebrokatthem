@@ -146,12 +146,11 @@
     }
 
     // === HIDE AND SHOW CONTENT ===
-    let button = document.getElementById('hide-show');
     let container = document.getElementById('news-container');
     let buttonText = document.getElementById('my-button');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
-    button.onclick = function show(){
+    function show(){
         if(container.classList.contains("expanded")) {
             container.classList.remove("expanded");
             /* Adds text so that the button is correct */
