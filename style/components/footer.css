@@ -1,7 +1,7 @@
 /* === LINKS TO OUTSIDE "COMPANIES" === */
 /* General styling */
 .outsiders {
-    height: 150px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -113,4 +113,39 @@
 .second-footer p {
     margin: 0;
     font-size: 15px;
+}
+
+@media screen and (max-width: 824px) {
+    /* All the sizing to images */
+    .svekatt {
+        height: 130px;
+    }
+    .vilse {
+        height: 30%;
+    }
+    .skk {
+        height: 110px;
+    }
+    .sverak {
+        height: 115px;
+    }
+}
+
+@media screen and (max-width: 643px) {
+    .first-footer {
+        width: 100%;
+        height: auto;
+        justify-items: left;
+        grid-template-columns: auto;
+        grid-template-rows: 150px;
+        grid-column-gap: 0;
+        padding-bottom: 15px;
+    }
+
+    /* All these 3 down there handles the different sections in footer */
+    .contact, .social-media, .explore {
+        grid-column: 1;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
