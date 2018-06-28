@@ -14,7 +14,13 @@
     list-style-type: none;
     display: flex;
     align-items: center;
-    padding: 0 0 0 20px;
+    padding: 0;
+}
+
+/* Some styling to logo in nav */
+#logo {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* Changes padding on the first child (logo) */
@@ -86,30 +92,70 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        width: 100%;
     }
 
+    /* Positioning for list-item */
+    .list-item {
+        display: none;
+        align-self: center;
+    }
+
+    /* Styling for everything except first child */
+    .nav-list li:not(:first-child) {
+        padding: 0;
+    }
+
+    /* Styling for everything but logo */
     .nav-list li:not(#logo) {
         margin-top: 10px;
     }
 
+    /* Important styling for first of type ("Hem") */
+    .nav-list li:first-of-type {
+        margin-top: 0 !important;
+    }
+
+    /* Styling for last child ("Stöd oss") */
     .nav-list li:last-child {
         margin-bottom: 20px;
     }
 
+    /* Styling for everything but last child */
+    .nav-list li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+
+    /* Styling for logo + menu-icon combo */
+    .divide-menu-elements {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Styling for menu-icon */
     #collapsing {
         display: block;
         font-size: 40px;
         background-color: transparent;
         border: none;
-        float: right;
-        margin-top: 3px;
+        margin-top: -29px;
         margin-right: 20px;
+        color: #4d6744;
+        cursor: pointer;
+    }
+    #collapsing:hover {
+        color: #e9f5e5;
+        animation-name: navigation-animation;
+        animation-duration: 0.5s;
     }
 
-    .list-item {
-        display: none;
+    /* Styling for logo */
+    #logo {
+        margin-left: 20px;
     }
 
+    /* Styles for JS */
     .display {
         display: block;
     }

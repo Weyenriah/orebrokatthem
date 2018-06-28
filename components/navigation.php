@@ -1,5 +1,4 @@
 <?php
-
 $navigationLinks = array(
     array(
         'uri' => BASE_URL . 'index.php',
@@ -26,9 +25,11 @@ $navigationLinks = array(
 
 <!-- General navigation -->
 <nav class="navbar">
-    <button type="button" id="collapsing" onclick="collapse(); addSize()"> <i class="fas fa-bars"></i> </button>
     <ul class="nav-list responsive">
-        <li id="logo"> <img src="images/logo.png"> </li>
+        <span class="divide-menu-elements">
+            <span id="logo"> <img src="images/logo.png"> </span>
+            <button type="button" id="collapsing" onclick="collapse(); addSize()"> <i class="fas fa-bars"></i> </button>
+        </span>
         <?php
         foreach ($navigationLinks as $navigationPage) {
             $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
