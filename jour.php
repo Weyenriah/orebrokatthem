@@ -1,6 +1,12 @@
-<?php require_once 'components/settings.php'?>
+<?php require_once 'components/resources.php'?>
 <!DOCTYPE html>
 <html lang="sv">
+
+<?php
+$cats = $database->getCats();
+var_dump($cats);
+
+?>
 
 <!-- Calls for head -->
 <?php include('components/head.php') ?>

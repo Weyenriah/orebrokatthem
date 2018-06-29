@@ -1,4 +1,4 @@
-<?php require_once 'components/settings.php'?>
+<?php require_once 'components/resources.php'?>
 <!DOCTYPE html>
 <html lang="sv">
 
