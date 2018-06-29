@@ -1,4 +1,8 @@
-<?php require_once 'components/resources.php'?>
+<?php
+require_once 'components/resources.php';
+
+$cats = $database->getCats();
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -57,35 +61,21 @@
         </div>
         <!-- Cat-cards -->
         <div class="white-paragraph" id="cats">
+            <?php
+            foreach ($cats as $cat) {
+            ?>
             <article class="cat">
                 <div class="cat-img">
                     <img src="images/ashild.jpg">
                 </div>
                 <div class="cat-text">
-                    <h3> <img src="images/paw-icon-darker.png"> Åshild </h3>
-                    <small> Troligen född 2017 | Hona | Bruntigré med lite vitt </small>
-                    <p> Blyg och försiktig och behöver tid på sig att bli bekväm med människor.
-                        Gått hemlös i Åmmeberg utanför Askersund.  </p>
+                    <h3> <img src="images/paw-icon-darker.png"> <?php echo($cat['name']); ?> </h3>
+                    <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
+                    <p> <?php echo($cat['description']) ?>  </p>
                     <a href="#"> Adoptera mig! </a>
                 </div>
             </article>
-
-            <hr/>
-
-            <article class="cat">
-                <div class="cat-img">
-                    <img src="images/mollyblom.jpg">
-                </div>
-                <div class="cat-text">
-                    <h3> <img src="images/paw-icon-darker.png"> Molly Blom </h3>
-                    <small> Född 2006 | Hona | Svart och vit </small>
-                    <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
-                        Vill ha samma hem som sitt syskon Mimmi Blom.
-                        <br/> </p>
-                        <h5 class="second-row-heading">180223:</h5> <p> "Mimmi och Molly söker ett hem där blivande husse eller matte är hemma om dagarna då de är väldigt sociala och vill ha mycket närhet. De tycker mycket om att ligga i knät eller på magen. De behöver en trygg och lugn miljö, så ett hem utan små barn är att föredra. De är utekatter och vill gärna ha tillgång till många små träd att klättra i." /Tidigare ägare  </p>
-                    <a href="#"> Adoptera mig! </a>
-                </div>
-            </article>
+            <?php } ?>
         </div>
         <!-- Hide/show content -->
         <div id="hide-show">

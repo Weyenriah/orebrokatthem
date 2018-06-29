@@ -19,9 +19,34 @@ class Database {
         $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
+    // Get all cats
     public function getCats() {
         // Gets all information from database
         $sql = 'SELECT * FROM cats';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        return $stmt->fetchAll();
+    }
+
+    // Get all news
+    public function getNews() {
+        // Gets all information from database
+        $sql = 'SELECT * FROM news';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        return $stmt->fetchAll();
+    }
+
+    // Get all news
+    public function getEmployees() {
+        // Gets all information from database
+        $sql = 'SELECT * FROM employees';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

@@ -1,4 +1,7 @@
-<?php require_once 'components/resources.php'?>
+<?php require_once 'components/resources.php';
+
+$employees = $database->getEmployees();
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -30,50 +33,21 @@
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <!-- Employee cards -->
-            <article class="employee-card">
-                <div class="employee-pic">
-                    <img src="images/human.jpg">
-                </div>
-                <div class="employee-info">
-                    <h3> Namn </h3>
-                    <small> Ordförande </small>
-                    <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
-                </div>
-            </article>
-            <article class="employee-card">
-                <div class="employee-pic">
-                    <img src="images/human.jpg">
-                </div>
-                <div class="employee-info">
-                    <h3> Namn </h3>
-                    <small> Ordförande </small>
-                    <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
-                </div>
-            </article>
-            <article class="employee-card">
-                <div class="employee-pic">
-                    <img src="images/human.jpg">
-                </div>
-                <div class="employee-info">
-                    <h3> Namn </h3>
-                    <small> Ordförande </small>
-                    <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
-                </div>
-            </article>
-            <article class="employee-card">
-                <div class="employee-pic">
-                    <img src="images/human.jpg">
-                </div>
-                <div class="employee-info">
-                    <h3> Namn </h3>
-                    <small> Ordförande </small>
-                    <p class="tele"><i class="fas fa-phone"></i> 000000000</p>
-                    <p><i class="fas fa-envelope"></i> namn@oh.se</p>
-                </div>
-            </article>
+            <?php foreach ($employees as $employee) { ?>
+                <article class="employee-card">
+                    <?php if ($employee['image'] !== '') { ?>
+                        <div class="employee-pic">
+                            <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
+                        </div>
+                    <?php } ?>
+                    <div class="employee-info">
+                        <h3> <?php echo($employee['name']); ?> </h3>
+                        <small> <?php echo($employee['title']); ?> </small>
+                        <p class="tele"><i class="fas fa-phone"></i> <?php echo($employee['telephone']); ?> </p>
+                        <p><i class="fas fa-envelope"></i> <?php echo($employee['email']); ?> </p>
+                    </div>
+                </article>
+            <?php } ?>
         </div>
     </section>
 

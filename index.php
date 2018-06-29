@@ -1,4 +1,7 @@
-<?php require_once 'components/resources.php'?>
+<?php require_once 'components/resources.php';
+
+$news = $database->getNews();
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -67,40 +70,20 @@
     <section class="white-background general-grid" id="newsflow">
         <h2> Nyheter </h2>
         <article class="white-paragraph" id="news-container">
-            <section class="news-card">
-                <div class="news-img">
-                    <img src="images/larissa.jpg">
-                </div>
-                <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
-                <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
-            </section>
-            <hr/>
-            <section class="news-card">
-                <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
-                <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
-            </section>
-            <hr/>
-            <section class="news-card">
-                <div class="news-img">
-                    <img src="images/larissa.jpg">
-                </div>
-                <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
-                <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
-            </section>
-            <section class="news-card">
-                <div class="news-img">
-                    <img src="images/larissa.jpg">
-                </div>
-                <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
-                <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
-            </section>
-            <section class="news-card">
-                <div class="news-img">
-                    <img src="images/larissa.jpg">
-                </div>
-                <h5 class="second-row-heading"> 16 Juni, 2018 </h5>
-                <p> Idag flyttade Larissa in på katthemmet! Du kan läsa mer om henne här. </p>
-            </section>
+            <?php foreach($news as $new) {
+
+                $date = date('Y-m-d', strtotime($new['date']));
+                ?>
+                <section class="news-card">
+                    <?php if ($new['image'] !== '') { ?>
+                        <div class="news-img">
+                            <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
+                        </div>
+                    <?php } ?>
+                    <h5 class="second-row-heading"> <?php echo($date); ?> </h5>
+                    <p> <?php echo($new['news']); ?> </p>
+                </section>
+            <?php } ?>
         </article>
         <div id="hide-show">
             <button id="my-button" onclick="show()"> Visa mer </button>
