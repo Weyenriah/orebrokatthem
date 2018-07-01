@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
 
+    <!-- General CSS -->
+    <link rel="stylesheet" type="text/css" href="style/general.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style/admin-home.css">
 
@@ -19,7 +22,7 @@
 </head>
 <body class="grid">
     <header>
-        <h1 class="header-title"> Administratör </h1>
+        <a href="index.php" class="header-title"> Administratör </a>
         <p class="logout"> <i class="fas fa-sign-out-alt"></i> </p>
     </header>
     <nav>
@@ -32,7 +35,7 @@
         <hr/>
         <h3> Hantera </h3>
         <div class="pages">
-            <a href="#" class="page"> Katter </a>
+            <a href="cats.php" class="page"> Katter </a>
         </div>
         <div class="pages">
             <a href="#" class="page"> Nyheter </a>
