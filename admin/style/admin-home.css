@@ -19,3 +19,8 @@ section p {
     margin: 0;
     font-family: "Calibri", sans-serif;
 }
+
+/* Specific nav-style */
+nav {
+    height: calc(100vh - 50px);
+}

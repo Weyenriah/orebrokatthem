@@ -1,3 +1,8 @@
+<?php
+require_once '../components/resources.php';
+
+$cats = $database->getCats();
+?>
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -54,7 +59,7 @@
     <h2> Filtrering: </h2>
     <form>
         <div>
-            <input type="radio" name="filter" value="A-Ö" id="ao">
+            <input type="radio" name="filter" value="A-Ö" id="ao" checked>
             <label for="ao"> A - Ö </label>
         </div>
         <div>
@@ -72,55 +77,44 @@
         <input class="search" type="text" placeholder="Sök efter katt...">
     </form>
 
+    <?php
+    switch (isset($_POST['radio'])) {
+        case $_POST['radio'] == 'latest':
+            $cat = "SELECT * FROM cats ORDER BY id ASC";
+            break;
+
+        case $_POST['radio'] == 'earlier':
+            $cat = "SELECT * FROM cats ORDER BY id DESC";
+            break;
+    }
+
+    var_dump($_POST['radio']);
+
+    ?>
+
     <div class="cats">
+        <?php
+        foreach ($cats as $cat) {
+        ?>
         <article class="cat">
-            <div class="cat-img">
-
-            </div>
+            <?php if ($cat['image'] !== '') { ?>
+                <div class="cat-img">
+                    <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+                </div>
+            <?php } ?>
             <div class="cat-text">
                 <div class="change-cat">
                     <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </a>
                     <a href="#"> <i class="fas fa-times"></i> Ta bort katt </a>
                 </div>
                 <div class="cat-information">
-                    <h3> Namn </h3>
-                    <small> Stuff | Stuff | Stuff </small>
-                    <p> Text </p>
+                    <h3> <?php echo($cat['name']) ?> </h3>
+                    <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
+                    <p> <?php echo($cat['description']) ?> </p>
                 </div>
             </div>
         </article>
-        <article class="cat">
-            <div class="cat-img">
-
-            </div>
-            <div class="cat-text">
-                <div class="change-cat">
-                    <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </a>
-                    <a href="#"> <i class="fas fa-times"></i> Ta bort katt </a>
-                </div>
-                <div class="cat-information">
-                    <h3> Namn </h3>
-                    <small> Stuff | Stuff | Stuff </small>
-                    <p> Text </p>
-                </div>
-            </div>
-        </article>
-        <article class="cat">
-            <div class="cat-img">
-
-            </div>
-            <div class="cat-text">
-                <div class="change-cat">
-                    <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </a>
-                    <a href="#"> <i class="fas fa-times"></i> Ta bort katt </a>
-                </div>
-                <div class="cat-information">
-                    <h3> Namn </h3>
-                    <small> Stuff | Stuff | Stuff </small>
-                    <p> Text </p>
-                </div>
-            </div>
-        </article>
+        <?php } ?>
     </div>
 </section>
 </body>
