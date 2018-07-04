@@ -41,7 +41,7 @@ require_once '../components/resources.php';
             <a href="cats.php" class="page"> Katter </a>
         </div>
         <div class="pages">
-            <a href="#" class="page"> Nyheter </a>
+            <a href="news.php" class="page"> Nyheter </a>
         </div>
         <div class="pages">
             <a href="#" class="page"> Medlemmar </a>
