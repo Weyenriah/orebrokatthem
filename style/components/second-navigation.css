@@ -3,8 +3,7 @@
 .second-navbar {
     width: 100%;
     height: 30px;
-    margin-top: 20px;
-    background-color: #739069;
+    margin-top: 5px;
     font-family: "Georgia", serif;
 }
 
@@ -21,29 +20,27 @@
 /* Style for secondary navigation-links (not when hovering) */
 .second-nav-list li a {
     text-decoration: none;
-    color: #4d6744;
+    color: lightgrey;
 }
 
 /* Hover over non-active navigation links */
 .second-nav-list li a:hover:not(.active) {
     animation-name: navigation-animation;
     animation-duration: 0.5s;
-    color: #e9f5e5;
+    color: black;
 }
 
 /* Animation for navigation-links */
 @keyframes navigation-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
+    from {color: lightgrey;}
+    to {color: lightgrey;}
 }
 
 /* Style only for active navigation-link */
 .active {
-    color: #e9f5e5 !important;
+    color: black !important;
 }
 
-@media screen and (max-width: 868px) {
-    .second-navbar {
-        display: none;
-    }
+.second-navbar {
+    display: none;
 }

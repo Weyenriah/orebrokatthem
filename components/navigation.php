@@ -27,8 +27,9 @@ $navigationLinks = array(
 <nav class="navbar">
     <ul class="nav-list responsive">
         <span class="divide-menu-elements">
-            <span id="logo"> <img src="images/logo.png"> </span>
-            <button type="button" id="collapsing" onclick="collapse(); addSize()"> <i class="fas fa-bars"></i> </button>
+            <span id="logo"> <img src="images/white-logo.png"> </span>
+            <button type="button" id="collapsing" onclick="collapse(); addSize()"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
+            <hr/>
         </span>
         <?php
         foreach ($navigationLinks as $navigationPage) {
@@ -42,7 +43,6 @@ $navigationLinks = array(
         </li>
         <?php } ?>
     </ul>
-
 </nav>
 
 <script>

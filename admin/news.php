@@ -22,7 +22,7 @@ $news = $database->getNews();
     <link rel="stylesheet" type="text/css" href="style/general.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="style/cats.css">
+    <link rel="stylesheet" type="text/css" href="style/news.css">
 
     <!-- Webpage title -->
     <title>Admin: Örebro Katthem</title>

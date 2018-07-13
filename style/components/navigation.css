@@ -3,9 +3,8 @@
 .navbar {
     width: 100%;
     height: 50px;
-    margin-top: 25px;
-    background-color: #739069;
-    font-family: "Georgia", serif;
+    margin-top: 20px;
+    font-family: "Calibri", sans-serif;
 }
 
 /* List-styles and some placing for navigation */
@@ -20,7 +19,13 @@
 /* Some styling to logo in nav */
 #logo {
     margin-left: 20px;
-    margin-right: 20px;
+    background-color: white;
+}
+
+/* "Control panel" for brand-logo */
+.nav-list img {
+    height: 100px;
+    margin-top: -12px;
 }
 
 /* Changes padding on the first child (logo) */
@@ -36,31 +41,25 @@
 /* Style for navigation-links (not when hovering) */
 .nav-list li a {
     text-decoration: none;
-    color: #4d6744;
+    color: #762a2a;
 }
 
 /* Hover over non-active navigation links */
 .nav-list li a:hover:not(.active) {
     animation-name: navigation-animation;
     animation-duration: 0.5s;
-    color: #e9f5e5;
+    color: #2d0707;
 }
 
 /* Animation for navigation-links */
 @keyframes navigation-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
+    from {color: #762a2a;}
+    to {color: #2d0707;}
 }
 
 /* Style only for active navigation-link */
 .active {
-    color: #e9f5e5 !important;
-}
-
-/* "Control panel" for brand-logo */
-.nav-list img {
-    height: 90px;
-    margin-top: -10px;
+    color: black !important;
 }
 
 /* Changes vertical alignment on everything except logo */
@@ -68,99 +67,87 @@
     margin-top: -34px;
 }
 
-#collapsing {
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Positioning for list-item */
+.list-item {
     display: none;
+    align-self: center;
 }
 
-/* === RESPONSIVE === */
-@media screen and (max-width: 1032px) {
-    /* Changes padding on every other child except first (logo) */
-    .nav-list li:not(:first-child) {
-        padding-right: 80px;
-    }
+/* Styling for everything except first child */
+.nav-list li:not(:first-child) {
+    padding: 0;
 }
 
-@media screen and (max-width: 933px) {
-    /* Changes padding on every other child except first (logo) */
-    .nav-list li:not(:first-child) {
-        padding-right: 60px;
-    }
+/* Styling for everything but logo */
+.nav-list li:not(#logo) {
+    margin-top: 10px;
 }
 
-@media screen and (max-width: 868px) {
-    .nav-list {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
+/* Important styling for first of type ("Hem") */
+.nav-list li:first-of-type {
+    margin-top: 0 !important;
+}
 
-    /* Positioning for list-item */
-    .list-item {
-        display: none;
-        align-self: center;
-    }
+/* Styling for last child ("Stöd oss") */
+.nav-list li:last-child {
+    margin-bottom: 0;
+}
 
-    /* Styling for everything except first child */
-    .nav-list li:not(:first-child) {
-        padding: 0;
-    }
+/* Styling for everything but last child */
+.nav-list li:not(:last-child) {
+    margin-bottom: 5px;
+}
 
-    /* Styling for everything but logo */
-    .nav-list li:not(#logo) {
-        margin-top: 10px;
-    }
+/* Styling for logo + menu-icon combo */
+.divide-menu-elements {
+    width: 100%;
+}
 
-    /* Important styling for first of type ("Hem") */
-    .nav-list li:first-of-type {
-        margin-top: 0 !important;
-    }
+.divide-menu-elements hr {
+    margin-top: -37px;
+    border: 4px solid #762a2a;
+}
 
-    /* Styling for last child ("Stöd oss") */
-    .nav-list li:last-child {
-        margin-bottom: 20px;
-    }
+/* Styling for menu-icon */
+#collapsing {
+    float: right;
+    display: block;
+    width: 50px;
+    height: 76px;
+    background-color: transparent;
+    border: none;
+    margin-top: -10px;
+    margin-right: 20px;
+    color: #762a2a;
+    cursor: pointer;
+}
+#collapsing:hover {
+    color: #2d0707;
+    animation-name: navigation-animation;
+    animation-duration: 0.5s;
+}
 
-    /* Styling for everything but last child */
-    .nav-list li:not(:last-child) {
-        margin-bottom: 5px;
-    }
+#collapsing i {
+    font-size: 56px;
+}
 
-    /* Styling for logo + menu-icon combo */
-    .divide-menu-elements {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
+#collapsing span {
+    font-size: 20px;
+    font-family: "Calibri", sans-serif;
+}
 
-    /* Styling for menu-icon */
-    #collapsing {
-        display: block;
-        font-size: 40px;
-        background-color: transparent;
-        border: none;
-        margin-top: -29px;
-        margin-right: 20px;
-        color: #4d6744;
-        cursor: pointer;
-    }
-    #collapsing:hover {
-        color: #e9f5e5;
-        animation-name: navigation-animation;
-        animation-duration: 0.5s;
-    }
+/* Styles for JS */
+.display {
+    display: block;
+}
 
-    /* Styling for logo */
-    #logo {
-        margin-left: 20px;
-    }
-
-    /* Styles for JS */
-    .display {
-        display: block;
-    }
-
-    .add-size {
-        height: auto;
-    }
+.add-size {
+    height: auto;
 }
