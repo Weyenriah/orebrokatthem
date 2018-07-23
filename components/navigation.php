@@ -27,21 +27,23 @@ $navigationLinks = array(
 <nav class="navbar">
     <ul class="nav-list responsive">
         <span class="divide-menu-elements">
-            <span id="logo"> <img src="images/white-logo.png"> </span>
+            <a href="index.php" id="logo"> <img src="images/white-logo.png"> </a>
             <button type="button" id="collapsing" onclick="collapse(); addSize()"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
             <hr/>
         </span>
-        <?php
-        foreach ($navigationLinks as $navigationPage) {
-            $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
-            $activeString = $active ? ' active ' : '';
-        ?>
-        <li class="list-item">
-            <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri']); ?>">
-                <?php echo($navigationPage['name']); ?>
-            </a>
-        </li>
-        <?php } ?>
+        <div class="toggle-menu-container">
+            <?php
+            foreach ($navigationLinks as $navigationPage) {
+                $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
+                $activeString = $active ? ' active ' : '';
+            ?>
+            <li class="list-item">
+                <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri']); ?>">
+                    <?php echo($navigationPage['name']); ?>
+                </a>
+            </li>
+            <?php } ?>
+        </div>
     </ul>
 </nav>
 
@@ -59,7 +61,7 @@ $navigationLinks = array(
     }
 
     function collapse() {
-        let collapseElements = document.getElementsByClassName("list-item");
+        let collapseElements = document.getElementsByClassName("toggle-menu-container");
 
         for (let i = 0; i < collapseElements.length; i++) {
             collapseElements[i].classList.toggle('display');

@@ -28,38 +28,21 @@
     margin-top: -12px;
 }
 
-/* Changes padding on the first child (logo) */
-.nav-list li:first-child {
-    padding-right: 30px;
-}
-
-/* Changes padding on every other child except first (logo) */
-.nav-list li:not(:first-child) {
-    padding-right: 100px;
-}
-
 /* Style for navigation-links (not when hovering) */
 .nav-list li a {
     text-decoration: none;
     color: #762a2a;
+    font-weight: 100;
 }
 
 /* Hover over non-active navigation links */
-.nav-list li a:hover:not(.active) {
-    animation-name: navigation-animation;
-    animation-duration: 0.5s;
-    color: #2d0707;
-}
-
-/* Animation for navigation-links */
-@keyframes navigation-animation {
-    from {color: #762a2a;}
-    to {color: #2d0707;}
+.nav-list li a:hover {
+    font-weight: 900;
 }
 
 /* Style only for active navigation-link */
 .active {
-    color: black !important;
+    font-weight: 900 !important;
 }
 
 /* Changes vertical alignment on everything except logo */
@@ -76,8 +59,7 @@
 
 /* Positioning for list-item */
 .list-item {
-    display: none;
-    align-self: center;
+    text-align: center;
 }
 
 /* Styling for everything except first child */
@@ -143,9 +125,17 @@
     font-family: "Calibri", sans-serif;
 }
 
+.toggle-menu-container {
+    width: 100%;
+    height: 160px;
+    display: none;
+    align-self: center;
+    border-bottom: 3px solid #762a2a;
+}
+
 /* Styles for JS */
 .display {
-    display: block;
+    display: block !important;
 }
 
 .add-size {
