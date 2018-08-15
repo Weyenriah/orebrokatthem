@@ -30,20 +30,20 @@
 .first-footer {
     width: 100%;
     height: 150px;
-    background-color: #739069;
+    background-color: #591c1c;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: 150px;
     justify-items: center;
     grid-column-gap: 10px;
-    color: #e9f5e5;
+    color: #fff;
     z-index: 20000;
 }
 
 /* Styles the heading for footer */
 .first-footer h2 {
     font-size: 18px;
-    font-family: "Georgia", serif;
+    font-family: "Calibri", sans-serif;
     margin-bottom: 0;
 }
 
@@ -70,21 +70,25 @@
 /* Handles the links in footer */
 .first-footer a {
     text-decoration: none;
-    color: #4d6744;
+    color: #ca8a8a;
     font-size: 15px;
 }
 
 /* Hover over non-active footer-links */
-.first-footer a:hover:not(.active) {
+.first-footer a:hover:not(.active-foot) {
     animation-name: footer-animation;
     animation-duration: 0.5s;
-    color: #e9f5e5;
+    color: #fff;
 }
 
 /* Animation for footer-links */
 @keyframes footer-animation {
-    from {color: #4d6744;}
-    to {color: #e9f5e5;}
+    from {color: #ca8a8a;}
+    to {color: #fff;}
+}
+
+.active-foot {
+    color: #fff !important;
 }
 
 /* Styling for the icons */
@@ -102,7 +106,7 @@
 .second-footer {
     font-family: "Calibri", sans-serif;
     height: 35px;
-    background-color: #3f5737;
+    background-color: #2d0707;
     color: #e9f5e5;
     display: flex;
     align-items: center;

@@ -35,7 +35,7 @@ $navigationLinks = array(
             <?php
             foreach ($navigationLinks as $navigationPage) {
                 $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
-                $activeString = $active ? ' active ' : '';
+                $activeString = $active ? ' active-nav ' : '';
             ?>
             <li class="list-item">
                 <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri']); ?>">

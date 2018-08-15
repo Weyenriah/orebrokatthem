@@ -32,7 +32,7 @@
     </section>
     <section class="explore">
         <h2>Utforska</h2>
-        <a class="active" href="#"> Hem </a>
+        <a class="active-foot" href="#"> Hem </a>
         <a href="#"> Adoptera </a>
         <a href="#"> Bli Jourhem </a>
         <a href="#"> Om Oss </a>

@@ -58,8 +58,8 @@ body {
     background-color: #591c1c;
     color: #faf3f3;
     /* The border-design */
-    border-top: 50px solid #76292a;
-    border-bottom: 50px solid #76292a;
+    border-top: 20px solid #591c1c;
+    border-bottom: 20px solid #591c1c;
     /* The CSS grid on every red page */
     grid-template-rows: 20px 61px auto;
 }

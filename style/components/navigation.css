@@ -2,7 +2,7 @@
 /* General style links for navigation */
 .navbar {
     width: 100%;
-    height: 50px;
+    height: 100px;
     margin-top: 20px;
     font-family: "Calibri", sans-serif;
 }
@@ -41,7 +41,7 @@
 }
 
 /* Style only for active navigation-link */
-.active {
+.active-nav {
     font-weight: 900 !important;
 }
 
