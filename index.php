@@ -9,7 +9,6 @@ $news = $database->getNews();
 <?php include('components/head.php') ?>
 
 <body>
-
     <!-- Calls for navigation -->
     <?php include('components/navigation.php') ?>
 

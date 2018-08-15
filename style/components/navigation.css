@@ -5,15 +5,16 @@
     height: 100px;
     margin-top: 20px;
     font-family: "Calibri", sans-serif;
+    z-index: 2;
 }
 
 /* List-styles and some placing for navigation */
-.nav-list {
+.responsive {
     margin: 0;
-    list-style-type: none;
     display: flex;
     align-items: center;
     padding: 0;
+    position: relative;
 }
 
 /* Some styling to logo in nav */
@@ -23,68 +24,15 @@
 }
 
 /* "Control panel" for brand-logo */
-.nav-list img {
+.responsive img {
     height: 100px;
     margin-top: -12px;
-}
-
-/* Style for navigation-links (not when hovering) */
-.nav-list li a {
-    text-decoration: none;
-    color: #762a2a;
-    font-weight: 100;
-}
-
-/* Hover over non-active navigation links */
-.nav-list li a:hover {
-    font-weight: 900;
 }
 
 /* Style only for active navigation-link */
 .active-nav {
     font-weight: 900 !important;
-}
-
-/* Changes vertical alignment on everything except logo */
-.nav-list li:not(#logo) {
-    margin-top: -34px;
-}
-
-.nav-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-/* Positioning for list-item */
-.list-item {
-    text-align: center;
-}
-
-/* Styling for everything except first child */
-.nav-list li:not(:first-child) {
-    padding: 0;
-}
-
-/* Styling for everything but logo */
-.nav-list li:not(#logo) {
-    margin-top: 10px;
-}
-
-/* Important styling for first of type ("Hem") */
-.nav-list li:first-of-type {
-    margin-top: 0 !important;
-}
-
-/* Styling for last child ("Stöd oss") */
-.nav-list li:last-child {
-    margin-bottom: 0;
-}
-
-/* Styling for everything but last child */
-.nav-list li:not(:last-child) {
-    margin-bottom: 5px;
+    color: #fff !important;
 }
 
 /* Styling for logo + menu-icon combo */
@@ -97,40 +45,143 @@
     border: 4px solid #762a2a;
 }
 
+/* The popup menu */
+.toggle-menu {
+    position: absolute;
+    margin-top: -120px;
+
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 50000;
+}
+#showing-up {
+    height: 100%;
+    width: 50%;
+    float: right;
+    background-color: #591c1c;
+    padding-bottom: 20px;
+}
+
+#showing-up hr {
+    margin-top: 72px;
+    border: 4px solid #fff;
+}
+
+#toning-down {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Positioning for list-item */
+.list-item {
+    width: 100%;
+    height: 80px;
+    margin-top: 5px;
+    padding-top: 65px;
+    text-align: center;
+}
+
+/* Style for navigation-links (not when hovering) */
+.nav-list li a {
+    text-decoration: none;
+    color: #ca8a8a;
+    font-weight: 400;
+}
+
+/* Hover over non-active navigation links */
+.nav-list li a:hover:not(.active-nav) {
+    font-weight: 900;
+    color: #fff;
+    animation-name: nav-ani;
+    animation-duration: 0.5s;
+}
+
+@keyframes nav-ani {
+    0% {
+        color: #ca8a8a;
+        font-weight: 400;
+    }
+    50% {
+        font-weight: 600;
+    }
+    100% {
+        color: #fff;
+        font-weight: 900;
+    }
+}
+
 /* Styling for menu-icon */
-#collapsing {
+.menu-icons {
     float: right;
     display: block;
     width: 50px;
     height: 76px;
     background-color: transparent;
     border: none;
-    margin-top: -10px;
     margin-right: 20px;
-    color: #762a2a;
     cursor: pointer;
 }
-#collapsing:hover {
-    color: #2d0707;
-    animation-name: navigation-animation;
-    animation-duration: 0.5s;
-}
-
-#collapsing i {
+.menu-icons i {
     font-size: 56px;
 }
 
-#collapsing span {
+.menu-icons span {
     font-size: 20px;
     font-family: "Calibri", sans-serif;
 }
 
-.toggle-menu-container {
-    width: 100%;
-    height: 160px;
-    display: none;
-    align-self: center;
-    border-bottom: 3px solid #762a2a;
+/* Specific styles for opening menu icon */
+#collapsing {
+    margin-top: -10px;
+    color: #762a2a;
+}
+
+#collapsing:hover {
+    color: #2d0707;
+    animation-name: closed-nav-ani;
+    animation-duration: 0.5s;
+}
+
+@keyframes closed-nav-ani {
+    from {color: #762a2a;}
+    to {color: #2d0707;}
+}
+
+/* Specific styles for closing menu icon */
+#close-menu {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #ca8a8a;
+    float: left;
+}
+
+#close-menu i {
+    margin-top: -3px;
+    margin-left: 6px;
+}
+
+#close-menu:hover {
+    color: #fff;
+    animation-name: open-nav-ani;
+    animation-duration: 0.5s;
+}
+
+@keyframes open-nav-ani {
+    from {color: #ca8a8a;}
+    to {color: #fff;}
 }
 
 /* Styles for JS */
@@ -138,6 +189,3 @@
     display: block !important;
 }
 
-.add-size {
-    height: auto;
-}

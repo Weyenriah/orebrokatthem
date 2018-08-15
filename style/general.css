@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 /* Styling for subheadings */
@@ -29,7 +30,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
     margin-right: 20%;
     margin-left: 20%;
 }
