@@ -12,15 +12,6 @@ $employees = $database->getEmployees();
     <!-- Calls for main navigation -->
     <?php include('components/navigation.php') ?>
 
-    <!-- Specific navigation for this page -->
-    <nav class="second-navbar">
-        <ul class="second-nav-list">
-            <li><a class="active" href="#workers"> Vi som jobbar här </a></li>
-            <li><a href="#contact"> Kontakta oss </a></li>
-            <li><a href="#volonteer"> Bli volontär </a></li>
-        </ul>
-    </nav>
-
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Om Oss </h1>

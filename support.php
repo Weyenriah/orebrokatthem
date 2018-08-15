@@ -9,15 +9,6 @@
 <!-- Calls for main navigation -->
 <?php include('components/navigation.php') ?>
 
-<!-- Specific navigation for this page -->
-<nav class="second-navbar">
-    <ul class="second-nav-list">
-        <li><a class="active" href="#membership"> Bli medlem </a></li>
-        <li><a href="#insurance"> Försäkra din katt </a></li>
-        <li><a href="#wishlist"> Önskelista </a></li>
-    </ul>
-</nav>
-
 <!-- Specific heading to this page -->
 <header class="header">
     <h1> Stöd oss </h1>

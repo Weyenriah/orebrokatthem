@@ -13,16 +13,6 @@ $cats = $database->getCats();
     <!-- Calls for main navigation -->
     <?php include('components/navigation.php') ?>
 
-    <!-- Specific navigation for this page -->
-    <nav class="second-navbar">
-        <ul class="second-nav-list">
-            <li><a class="active" href="#how"> Hur </a></li>
-            <li><a href="#our-cats"> Våra Katter </a></li>
-            <li><a href="#advice"> Tips </a></li>
-            <li><a href="#prices"> Pris </a></li>
-        </ul>
-    </nav>
-
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Adoptera </h1>

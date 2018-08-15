@@ -9,15 +9,6 @@
     <!-- Calls for main navigation -->
     <?php include('components/navigation.php') ?>
 
-    <!-- Specific navigation for this page -->
-    <nav class="second-navbar">
-        <ul class="second-nav-list">
-            <li><a class="active" href="#how"> Hur </a></li>
-            <li><a href="#tips"> Tips </a></li>
-            <li><a href="#report"> Anmälning </a></li>
-        </ul>
-    </nav>
-
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Bli Jourhem </h1>
