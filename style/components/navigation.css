@@ -49,18 +49,19 @@
 .toggle-menu {
     position: absolute;
     margin-top: -120px;
-
     width: 100%;
     height: 100%;
     display: none;
     z-index: 50000;
 }
+
 #showing-up {
     height: 100%;
-    width: 50%;
+    width: 500px;
     float: right;
     background-color: #591c1c;
     padding-bottom: 20px;
+    z-index: 2;
 }
 
 #showing-up hr {
@@ -70,9 +71,10 @@
 
 #toning-down {
     background-color: rgba(0, 0, 0, 0.8);
-    width: 50%;
+    width: 100%;
     height: 100%;
     padding-bottom: 20px;
+    z-index: 1;
 }
 
 .nav-list {
@@ -131,7 +133,7 @@
     height: 76px;
     background-color: transparent;
     border: none;
-    margin-right: 20px;
+
     cursor: pointer;
 }
 .menu-icons i {
@@ -146,24 +148,26 @@
 /* Specific styles for opening menu icon */
 #collapsing {
     margin-top: -10px;
+    margin-right: 20px;
     color: #762a2a;
 }
 
 #collapsing:hover {
-    color: #2d0707;
+    color: #ca8a8a;
     animation-name: closed-nav-ani;
     animation-duration: 0.5s;
 }
 
 @keyframes closed-nav-ani {
     from {color: #762a2a;}
-    to {color: #2d0707;}
+    to {color: #ca8a8a;}
 }
 
 /* Specific styles for closing menu icon */
 #close-menu {
     margin-top: 10px;
-    margin-left: 10px;
+    margin-right: 15px;
+    margin-left: 7px;
     color: #ca8a8a;
     float: left;
 }
