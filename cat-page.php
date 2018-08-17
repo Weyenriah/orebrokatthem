@@ -43,7 +43,7 @@ $cats = $database->getCats();
                     <small class="cat-gender"> Kön | </small>
                     <small class="color"> Färg </small>
                 </div>
-                <p class="desc"> Text </p>
+                <p class="desc" style="white-space: pre-line;" > Text </p>
             </div>
         </section>
         <div class="adopt-me">
