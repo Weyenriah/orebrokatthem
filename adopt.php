@@ -56,16 +56,24 @@ $cats = $database->getCats();
             <?php
             foreach ($cats as $cat) {
             ?>
-            <article class="cat">
+            <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
                 <div class="cat-img">
-                    <img src="images/ashild.jpg">
+                    <img class="image-to-cat" src="images/ashild.jpg">
                 </div>
                 <div class="cat-text">
-                    <h3> <img src="images/paw-icon-darker.png"> <?php echo($cat['name']); ?> </h3>
-                    <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
-                    <p> <?php echo($cat['description']) ?>  </p>
+                    <div class="cat-title">
+                        <img src="images/paw-icon-darker.png">
+                        <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+                    </div>
+
+                    <div class="small-info">
+                        <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
+                        <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
+                        <small class="color"> <?php echo($cat['color']) ?> </small>
+                    </div>
+                    <p class="desc"> <?php echo($cat['description']) ?>  </p>
                     <div class="links">
-                        <button class="read-more" type="button" onclick="showCat()"> Läs mer om mig! </button>
+                        <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
                         <a href="#"> Adoptera mig! </a>
                     </div>
                 </div>
@@ -118,7 +126,7 @@ $cats = $database->getCats();
     <?php include('components/footer.php') ?>
 
     <script>
-    // HIDE AND SHOW FILTER CHOICES
+    // === HIDE AND SHOW FILTER CHOICES ===
     let element = document.getElementById('filter-choices');
 
     function filter() {
@@ -147,17 +155,32 @@ $cats = $database->getCats();
         }
     };
 
-    function showCat() {
+    // == SHOW POPUP ===
+    function showCat(id) {
         let popup = document.getElementById("cat-page");
         let background = document.getElementById("toned-down");
 
-        if(popup.style.display === "block" && background.style.display === "block") {
-            popup.style.display = "none";
-            background.style.display = "none";
-        } else {
-            popup.style.display = "block";
-            background.style.display = "block";
-        }
+        let cat = document.getElementById("cat-" + id);
+
+        /* Matches the information from popup with cat */
+        popup.getElementsByClassName("cat-name")[0].textContent = cat.getElementsByClassName("cat-name")[0].textContent;
+        popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
+        popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
+        popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
+        popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
+
+        /* Show popup */
+        popup.style.display = "block";
+        background.style.display = "block";
+    }
+
+    /* === HIDE POPUP === */
+    function hideCat() {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        popup.style.display = "none";
+        background.style.display = "none";
     }
 
     </script>

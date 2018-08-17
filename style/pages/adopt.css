@@ -82,7 +82,7 @@
 }
 
 /* Layout for cat-cards */
-.cat {
+.cat-style {
     margin-bottom: 30px;
 }
 .cat-img {
@@ -105,8 +105,14 @@
     font-family: "Georgia", serif;
     font-size: 33px;
 }
-.cat-text h3 img {
+.cat-title {
+    display: flex;
+}
+
+.cat-title img {
     height: 27px;
+    margin-top: 3px;
+    margin-right: 7px;
 }
 .cat-text small {
     margin: 0;

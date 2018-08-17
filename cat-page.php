@@ -12,7 +12,7 @@ $cats = $database->getCats();
 
 <body>
     <article id="cat-page">
-        <button class="close-button" type="button" onclick="showCat()"> <i class="fas fa-times"></i> </button>
+        <button class="close-button" type="button" onclick="hideCat()"> <i class="fas fa-times"></i> </button>
         <hr/>
         <section class="cat-info">
             <div class="img">
@@ -34,21 +34,29 @@ $cats = $database->getCats();
             </div>
 
             <div class="cat-info-text">
-                <h2> Name </h2>
-                <small> Text </small>
-                <p> Text </p>
+                <div class="cat-title">
+                    <img src="images/white-paw.png">
+                    <h2 class="cat-name"> Name </h2>
+                </div>
+                <div class="small-info">
+                    <small class="cat-age"> Ålder | </small>
+                    <small class="cat-gender"> Kön | </small>
+                    <small class="color"> Färg </small>
+                </div>
+                <p class="desc"> Text </p>
             </div>
         </section>
         <div class="adopt-me">
             <a href="#"> Adoptera mig! </a>
         </div>
     </article>
-    <div id="toned-down" onclick="showCat()"></div>
+    <div id="toned-down" onclick="hideCat()"></div>
 </body>
 
 </html>
 
 <script>
+    /* Slide for cat images */
     let slideIndex = 1;
     showSlides(slideIndex);
 

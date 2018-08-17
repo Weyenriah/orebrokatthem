@@ -54,10 +54,15 @@ hr {
     margin-left: 20px;
 }
 
+.cat-info-text img {
+    width: 27px;
+}
+
 .cat-info-text h2 {
     color: #fff;
+    font-size: 33px;
     font-family: "Georgia", serif;
-    margin-top: 5px;
+    margin-top: 0;
     margin-bottom: 7px;
 }
 
