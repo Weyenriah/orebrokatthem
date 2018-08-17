@@ -10,6 +10,8 @@ $cats = $database->getCats();
 <?php include('components/head.php') ?>
 
 <body>
+    <?php include('cat-page.php') ?>
+
     <!-- Calls for main navigation -->
     <?php include('components/navigation.php') ?>
 
@@ -62,7 +64,10 @@ $cats = $database->getCats();
                     <h3> <img src="images/paw-icon-darker.png"> <?php echo($cat['name']); ?> </h3>
                     <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
                     <p> <?php echo($cat['description']) ?>  </p>
-                    <a href="#"> Adoptera mig! </a>
+                    <div class="links">
+                        <button type="button" onclick="showCat()"> Läs mer om mig! </button>
+                        <a href="#"> Adoptera mig! </a>
+                    </div>
                 </div>
             </article>
             <?php } ?>
@@ -130,7 +135,7 @@ $cats = $database->getCats();
     let buttonText = document.getElementById('my-button');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
-    button.onclick = function show(){
+    button.onclick = function show() {
         if(container.classList.contains("expanded")) {
             container.classList.remove("expanded");
             /* Adds text so that the button is correct */
@@ -140,7 +145,21 @@ $cats = $database->getCats();
             /* Adds text so that the button is correct */
             buttonText.innerHTML = 'Dölj';
         }
+    };
+
+    function showCat() {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        if(popup.style.display === "block" && background.style.display === "block") {
+            popup.style.display = "none";
+            background.style.display = "none";
+        } else {
+            popup.style.display = "block";
+            background.style.display = "block";
+        }
     }
+
     </script>
 </body>
 </html>

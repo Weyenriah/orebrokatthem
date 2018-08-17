@@ -1,0 +1,114 @@
+#toned-down {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    margin-top: -20px;
+    z-index: 1000000;
+}
+
+#cat-page {
+    position: fixed;
+    display: none;
+    min-height: 400px;
+    width: 800px;
+    margin-top: 100px;
+    background-color: #762a2a;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000000;
+}
+
+.close-button {
+    float: right;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.close-button i {
+    font-size: 30px;
+    color: #ca8a8a;
+}
+
+.close-button i:hover {
+    color: #fff;
+}
+
+hr {
+    border: 2px solid #fff;
+    margin-top: 19px;
+}
+
+.cat-info {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.cat-info-text {
+    margin-left: 20px;
+}
+
+.cat-info-text h2 {
+    color: #fff;
+    font-family: "Georgia", serif;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+.cat-info-text small {
+    color: #fff;
+}
+
+.cat-info-text p {
+    margin-top: 7px;
+    color: #fff;
+    font-family: "Calibri", sans-serif;
+}
+
+.adopt-me {
+    width: 100%;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Georgia", serif;
+}
+
+.adopt-me a {
+    text-decoration: none;
+    color: #ca8a8a;
+}
+
+.adopt-me a:hover {
+    color: white;
+}
+
+.popup-slide {
+    width: 300px;
+    display: none;
+    border: 1px solid white;
+    border-bottom: none;
+}
+
+.demos {
+    display: flex;
+    width: 300px;
+    height: 110px;
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.demo {
+    width: 100px;
+    cursor: pointer;
+    border-right: 1px solid white;
+}
+
+.opacity {
+
+}

@@ -115,14 +115,20 @@
     height: auto;
     margin-bottom: 10px;
 }
-.cat-text a {
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
     font-family: "Georgia", serif;
     text-decoration: none;
     color: #ca8a8a;
 }
 
 /* Hover over link in cat-card */
-.cat-text a:hover {
+.links a:hover {
     animation-name: cat-link;
     animation-duration: 0.5s;
     color: #762a2a;
