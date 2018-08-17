@@ -118,6 +118,7 @@
 
 .links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -125,10 +126,29 @@
     font-family: "Georgia", serif;
     text-decoration: none;
     color: #ca8a8a;
+    font-size: 17px;
 }
 
 /* Hover over link in cat-card */
 .links a:hover {
+    animation-name: cat-link;
+    animation-duration: 0.5s;
+    color: #762a2a;
+}
+
+.read-more {
+    padding: 0;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    font-family: "Georgia", serif;
+    font-size: 17px;
+    text-decoration: none;
+    color: #ca8a8a;
+    cursor: pointer;
+}
+
+.read-more:hover {
     animation-name: cat-link;
     animation-duration: 0.5s;
     color: #762a2a;

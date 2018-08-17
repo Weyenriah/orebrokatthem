@@ -65,7 +65,7 @@ $cats = $database->getCats();
                     <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
                     <p> <?php echo($cat['description']) ?>  </p>
                     <div class="links">
-                        <button type="button" onclick="showCat()"> Läs mer om mig! </button>
+                        <button class="read-more" type="button" onclick="showCat()"> Läs mer om mig! </button>
                         <a href="#"> Adoptera mig! </a>
                     </div>
                 </div>
