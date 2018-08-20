@@ -1,48 +1,105 @@
 /* === FILTER STYLING === */
 /* The search part of page */
-.filter {
+.search-field {
     height: 60px;
     width: 100%;
     z-index: 20000;
+    display: flex;
 }
 
 .searches {
     display: flex;
+    width: 70%;
+    height: 30px;
 }
 
 /* Layout for search input/label */
 .searches input {
-    width: 66%;
+    width: 100%;
     padding-left: 3px;
 }
 .searches label {
-    width: 4%;
+    width: 20px;
     padding-top: 5px;
     text-align: center;
+    margin-right: 5px;
 }
-
-/* Layout for filters-button */
-#filters {
-    height: 30px;
-    width: 30%;
+.search-button {
+    width: 100px;
     background-color: #762a2a;
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: none;
     cursor: pointer;
     font-family: "Calibri", sans-serif;
     font-size: 16px;
 }
 
-/* Filter choices */
-#filter-choices {
-    height: 100px;
+/* */
+.filter {
     width: 30%;
-    background-color: #2d0707;
-    display: none;
+}
+
+.all-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#ao {
+    margin-right: 10px;
+}
+
+/* Layout for filters-button */
+.filters {
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    color: #762a2a;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 25px;
     float: right;
+}
+
+#filter-choices {
+    width: 100%;
+    margin-top: -25px;
+    margin-bottom: 10px;
+    float: right;
+    background-color: white;
+    font-size: 15px;
+    grid-column: 2;
+}
+
+.age-filter, .gender-filter, .home-filter {
+    width: 200px;
+    margin-top: 5px;
+}
+
+#filter-choices h3 {
+    margin: 0;
+    color: #762a2a;
+}
+
+.home-filter button, .gender-filter button, .age-filter button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #ca8a8a;
+    font-family: "Georgia", serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.home-filter button:hover, .gender-filter button:hover, .age-filter button:hover {
+    color: #762a2a;
+    animation-name: cat-link;
+    animation-duration: 0.5s;
+}
+
+.filter-right {
+    margin-right: 15px;
 }
 
 /* Not displaying when not onclick */
@@ -50,21 +107,6 @@
     display: none;
 }
 
-/* Layout for individual choices in filter */
-.choices {
-    height: 25%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    font-family: "Calibri", sans-serif;
-    font-size: 16px;
-}
-.choices:hover {
-    background-color: #762a2a;
-}
 
 /* === OUR CATS FLOW === */
 /* Layout when not expanded */
@@ -158,6 +200,10 @@
     animation-name: cat-link;
     animation-duration: 0.5s;
     color: #762a2a;
+}
+
+.hidden {
+    display: none !important;
 }
 
 /* Animation for link in cat-card */

@@ -22,7 +22,33 @@ class Database {
     // Get all cats
     public function getCats() {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats';
+        $sql = 'SELECT * FROM cats ORDER BY name ASC';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        return $stmt->fetchAll();
+    }
+
+    // Search cats by name
+    public function searchCats($name) {
+        // Gets all information from database
+        $sql = 'SELECT * FROM cats WHERE name LIKE :name';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute(array(
+           'name' => '%'.$name.'%',
+        ));
+        // Grab the list
+        return $stmt->fetchAll();
+    }
+
+    //
+    public function aoFilter() {
+        // Gets all information from database
+        $sql = 'SELECT * FROM cats ORDER BY name DESC';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

@@ -1,7 +1,18 @@
 <?php
-require_once 'components/resources.php';
+    require_once 'components/resources.php';
 
-$cats = $database->getCats();
+    $cats = $database->getCats();
+
+    $name = "";
+
+    $search = isset($_GET['search']);
+    if($search) {
+        $name = $_GET['search'];
+
+        $cats = $database->searchCats($name);
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -36,21 +47,45 @@ $cats = $database->getCats();
     <section class="white-background general-grid" id="our-cats">
         <h2> Våra katter </h2>
         <!-- Filter -->
-        <div class="filter white-paragraph">
-            <div class="searches">
+        <div class="search-field white-paragraph">
+            <form class="searches" method="GET" action="#our-cats">
                 <label for="search"> <i class="fas fa-search"></i> </label>
-                <input type="text" name="search" id="search" value="Sök efter katt...">
-                <button type="button" id="filters" onclick="filter()">
-                    Filter
+                <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
+                <button class="search-button" type="submit"> Sök </button>
+            </form>
+
+            <div class="filter">
+                <button type="button" name="all-filters" class="filters" id="all-filters" onclick="filter()">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
+                <button type="button" name="ao" class="filters" id="ao" onclick="">
+                    <i class="fas fa-sort-alpha-down"></i>
                 </button>
             </div>
-            <div id="filter-choices">
-                <div class="choices"> Hanar </div>
-                <div class="choices"> Honor </div>
-                <div class="choices"> 0 - 10 år </div>
-                <div class="choices"> 10+ år </div>
+        </div>
+        <div id="filter-choices" class="not-display">
+            <div class="all-filters">
+                <div class="age-filter">
+                    <h3> Ålder </h3>
+                    <button type="submit" name="ages" class="filter-right"> Kattunge </button>
+                    <button type="submit" name="ages" class="filter-right"> Vuxen </button>
+                    <button type="submit" name="ages"> Senior </button>
+                </div>
+
+                <div class="gender-filter">
+                    <h3> Kön </h3>
+                    <button type="submit" name="gender" class="filter-right"> Honor </button>
+                    <button type="submit" name="gender"> Hanar </button>
+                </div>
+
+                <div class="home-filter">
+                    <h3> Boende </h3>
+                    <button type="submit" name="home" class="filter-right"> Katthemmet </button>
+                    <button type="submit" name="home"> Jourhem </button>
+                </div>
             </div>
         </div>
+
         <!-- Cat-cards -->
         <div class="white-paragraph" id="cats">
             <?php
@@ -71,7 +106,8 @@ $cats = $database->getCats();
                         <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
                         <small class="color"> <?php echo($cat['color']) ?> </small>
                     </div>
-                    <p class="desc"> <?php echo($cat['description']) ?>  </p>
+                    <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
+                    <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
                     <div class="links">
                         <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
                         <a href="#"> Adoptera mig! </a>
@@ -81,7 +117,7 @@ $cats = $database->getCats();
             <?php } ?>
         </div>
         <!-- Hide/show content -->
-        <div id="hide-show">
+        <div id="hide-show" class="<?php if (count($cats) < 2) echo('hidden'); ?>">
             <button id="my-button" onclick="show()"> Visa mer </button>
         </div>
     </section>
@@ -125,25 +161,24 @@ $cats = $database->getCats();
     <!-- Calls for footer -->
     <?php include('components/footer.php') ?>
 
-    <script>
+<script>
     // === HIDE AND SHOW FILTER CHOICES ===
     let element = document.getElementById('filter-choices');
 
     function filter() {
-        if (element.style.display === "block") {
-            element.style.display = "none";
+        if (element.classList.contains("not-display")) {
+            element.classList.remove("not-display");
         } else {
-            element.style.display = "block";
+            element.classList.add("not-display");
         }
     }
 
     // === HIDE AND SHOW CATS ===
-    let button = document.getElementById('hide-show');
     let container = document.getElementById('cats');
     let buttonText = document.getElementById('my-button');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
-    button.onclick = function show() {
+    function show() {
         if(container.classList.contains("expanded")) {
             container.classList.remove("expanded");
             /* Adds text so that the button is correct */
@@ -153,7 +188,7 @@ $cats = $database->getCats();
             /* Adds text so that the button is correct */
             buttonText.innerHTML = 'Dölj';
         }
-    };
+    }
 
     // == SHOW POPUP ===
     function showCat(id) {
@@ -167,7 +202,7 @@ $cats = $database->getCats();
         popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
         popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
         popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
-        popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
+        popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent + '\r\n' + cat.getElementsByClassName("desc-long")[0].textContent;
 
         /* Show popup */
         popup.style.display = "block";
