@@ -20,9 +20,12 @@ class Database {
     }
 
     // Get all cats
-    public function getCats() {
+    public function getCats($reversed) {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats ORDER BY name ASC';
+        $sql = 'SELECT * FROM cats ORDER BY name';
+        if ($reversed) {
+            $sql .= ' DESC';
+        }
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -32,9 +35,12 @@ class Database {
     }
 
     // Search cats by name
-    public function searchCats($name) {
+    public function searchCats($name, $reversed) {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats WHERE name LIKE :name';
+        $sql = 'SELECT * FROM cats WHERE name LIKE :name ORDER BY name';
+        if ($reversed) {
+            $sql .= ' DESC';
+        }
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -46,7 +52,7 @@ class Database {
     }
 
     //
-    public function aoFilter() {
+    public function alphaFilter() {
         // Gets all information from database
         $sql = 'SELECT * FROM cats ORDER BY name DESC';
         // Prepares a query

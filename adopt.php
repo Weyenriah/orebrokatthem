@@ -1,7 +1,9 @@
 <?php
     require_once 'components/resources.php';
 
-    $cats = $database->getCats();
+    $reversed = isset($_GET['oa'])? $_GET['oa'] === "true" : false;
+
+    $cats = $database->getCats($reversed);
 
     $name = "";
 
@@ -9,7 +11,7 @@
     if($search) {
         $name = $_GET['search'];
 
-        $cats = $database->searchCats($name);
+        $cats = $database->searchCats($name, $reversed);
     }
 
 
@@ -58,9 +60,19 @@
                 <button type="button" name="all-filters" class="filters" id="all-filters" onclick="filter()">
                     <i class="fas fa-sliders-h"></i>
                 </button>
-                <button type="button" name="ao" class="filters" id="ao" onclick="">
-                    <i class="fas fa-sort-alpha-down"></i>
-                </button>
+                <?php if($reversed) { ; ?>
+                    <form method="GET" action="#our-cats">
+                        <button type="submit" name="oa" value="false" class="filters">
+                            <i class="fas fa-sort-alpha-up"></i>
+                        </button>
+                    </form>
+                <?php } else {  ?>
+                    <form method="GET" action="#our-cats">
+                        <button type="submit" name="oa" value="true" class="filters">
+                            <i class="fas fa-sort-alpha-down"></i>
+                        </button>
+                    </form>
+                <?php } ?>
             </div>
         </div>
         <div id="filter-choices" class="not-display">
@@ -91,29 +103,31 @@
             <?php
             foreach ($cats as $cat) {
             ?>
-            <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
-                <div class="cat-img">
-                    <img class="image-to-cat" src="images/ashild.jpg">
-                </div>
-                <div class="cat-text">
-                    <div class="cat-title">
-                        <img src="images/paw-icon-darker.png">
-                        <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+            <div class="small-change">
+                <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
+                    <div class="cat-img">
+                        <img class="image-to-cat" src="images/ashild.jpg">
                     </div>
+                    <div class="cat-text">
+                        <div class="cat-title">
+                            <img src="images/paw-icon-darker.png">
+                            <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+                        </div>
 
-                    <div class="small-info">
-                        <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
-                        <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
-                        <small class="color"> <?php echo($cat['color']) ?> </small>
+                        <div class="small-info">
+                            <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
+                            <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
+                            <small class="color"> <?php echo($cat['color']) ?> </small>
+                        </div>
+                        <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
+                        <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
+                        <div class="links">
+                            <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
+                            <a href="#"> Adoptera mig! </a>
+                        </div>
                     </div>
-                    <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
-                    <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
-                    <div class="links">
-                        <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
-                        <a href="#"> Adoptera mig! </a>
-                    </div>
-                </div>
-            </article>
+                </article>
+            </div>
             <?php } ?>
         </div>
         <!-- Hide/show content -->

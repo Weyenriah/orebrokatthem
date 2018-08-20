@@ -107,7 +107,6 @@
     display: none;
 }
 
-
 /* === OUR CATS FLOW === */
 /* Layout when not expanded */
 #cats {
@@ -124,14 +123,16 @@
 }
 
 /* Layout for cat-cards */
-.cat-style {
+.small-change {
     margin-bottom: 30px;
 }
+
 .cat-img {
     margin-right: 15px;
     height: 300px;
     width: 250px;
     overflow: hidden;
+    display: inline-block;
     float: left;
     border: 1px solid #762a2a;
 }
@@ -234,3 +235,11 @@
 .white-paragraph ul li {
     margin-top: 3px;
 }
+
+@media screen and (max-width: 750px) {
+    .cat-style {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
