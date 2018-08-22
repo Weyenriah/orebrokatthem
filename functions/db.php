@@ -20,18 +20,34 @@ class Database {
     }
 
     // Get all cats
-    public function getCats($reversed) {
+    public function getCats($reversed, $page=0) {
         // Gets all information from database
         $sql = 'SELECT * FROM cats ORDER BY name';
         if ($reversed) {
             $sql .= ' DESC';
         }
+
+        $sql .= ' LIMIT 8 OFFSET :offset';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
-        $stmt->execute();
+        $stmt->execute(array(
+            'offset' => 8 * $page,
+        ));
         // Grab the list
         return $stmt->fetchAll();
+    }
+
+    public function countCatPages() {
+        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute();
+
+        $numberOfCats = $stmt->fetchColumn(0);
+
+        return ceil($numberOfCats / 8);
     }
 
     // Search cats by name

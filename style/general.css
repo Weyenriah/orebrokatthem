@@ -117,3 +117,15 @@ body {
     border: 0.5px solid #f0dfdf;
     width: 100%;
 }
+
+/* General button-style for white-background */
+@keyframes button-white {
+    from {background-color: #ca8a8a;}
+    to {background-color: #762a2a;}
+}
+
+/* Animation for link in cat-card */
+@keyframes link-white {
+    from {color: #ca8a8a;}
+    to {color: #762a2a;}
+}

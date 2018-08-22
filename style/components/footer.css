@@ -14,9 +14,6 @@
 .svekatt {
     height: 150px;
 }
-.vilse {
-    height: 30%;
-}
 .skk {
     height: 130px;
 }
@@ -123,9 +120,6 @@
     /* All the sizing to images */
     .svekatt {
         height: 130px;
-    }
-    .vilse {
-        height: 30%;
     }
     .skk {
         height: 110px;

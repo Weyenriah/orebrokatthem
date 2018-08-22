@@ -1,20 +1,34 @@
 <?php
     require_once 'components/resources.php';
 
+    $ageFilter = null;
+    $livingFilter = null;
+    $genderFilter = null;
+
+    
+
+    var_dump($ageFilter); // K, V, S
+    var_dump($livingFilter); // k, J
+    var_dump($genderFilter); // 1, 0
+
+    $pages = $database->countCatPages();
+
     $reversed = isset($_GET['oa'])? $_GET['oa'] === "true" : false;
 
-    $cats = $database->getCats($reversed);
+    $page = isset($_GET['page'])? $_GET['page'] : 0;
+
+    $cats = $database->getCats($reversed, $page);
 
     $name = "";
 
-    $search = isset($_GET['search']);
+    $search = isset($_GET['search']) && $_GET['search'] != '';
     if($search) {
         $name = $_GET['search'];
 
         $cats = $database->searchCats($name, $reversed);
     }
 
-
+    $expanded = isset($_GET['page']) || isset($_GET['oa']) || $search;
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -49,90 +63,89 @@
     <section class="white-background general-grid" id="our-cats">
         <h2> Våra katter </h2>
         <!-- Filter -->
-        <div class="search-field white-paragraph">
-            <form class="searches" method="GET" action="#our-cats">
-                <label for="search"> <i class="fas fa-search"></i> </label>
-                <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
-                <button class="search-button" type="submit"> Sök </button>
-            </form>
+        <section class="filter-search white-paragraph">
+            <div class="search-field">
+                <form class="searches" method="GET" action="#our-cats">
+                    <label for="search"> <i class="fas fa-search"></i> </label>
+                    <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
+                    <button class="search-button" type="submit"> Sök </button>
+                </form>
 
-            <div class="filter">
-                <button type="button" name="all-filters" class="filters" id="all-filters" onclick="filter()">
-                    <i class="fas fa-sliders-h"></i>
-                </button>
-                <?php if($reversed) { ; ?>
-                    <form method="GET" action="#our-cats">
-                        <button type="submit" name="oa" value="false" class="filters">
-                            <i class="fas fa-sort-alpha-up"></i>
-                        </button>
-                    </form>
-                <?php } else {  ?>
-                    <form method="GET" action="#our-cats">
-                        <button type="submit" name="oa" value="true" class="filters">
-                            <i class="fas fa-sort-alpha-down"></i>
-                        </button>
-                    </form>
-                <?php } ?>
-            </div>
-        </div>
-        <div id="filter-choices" class="not-display">
-            <div class="all-filters">
-                <div class="age-filter">
-                    <h3> Ålder </h3>
-                    <button type="submit" name="ages" class="filter-right"> Kattunge </button>
-                    <button type="submit" name="ages" class="filter-right"> Vuxen </button>
-                    <button type="submit" name="ages"> Senior </button>
-                </div>
-
-                <div class="gender-filter">
-                    <h3> Kön </h3>
-                    <button type="submit" name="gender" class="filter-right"> Honor </button>
-                    <button type="submit" name="gender"> Hanar </button>
-                </div>
-
-                <div class="home-filter">
-                    <h3> Boende </h3>
-                    <button type="submit" name="home" class="filter-right"> Katthemmet </button>
-                    <button type="submit" name="home"> Jourhem </button>
+                <div class="filter">
+                    <button type="button" name="all-filters" class="filters" id="all-filters" onclick="filter()">
+                        <i class="fas fa-sliders-h"></i>
+                    </button>
                 </div>
             </div>
-        </div>
+            <div id="filter-choices" class="not-display">
+                <form class="filter-form" method="get" action="#our-cats">
+                    <span class="gender checkbox">
+                        <h3 class="checkbox-title"> Kön </h3>
+                        <input type="checkbox" name="gender1" value="female" id="female">
+                        <label for="female"> Hona </label>
+                        <input type="checkbox" name="gender2" value="male" id="male">
+                        <label for="male"> Hane </label>
+                    </span>
 
+                    <span class="living checkbox">
+                        <h3 class="checkbox-title"> Boende </h3>
+                        <input type="checkbox" name="living" value="cathome" id="cathome">
+                        <label for="cathome"> Katthem </label>
+                        <input type="checkbox" name="living" value="jour" id="jour">
+                        <label for="jour"> Jourhem </label>
+                    </span>
+
+                    <button class="filter-submit" type="submit" value="submit"> Filtrera </button>
+                </form>
+            </div>
+        </section>
         <!-- Cat-cards -->
-        <div class="white-paragraph" id="cats">
+        <div class="white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="cats">
             <?php
             foreach ($cats as $cat) {
             ?>
-            <div class="small-change">
-                <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
-                    <div class="cat-img">
-                        <img class="image-to-cat" src="images/ashild.jpg">
-                    </div>
-                    <div class="cat-text">
-                        <div class="cat-title">
-                            <img src="images/paw-icon-darker.png">
-                            <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+                <div class="small-change">
+                    <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
+                        <div class="cat-img">
+                            <img class="image-to-cat" src="images/ashild.jpg">
                         </div>
+                        <div class="cat-text">
+                            <div class="cat-title">
+                                <img src="images/paw-icon-darker.png">
+                                <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+                            </div>
 
-                        <div class="small-info">
-                            <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
-                            <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
-                            <small class="color"> <?php echo($cat['color']) ?> </small>
+                            <div class="small-info">
+                                <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
+                                <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
+                                <small class="color"> <?php echo($cat['color']) ?> </small>
+                            </div>
+                            <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
+                            <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
+                            <div class="links">
+                                <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
+                                <a href="#"> Adoptera mig! </a>
+                            </div>
                         </div>
-                        <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
-                        <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
-                        <div class="links">
-                            <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
-                            <a href="#"> Adoptera mig! </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+                    </article>
+                </div>
             <?php } ?>
+            <div class="prev-next">
+                <?php if($page > 0 && !$search) { ?>
+                    <a class="prev-arrow" href="?page=<?php echo $page - 1 ?>#our-cats">
+                        <i class="fas fa-angle-left"></i> Föregående
+                    </a>
+                <?php }
+                if($page < $pages - 1 && !$search) { ?>
+                    <a class="next-arrow" href="?page=<?php echo $page + 1 ?>#our-cats">
+                        Nästa <i class="fas fa-angle-right"></i>
+                    </a>
+                <?php } ?>
+            </div>
         </div>
         <!-- Hide/show content -->
-        <div id="hide-show" class="<?php if (count($cats) < 2) echo('hidden'); ?>">
-            <button id="my-button" onclick="show()"> Visa mer </button>
+        <div id="hide-show">
+            <button class="<?php if (count($cats) < 2) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 
