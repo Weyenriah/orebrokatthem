@@ -110,21 +110,9 @@ $news = $database->getNews();
                             <h3> Name </h3>
                         </div>
                         <small class="birth"> * Birth | </small>
-                        <small class="death"> † Death </small>
-                        <p> Minnestext </p>
-                    </div>
-                </article>
-                <article class="remem-cat">
-                    <div class="red-img-border">
-                        <img src="images/ashild.jpg">
-                    </div>
-                    <div class="remem-cat-info">
-                        <div class="cat-title remem-cat-title">
-                            <img src="images/paw-icon.png">
-                            <h3> Name </h3>
-                        </div>
-                        <small class="birth"> * Birth | </small>
-                        <small class="death"> † Death </small>
+                        <small class="birth"> Inkom | </small>
+                        <small class="death"> Adopterad | </small>
+                        <small class="death"> † Death  </small>
                         <p> Minnestext </p>
                     </div>
                 </article>
