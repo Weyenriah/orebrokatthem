@@ -102,4 +102,16 @@ class Database {
         // Grab the list
         return $stmt->fetchAll();
     }
+
+    // Get all Remember Cats-cats
+    public function getRememberCats() {
+        // Gets all information from database
+        $sql = 'SELECT * FROM remember';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        return $stmt->fetchAll();
+    }
 }

@@ -197,7 +197,6 @@ body {
 }
 
 /* === GENERAL STYLING FOR REMEMBER === */
-
 #remember-container {
     grid-row: 3;
     grid-column: 2;
@@ -207,10 +206,6 @@ body {
 
 #remember-container.expanded {
     height: auto;
-}
-
-.all-remem-cats article:not(:first-child) {
-    margin-top: 30px;
 }
 
 #remember h2 {
@@ -226,19 +221,66 @@ body {
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    margin-bottom: 30px;
 }
 
+.remem-cat:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+/* General positioning of title */
+.all-remem-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.remem-cat-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling of title */
 .remem-cat-title h3 {
     margin: 0;
     font-family: "Georgia", serif;
     font-size: 33px;
 }
-
-.remem-cat small {
-    font-style: normal;
+/* Paw-print icon */
+.remem-cat-title img {
+    height: 33px;
+    margin-right: 5px;
+}
+/* The small titling */
+.remem-cat h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: normal;
+}
+.circle-of-life, .circle-of-cathome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.push-title {
+    margin-left: 5px !important;
 }
 
+/* The description and image */
+.remem-cat-info {
+    margin-top: 10px;
+}
+.remem-img {
+    float: left;
+}
+
+/* Small text about cause of death */
+.cause-of-death {
+    font-style: italic !important;
+}
+
+/* Hide and show/expand-button to Minneslunden/remember cats */
 #remem-hide-show {
     position: relative;
     grid-column: 2;
@@ -262,4 +304,6 @@ body {
 
 #remem-hide-show button:hover {
     color: white;
+    animation-name: link-red;
+    animation-duration: 0.5s;
 }

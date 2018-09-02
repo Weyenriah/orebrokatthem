@@ -1,6 +1,8 @@
 <?php require_once 'components/resources.php';
 
 $news = $database->getNews();
+
+$remember = $database->getRememberCats();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -81,6 +83,7 @@ $news = $database->getNews();
         </div>
     </section>
 
+    <!-- Minneslunden/Remember Cats -->
     <section class="general-grid red-background" id="remember">
         <h2> Minneslunden </h2>
         <div class="all-remem" id="remember-container">
@@ -100,22 +103,35 @@ $news = $database->getNews();
                 <br/>
                 <i>I ert minne räddar vi fler</i> </p>
             <div class="all-remem-cats">
+                <?php foreach($remember as $cat) {
+
+                    $came = date('Y-m-d', strtotime($cat['came']));
+                    $adopted = date('Y-m-d', strtotime($cat['adopted']));
+                    $death = date('Y-m-d', strtotime($cat['death'])); ?>
                 <article class="remem-cat">
-                    <div class="red-img-border">
-                        <img src="images/ashild.jpg">
+                    <div class="all-remem-title">
+                        <div class="circle-of-life">
+                            <h4 class="birth"> * <?php echo($cat['born']) ?> |  </h4>
+                            <h4 class="death push-title">  † <?php echo($death) ?> </h4>
+                        </div>
+                        <div class="remem-cat-title">
+                            <img src="images/paw-icon.png">
+                            <h3> <?php echo($cat['name']) ?> </h3>
+                        </div>
+                        <div class="circle-of-cathome">
+                            <h4 class="came"> <i>Inkom:</i> <?php echo($came) ?> | </h4>
+                            <h4 class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </h4>
+                        </div>
                     </div>
                     <div class="remem-cat-info">
-                        <div class="cat-title remem-cat-title">
-                            <img src="images/paw-icon.png">
-                            <h3> Name </h3>
+                        <div class="red-img-border remem-img">
+                            <img src="images/ashild.jpg">
                         </div>
-                        <small class="birth"> * Birth | </small>
-                        <small class="birth"> Inkom | </small>
-                        <small class="death"> Adopterad | </small>
-                        <small class="death"> † Death  </small>
-                        <p> Minnestext </p>
+                        <p> <?php echo($cat['description']) ?> </p>
+                        <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
                     </div>
                 </article>
+                <?php } ?>
             </div>
         </div>
         <div id="remem-hide-show">

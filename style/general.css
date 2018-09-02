@@ -102,6 +102,12 @@ body {
     width: 250px;
 }
 
+/* Animation for link in cat-card */
+@keyframes link-red {
+    from {color: #ca8a8a;}
+    to {color: white;}
+}
+
 /* === DESIGN RULES: WHITE PAGES === */
 /* Styling to heading */
 .white-background h2 {
