@@ -1,16 +1,6 @@
 <?php
     require_once 'components/resources.php';
 
-    $ageFilter = null;
-    $livingFilter = null;
-    $genderFilter = null;
-
-    
-
-    var_dump($ageFilter); // K, V, S
-    var_dump($livingFilter); // k, J
-    var_dump($genderFilter); // 1, 0
-
     $pages = $database->countCatPages();
 
     $reversed = isset($_GET['oa'])? $_GET['oa'] === "true" : false;

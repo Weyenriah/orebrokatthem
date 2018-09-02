@@ -77,7 +77,61 @@ $news = $database->getNews();
             <?php } ?>
         </article>
         <div id="hide-show">
-            <button id="my-button" onclick="show()"> Visa mer </button>
+            <button id="my-button" onclick="showNews()"> Visa mer </button>
+        </div>
+    </section>
+
+    <section class="general-grid red-background" id="remember">
+        <h2> Minneslunden </h2>
+        <div class="all-remem" id="remember-container">
+            <p class="red-paragraph"> Sov gott små vänner, vila nu, för smärtan är över <br/>
+                Era tappra små själar ej kämpa mer behöver <br/>
+                <br/>
+                Ni var så perfekta, alla underbara på sitt eget lilla sätt <br/>
+                Att ni hamnade i fel händer, det känns inte rätt <br/>
+                Och att vi ej hann er rädda det känns inte lätt <br/>
+                <br/>
+                Vi ville få ger er ett kärleksfullt hem <br/>
+                som alla andra katter, ni är unika precis som dem <br/>
+                Vem gjorde er så illa? Snälla säg oss vem <br/>
+                <br/>
+                Sov gott små vänner, vila nu, för smärtan är över <br/>
+                Era tappra små själar ej kämpa mer behöver <br/>
+                <br/>
+                <i>I ert minne räddar vi fler</i> </p>
+            <div class="all-remem-cats">
+                <article class="remem-cat">
+                    <div class="red-img-border">
+                        <img src="images/ashild.jpg">
+                    </div>
+                    <div class="remem-cat-info">
+                        <div class="cat-title remem-cat-title">
+                            <img src="images/paw-icon.png">
+                            <h3> Name </h3>
+                        </div>
+                        <small class="birth"> * Birth | </small>
+                        <small class="death"> † Death </small>
+                        <p> Minnestext </p>
+                    </div>
+                </article>
+                <article class="remem-cat">
+                    <div class="red-img-border">
+                        <img src="images/ashild.jpg">
+                    </div>
+                    <div class="remem-cat-info">
+                        <div class="cat-title remem-cat-title">
+                            <img src="images/paw-icon.png">
+                            <h3> Name </h3>
+                        </div>
+                        <small class="birth"> * Birth | </small>
+                        <small class="death"> † Death </small>
+                        <p> Minnestext </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div id="remem-hide-show">
+            <button id="remem-button" onclick="showRemem()"> Visa mer </button>
         </div>
     </section>
 
@@ -120,11 +174,12 @@ $news = $database->getNews();
     }
 
     // === HIDE AND SHOW CONTENT ===
+    /* Hide and show/expand news flow */
     let container = document.getElementById('news-container');
     let buttonText = document.getElementById('my-button');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
-    function show(){
+    function showNews(){
         if(container.classList.contains("expanded")) {
             container.classList.remove("expanded");
             /* Adds text so that the button is correct */
@@ -133,6 +188,22 @@ $news = $database->getNews();
             container.classList.add("expanded");
             /* Adds text so that the button is correct */
             buttonText.innerHTML = 'Dölj';
+        }
+    }
+
+    /* Hide and show/expand remember-cats part */
+    let rememContainer = document.getElementById("remember-container");
+    let rememButtonText = document.getElementById("remem-button");
+
+    function showRemem() {
+        if(rememContainer.classList.contains("expanded")) {
+            rememContainer.classList.remove("expanded");
+            /* Adds text so that the button is correct */
+            rememButtonText.innerHTML = 'Visa mer';
+        } else {
+            rememContainer.classList.add("expanded");
+            /* Adds text so that the button is correct */
+            rememButtonText.innerHTML = 'Dölj';
         }
     }
 

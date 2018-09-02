@@ -61,7 +61,7 @@ body {
     border-top: 20px solid #591c1c;
     border-bottom: 20px solid #591c1c;
     /* The CSS grid on every red page */
-    grid-template-rows: 20px 61px auto;
+    grid-template-rows: 20px 61px auto 20px;
 }
 
 /* H2 headings styling */
@@ -87,6 +87,19 @@ body {
 
 .red-background small {
     font-style: italic;
+}
+
+/* CAT DISPLAYING RULES, RED BACKGROUND */
+/* First image */
+.red-img-border {
+    height: 300px;
+    width: 250px;
+    margin-right: 15px;
+    overflow: hidden;
+    border: 1px solid white;
+}
+.red-img-border img {
+    width: 250px;
 }
 
 /* === DESIGN RULES: WHITE PAGES === */
