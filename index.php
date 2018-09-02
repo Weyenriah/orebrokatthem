@@ -2,7 +2,14 @@
 
 $news = $database->getNews();
 
-$remember = $database->getRememberCats();
+
+
+// Pagination (Minneslunden/remember cats)
+$rememPages = $database->countRememberPages();
+
+$rememPage = isset($_GET['remempage']) ? $_GET['remempage'] : 0;
+
+$remember = $database->getRememberCats($rememPage);
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -86,7 +93,7 @@ $remember = $database->getRememberCats();
     <!-- Minneslunden/Remember Cats -->
     <section class="general-grid red-background" id="remember">
         <h2> Minneslunden </h2>
-        <div class="all-remem" id="remember-container">
+        <div class="all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
             <p class="red-paragraph"> Sov gott små vänner, vila nu, för smärtan är över <br/>
                 Era tappra små själar ej kämpa mer behöver <br/>
                 <br/>
@@ -104,33 +111,45 @@ $remember = $database->getRememberCats();
                 <i>I ert minne räddar vi fler</i> </p>
             <div class="all-remem-cats">
                 <?php foreach($remember as $cat) {
-
-                    $came = date('Y-m-d', strtotime($cat['came']));
-                    $adopted = date('Y-m-d', strtotime($cat['adopted']));
+                    $born = ($cat['born'] === null) ? '' : ('* ' . $cat['born'] . ' |');
+                    $came = ($cat['came'] === null) ? '-' : date('Y-m-d', strtotime($cat['came']));
+                    $adopted = ($cat['adopted'] === null) ? '-' : date('Y-m-d', strtotime($cat['adopted']));
                     $death = date('Y-m-d', strtotime($cat['death'])); ?>
-                <article class="remem-cat">
-                    <div class="all-remem-title">
-                        <div class="circle-of-life">
-                            <h4 class="birth"> * <?php echo($cat['born']) ?> |  </h4>
-                            <h4 class="death push-title">  † <?php echo($death) ?> </h4>
+                    <article class="remem-cat">
+                        <div class="all-remem-title">
+                            <div class="circle-of-life">
+                                <h4 class="birth"> <?php echo($born) ?>  </h4>
+                                <h4 class="death push-title">  † <?php echo($death) ?> </h4>
+                            </div>
+                            <div class="remem-cat-title">
+                                <img src="images/paw-icon.png">
+                                <h3> <?php echo($cat['name']) ?> </h3>
+                            </div>
+                            <div class="circle-of-cathome">
+                                <h4 class="came"> <i>Inkom:</i> <?php echo($came) ?> | </h4>
+                                <h4 class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </h4>
+                            </div>
                         </div>
-                        <div class="remem-cat-title">
-                            <img src="images/paw-icon.png">
-                            <h3> <?php echo($cat['name']) ?> </h3>
+                        <div class="remem-cat-info">
+                            <div class="red-img-border remem-img">
+                                <img src="images/ashild.jpg">
+                            </div>
+                            <p> <?php echo($cat['description']) ?> </p>
+                            <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
                         </div>
-                        <div class="circle-of-cathome">
-                            <h4 class="came"> <i>Inkom:</i> <?php echo($came) ?> | </h4>
-                            <h4 class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </h4>
-                        </div>
-                    </div>
-                    <div class="remem-cat-info">
-                        <div class="red-img-border remem-img">
-                            <img src="images/ashild.jpg">
-                        </div>
-                        <p> <?php echo($cat['description']) ?> </p>
-                        <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
-                    </div>
-                </article>
+                    </article>
+                <?php } ?>
+            </div>
+            <div class="remem-pagination">
+                <?php if($rememPage > 0) { ?>
+                    <a class="prev-arrow" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
+                        <i class="fas fa-angle-left"></i> Föregående
+                    </a>
+                <?php }
+                if($rememPage < $rememPages - 1) { ?>
+                    <a class="next-arrow" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
+                        Nästa <i class="fas fa-angle-right"></i>
+                    </a>
                 <?php } ?>
             </div>
         </div>

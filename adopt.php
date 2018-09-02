@@ -3,20 +3,33 @@
 
     $pages = $database->countCatPages();
 
+    // Reverse cat page flow
     $reversed = isset($_GET['oa'])? $_GET['oa'] === "true" : false;
 
     $page = isset($_GET['page'])? $_GET['page'] : 0;
 
-    $cats = $database->getCats($reversed, $page);
+
+
+    // Filter
+    $gender = 0;
+    if(isset($_GET['male']))
+        $gender += 1;
+    if (isset($_GET['female']))
+        $gender += 2;
+    $living = 0;
+    if(isset($_GET['male'])) // TODO
+        $living = 0;
+    if (isset($_GET['female'])) // TODO
+        $living = 0;
 
     $name = "";
 
     $search = isset($_GET['search']) && $_GET['search'] != '';
     if($search) {
         $name = $_GET['search'];
-
-        $cats = $database->searchCats($name, $reversed);
     }
+
+    $cats = $database->getCats($reversed, $page, $gender, $living, $name);
 
     $expanded = isset($_GET['page']) || isset($_GET['oa']) || $search;
 ?>
@@ -71,9 +84,9 @@
                 <form class="filter-form" method="get" action="#our-cats">
                     <span class="gender checkbox">
                         <h3 class="checkbox-title"> Kön </h3>
-                        <input type="checkbox" name="gender1" value="female" id="female">
+                        <input type="checkbox" name="female" value="true" id="female">
                         <label for="female"> Hona </label>
-                        <input type="checkbox" name="gender2" value="male" id="male">
+                        <input type="checkbox" name="male" value="true" id="male">
                         <label for="male"> Hane </label>
                     </span>
 
@@ -84,6 +97,8 @@
                         <input type="checkbox" name="living" value="jour" id="jour">
                         <label for="jour"> Jourhem </label>
                     </span>
+
+                    <input hidden name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" >
 
                     <button class="filter-submit" type="submit" value="submit"> Filtrera </button>
                 </form>
