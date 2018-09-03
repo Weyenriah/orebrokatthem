@@ -1,26 +1,34 @@
 <?php
     require_once 'components/resources.php';
 
-    $pages = $database->countCatPages();
-
     // Reverse cat page flow
     $reversed = isset($_GET['oa']) ? $_GET['oa'] === "true" : false;
 
     // Get page
     $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
+    $filter = array();
+
     // Filter
     $gender = 0; // Gender filter
-    if(isset($_GET['male']))
+    if(isset($_GET['male'])) {
         $gender += 1;
-    if (isset($_GET['female']))
+        $filter[] = 'male=true';
+    }
+    if (isset($_GET['female'])) {
         $gender += 2;
+        $filter[] = 'female=true';
+    }
 
     $living = 0; // Living filter
-    if(isset($_GET['jourhome']))
+    if(isset($_GET['jourhome'])) {
         $living += 1;
-    if (isset($_GET['cathome']))
+        $filter[] = 'jourhome=true';
+    }
+    if (isset($_GET['cathome'])) {
         $living += 2;
+        $filter[] = 'cathome=true';
+    }
 
     // Search cats according to name
     $name = "";
@@ -28,13 +36,20 @@
     $search = isset($_GET['search']) && $_GET['search'] != '';
     if($search) {
         $name = $_GET['search'];
+        $filter[] = 'search=' . $name;
     }
 
-    // Get cats
-    $cats = $database->getCats($reversed, $page, $gender, $living, $name);
+    // Glue
+    $filterString = implode('&', $filter);
 
-    // Keep the expanded page throughout some actions
-    $expanded = isset($_GET['page']) || isset($_GET['oa']) || $search;
+    // Get cats
+    $cats = $database->getCats($page, $gender, $living, $name);
+    $pages = $database->countCatPages($gender, $living, $name);
+
+    // Keep the expanded page throughout actions with cat flow
+    $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
+        isset($_GET['jourhome']) || isset($_GET['female']) || isset($_GET['male']) ||
+        count($cats) ;
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -110,6 +125,10 @@
         <!-- Cat-cards -->
         <div class="white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="cats">
             <?php
+            if(count($cats) < 1) {
+                echo('Inga katter hittades');
+            }
+
             foreach ($cats as $cat) {
             ?>
                 <div class="small-change">
@@ -141,14 +160,14 @@
             <div class="prev-next">
                 <?php if($page > 0 && !$search) { ?>
                     <div class="previous-page">
-                        <a class="prev-arrow prev-arrow-white" href="?page=<?php echo $page - 1 ?>#our-cats">
+                        <a class="prev-arrow prev-arrow-white" href="?page=<?php echo $page - 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
                             <i class="fas fa-angle-left"></i> Föregående
                         </a>
                     </div>
                 <?php }
                 if($page < $pages - 1 && !$search) { ?>
                     <div class="next-page">
-                        <a class="next-arrow next-arrow-white" href="?page=<?php echo $page + 1 ?>#our-cats">
+                        <a class="next-arrow next-arrow-white" href="?page=<?php echo $page + 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
                             Nästa <i class="fas fa-angle-right"></i>
                         </a>
                     </div>
@@ -157,7 +176,7 @@
         </div>
         <!-- Hide/show content -->
         <div id="hide-show">
-            <button class="<?php if (count($cats) < $pages) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
+            <button class="<?php if (count($cats) < 2) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 

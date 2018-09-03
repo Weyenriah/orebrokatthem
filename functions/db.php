@@ -20,7 +20,7 @@ class Database {
     }
 
     // Get all cats
-    public function getCats($reversed, $page = 0, $gender = 0, $living = 0, $name='') {
+    public function getCats($page = 0, $gender = 0, $living = 0, $name='') {
         // Gets all information from database
         $sql = 'SELECT * FROM cats';
         $conditions = array();
@@ -43,9 +43,6 @@ class Database {
 
         // Reversing the order
         $sql .= ' ORDER BY name';
-        if ($reversed) {
-            $sql .= ' DESC';
-        }
         // Limit amount of cats per pages
         $sql .= ' LIMIT 8 OFFSET :offset';
         // Prepares a query
@@ -60,12 +57,35 @@ class Database {
     }
 
     // Count and return pages of cats
-    public function countCatPages() {
+    public function countCatPages($gender = 0, $living = 0, $name='') {
+        // Gets all information from database
         $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
+        $conditions = array();
+        // Filter cats
+        if ($gender == 1){
+            $conditions[] = 'gender = 1';
+        } elseif ($gender == 2) {
+            $conditions[] = 'gender = 0';
+        }
+        if ($living == 1){
+            $conditions[] = 'home = 1';
+        } elseif ($living == 2) {
+            $conditions[] = 'home = 0';
+        }
+        $conditions[] = 'name LIKE :name';
+
+        if (count($conditions) > 0) {
+            $sql .= ' WHERE ' . implode(' AND ', $conditions);
+        }
+
+        // Reversing the order
+        $sql .= ' ORDER BY name';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
-        $stmt->execute();
+        $stmt->execute(array(
+            'name' => '%'.$name.'%'
+        ));
         // Grab the list
         $numberOfCats = $stmt->fetchColumn(0);
         // Return number of cats divided by number of pages

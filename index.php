@@ -108,7 +108,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             </div>
         </div>
         <div id="hide-show">
-            <button class="<?php if (count($news) < $newsPages) echo('hidden'); ?>" id="my-button" onclick="showNews()"> Visa mer </button>
+            <button class="<?php if (count($news) < 2) echo('hidden'); ?>" id="my-button" onclick="showNews()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 
@@ -180,7 +180,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             </div>
         </div>
         <div id="remem-hide-show">
-            <button class="<?php if (count($news) < $rememPages) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> Visa mer </button>
+            <button class="<?php if (count($remember) < 2) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 
