@@ -4,24 +4,25 @@
     $pages = $database->countCatPages();
 
     // Reverse cat page flow
-    $reversed = isset($_GET['oa'])? $_GET['oa'] === "true" : false;
+    $reversed = isset($_GET['oa']) ? $_GET['oa'] === "true" : false;
 
-    $page = isset($_GET['page'])? $_GET['page'] : 0;
-
-
+    // Get page
+    $page = isset($_GET['page']) ? $_GET['page'] : 0;
 
     // Filter
-    $gender = 0;
+    $gender = 0; // Gender filter
     if(isset($_GET['male']))
         $gender += 1;
     if (isset($_GET['female']))
         $gender += 2;
-    $living = 0;
-    if(isset($_GET['male'])) // TODO
-        $living = 0;
-    if (isset($_GET['female'])) // TODO
-        $living = 0;
 
+    $living = 0; // Living filter
+    if(isset($_GET['jourhome'])) // TODO
+        $living += 1;
+    if (isset($_GET['cathome'])) // TODO
+        $living += 2;
+
+    // Search cats according to name
     $name = "";
 
     $search = isset($_GET['search']) && $_GET['search'] != '';
@@ -29,8 +30,10 @@
         $name = $_GET['search'];
     }
 
+    // Get cats
     $cats = $database->getCats($reversed, $page, $gender, $living, $name);
 
+    // Keep the expanded page throughout some actions
     $expanded = isset($_GET['page']) || isset($_GET['oa']) || $search;
 ?>
 <!DOCTYPE html>
@@ -92,9 +95,9 @@
 
                     <span class="living checkbox">
                         <h3 class="checkbox-title"> Boende </h3>
-                        <input type="checkbox" name="living" value="cathome" id="cathome">
+                        <input type="checkbox" name="cathome" value="true" id="cathome">
                         <label for="cathome"> Katthem </label>
-                        <input type="checkbox" name="living" value="jour" id="jour">
+                        <input type="checkbox" name="jourhome" value="true" id="jour">
                         <label for="jour"> Jourhem </label>
                     </span>
 
