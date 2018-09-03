@@ -20,7 +20,7 @@ class Database {
     }
 
     // Get all cats
-    public function getCats($reversed, $page=0, $gender = 0, $living = 0, $name='') {
+    public function getCats($reversed, $page = 0, $gender = 0, $living = 0, $name='') {
         // Gets all information from database
         $sql = 'SELECT * FROM cats';
         $conditions = array();
@@ -85,27 +85,30 @@ class Database {
     }
 
     // Get all news
-    public function getNews() {
+    public function getNews($page = 0) {
         // Gets all information from database
-        $sql = 'SELECT * FROM news';
+        $sql = 'SELECT * FROM news ORDER BY id DESC LIMIT 8 OFFSET :offset';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
-        $stmt->execute();
+        $stmt->execute(array(
+            'offset' => 8 * $page,
+        ));
         // Grab the list
         return $stmt->fetchAll();
     }
 
-    // Get all news
-    public function getEmployees() {
-        // Gets all information from database
-        $sql = 'SELECT * FROM employees';
+    // Count and return pages of news
+    public function countNewsPages() {
+        $sql = 'SELECT COUNT(id) AS NumberOfNews FROM news';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
         $stmt->execute();
         // Grab the list
-        return $stmt->fetchAll();
+        $numberOfNews = $stmt->fetchColumn(0);
+        // Return number of cats divided by number of pages
+        return ceil($numberOfNews / 8);
     }
 
     // Get all Remember Cats-cats
@@ -133,5 +136,17 @@ class Database {
         $numberOfCats = $stmt->fetchColumn(0);
         // Return number of cats divided by number of pages
         return ceil($numberOfCats / 8);
+    }
+
+    // Get all employees
+    public function getEmployees() {
+        // Gets all information from database
+        $sql = 'SELECT * FROM employees';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        return $stmt->fetchAll();
     }
 }

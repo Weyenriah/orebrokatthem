@@ -264,36 +264,6 @@
     display: none !important;
 }
 
-.prev-next {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 25px;
-}
-
-.prev-arrow {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ca8a8a;
-}
-
-.prev-arrow i {
-    margin-right: 4px;
-}
-
-.next-arrow {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #ca8a8a;
-    float: right !important;
-}
-
-.next-arrow i {
-    margin-left: 4px;
-}
-
 /* === ADVICE SECTION STYLING === */
 #advice {
     margin-top: 0;

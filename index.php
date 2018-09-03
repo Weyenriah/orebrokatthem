@@ -1,15 +1,21 @@
 <?php require_once 'components/resources.php';
 
-$news = $database->getNews();
-
-
+// Pagination News
+$newsPages = $database->countNewsPages();
+// Get page
+$newsPage = isset($_GET['newspage']) ? $_GET['newspage'] : 0;
+// Get news
+$news = $database->getNews($newsPage);
 
 // Pagination (Minneslunden/remember cats)
 $rememPages = $database->countRememberPages();
-
+// Get page
 $rememPage = isset($_GET['remempage']) ? $_GET['remempage'] : 0;
-
+// Get rememberCats
 $remember = $database->getRememberCats($rememPage);
+
+
+$expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -69,12 +75,12 @@ $remember = $database->getRememberCats($rememPage);
     <!-- News flow -->
     <section class="white-background general-grid" id="newsflow">
         <h2> Nyheter </h2>
-        <article class="white-paragraph" id="news-container">
+        <div class="news white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="news-container">
             <?php foreach($news as $new) {
 
                 $date = date('Y-m-d', strtotime($new['date']));
                 ?>
-                <section class="news-card">
+                <article class="news-card">
                     <?php if ($new['image'] !== '') { ?>
                         <div class="news-img">
                             <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
@@ -82,11 +88,27 @@ $remember = $database->getRememberCats($rememPage);
                     <?php } ?>
                     <h5 class="second-row-heading"> <?php echo($date); ?> </h5>
                     <p> <?php echo($new['news']); ?> </p>
-                </section>
+                </article>
             <?php } ?>
-        </article>
+            <div class="white-paragraph prev-next">
+                <?php if($newsPage > 0) { ?>
+                    <div class="previous-page">
+                        <a class="prev-arrow prev-arrow-white" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
+                            <i class="fas fa-angle-left"></i> Föregående
+                        </a>
+                    </div>
+                <?php }
+                if($newsPage < $newsPages - 1) { ?>
+                    <div class="next-page">
+                        <a class="next-arrow next-arrow-white" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
+                            Nästa <i class="fas fa-angle-right"></i>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
         <div id="hide-show">
-            <button id="my-button" onclick="showNews()"> Visa mer </button>
+            <button class="<?php if (count($news) < $newsPages) echo('hidden'); ?>" id="my-button" onclick="showNews()"> Visa mer </button>
         </div>
     </section>
 
@@ -140,21 +162,25 @@ $remember = $database->getRememberCats($rememPage);
                     </article>
                 <?php } ?>
             </div>
-            <div class="remem-pagination">
+            <div class="red-paragraph prev-next remem-pagination">
                 <?php if($rememPage > 0) { ?>
-                    <a class="prev-arrow" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
-                        <i class="fas fa-angle-left"></i> Föregående
-                    </a>
+                    <div class="previous-page">
+                        <a class="prev-arrow prev-arrow-red" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
+                            <i class="fas fa-angle-left"></i> Föregående
+                        </a>
+                    </div>
                 <?php }
                 if($rememPage < $rememPages - 1) { ?>
-                    <a class="next-arrow" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
-                        Nästa <i class="fas fa-angle-right"></i>
-                    </a>
+                    <div class="next-page">
+                        <a class="next-arrow next-arrow-red" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
+                            Nästa <i class="fas fa-angle-right"></i>
+                        </a>
+                    </div>
                 <?php } ?>
             </div>
         </div>
         <div id="remem-hide-show">
-            <button id="remem-button" onclick="showRemem()"> Visa mer </button>
+            <button class="<?php if (count($news) < $rememPages) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> Visa mer </button>
         </div>
     </section>
 
@@ -200,6 +226,7 @@ $remember = $database->getRememberCats($rememPage);
     /* Hide and show/expand news flow */
     let container = document.getElementById('news-container');
     let buttonText = document.getElementById('my-button');
+    let pagination = document.getElementById('prev-next');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
     function showNews(){

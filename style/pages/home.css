@@ -280,6 +280,10 @@ body {
     font-style: italic !important;
 }
 
+.remem-pagination {
+    margin-top: 8px;
+}
+
 /* Hide and show/expand-button to Minneslunden/remember cats */
 #remem-hide-show {
     position: relative;

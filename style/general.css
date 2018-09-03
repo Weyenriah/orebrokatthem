@@ -51,6 +51,66 @@ body {
     margin: 0;
 }
 
+/* === PAGINATION STYLING === */
+.prev-next {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 25px;
+}
+
+/* Previous page specific styling */
+.previous-page {
+    grid-column: 1;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.prev-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.prev-arrow i {
+    margin-right: 4px;
+}
+
+/* Next page specific styling */
+.next-page {
+    grid-column: 2;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.next-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    float: right !important;
+}
+.next-arrow i {
+    margin-left: 4px;
+}
+
+/* Coloring of next/prev arrows */
+/* Next/prev arrow on red background */
+.next-arrow-red, .prev-arrow-red {
+    color: #ca8a8a;
+}
+.next-arrow-red:hover, .prev-arrow-red:hover {
+    color: white;
+    animation-name: link-red;
+    animation-duration: 0.5s;
+}
+
+/* Next/prev on white background */
+.next-arrow-white, .prev-arrow-white {
+    color: #ca8a8a;
+}
+.next-arrow-white:hover, .prev-arrow-white:hover {
+    color: #762a2a;
+    animation-name: link-white;
+    animation-duration: 0.5s;
+}
+
 /* === DESIGN RULES: RED PAGES === */
 .red-background {
     margin-top: 30px;

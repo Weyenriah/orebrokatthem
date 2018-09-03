@@ -17,9 +17,9 @@
         $gender += 2;
 
     $living = 0; // Living filter
-    if(isset($_GET['jourhome'])) // TODO
+    if(isset($_GET['jourhome']))
         $living += 1;
-    if (isset($_GET['cathome'])) // TODO
+    if (isset($_GET['cathome']))
         $living += 2;
 
     // Search cats according to name
@@ -140,20 +140,24 @@
             <?php } ?>
             <div class="prev-next">
                 <?php if($page > 0 && !$search) { ?>
-                    <a class="prev-arrow" href="?page=<?php echo $page - 1 ?>#our-cats">
-                        <i class="fas fa-angle-left"></i> Föregående
-                    </a>
+                    <div class="previous-page">
+                        <a class="prev-arrow prev-arrow-white" href="?page=<?php echo $page - 1 ?>#our-cats">
+                            <i class="fas fa-angle-left"></i> Föregående
+                        </a>
+                    </div>
                 <?php }
                 if($page < $pages - 1 && !$search) { ?>
-                    <a class="next-arrow" href="?page=<?php echo $page + 1 ?>#our-cats">
-                        Nästa <i class="fas fa-angle-right"></i>
-                    </a>
+                    <div class="next-page">
+                        <a class="next-arrow next-arrow-white" href="?page=<?php echo $page + 1 ?>#our-cats">
+                            Nästa <i class="fas fa-angle-right"></i>
+                        </a>
+                    </div>
                 <?php } ?>
             </div>
         </div>
         <!-- Hide/show content -->
         <div id="hide-show">
-            <button class="<?php if (count($cats) < 2) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
+            <button class="<?php if (count($cats) < $pages) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 
