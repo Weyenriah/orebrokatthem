@@ -129,28 +129,35 @@
                 echo('Inga katter hittades');
             }
 
-            foreach ($cats as $cat) {
+            foreach ($cats as $cat => $kitten) {
+                // Single out the last cat in array
+                end($cats);
+                if($cat === key($cats)) {
+                    if(count($cats) < 9) {
+                        $noMargin = ' no-margin';
+                    }
+                }
             ?>
-                <div class="small-change">
-                    <article class="cat-style" id="cat-<?php echo($cat['id']); ?>">
+                <div class="small-change <?php echo($noMargin); ?>">
+                    <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
                         <div class="cat-img">
                             <img class="image-to-cat" src="images/ashild.jpg">
                         </div>
                         <div class="cat-text">
                             <div class="cat-title">
                                 <img src="images/paw-icon-darker.png">
-                                <h3 class="cat-name"> <?php echo($cat['name']); ?> </h3>
+                                <h3 class="cat-name"> <?php echo($kitten['name']); ?> </h3>
                             </div>
 
                             <div class="small-info">
-                                <small class="cat-age"> <?php echo($cat['age']) ?> | </small>
-                                <small class="cat-gender"> <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | </small>
-                                <small class="color"> <?php echo($cat['color']) ?> </small>
+                                <small class="cat-age"> <?php echo($kitten['age']) ?> | </small>
+                                <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane': 'Hona') ?> | </small>
+                                <small class="color"> <?php echo($kitten['color']) ?> </small>
                             </div>
-                            <p class="desc"> <?php echo(explode("<br/>", $cat['description'], 2)[0]) ?> </p>
-                            <p class="desc-long" hidden> <?php echo(explode("<br/>", $cat['description'], 2)[1]) ?> </p>
+                            <p class="desc"> <?php echo(explode("<br/>", $kitten['description'], 2)[0]) ?> </p>
+                            <p class="desc-long" hidden> <?php echo(explode("<br/>", $kitten['description'], 2)[1]) ?> </p>
                             <div class="links">
-                                <button class="read-more" type="button" onclick="showCat(<?php echo($cat['id']); ?>)"> Läs mer om mig! </button>
+                                <button class="read-more" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
                                 <a href="#"> Adoptera mig! </a>
                             </div>
                         </div>

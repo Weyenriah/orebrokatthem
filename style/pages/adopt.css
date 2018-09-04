@@ -184,6 +184,11 @@
     margin-bottom: 30px;
 }
 
+/* No bottom margin-styling */
+.no-margin {
+    margin-bottom: 0;
+}
+
 .cat-img {
     margin-right: 15px;
     height: 300px;
