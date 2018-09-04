@@ -34,7 +34,7 @@
         </div>
     </section>
     <div class="adopt-me">
-        <a href="#"> Adoptera mig! </a>
+        <a class="adopt" href="mailto:"> Adoptera mig! </a>
     </div>
 </article>
 <div id="toned-down" onclick="hideCat()"></div>

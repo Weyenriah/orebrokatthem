@@ -87,7 +87,7 @@
         <!-- Filter -->
         <section class="filter-search white-paragraph">
             <div class="search-field">
-                <form class="searches" method="GET" action="#our-cats">
+                <form class="searches" method="GET" action="#our-cats" id="search-form">
                     <label for="search"> <i class="fas fa-search"></i> </label>
                     <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
                     <button class="search-button" type="submit"> Sök </button>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div id="filter-choices" class="not-display">
-                <form class="filter-form" method="get" action="#our-cats">
+                <form class="filter-form" method="get" action="#our-cats" id="filter-form">
                     <span class="gender checkbox">
                         <h3 class="checkbox-title"> Kön </h3>
                         <input type="checkbox" name="female" value="true" id="female">
@@ -159,7 +159,7 @@
                             <p class="desc-long" hidden> <?php echo(explode("<br/>", $kitten['description'], 2)[1]) ?> </p>
                             <div class="links">
                                 <button class="read-more" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
-                                <a href="#"> Adoptera mig! </a>
+                                <a class="adopt" href="mailto:<?php echo($kitten['contact']) ?>"> Adoptera mig! </a>
                             </div>
                         </div>
                     </article>
@@ -268,6 +268,7 @@
         popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
         popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
         popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
+        popup.getElementsByClassName("adopt")[0].href = cat.getElementsByClassName("adopt")[0].href;
         popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent + '\r\n' + cat.getElementsByClassName("desc-long")[0].textContent;
 
         /* Show popup */
@@ -283,7 +284,6 @@
         popup.style.display = "none";
         background.style.display = "none";
     }
-
     </script>
 </body>
 </html>
