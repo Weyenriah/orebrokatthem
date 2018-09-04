@@ -92,10 +92,10 @@ class Database {
         return ceil($numberOfCats / 8);
     }
 
-    //
-    public function alphaFilter() {
+    // Slideshow cats
+    public function getSlideCats() {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats ORDER BY name DESC';
+        $sql = 'SELECT * FROM cats WHERE showcase = 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

@@ -58,6 +58,7 @@
 <?php include('components/head.php') ?>
 
 <body>
+    <!-- Popup for cats -->
     <?php include('cat-page.php') ?>
 
     <!-- Calls for main navigation -->

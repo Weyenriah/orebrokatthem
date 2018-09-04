@@ -24,10 +24,10 @@ body {
 }
 
 /* Image styling for carousel */
-.image {
+.image-carousel {
     float: left;
 }
-.image img {
+.image-carousel img {
     height: 350px;
     margin-right: 26px;
     border: 1px solid #feefef;
@@ -36,15 +36,9 @@ body {
 /* Styling for text in carousel */
 .carousel-text {
     display: grid;
-    grid-template-rows: 55px 25px 245px 30px;
+    grid-template-rows: 55px auto 245px 30px;
 }
-.carousel-text h3 {
-    grid-row: 1;
-    margin-top: 17px;
-    font-family: "Georgia", serif;
-    font-size: 33px;
-}
-.carousel-text small {
+.small-info {
     grid-row: 2;
     font-family: "Calibri", sans-serif;
 }
@@ -52,6 +46,22 @@ body {
     grid-row: 3;
     font-family: "Calibri", sans-serif;
     width: 300px;
+}
+
+/* Carousel title styling */
+.carousel-title {
+    margin-top: 18px;
+    display: flex;
+}
+.carousel-title h3 {
+    margin: 0;
+    grid-row: 1;
+    font-family: "Georgia", serif;
+    font-size: 33px;
+}
+.carousel-title img {
+    height: 33px;
+    margin-right: 7px;
 }
 
 /* Link styling */
@@ -72,11 +82,6 @@ body {
 @keyframes carousel-link-animation {
     from {color: #e57e7e;}
     to {color: #feefef;}
-}
-
-/* Styling for paw-img */
-.carousel-text h3 img {
-    height: 27px;
 }
 
 /* Styling for previous/next */

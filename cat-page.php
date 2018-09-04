@@ -1,4 +1,3 @@
-
 <article id="cat-page">
     <button class="close-button" type="button" onclick="hideCat()"> <i class="fas fa-times"></i> </button>
     <hr/>
@@ -10,13 +9,13 @@
 
             <div class="demos">
                 <div class="styling-demos">
-                    <img class="demo" src="images/ashild.jpg" onclick="currentSlide(1)">
+                    <img class="demo" src="images/ashild.jpg" onclick="currentPicSlide(1)">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="images/dollar.jpg" onclick="currentSlide(2)">
+                    <img class="demo" src="images/dollar.jpg" onclick="currentPicSlide(2)">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="images/mollyblom.jpg" onclick="currentSlide(3)">
+                    <img class="demo" src="images/mollyblom.jpg" onclick="currentPicSlide(3)">
                 </div>
             </div>
         </div>
@@ -42,23 +41,23 @@
 
 <script>
     /* Slide for cat images */
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    let slidePicIndex = 1;
+    showPicSlides(slidePicIndex);
 
-    function currentSlide(n) {
+    function currentPicSlide(n) {
         showSlides(slideIndex = n);
     }
 
-    function showSlides(n) {
+    function showPicSlides(n) {
         let i;
         let x = document.getElementsByClassName("popup-slide");
         let changers = document.getElementsByClassName("demo");
 
         if(n > x.length) {
-            slideIndex = 1;
+            slidePicIndex = 1;
         }
         if(n < 1) {
-            slideIndex = x.length;
+            slidePicIndex = x.length;
         }
         for(i = 0; i < x.length; i++) {
             x[i].style.display = "none";
@@ -67,7 +66,7 @@
             changers[i].className = changers[i].className.replace(" opacity", "");
         }
 
-        x[slideIndex-1].style.display = "block";
-        changers[slideIndex-1].className += " opacity";
+        x[slidePicIndex-1].style.display = "block";
+        changers[slidePicIndex-1].className += " opacity";
     }
 </script>

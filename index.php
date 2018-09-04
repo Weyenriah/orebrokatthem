@@ -1,4 +1,5 @@
 <?php require_once 'components/resources.php';
+$slideCats = $database->getSlideCats();
 
 // Pagination News
 $newsPages = $database->countNewsPages();
@@ -24,6 +25,9 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 <?php include('components/head.php') ?>
 
 <body>
+    <!-- Popup for cats -->
+    <?php include('cat-page.php') ?>
+
     <!-- Calls for navigation -->
     <?php include('components/navigation.php') ?>
 
@@ -36,37 +40,34 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 
     <!-- Carousel -->
     <section class="carousel-container red-background" id="carousel">
-        <div class="slide fade">
-            <div class="image"> <img src="images/dollar.jpg"> </div>
-            <div class="carousel-text">
-                <h3> <img src="images/paw-icon.png"> Dollar </h3>
-                <small> Född 2010 | Hane | Svart </small>
-                <p>  Stor katt. Innekatt. Vill ha tryggt, snällt kattsällskap. Behöver mycket tid och tålamod. Kommer från samma hem som Dagmar och Disney. Kommer från Kumla.  </p>
-                <a href="#">Läs mer om mig!</a>
-            </div>
-        </div>
+        <?php
+        foreach($slideCats as $slideCat) {
+        ?>
+            <div class="slide fade" id="cat-<?php echo($slideCat['id']); ?>">
+                <article class="cat-style" id="cat-<?php echo($slideCat['id']); ?>">
+                    <div class="image-carousel">
+                        <img class="image-to-cat" src="images/ashild.jpg">
+                    </div>
+                    <div class="carousel-text">
+                        <div class="carousel-title">
+                            <img src="images/paw-icon.png">
+                            <h3 class="cat-name"> <?php echo($slideCat['name']); ?> </h3>
+                        </div>
 
-        <div class="slide fade">
-            <div class="image"> <img src="images/mollyblom.jpg"> </div>
-            <div class="carousel-text">
-                <h3> <img src="images/paw-icon.png"> Molly Blom </h3>
-                <small> Född 2006 | Hona | Svart och vit </small>
-                <p> Social och kelig. Van utekatt. Kommer från samma hem som sitt syskon Mimmi Blom. Inkom på grund av att ägare ska flytta till äldreboende och kan inte ta sina katter med sig. Kommer från Lindesberg.
-                    Vill ha samma hem som sitt syskon Mimmi Blom. </p>
-                <a href="#">Läs mer om mig!</a>
+                        <div class="small-info">
+                            <small class="cat-age"> <?php echo($slideCat['age']) ?> | </small>
+                            <small class="cat-gender"> <?php echo($slideCat['gender'] ? 'Hane': 'Hona') ?> | </small>
+                            <small class="color"> <?php echo($slideCat['color']) ?> </small>
+                        </div>
+                        <p class="desc"> <?php echo(explode("<br/>", $slideCat['description'], 2)[0]) ?> </p>
+                        <p class="desc-long" hidden> <?php echo(explode("<br/>", $slideCat['description'], 2)[1]) ?> </p>
+                        <div class="links">
+                            <button class="read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-
-        <div class="slide fade">
-            <div class="image"> <img src="images/ashild.jpg"> </div>
-            <div class="carousel-text">
-                <h3> <img src="images/paw-icon.png"> Åshild </h3>
-                <small> Troligen född 2017 | Hona | Bruntigré med lite vitt </small>
-                <p> Blyg och försiktig och behöver tid på sig att bli bekväm med människor.
-                    Gått hemlös i Åmmeberg utanför Askersund. </p>
-                <a href="#">Läs mer om mig!</a>
-            </div>
-        </div>
+        <?php } ?>
 
         <a onclick="changeSlide(-1)" class="previous"> <img src="images/arrow.png"> </a>
         <a onclick="changeSlide(1)" class="next"> <img src="images/arrow.png"> </a>
@@ -222,11 +223,38 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         slide[slideIndex - 1].style.display = "block";
     }
 
+    // == SHOW POPUP ===
+    function showCat(id) {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        let cat = document.getElementById("cat-" + id);
+
+        /* Matches the information from popup with cat */
+        popup.getElementsByClassName("cat-name")[0].textContent = cat.getElementsByClassName("cat-name")[0].textContent;
+        popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
+        popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
+        popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
+        popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
+
+        /* Show popup */
+        popup.style.display = "block";
+        background.style.display = "block";
+    }
+
+    /* === HIDE POPUP === */
+    function hideCat() {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        popup.style.display = "none";
+        background.style.display = "none";
+    }
+
     // === HIDE AND SHOW CONTENT ===
     /* Hide and show/expand news flow */
     let container = document.getElementById('news-container');
     let buttonText = document.getElementById('my-button');
-    let pagination = document.getElementById('prev-next');
 
     /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
     function showNews(){
