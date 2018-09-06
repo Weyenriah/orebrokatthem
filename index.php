@@ -154,9 +154,11 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                             </div>
                         </div>
                         <div class="remem-cat-info">
-                            <div class="red-img-border remem-img">
-                                <img src="images/ashild.jpg">
-                            </div>
+                            <?php if ($cat['image'] !== '') { ?>
+                                <div class="red-img-border remem-img">
+                                    <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+                                </div>
+                            <?php } ?>
                             <p> <?php echo($cat['description']) ?> </p>
                             <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
                         </div>
