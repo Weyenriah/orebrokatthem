@@ -24,15 +24,17 @@
         <h2> Försäkra din katt </h2>
         <div class="white-paragraph insurance">
             <div class="insurance-img">
-                <img src="images/ashild.jpg">
+                <img src="uploads/images/ashild.jpg">
             </div>
-            <p> Ska du försäkra din katt? Om du tecknar försäkringen via vårt ombud på Agria och uppger att du vill stödja Örebro Katthem så får vi en viss provision. Katten behöver inte vara adopterad från oss!</p>
-            <br/>
-            <h5 class="second-row-heading"> Kontakt </h5>
-            <p> Marina Walström <br/>
-                <i class="fas fa-envelope"></i> <a href="#"> marina.walstrom@ombud.agria.se </a> <br/>
-                <i class="fas fa-phone"></i> 073-33 10 709 / 021-35 74 35 <br/>
-                Tillgänglig alla dagar kl 09-21</p>
+            <div class="insurance-text">
+                <p> Ska du försäkra din katt? Om du tecknar försäkringen via vårt ombud på Agria och uppger att du vill stödja Örebro Katthem så får vi en viss provision. Katten behöver inte vara adopterad från oss!</p>
+                <br/>
+                <h5 class="second-row-heading"> Kontakt </h5>
+                <p> Marina Walström <br/>
+                    <i class="fas fa-envelope"></i> <a href="#"> marina.walstrom@ombud.agria.se </a> <br/>
+                    <i class="fas fa-phone"></i> 073-33 10 709 / 021-35 74 35 <br/>
+                    Tillgänglig alla dagar kl 09-21</p>
+            </div>
         </div>
     </section>
 

@@ -1,9 +1,16 @@
 /* === === */
 .insurance {
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-rows: 100%;
+}
+.insurance-text {
+    grid-column: 1;
+    grid-row: 1;
+    margin-right: 15px;
 }
 
-.insurance p i {
+.insurance-text i {
     font-size: 15px;
     margin-right: 3px;
 }
@@ -27,12 +34,12 @@
 
 
 .insurance-img {
-    float: right;
+    grid-column: 2;
+    grid-row: 1;
     height: 300px;
     width: 250px;
     overflow: hidden;
     border: 1px solid #762a2a;
-    margin-left: 15px;
 }
 
 .insurance-img img {
