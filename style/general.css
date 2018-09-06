@@ -19,6 +19,13 @@ body {
     display: grid;
     grid-template-columns: 20% 60% 20%;
 }
+
+@media only screen and (max-width: 800px) {
+    .general-grid {
+        grid-template-columns: 10% 80% 10%;
+    }
+}
+
 .double-sided-grid {
     display: grid;
     grid-template-rows: 20px 61px auto;
@@ -32,6 +39,13 @@ body {
     justify-content: center;
     margin-right: 20%;
     margin-left: 20%;
+}
+
+@media only screen and (max-width: 800px) {
+    .header {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
 }
 
 /* Styling for heading in Header */

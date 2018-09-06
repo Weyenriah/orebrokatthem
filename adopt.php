@@ -57,7 +57,7 @@
 <!-- Calls for head -->
 <?php include('components/head.php') ?>
 
-<body>
+<body id="body">
     <!-- Popup for cats -->
     <?php include('cat-page.php') ?>
 
@@ -142,7 +142,7 @@
                 <div class="small-change <?php echo($noMargin); ?>">
                     <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
                         <div class="cat-img">
-                            <img class="image-to-cat" src="images/ashild.jpg">
+                            <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">
                         </div>
                         <div class="cat-text">
                             <div class="cat-title">

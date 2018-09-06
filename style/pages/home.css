@@ -41,6 +41,9 @@ body {
 .small-info {
     grid-row: 2;
     font-family: "Calibri", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
 }
 .carousel-text p {
     grid-row: 3;

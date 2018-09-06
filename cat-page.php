@@ -3,19 +3,19 @@
     <hr/>
     <section class="cat-info">
         <div class="img">
-            <img class="popup-slide" src="images/ashild.jpg">
-            <img class="popup-slide" src="images/dollar.jpg">
-            <img class="popup-slide" src="images/mollyblom.jpg">
+            <img class="popup-slide" src="uploads/images/ashild.jpg">
+            <img class="popup-slide" src="uploads/images/dollar.jpg">
+            <img class="popup-slide" src="uploads/images/mollyblom.jpg">
 
             <div class="demos">
                 <div class="styling-demos">
-                    <img class="demo" src="images/ashild.jpg" onclick="currentPicSlide(1)">
+                    <img class="demo" src="uploads/images/ashild.jpg" onclick="currentPicSlide(1)">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="images/dollar.jpg" onclick="currentPicSlide(2)">
+                    <img class="demo" src="uploads/images/dollar.jpg" onclick="currentPicSlide(2)">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="images/mollyblom.jpg" onclick="currentPicSlide(3)">
+                    <img class="demo" src="uploads/images/mollyblom.jpg" onclick="currentPicSlide(3)">
                 </div>
             </div>
         </div>

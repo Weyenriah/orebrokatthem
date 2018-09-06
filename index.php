@@ -24,7 +24,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 <!-- Calls for head -->
 <?php include('components/head.php') ?>
 
-<body>
+<body id="body">
     <!-- Popup for cats -->
     <?php include('cat-page.php') ?>
 
@@ -43,10 +43,10 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <?php
         foreach($slideCats as $slideCat) {
         ?>
-            <div class="slide fade" id="cat-<?php echo($slideCat['id']); ?>">
+            <div class="slide fade red-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="cat-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
-                        <img class="image-to-cat" src="images/ashild.jpg">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
@@ -284,7 +284,6 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             rememButtonText.innerHTML = 'Dölj';
         }
     }
-
 </script>
 </body>
 </html>
