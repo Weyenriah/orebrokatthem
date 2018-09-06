@@ -33,7 +33,7 @@ $navigationLinks = array(
     <ul class="responsive">
         <span class="divide-menu-elements">
             <a href="index.php" id="logo"> <img src="images/white-logo.png"> </a>
-            <button type="button" class="menu-icons" id="collapsing" onclick="collapse(); addSize()"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
+            <button type="button" class="menu-icons" id="collapsing" onclick="collapse(); webpageHidden();"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
             <hr/>
         </span>
     </ul>
@@ -63,23 +63,27 @@ $navigationLinks = array(
 
 
 <script>
-    function addSize() {
-        let needsSize = document.getElementsByClassName('navbar')[0];
-
-        console.log(needsSize);
-
-        if(needsSize.classList.contains('add-size')) {
-            needsSize.classList.remove('add-size');
-        } else {
-            needsSize.classList.add('add-size');
-        }
-    }
-
+    /* Show and collapse navigation */
     function collapse() {
         let collapseElements = document.getElementsByClassName("toggle-menu");
 
         for (let i = 0; i < collapseElements.length; i++) {
             collapseElements[i].classList.toggle('display');
+        }
+    }
+
+    // Add Overflow: Hidden to body when navigation is covering page
+    let body = document.getElementById("body");
+
+    let overflow = window.matchMedia("(max-width: 517px)");
+    webpageHidden(overflow);
+    overflow.addListener(webpageHidden);
+
+    function webpageHidden() {
+        if(window.matchMedia("(max-width: 517px)").matches) {
+            body.classList.add("bodyOverflow");
+        } else {
+            body.classList.remove("bodyOverflow");
         }
     }
 </script>

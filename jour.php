@@ -5,7 +5,7 @@
 <!-- Calls for head -->
 <?php include('components/head.php') ?>
 
-<body>
+<body id="body">
     <!-- Calls for main navigation -->
     <?php include('components/navigation.php') ?>
 

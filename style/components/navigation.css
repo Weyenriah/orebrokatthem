@@ -188,8 +188,26 @@
     to {color: #fff;}
 }
 
-/* Styles for JS */
+/* === STYLES FOR JS === */
 .display {
     display: block !important;
 }
+
+/* === RESPONSIVENESS === */
+@media only screen and (max-width: 517px) {
+    #showing-up {
+        height: 100vh;
+        width: 100%;
+    }
+
+    #toning-down {
+        display: none;
+    }
+
+    /* === STYLES FOR JS === */
+    .bodyOverflow {
+        overflow: hidden;
+    }
+}
+
 
