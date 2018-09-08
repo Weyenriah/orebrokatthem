@@ -3,33 +3,36 @@
     grid-row: 3;
     grid-column: 2;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 /* Separate card styling */
 .employee-card {
-    display: flex;
+    width: 450px;
+    display: grid;
+    grid-template-columns: 190px 1fr;
     margin-bottom: 30px;
 }
 
 /* Styling for picture in employee-card */
 .employee-pic {
-    height: 210px;
-    width: 190px;
+    grid-column: 1;
+    height: 200px;
     overflow: hidden;
     border: 1px solid white;
 }
 .employee-pic img {
-    height: 210px;
+    max-height: 100%;
     width: auto;
+    vertical-align: top;
 }
 
 /* Info-box styling */
 .employee-info {
-    width: 30%;
+    grid-column: 2;
+    width: 100%;
     margin-left: 15px;
-    margin-right: 15px;
 }
 
 /* Text styling for employee-card */
