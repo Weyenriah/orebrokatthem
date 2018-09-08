@@ -129,7 +129,7 @@
     }
 }
 
-@media screen and (max-width: 643px) {
+@media screen and (max-width: 500px) {
     .first-footer {
         width: 100%;
         height: auto;
@@ -143,7 +143,6 @@
     /* All these 3 down there handles the different sections in footer */
     .contact, .social-media, .explore {
         grid-column: 1;
-        margin-left: 10%;
-        margin-right: 10%;
+        text-align: center;
     }
 }
