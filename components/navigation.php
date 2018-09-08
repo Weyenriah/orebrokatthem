@@ -33,7 +33,7 @@ $navigationLinks = array(
     <ul class="responsive">
         <span class="divide-menu-elements">
             <a href="index.php" id="logo"> <img src="images/white-logo.png"> </a>
-            <button type="button" class="menu-icons" id="collapsing" onclick="collapse(); webpageHidden();"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
+            <button type="button" class="menu-icons" id="collapsing" onclick="collapse();"> <span> MENY </span> <i class="fas fa-bars"></i> </button>
             <hr/>
         </span>
     </ul>
@@ -73,6 +73,8 @@ $navigationLinks = array(
         for (let i = 0; i < collapseElements.length; i++) {
             collapseElements[i].classList.toggle('display');
         }
+
+        webpageHidden();
     }
 
     // Add Overflow: Hidden to body when navigation is covering page

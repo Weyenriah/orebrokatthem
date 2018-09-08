@@ -48,8 +48,8 @@
 
     // Keep the expanded page throughout actions with cat flow
     $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
-        isset($_GET['jourhome']) || isset($_GET['female']) || isset($_GET['male']) ||
-        count($cats) ;
+        isset($_GET['jourhome']) || isset($_GET['female']) || isset($_GET['male'])  ||
+        count($cats) < 3;
 ?>
 <!DOCTYPE html>
 <html lang="sv">
