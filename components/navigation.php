@@ -41,8 +41,10 @@ $navigationLinks = array(
 <!-- Container that pops up with all the links -->
 <nav class="toggle-menu">
     <div id="showing-up">
-        <button type="button" class="menu-icons" id="close-menu" onclick="collapse();"> <span> STÄNG </span> <i class="fas fa-times"></i> </button>
-        <hr/>
+        <div class="buttons-and-dividers">
+            <button type="button" class="menu-icons" id="close-menu" onclick="collapse();"> <span> STÄNG </span> <i class="fas fa-times"></i> </button>
+            <hr/>
+        </div>
         <ul class="nav-list">
             <?php
             foreach ($navigationLinks as $navigationPage) {

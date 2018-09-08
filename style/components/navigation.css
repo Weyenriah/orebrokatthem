@@ -12,7 +12,10 @@
 .responsive {
     margin: 0;
     display: flex;
+        display: -ms-flexbox; /* For IE and Edge */
     align-items: center;
+        -webkit-box-align: center; /* For Safari */
+            -ms-flex-align: center; /* For IE and Edge */
     padding: 0;
     position: relative;
 }
@@ -29,12 +32,6 @@
     margin-top: -12px;
 }
 
-/* Style only for active navigation-link */
-.active-nav {
-    font-weight: 900 !important;
-    color: #fff !important;
-}
-
 /* Styling for logo + menu-icon combo */
 .divide-menu-elements {
     width: 100%;
@@ -45,7 +42,7 @@
     border: 4px solid #762a2a;
 }
 
-/* The popup menu */
+/* === THE POPUP NAVIGATION === */
 .toggle-menu {
     position: absolute;
     margin-top: -120px;
@@ -55,20 +52,7 @@
     z-index: 50000;
 }
 
-#showing-up {
-    height: 100%;
-    width: 500px;
-    float: right;
-    background-color: #591c1c;
-    padding-bottom: 20px;
-    z-index: 2;
-}
-
-#showing-up hr {
-    margin-top: 72px;
-    border: 4px solid #fff;
-}
-
+/* The left side of navigation that makes stuff black */
 #toning-down {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
@@ -77,23 +61,76 @@
     z-index: 1;
 }
 
-.nav-list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
+#showing-up {
+    display: -ms-grid; /* For IE and Edge */
+    display: grid;
+    -ms-grid-rows: 86px 1fr; /* For IE and Edge */
+    grid-template-rows: 86px 1fr;
+
+    height: 100%;
+    width: 500px;
+    float: right;
+    background-color: #591c1c;
+    padding-bottom: 20px;
+    z-index: 2;
 }
 
-/* Positioning for list-item */
+.buttons-and-dividers {
+    grid-row: 1;
+    -ms-grid-row: 1; /* For IE and Edge */
+}
+
+.buttons-and-dividers hr {
+    margin-top: 72px;
+    border: 4px solid #fff;
+}
+
+.nav-list {
+    grid-row: 2;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 86px);
+    display: grid;
+    display: -ms-grid; /* For IE and Edge */
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr; /* For IE and Edge */
+    -ms-grid-columns: 100%; /* For IE and Edge */
+}
+
+/* Positioning for content of list-item */
 .list-item {
-    width: 100%;
-    height: 80px;
-    margin-top: 5px;
-    padding-top: 65px;
-    text-align: center;
+    display: flex;
+    display: -webkit-box; /* For Safari */
+    display: -ms-flexbox; /* For IE and Edge */
+    justify-content: center;
+    -webkit-box-pack: center; /* For Safari */
+    -ms-flex-pack: center; /* For IE and Edge */
+    align-items: center;
+    -webkit-box-align: center; /* For Safari */
+    -ms-flex-align: center; /* For IE and Edge */
+}
+
+/* Grid positioning of every list-item */
+.home {
+    grid-row: 1;
+    -ms-grid-row: 1;
+}
+.adopt {
+    grid-row: 2;
+    -ms-grid-row: 2;
+}
+.jour {
+    grid-row: 3;
+    -ms-grid-row: 3;
+}
+.about {
+    grid-row: 4;
+    -ms-grid-row: 4;
+}
+.support {
+    grid-row: 5;
+    -ms-grid-row: 5;
 }
 
 /* Style for navigation-links (not when hovering) */
@@ -101,39 +138,29 @@
     text-decoration: none;
     color: #ca8a8a;
     font-weight: 400;
+    font-family: "Calibri", sans-serif;
 }
-
 /* Hover over non-active navigation links */
 .nav-list li a:hover:not(.active-nav) {
     font-weight: 900;
     color: #fff;
-    animation-name: nav-ani;
-    animation-duration: 0.5s;
 }
-
-@keyframes nav-ani {
-    0% {
-        color: #ca8a8a;
-        font-weight: 400;
-    }
-    50% {
-        font-weight: 600;
-    }
-    100% {
-        color: #fff;
-        font-weight: 900;
-    }
+/* Style only for active navigation-link */
+.active-nav {
+    font-weight: 900 !important;
+    color: #fff !important;
 }
 
 /* Styling for menu-icon */
 .menu-icons {
+    grid-row: 1;
+    -ms-grid-row: 1; /* For IE and Edge */
     float: right;
     display: block;
     width: 50px;
     height: 76px;
     background-color: transparent;
     border: none;
-
     cursor: pointer;
 }
 .menu-icons i {
@@ -155,10 +182,17 @@
 #collapsing:hover {
     color: #ca8a8a;
     animation-name: closed-nav-ani;
+        -webkit-animation-name: closed-nav-ani; /* For Safari */
     animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 @keyframes closed-nav-ani {
+    from {color: #762a2a;}
+    to {color: #ca8a8a;}
+}
+/* For Safari */
+@-webkit-keyframes closed-nav-ani {
     from {color: #762a2a;}
     to {color: #ca8a8a;}
 }
@@ -180,13 +214,21 @@
 #close-menu:hover {
     color: #fff;
     animation-name: open-nav-ani;
+        -webkit-animation-name: open-nav-ani; /* For Safari */
     animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 @keyframes open-nav-ani {
     from {color: #ca8a8a;}
     to {color: #fff;}
 }
+/* For Safari */
+@-webkit-keyframes open-nav-ani {
+    from {color: #ca8a8a;}
+    to {color: #fff;}
+}
+
 
 /* === STYLES FOR JS === */
 .display {

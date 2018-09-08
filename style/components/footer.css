@@ -134,7 +134,7 @@
         width: 100%;
         height: auto;
         justify-items: left;
-        grid-template-columns: auto;
+        grid-template-columns: 10% 80% 10%;
         grid-template-rows: 150px;
         grid-column-gap: 0;
         padding-bottom: 15px;
@@ -142,7 +142,6 @@
 
     /* All these 3 down there handles the different sections in footer */
     .contact, .social-media, .explore {
-        grid-column: 1;
-        text-align: center;
+        grid-column: 2;
     }
 }
