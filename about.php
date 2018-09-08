@@ -43,46 +43,48 @@ $employees = $database->getEmployees();
     </section>
 
     <!-- Contact section -->
-    <section class="white-background double-sided-grid" id="contact">
+    <section class="white-background general-grid" id="contact">
         <h2>Kontakta oss</h2>
-        <form>
-            <label for="firstname" class="second-row-heading">
-                Ditt namn
-            </label>
-            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+        <div class="contact-us">
+            <form>
+                <label for="firstname" class="second-row-heading">
+                    Ditt namn
+                </label>
+                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
 
-            <label for="firstname" class="second-row-heading">
-                Din emailadress
-            </label>
-            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+                <label for="firstname" class="second-row-heading">
+                    Din emailadress
+                </label>
+                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
 
-            <label for="subject" class="second-row-heading">
-                Meddelande
-            </label>
-            <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
+                <label for="subject" class="second-row-heading">
+                    Meddelande
+                </label>
+                <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
 
-            <input type="submit" value="Skicka" class="submit-button">
-        </form>
+                <input type="submit" value="Skicka" class="submit-button">
+            </form>
 
-        <!-- Information where to contact otherwise -->
-        <div class="contact-info">
-            <section>
-                <h5 class="second-row-heading"> Besök oss </h5>
-                <p> Örebro Katthem <br/>
-                    Sockengatan 5 <br/>
-                    702 16 <br/>
-                    <i class="fas fa-phone"></i> 019-26 00 86
-                </p>
-            </section>
-            <section>
-                <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
-                <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
-                <small> Christina "Kicki" Åbladh </small>
-            </section>
-            <section>
-                <h5 class="second-row-heading"> Adoptera katt </h5>
-                <p> Kontakta respektive kontaktperson i kattens annons. </p>
-            </section>
+            <!-- Information where to contact otherwise -->
+            <div class="contact-info">
+                <section>
+                    <h5 class="second-row-heading"> Besök oss </h5>
+                    <p> Örebro Katthem <br/>
+                        Sockengatan 5 <br/>
+                        702 16 <br/>
+                        <i class="fas fa-phone"></i> 019-26 00 86
+                    </p>
+                </section>
+                <section>
+                    <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
+                    <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
+                    <small> Christina "Kicki" Åbladh </small>
+                </section>
+                <section>
+                    <h5 class="second-row-heading"> Adoptera katt </h5>
+                    <p> Kontakta respektive kontaktperson i kattens annons. </p>
+                </section>
+            </div>
         </div>
     </section>
 

@@ -66,12 +66,15 @@
 
 
 /* === CONTACT US STYLING === */
-#contact form {
-    grid-row: 3;
+.contact-us {
     grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 10% 30%;
+}
+#contact form {
+    grid-column: 1;
     margin-top: 10px;
     margin-bottom: 30px;
-    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -123,17 +126,15 @@
 
 /* The other side of this page styling */
 .contact-info {
-    grid-row: 1 / span 3;
     grid-column: 3;
     display: flex;
     flex-direction: column;
-    margin-left: 40%;
     justify-content: center;
 }
 
 /* Styling for every section except last one */
 .contact-info section:not(:last-child) {
-    margin-bottom: 30%;
+    margin-bottom: 20px;
 }
 
 /* Text styling */
@@ -204,4 +205,14 @@
 @keyframes contact-animation {
     from {color: #ca8a8a;}
     to {color: #faf3f3;}
+}
+
+@media only screen and (max-width: 484px) {
+    .contact-us {
+        grid-template-columns: 100%;
+    }
+
+    .contact-info {
+        grid-column: 1;
+    }
 }
