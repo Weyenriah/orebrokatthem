@@ -64,7 +64,10 @@ $navigationLinks = array(
 
 <script>
     /* Show and collapse navigation */
+    let collapsed = true;
+
     function collapse() {
+        collapsed = !collapsed;
         let collapseElements = document.getElementsByClassName("toggle-menu");
 
         for (let i = 0; i < collapseElements.length; i++) {
@@ -75,12 +78,10 @@ $navigationLinks = array(
     // Add Overflow: Hidden to body when navigation is covering page
     let body = document.getElementById("body");
 
-    let overflow = window.matchMedia("(max-width: 517px)");
-    webpageHidden(overflow);
-    overflow.addListener(webpageHidden);
+    window.matchMedia("(max-width: 517px)").addListener(webpageHidden);
 
     function webpageHidden() {
-        if(window.matchMedia("(max-width: 517px)").matches) {
+        if(window.matchMedia("(max-width: 517px)").matches && !collapsed) {
             body.classList.add("bodyOverflow");
         } else {
             body.classList.remove("bodyOverflow");
