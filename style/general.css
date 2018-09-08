@@ -20,6 +20,7 @@ body {
     grid-template-columns: 20% 60% 20%;
 }
 
+/* RESPONSIVE for general-grid */
 @media only screen and (max-width: 800px) {
     .general-grid {
         grid-template-columns: 10% 80% 10%;
@@ -41,6 +42,7 @@ body {
     margin-left: 20%;
 }
 
+/* RESPONSIVE for header */
 @media only screen and (max-width: 800px) {
     .header {
         margin-right: 10%;
@@ -64,6 +66,7 @@ body {
     font-family: "Calibri", sans-serif;
     margin: 0;
 }
+
 
 /* === PAGINATION STYLING === */
 .prev-next {
@@ -125,6 +128,7 @@ body {
     animation-duration: 0.5s;
 }
 
+
 /* === DESIGN RULES: RED PAGES === */
 .red-background {
     margin-top: 30px;
@@ -159,9 +163,16 @@ body {
     font-family: "Calibri", sans-serif;
 }
 
+@media only screen and (max-width: 498px) {
+    .red-background p {
+        margin-bottom: 15px;
+    }
+}
+
 .red-background small {
     font-style: italic;
 }
+
 
 /* CAT DISPLAYING RULES, RED BACKGROUND */
 /* First image */
@@ -181,6 +192,7 @@ body {
     from {color: #ca8a8a;}
     to {color: white;}
 }
+
 
 /* === DESIGN RULES: WHITE PAGES === */
 /* Styling to heading */

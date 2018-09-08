@@ -187,6 +187,11 @@
 .contact-become {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-become div:first-child {
+    margin-right: 20px;
 }
 
 /* Contact information link styling */
@@ -197,23 +202,34 @@
 }
 .contact-become div a:hover {
     color: #faf3f3;
-    animation-name: contact-animation;
+    animation-name: link-red;
     animation-duration: 0.5s;
 }
 
-/* Animation for contact-links */
-@keyframes contact-animation {
-    from {color: #ca8a8a;}
-    to {color: #faf3f3;}
-}
-
-@media only screen and (max-width: 484px) {
+@media only screen and (max-width: 498px) {
+    /* === RESPONSIVE CONTACT US === */
     .contact-us {
         grid-template-columns: 100%;
     }
 
     .contact-info {
         grid-column: 1;
+        text-align: center;
+    }
+
+    /* === RESPONSIVE BECOME VOLONTEER === */
+    .become {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+
+    .contact-become div:first-child p {
+        margin-bottom: 15px;
+    }
+
+    .volonteer-img {
+        margin: 20px auto 0 auto;
     }
 }
 
