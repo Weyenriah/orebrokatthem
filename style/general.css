@@ -116,7 +116,9 @@ body {
 .next-arrow-red:hover, .prev-arrow-red:hover {
     color: white;
     animation-name: link-red;
+        -webkit-animation-name: link-red; /* For Safari */
     animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 /* Next/prev on white background */
@@ -126,7 +128,9 @@ body {
 .next-arrow-white:hover, .prev-arrow-white:hover {
     color: #762a2a;
     animation-name: link-white;
+        -webkit-animation-name: link-white; /* For Safari */
     animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 
@@ -140,6 +144,7 @@ body {
     border-top: 20px solid #591c1c;
     border-bottom: 20px solid #591c1c;
     /* The CSS grid on every red page */
+    display: grid;
     grid-template-rows: 20px 61px auto 20px;
 }
 
@@ -149,6 +154,13 @@ body {
     grid-column: 2;
     margin: 0;
     font-family: "Georgia", serif;
+}
+
+@media only screen and (max-width: 420px) {
+    .red-background h2 {
+        font-size: 7vw;
+        text-align: center;
+    }
 }
 
 /* Grid positioning for "main"-content */
@@ -193,6 +205,11 @@ body {
     from {color: #ca8a8a;}
     to {color: white;}
 }
+/* For Safari */
+@-webkit-keyframes link-red {
+    from {color: #ca8a8a;}
+    to {color: white;}
+}
 
 
 /* === DESIGN RULES: WHITE PAGES === */
@@ -203,6 +220,13 @@ body {
     color: #76292a;
     font-family: "Georgia", serif;
     margin-top: 30px;
+}
+
+@media only screen and (max-width: 420px) {
+    .white-background h2 {
+        font-size: 7vw;
+        text-align: center;
+    }
 }
 
 /* Styling for "main"-content */
@@ -229,9 +253,19 @@ body {
     from {background-color: #ca8a8a;}
     to {background-color: #762a2a;}
 }
+/* For Safari */
+@-webkit-keyframes button-white {
+    from {background-color: #ca8a8a;}
+    to {background-color: #762a2a;}
+}
 
 /* Animation for link in cat-card */
 @keyframes link-white {
+    from {color: #ca8a8a;}
+    to {color: #762a2a;}
+}
+/* For Safari */
+@-webkit-keyframes link-white {
     from {color: #ca8a8a;}
     to {color: #762a2a;}
 }

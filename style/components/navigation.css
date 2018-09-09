@@ -12,10 +12,7 @@
 .responsive {
     margin: 0;
     display: flex;
-        display: -ms-flexbox; /* For IE and Edge */
     align-items: center;
-        -webkit-box-align: center; /* For Safari */
-            -ms-flex-align: center; /* For IE and Edge */
     padding: 0;
     position: relative;
 }
@@ -62,11 +59,8 @@
 }
 
 #showing-up {
-    display: -ms-grid; /* For IE and Edge */
     display: grid;
-    -ms-grid-rows: 86px 1fr; /* For IE and Edge */
     grid-template-rows: 86px 1fr;
-
     height: 100%;
     width: 500px;
     float: right;
@@ -77,7 +71,6 @@
 
 .buttons-and-dividers {
     grid-row: 1;
-    -ms-grid-row: 1; /* For IE and Edge */
 }
 
 .buttons-and-dividers hr {
@@ -92,45 +85,31 @@
     padding: 0;
     height: calc(100vh - 86px);
     display: grid;
-    display: -ms-grid; /* For IE and Edge */
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr; /* For IE and Edge */
-    -ms-grid-columns: 100%; /* For IE and Edge */
 }
 
 /* Positioning for content of list-item */
 .list-item {
     display: flex;
-    display: -webkit-box; /* For Safari */
-    display: -ms-flexbox; /* For IE and Edge */
     justify-content: center;
-    -webkit-box-pack: center; /* For Safari */
-    -ms-flex-pack: center; /* For IE and Edge */
     align-items: center;
-    -webkit-box-align: center; /* For Safari */
-    -ms-flex-align: center; /* For IE and Edge */
 }
 
 /* Grid positioning of every list-item */
 .home {
     grid-row: 1;
-    -ms-grid-row: 1;
 }
 .adopt {
     grid-row: 2;
-    -ms-grid-row: 2;
 }
 .jour {
     grid-row: 3;
-    -ms-grid-row: 3;
 }
 .about {
     grid-row: 4;
-    -ms-grid-row: 4;
 }
 .support {
     grid-row: 5;
-    -ms-grid-row: 5;
 }
 
 /* Style for navigation-links (not when hovering) */
@@ -154,7 +133,6 @@
 /* Styling for menu-icon */
 .menu-icons {
     grid-row: 1;
-    -ms-grid-row: 1; /* For IE and Edge */
     float: right;
     display: block;
     width: 50px;

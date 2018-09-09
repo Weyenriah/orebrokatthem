@@ -115,13 +115,10 @@
 }
 .submit-button:hover {
     background-color: #4e1414;
-    animation-name: submit-animation;
+    animation-name: button-white;
+        -webkit-animation-name: button-white; /* For Safari */
     animation-duration: 0.5s;
-}
-/* Animation for submit-button */
-@keyframes submit-animation {
-    from {background-color: #2d0707;}
-    to {background-color: #4e1414;}
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 /* The other side of this page styling */
@@ -203,7 +200,9 @@
 .contact-become div a:hover {
     color: #faf3f3;
     animation-name: link-red;
+        -webkit-animation-name: link-red; /* For Safari */
     animation-duration: 0.5s;
+        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 @media only screen and (max-width: 498px) {
@@ -237,6 +236,7 @@
     .employee-card {
         grid-template-columns: 100%;
         margin-bottom: 0;
+        width: 100%;
     }
 
     /* Stylign for employee info */
