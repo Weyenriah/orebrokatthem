@@ -40,7 +40,7 @@
     background-color: #762a2a;
 }
 
-/* */
+/* === FILTER STYLE === */
 .filter {
     width: 30%;
 }
@@ -49,10 +49,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-#ao {
-    margin-right: 10px;
 }
 
 /* Layout for filters-button */
@@ -189,7 +185,14 @@
     margin-bottom: 0;
 }
 
+.cat-style {
+    height: auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
 .cat-img {
+    grid-column: 1;
     height: auto;
     margin-right: 15px;
     max-width: 260px;
@@ -205,6 +208,7 @@
     vertical-align: top;
 }
 .cat-text {
+    grid-column: 2;
     display: flex;
     flex-direction: column;
 }
@@ -226,6 +230,7 @@
 .cat-text small {
     margin: 0;
 }
+
 .cat-text p {
     height: auto;
     margin-bottom: 10px;
@@ -285,6 +290,7 @@
 
 .prices {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -296,10 +302,31 @@
     margin-top: 3px;
 }
 
-@media screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) {
+    /* Cat styling */
     .cat-style {
-        display: flex;
-        flex-wrap: wrap;
+        grid-template-columns: 100%;
+    }
+
+    .cat-img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cat-text {
+        grid-column: 1;
+    }
+
+    .cat-title {
+        justify-content: center;
+    }
+
+    .small-info {
+        justify-content: center;
+    }
+
+    /* Price styling */
+    .prices div:not(:first-child) {
+        margin-top: 10px;
     }
 }
-
