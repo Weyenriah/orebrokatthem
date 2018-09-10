@@ -43,7 +43,7 @@
         <div class="red-paragraph">
             <p> Det är också möjligt att skänka saker till oss på Örebro Katthem. Detta är vad vi behöver just nu. </p>
             <div class="needs">
-                <div class="need">
+                <div class="cat-need">
                     <h5 class="second-row-heading"> Katterna önskar sig </h5>
                     <ul>
                         <li> Kattsand <br/> <small> Helst klumpbildande då vi använder det på katthemmet, men annat går också bra </small> </li>
@@ -58,7 +58,7 @@
                         <li> Kattungefoder <br/> <small> Av bra kvalité med hög protein- och fetthalt. Går åt som smör i solsken för alla dräktiga honor och kattungar vi får in  </small> </li>
                     </ul>
                 </div>
-                <div class="need">
+                <div class="human-need">
                     <h5 class="second-row-heading"> Personalen önskar sig </h5>
                     <ul>
                         <li> Stålfällor </li>

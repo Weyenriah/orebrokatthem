@@ -1,12 +1,10 @@
-/* === === */
+/* === INSURANCE STYLING === */
 .insurance {
     display: grid;
     grid-template-columns: 1fr 250px;
-    grid-template-rows: 100%;
 }
 .insurance-text {
     grid-column: 1;
-    grid-row: 1;
     margin-right: 15px;
 }
 
@@ -47,21 +45,51 @@
     width: 250px;
 }
 
-/* === === */
+/* === WISHING LIST STYLE === */
 .needs {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 50% 50%;
     margin-bottom: 30px;
 }
 
-.need:last-child {
-    margin-left: 20px;
+.cat-need {
+    grid-column: 1;
 }
 
-.need ul {
-    margin-top: 0;
+.human-need {
+    grid-column: 2;
 }
 
-.need ul li {
-    margin-top: 3px;
+/* === RESPONSIVE === */
+@media only screen and (max-width: 600px) {
+    .insurance {
+        grid-template-columns: 100%;
+    }
+
+    .insurance-img {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    /* === WISHING LIST STYLE === */
+    .needs {
+        grid-template-columns: 100%;
+        margin-bottom: 0;
+    }
+
+    .human-need {
+        grid-column: 1;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 379px) {
+    .insurance-text i:first-of-type {
+        display: none;
+    }
 }
