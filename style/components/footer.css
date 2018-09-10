@@ -102,7 +102,7 @@
 /* === THE SECOND FOOTER STYLING === */
 .second-footer {
     font-family: "Calibri", sans-serif;
-    height: 35px;
+    height: auto;
     background-color: #2d0707;
     color: #e9f5e5;
     display: flex;
@@ -112,11 +112,15 @@
 }
 
 .second-footer p {
-    margin: 0;
+    margin: 10px 0 10px 0;
     font-size: 15px;
 }
 
 @media screen and (max-width: 824px) {
+    .outsiders a:not(:first-child):not(:nth-child(2)) {
+        margin-top: 15px;
+    }
+
     /* All the sizing to images */
     .svekatt {
         height: 130px;
