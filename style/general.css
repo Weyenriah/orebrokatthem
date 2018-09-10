@@ -21,20 +21,10 @@ body {
     grid-template-columns: 20% 60% 20%;
 }
 
-.double-sided-grid {
-    display: grid;
-    grid-template-rows: 20px 61px auto;
-    grid-template-columns: 20% 40% 20% 20%;
-}
-
 /* RESPONSIVE for grid */
 @media only screen and (max-width: 800px) {
     .general-grid {
         grid-template-columns: 10% 80% 10%;
-    }
-
-    .double-sided-grid {
-        grid-template-columns: 10% 50% 30% 10%;
     }
 }
 

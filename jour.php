@@ -20,7 +20,7 @@
     <!-- Section for "How it is to be an emergency home?" -->
     <section class="red-background general-grid" id="how">
         <h2> Hur är det att vara jourhem? </h2>
-        <div class="red-paragraph"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
+        <div class="red-paragraph how-text"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
             <p> för en eller fler hemlösa katter som inte kan tas in på katthemmet eller som är i behov av extra omsorg. </p>
 
             <h5 class="second-row-heading"> Det handlar ofta om lite rädda/skygga katter </h5>
@@ -49,7 +49,7 @@
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div class="white-paragraph">
             <div class="tips-img">
-                <img src="images/ashild.jpg">
+                <img src="uploads/images/ashild.jpg">
             </div>
             <ol>
                 <li>
@@ -137,30 +137,32 @@
     </section>
 
     <!-- Double sided, report-form on left and contact on right -->
-    <section class="red-background double-sided-grid" id="report">
+    <section class="red-background general-grid" id="report">
         <h2>Anmälning</h2>
-        <form>
-            <label for="firstname" class="second-row-heading">
-                Ditt namn
-            </label>
-            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+        <div class="report-info red-paragraph">
+            <form>
+                <label for="firstname" class="second-row-heading">
+                    Ditt namn
+                </label>
+                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
 
-            <label for="firstname" class="second-row-heading">
-                Din emailadress
-            </label>
-            <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+                <label for="firstname" class="second-row-heading">
+                    Din emailadress
+                </label>
+                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
 
-            <label for="subject" class="second-row-heading">
-                Meddelande
-            </label>
-            <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
+                <label for="subject" class="second-row-heading">
+                    Meddelande
+                </label>
+                <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
 
-            <input type="submit" value="Skicka" class="submit-button">
-        </form>
-        <div class="report-contact">
-            <h5 class="second-row-heading"> Eller ring till </h5>
-            <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
-            <small> Kikki </small>
+                <input type="submit" value="Skicka" class="submit-button">
+            </form>
+            <div class="report-contact">
+                <h5 class="second-row-heading"> Eller ring till </h5>
+                <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
+                <small> Kikki </small>
+            </div>
         </div>
     </section>
 

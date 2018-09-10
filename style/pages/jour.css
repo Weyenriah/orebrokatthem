@@ -51,16 +51,16 @@
 
 
 /* === REPORT-FORM AND STUFF STYLING === */
-#report h2 {
-    grid-column: 2 / span 2;
+.report-info {
+    display: grid;
+    grid-template-columns: 1fr 10% 30%;
 }
 
 #report form {
-    grid-row: 3;
-    grid-column: 2;
+    grid-column: 1;
     margin-top: -5px;
     margin-bottom: 30px;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -111,11 +111,9 @@
 
 /* The other side of this page styling */
 .report-contact {
-    grid-row: 1 / span 3;
     grid-column: 3;
     display: flex;
     flex-direction: column;
-    margin-left: 40%;
     justify-content: center;
 }
 .report-contact p {
@@ -128,4 +126,35 @@
 }
 .report-contact small {
     font-family: "Calibri", sans-serif;
+}
+
+
+/* === RESPONSIVE === */
+@media only screen and (max-width: 571px) {
+    .tips-img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 517px) {
+    .how-text {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 498px) {
+    .report-info {
+        grid-template-columns: 100%;
+    }
+
+    .report-contact {
+        grid-column: 1;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .white-background ol li:last-child {
+        margin-bottom: 0;
+    }
 }
