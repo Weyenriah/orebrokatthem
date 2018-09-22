@@ -10,27 +10,32 @@ body {
 .carousel-container {
     padding-top: 3px;
     display: grid;
-    grid-template-columns: 50px auto auto 50px;
+    grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 100%;
-    grid-template-areas:
-        "previous content content next";
 }
 
 /* General slide-styling */
 .slide {
-    grid-area: content;
-    justify-self: center;
-    align-self: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.carousel-style {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Image styling for carousel */
 .image-carousel {
-    float: left;
+    margin-right: 15px;
+    height: 350px;
+    width: 250px;
+    border: 1px solid #feefef;
+    overflow: hidden;
 }
 .image-carousel img {
     height: 350px;
-    margin-right: 26px;
-    border: 1px solid #feefef;
 }
 
 /* Styling for text in carousel */
@@ -42,6 +47,13 @@ body {
     grid-row: 3;
     font-family: "Calibri", sans-serif;
     width: 300px;
+}
+.small-carousel-info {
+    grid-row: 2;
+    font-family: "Calibri", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
 }
 
 /* Carousel title styling */
@@ -82,7 +94,8 @@ body {
 
 /* Styling for previous/next */
 .previous {
-    grid-area: previous;
+    grid-column: 1;
+    grid-row: 1;
     align-self: center;
     justify-self: center;
     color: #feefef;
@@ -94,7 +107,8 @@ body {
     height: 100px;
 }
 .next {
-    grid-area: next;
+    grid-column: 3;
+    grid-row: 1;
     align-self: center;
     justify-self: center;
     color: #feefef;
@@ -311,4 +325,97 @@ body {
     color: white;
     animation-name: link-red;
     animation-duration: 0.5s;
+}
+
+@media only screen and (max-width: 666px) {
+    .carousel-container {
+        grid-template-columns: 10% 80% 10%;
+    }
+
+    /* Image styling for carousel */
+    .image-carousel {
+        margin-right: 0;
+        height: 300px;
+        width: auto;
+    }
+
+    .carousel-text {
+        grid-template-rows: 45px auto auto 30px;
+        width: 98%;
+    }
+
+    .carousel-title {
+        margin-top: 5px;
+        justify-content: center;
+    }
+
+    .small-carousel-info {
+        margin-bottom: 5px;
+        justify-content: center;
+    }
+
+    .carousel-text p {
+        width: auto;
+    }
+
+    .previous img {
+        height: 75px;
+    }
+
+    .next img {
+        height: 75px;
+    }
+}
+
+@media only screen and (max-width: 569px) {
+    /* Image styling for carousel */
+    .image-carousel {
+        margin-right: 0;
+        height: 250px;
+    }
+
+    .image-carousel img {
+        height: 250px;
+        width: auto;
+    }
+
+    .news-card {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .news-img {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 499px) {
+    .img-info-remem {
+        display: grid;
+    }
+    .remem-img {
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .carousel-title h3 {
+        font-size: 29px;
+    }
+
+    .carousel-title img {
+        height: 29px;
+    }
+
+    /* Styling for the image */
+    .news-img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .news-info {
+        margin-top: 5px;
+    }
 }

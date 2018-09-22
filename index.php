@@ -44,7 +44,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         foreach($slideCats as $slideCat) {
         ?>
             <div class="slide fade red-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
-                <article class="cat-style" id="cat-<?php echo($slideCat['id']); ?>">
+                <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
                         <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
                     </div>
@@ -54,7 +54,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                             <h3 class="cat-name"> <?php echo($slideCat['name']); ?> </h3>
                         </div>
 
-                        <div class="small-info">
+                        <div class="small-carousel-info">
                             <small class="cat-age"> <?php echo($slideCat['age']) ?> | </small>
                             <small class="cat-gender"> <?php echo($slideCat['gender'] ? 'Hane': 'Hona') ?> | </small>
                             <small class="color"> <?php echo($slideCat['color']) ?> </small>
@@ -87,8 +87,10 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                             <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
                         </div>
                     <?php } ?>
-                    <h5 class="second-row-heading"> <?php echo($date); ?> </h5>
-                    <p> <?php echo($new['news']); ?> </p>
+                    <div class="news-info">
+                        <h5 class="second-row-heading"> <?php echo($date); ?> </h5>
+                        <p> <?php echo($new['news']); ?> </p>
+                    </div>
                 </article>
             <?php } ?>
             <div class="white-paragraph prev-next">
@@ -153,14 +155,16 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                                 <h4 class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </h4>
                             </div>
                         </div>
-                        <div class="remem-cat-info">
+                        <div class="img-info-remem">
                             <?php if ($cat['image'] !== '') { ?>
                                 <div class="red-img-border remem-img">
                                     <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
                                 </div>
                             <?php } ?>
-                            <p> <?php echo($cat['description']) ?> </p>
-                            <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
+                            <div class="remem-cat-info">
+                                <p> <?php echo($cat['description']) ?> </p>
+                                <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
+                            </div>
                         </div>
                     </article>
                 <?php } ?>
