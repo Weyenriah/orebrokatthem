@@ -94,6 +94,24 @@ body {
     color: white;
 }
 
+/* Fading animation for slideshow */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .6}
+    to {opacity: 1}
+}
+
 /* Styling for previous/next */
 .previous {
     grid-column: 1;
@@ -120,25 +138,6 @@ body {
     height: 100px;
 }
 
-/* Fading animation for slideshow */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1s;
-    animation-name: fade;
-    animation-duration: 1s;
-}
-
-@-webkit-keyframes fade {
-    from {opacity: .6}
-    to {opacity: 1}
-}
-
-@keyframes fade {
-    from {opacity: .6}
-    to {opacity: 1}
-}
-
-
 /* === GENERAL STYLING FOR NEWSFLOW === */
 .white-background h2 {
     margin-bottom: 30px !important;
@@ -150,7 +149,21 @@ body {
 }
 
 #news-container.expanded {
-    height: auto;
+    height: 100%;
+    animation-name: expand-news-animation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+
+/* News-flow animation */
+@-webkit-keyframes expand-news-animation {
+    from { height: 400px; }
+    to { height: 100%; }
+}
+
+@keyframes expand-news-animation {
+    from { height: 400px; }
+    to { height: 100%; }
 }
 
 .news-card {
@@ -203,14 +216,8 @@ body {
 
 #hide-show button:hover {
     color: #762a2a;
-    animation-name: show-animation;
+    animation-name: link-white;
     animation-duration: 0.5s;
-}
-
-/* Animation for show more-button */
-@keyframes show-animation {
-    from {color: #ca8a8a;}
-    to {color: #762a2a;}
 }
 
 /* === GENERAL STYLING FOR REMEMBER === */
@@ -222,8 +229,24 @@ body {
 }
 
 #remember-container.expanded {
-    height: auto;
+    height: 100%;
+    animation-name: expand-remember-animation;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
 }
+
+/* Remember-flow animation */
+@-webkit-keyframes expand-remember-animation {
+    from { height: 550px; }
+    to { height: 100%; }
+}
+
+@keyframes expand-remember-animation {
+    from { height: 550px; }
+    to { height: 100%; }
+}
+
+/* TODO reverse animation */
 
 #remember h2 {
     grid-row: 2;

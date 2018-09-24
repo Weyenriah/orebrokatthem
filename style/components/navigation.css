@@ -51,22 +51,68 @@
 
 /* The left side of navigation that makes stuff black */
 #toning-down {
+    grid-column: 1;
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
     padding-bottom: 20px;
     z-index: 1;
+    position: absolute;
+}
+
+.navigation-grid {
+    position: relative;
+    height: 100%;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    overflow: hidden;
 }
 
 #showing-up {
+    grid-column: 2;
     display: grid;
     grid-template-rows: 86px 1fr;
     height: 100%;
     width: 500px;
-    float: right;
     background-color: #591c1c;
     padding-bottom: 20px;
     z-index: 2;
+    margin-left: 500px;
+}
+
+/* SHOWING UP ANIMATION */
+.showing-up-ani {
+    animation-name: menu-slide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+@-webkit-keyframes menu-slide {
+    from { margin-left: 500px; }
+    to { margin-left: 0; }
+}
+
+@keyframes menu-slide {
+    from { margin-left: 500px; }
+    to { margin-left: 0; }
+}
+
+/* TODO reverse animation */
+.showing-up-ani-rev {
+    animation-name: menu-slide-rev;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes menu-slide-rev {
+    from { margin-left: 0; }
+    to { margin-left: 500px; }
+}
+
+@keyframes menu-slide-rev {
+    from { margin-left: 0; }
+    to { margin-left: 500px; }
 }
 
 .buttons-and-dividers {
@@ -191,10 +237,10 @@
 
 #close-menu:hover {
     color: #fff;
-    animation-name: open-nav-ani;
-        -webkit-animation-name: open-nav-ani; /* For Safari */
-    animation-duration: 0.5s;
-        -webkit-animation-duration: 0.5s; /* For Safari */
+    -webkit-animation-name: open-nav-ani; /* For Safari */
+        animation-name: open-nav-ani;
+    -webkit-animation-duration: 0.5s; /* For Safari */
+        animation-duration: 0.5s;
 }
 
 @keyframes open-nav-ani {
@@ -215,7 +261,12 @@
 
 /* === RESPONSIVENESS === */
 @media only screen and (max-width: 517px) {
+    .navigation-grid {
+        grid-template-columns: 100%;
+    }
+
     #showing-up {
+        grid-column: 1;
         height: 100vh;
         width: 100%;
     }
