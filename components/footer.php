@@ -61,8 +61,8 @@ $footerLinks = array(
     </section>
     <section class="social-media">
         <h2>Hitta oss på sociala medier!</h2>
-        <a href="#"> <i class="fab fa-facebook-square"></i> </a>
-        <a href="#"> <i class="fab fa-instagram"></i> </a>
+        <a href="https://www.facebook.com/orebrokatthem/" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
+        <a href="https://www.instagram.com/orebrokatthem/" target="_blank"> <i class="fab fa-instagram"></i> </a>
     </section>
     <section class="explore">
         <h2>Utforska</h2>
