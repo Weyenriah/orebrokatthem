@@ -38,7 +38,7 @@ body {
 }
 
 /* RESPONSIVE for header */
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 954px) {
     .header {
         margin-right: 10%;
         margin-left: 10%;
