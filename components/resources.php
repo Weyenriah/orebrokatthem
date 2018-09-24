@@ -1,6 +1,7 @@
 <?php
-require_once '/../functions/db.php';
-require_once 'settings.php';
+define('APP_FOLDER', dirname(__DIR__));
 
+require_once APP_FOLDER . '/functions/db.php';
+require_once APP_FOLDER . '/components/settings.php';
 
 $database = new Database(DB_HOST, DB_NAME, DB_USER, DB_PASSWORD);

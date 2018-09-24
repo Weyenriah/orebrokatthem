@@ -6,11 +6,11 @@ $employees = $database->getEmployees();
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('components/head.php') ?>
+<?php include(APP_FOLDER . '/components/head.php') ?>
 
 <body id="body">
     <!-- Calls for main navigation -->
-    <?php include('components/navigation.php') ?>
+    <?php include(APP_FOLDER . '/components/navigation.php') ?>
 
     <!-- Specific heading to this page -->
     <header class="header">
@@ -132,6 +132,6 @@ $employees = $database->getEmployees();
     </section>
 
     <!-- Calls for footer -->
-    <?php include('components/footer.php') ?>
+    <?php include(APP_FOLDER . '/components/footer.php') ?>
 </body>
 </html>

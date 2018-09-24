@@ -22,14 +22,14 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 <html lang="sv">
 
 <!-- Calls for head -->
-<?php include('components/head.php') ?>
+<?php include(APP_FOLDER . '/components/head.php') ?>
 
 <body id="body">
     <!-- Popup for cats -->
-    <?php include('cat-page.php') ?>
+    <?php include(APP_FOLDER . '/cat-page.php') ?>
 
     <!-- Calls for navigation -->
-    <?php include('components/navigation.php') ?>
+    <?php include(APP_FOLDER . '/components/navigation.php') ?>
 
     <!-- Specific heading to this page -->
     <header class="header">
@@ -192,7 +192,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- Calls for footer -->
-    <?php include('components/footer.php') ?>
+    <?php include(APP_FOLDER . '/components/footer.php') ?>
 
 <script>
     // === CAROUSEL ===
