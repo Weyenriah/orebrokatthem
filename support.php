@@ -31,7 +31,7 @@
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
                 <p> Marina Walström <br/>
-                    <i class="fas fa-envelope"></i> <a href="#"> marina.walstrom@ombud.agria.se </a> <br/>
+                    <i class="fas fa-envelope"></i> <a href="mailto:marina.walstrom@ombud.agria.se"> marina.walstrom@ombud.agria.se </a> <br/>
                     <i class="fas fa-phone"></i> 073-33 10 709 / 021-35 74 35 <br/>
                     Tillgänglig alla dagar kl 09-21</p>
             </div>

@@ -35,7 +35,7 @@ $employees = $database->getEmployees();
                         <h3> <?php echo($employee['name']); ?> </h3>
                         <small> <?php echo($employee['title']); ?> </small>
                         <p class="tele"><i class="fas fa-phone"></i> <?php echo($employee['telephone']); ?> </p>
-                        <p><i class="fas fa-envelope"></i> <?php echo($employee['email']); ?> </p>
+                        <a href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i> <?php echo($employee['email']); ?> </a>
                     </div>
                 </article>
             <?php } ?>
@@ -124,7 +124,7 @@ $employees = $database->getEmployees();
                     </div>
                     <div>
                         <h5 class="second-row-heading"> Mejla personalansvarige </h5>
-                        <a href="#"> intro@orebrokatthem.com </a>
+                        <a href="mailto:intro@orebrokatthem.com"> intro@orebrokatthem.com </a>
                     </div>
                 </div>
             </div>
