@@ -55,9 +55,9 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         </div>
 
                         <div class="small-carousel-info">
-                            <small class="cat-age"> <?php echo($slideCat['age']) ?> | </small>
-                            <small class="cat-gender"> <?php echo($slideCat['gender'] ? 'Hane': 'Hona') ?> | </small>
-                            <small class="color"> <?php echo($slideCat['color']) ?> </small>
+                            <small class="cat-age"> <?php echo($slideCat['age']) ?> </small>
+                            <small class="cat-gender"> | <?php echo($slideCat['gender'] ? 'Hane': 'Hona') ?> </small>
+                            <small class="color"> | <?php echo($slideCat['color']) ?> </small>
                         </div>
                         <p class="desc"> <?php echo(explode("<br/>", $slideCat['description'], 2)[0]) ?> </p>
                         <p class="desc-long" hidden> <?php echo(explode("<br/>", $slideCat['description'], 2)[1]) ?> </p>
