@@ -85,13 +85,13 @@
     <section class="white-background general-grid" id="our-cats">
         <h2> Våra katter </h2>
         <!-- Filter -->
-        <section class="filter-search white-paragraph">
+        <form method="GET" action="#our-cats" class="filter-search white-paragraph">
             <div class="search-field">
-                <form class="searches" method="GET" action="#our-cats" id="search-form">
+                <div class="searches" id="search-form">
                     <label for="search"> <i class="fas fa-search"></i> </label>
                     <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
                     <button class="search-button" type="submit"> Sök </button>
-                </form>
+                </div>
 
                 <div class="filter">
                     <button type="button" name="all-filters" class="filters" id="all-filters" onclick="filter()">
@@ -99,30 +99,28 @@
                     </button>
                 </div>
             </div>
-            <div id="filter-choices" class="not-display">
-                <form class="filter-form" method="get" action="#our-cats" id="filter-form">
+            <div id="filter-choices" class="<?php echo((isset($_GET['female']) || isset($_GET['male']) || isset($_GET['cathome']) || isset($_GET['jourhome'])) ? '' : 'not-display') ?>">
+                <div class="filter-form" id="filter-form">
                     <span class="gender checkbox">
                         <h3 class="checkbox-title"> Kön </h3>
-                        <input type="checkbox" name="female" value="true" id="female">
+                        <input type="checkbox" name="female" <?php echo((isset($_GET['female'])) ? 'checked' : '')?> value="true" id="female">
                         <label for="female"> Hona </label>
-                        <input type="checkbox" name="male" value="true" id="male">
+                        <input type="checkbox" name="male" <?php echo((isset($_GET['male'])) ? 'checked' : '')?> value="true" id="male">
                         <label for="male"> Hane </label>
                     </span>
 
                     <span class="living checkbox">
                         <h3 class="checkbox-title"> Boende </h3>
-                        <input type="checkbox" name="cathome" value="true" id="cathome">
+                        <input type="checkbox" name="cathome" <?php echo((isset($_GET['cathome'])) ? 'checked' : '')?> value="true" id="cathome">
                         <label for="cathome"> Katthem </label>
-                        <input type="checkbox" name="jourhome" value="true" id="jour">
+                        <input type="checkbox" name="jourhome" <?php echo((isset($_GET['jourhome'])) ? 'checked' : '')?> value="true" id="jour">
                         <label for="jour"> Jourhem </label>
                     </span>
 
-                    <input hidden name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : '' ?>" >
-
                     <button class="filter-submit" type="submit" value="submit"> Filtrera </button>
-                </form>
+                </div>
             </div>
-        </section>
+        </form>
         <!-- Cat-cards -->
         <div class="white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="cats">
             <?php
