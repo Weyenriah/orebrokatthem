@@ -150,20 +150,8 @@ body {
 
 #news-container.expanded {
     height: 100%;
-    animation-name: expand-news-animation;
-    animation-duration: 0.5s;
-    animation-timing-function: ease;
-}
-
-/* News-flow animation */
-@-webkit-keyframes expand-news-animation {
-    from { height: 400px; }
-    to { height: 100%; }
-}
-
-@keyframes expand-news-animation {
-    from { height: 400px; }
-    to { height: 100%; }
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 }
 
 .news-card {
@@ -230,23 +218,9 @@ body {
 
 #remember-container.expanded {
     height: 100%;
-    animation-name: expand-remember-animation;
-    animation-timing-function: ease;
-    animation-duration: 0.5s;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 }
-
-/* Remember-flow animation */
-@-webkit-keyframes expand-remember-animation {
-    from { height: 550px; }
-    to { height: 100%; }
-}
-
-@keyframes expand-remember-animation {
-    from { height: 550px; }
-    to { height: 100%; }
-}
-
-/* TODO reverse animation */
 
 #remember h2 {
     grid-row: 2;

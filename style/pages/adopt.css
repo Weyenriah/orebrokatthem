@@ -173,19 +173,9 @@
 /* Layout when expanded and animation */
 #cats.expanded {
     height: 100%;
-    animation-name: show-more-animation;
-    animation-timing-function: ease;
-    animation-duration: 0.5s;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 }
-@-webkit-keyframes show-more-animation {
-    from { height: 400px; }
-    to { height: 100%; }
-}
-@keyframes show-more-animation {
-    from { height: 400px; }
-    to { height: 100%; }
-}
-/* TODO reverse animation */
 
 /* Layout for cat-cards */
 .small-change {
