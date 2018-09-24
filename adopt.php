@@ -124,10 +124,12 @@
         <!-- Cat-cards -->
         <div class="white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="cats">
             <?php
+            // If there is no cats echo this
             if(count($cats) < 1) {
                 echo('Inga katter hittades');
             }
 
+            // Checks if pagination exists
             $hasPrevOrNext = ($page < $pages - 1 && !$search) || ($page > 0 && !$search);
 
             foreach ($cats as $kittenPosition => $kitten) {
