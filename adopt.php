@@ -130,16 +130,12 @@
                 echo('Inga katter hittades');
             }
 
-            foreach ($cats as $cat => $kitten) {
-                // Single out the last cat in array
-                end($cats);
-                if($cat === key($cats)) {
-                    if(count($cats) < 9) {
-                        $noMargin = ' no-margin';
-                    }
-                }
+            $hasPrevOrNext = ($page < $pages - 1 && !$search) || ($page > 0 && !$search);
+
+            foreach ($cats as $kittenPosition => $kitten) {
+
             ?>
-                <div class="small-change <?php echo($noMargin); ?>">
+                <div class="small-change<?php echo(((!$hasPrevOrNext) && ($kittenPosition + 1 == count($cats)))? ' no-margin' : ''); ?>">
                     <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
                         <div class="cat-img">
                             <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">

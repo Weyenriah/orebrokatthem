@@ -1,4 +1,13 @@
-<?php require_once 'components/resources.php'?>
+<?php require_once 'components/resources.php';
+
+if(isset($_POST['jour-contact'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $msg = $_POST['msg'];
+
+    // TODO send mail
+}
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -140,23 +149,23 @@
     <section class="red-background general-grid" id="report">
         <h2>Anmälning</h2>
         <div class="report-info red-paragraph">
-            <form>
-                <label for="firstname" class="second-row-heading">
+            <form method="post">
+                <label for="name" class="second-row-heading">
                     Ditt namn
                 </label>
-                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+                <input type="text" id="name" name="name" placeholder="Ditt namn här..."/>
 
-                <label for="firstname" class="second-row-heading">
+                <label for="email" class="second-row-heading">
                     Din emailadress
                 </label>
-                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+                <input type="text" id="email" name="email" placeholder="Din e-post här..."/>
 
-                <label for="subject" class="second-row-heading">
+                <label for="msg" class="second-row-heading">
                     Meddelande
                 </label>
-                <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
+                <textarea id="msg" name="msg" placeholder="Skriv ditt meddelande här..."></textarea>
 
-                <input type="submit" value="Skicka" class="submit-button">
+                <input type="submit" name="jour-contact" value="Skicka" class="submit-button">
             </form>
             <div class="report-contact">
                 <h5 class="second-row-heading"> Eller ring till </h5>
