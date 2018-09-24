@@ -39,22 +39,13 @@
 </article>
 <div id="toned-down" onclick="hideCat()"></div>
 
-<script>
-    /* === HIDE POPUP === */
-    function hideCat() {
-        let popup = document.getElementById("cat-page");
-        let background = document.getElementById("toned-down");
-
-        popup.style.display = "none";
-        background.style.display = "none";
-    }
-
+<script type="text/javascript">
     /* Slide for cat images */
     let slidePicIndex = 1;
     showPicSlides(slidePicIndex);
 
     function currentPicSlide(n) {
-        showSlides(slideIndex = n);
+        showPicSlides(slidePicIndex = n);
     }
 
     function showPicSlides(n) {
@@ -77,5 +68,14 @@
 
         x[slidePicIndex-1].style.display = "block";
         changers[slidePicIndex-1].className += " opacity";
+    }
+
+    /* === HIDE POPUP === */
+    function hideCat() {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        popup.style.display = "none";
+        background.style.display = "none";
     }
 </script>

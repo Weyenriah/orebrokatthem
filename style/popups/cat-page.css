@@ -12,7 +12,9 @@
     position: fixed;
     display: none;
     min-height: 400px;
-    width: 800px;
+    max-height: 100vh;
+    overflow-y: auto;
+    width: auto;
     margin-top: 100px;
     background-color: #762a2a;
     left: 50%;
@@ -115,18 +117,15 @@ hr {
     border-right: 1px solid white;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 719px) {
     #cat-page {
-        min-height: 100%;
+        min-height: 0;
         width: 100%;
-        margin-top: -20px;
         left: 0;
         transform: none;
-        position: relative;
+        margin-top: -20px;
     }
-}
 
-@media only screen and (max-width: 586px) {
     .cat-info {
         flex-wrap: wrap-reverse;
     }
@@ -146,5 +145,19 @@ hr {
 
     .demos {
         width: 288px;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    .popup-slide {
+        width: 246px;
+    }
+
+    .demos {
+        width: 246px;
+    }
+
+    .demo {
+        width: 82px;
     }
 }
