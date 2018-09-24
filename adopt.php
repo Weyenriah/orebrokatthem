@@ -275,15 +275,6 @@
         popup.style.display = "block";
         background.style.display = "block";
     }
-
-    /* === HIDE POPUP === */
-    function hideCat() {
-        let popup = document.getElementById("cat-page");
-        let background = document.getElementById("toned-down");
-
-        popup.style.display = "none";
-        background.style.display = "none";
-    }
     </script>
 </body>
 </html>

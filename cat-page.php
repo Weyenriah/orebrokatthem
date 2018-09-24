@@ -40,6 +40,15 @@
 <div id="toned-down" onclick="hideCat()"></div>
 
 <script>
+    /* === HIDE POPUP === */
+    function hideCat() {
+        let popup = document.getElementById("cat-page");
+        let background = document.getElementById("toned-down");
+
+        popup.style.display = "none";
+        background.style.display = "none";
+    }
+
     /* Slide for cat images */
     let slidePicIndex = 1;
     showPicSlides(slidePicIndex);

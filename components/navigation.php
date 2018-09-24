@@ -85,7 +85,7 @@ $navigationLinks = array(
     window.matchMedia("(max-width: 517px)").addListener(webpageHidden);
 
     function webpageHidden() {
-        if(window.matchMedia("(max-width: 517px)").matches && !collapsed) {
+        if(window.matchMedia("(max-width: 517px)").matches && !collapsed ) {
             body.classList.add("bodyOverflow");
         } else {
             body.classList.remove("bodyOverflow");

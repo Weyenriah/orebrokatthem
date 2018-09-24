@@ -115,6 +115,36 @@ hr {
     border-right: 1px solid white;
 }
 
-.opacity {
+@media only screen and (max-width: 800px) {
+    #cat-page {
+        min-height: 100%;
+        width: 100%;
+        margin-top: -20px;
+        left: 0;
+        transform: none;
+        position: relative;
+    }
+}
 
+@media only screen and (max-width: 586px) {
+    .cat-info {
+        flex-wrap: wrap-reverse;
+    }
+
+    .cat-info-text {
+        margin-left: 0;
+    }
+
+    .img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .popup-slide {
+        width: 288px;
+    }
+
+    .demos {
+        width: 288px;
+    }
 }
