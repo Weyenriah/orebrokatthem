@@ -76,23 +76,22 @@ body {
 }
 
 /* Link styling */
-.carousel-text a {
+.caro-read-more {
     grid-row: 4;
     font-family: "Georgia", serif;
     text-decoration: none;
     color: #ca8a8a;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 /* Hover over link in carousel */
-.carousel-text a:hover {
-    animation-name: carousel-link-animation;
+.caro-read-more:hover {
+    animation-name: link-red;
     animation-duration: 0.5s;
-    color: #feefef;
-}
-
-/* Animation for link in carousel */
-@keyframes carousel-link-animation {
-    from {color: #e57e7e;}
-    to {color: #feefef;}
+    color: white;
 }
 
 /* Styling for previous/next */

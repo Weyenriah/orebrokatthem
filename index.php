@@ -61,8 +61,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         </div>
                         <p class="desc"> <?php echo(explode("<br/>", $slideCat['description'], 2)[0]) ?> </p>
                         <p class="desc-long" hidden> <?php echo(explode("<br/>", $slideCat['description'], 2)[1]) ?> </p>
-                        <div class="links">
-                            <button class="read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
+                        <div class="carousel-link">
+                            <button class="caro-read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
                         </div>
                     </div>
                 </article>
