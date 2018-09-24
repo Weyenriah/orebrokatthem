@@ -1,3 +1,33 @@
+<?php
+$footerLinks = array(
+    array(
+        'uri' => BASE_URL . 'index.php',
+        'name' => 'Hem',
+        'class' => 'home',
+    ),
+    array(
+        'uri' => BASE_URL . 'adopt.php',
+        'name' => 'Adoptera',
+        'class' => 'adopt',
+    ),
+    array(
+        'uri' => BASE_URL . 'jour.php',
+        'name' => 'Bli Jourhem',
+        'class' => 'jour',
+    ),
+    array(
+        'uri' => BASE_URL . 'about.php',
+        'name' => 'Om Oss',
+        'class' => 'about',
+    ),
+    array(
+        'uri' => BASE_URL . 'support.php',
+        'name' => 'Stöd Oss',
+        'class' => 'support',
+    ),
+);
+?>
+
 <!-- The outside companies that ÖKH linked on their first page -->
 <section class="outsiders">
     <a href="http://www.svekatt.se/">
@@ -18,10 +48,14 @@
 <footer class="first-footer">
     <section class="contact">
         <h2>Kontakt</h2>
-        <p>Örebro Katthem <br/>
+        <p class="contact-p">Örebro Katthem <br/>
             Sockengatan 5 <br/>
             702 16 Örebro <br/>
-            <i class="fas fa-envelope"></i> info@orebrokatthem.com <br/>
+        </p>
+        <a class="footer-link contact-foot-link" href="mailto:info@orebrokatthem.com">
+            <i class="fas fa-envelope"></i> info@orebrokatthem.com
+        </a>
+        <p class="contact-p">
             <i class="fas fa-phone"></i> 019-26 00 86
         </p>
     </section>
@@ -32,11 +66,17 @@
     </section>
     <section class="explore">
         <h2>Utforska</h2>
-        <a class="active-foot" href="#"> Hem </a>
-        <a href="#"> Adoptera </a>
-        <a href="#"> Bli Jourhem </a>
-        <a href="#"> Om Oss </a>
-        <a href="#"> Stöd Oss </a>
+        <?php
+        foreach ($footerLinks as $footerPage) {
+            $active = $_SERVER['REQUEST_URI'] == $footerPage['uri'];
+            $activeString = $active ? ' active-foot ' : '';
+            ?>
+            <li class="footer-item <?php echo($footerPage['class']); ?>">
+                <a class="footer-link<?php echo($activeString); ?>" href="<?php echo($footerPage['uri']); ?>">
+                    <?php echo($footerPage['name']); ?>
+                </a>
+            </li>
+        <?php } ?>
     </section>
 </footer>
 <footer class="second-footer">
