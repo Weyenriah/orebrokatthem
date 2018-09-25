@@ -1,31 +1,40 @@
 <?php
 $navigationLinks = array(
     array(
-        'uri' => BASE_URL . 'index.php',
+        'uri' => array(BASE_URL . 'index.php', substr(BASE_URL,0, -1), BASE_URL),
         'name' => 'Hem',
         'class' => 'home',
     ),
     array(
-        'uri' => BASE_URL . 'adopt.php',
+        'uri' => array(BASE_URL . 'adopt.php'),
         'name' => 'Adoptera',
         'class' => 'adopt',
     ),
     array(
-        'uri' => BASE_URL . 'jour.php',
+        'uri' => array(BASE_URL . 'jour.php'),
         'name' => 'Bli Jourhem',
         'class' => 'jour',
     ),
     array(
-        'uri' => BASE_URL . 'about.php',
+        'uri' => array(BASE_URL . 'about.php'),
         'name' => 'Om Oss',
         'class' => 'about',
     ),
     array(
-        'uri' => BASE_URL . 'support.php',
+        'uri' => array(BASE_URL . 'support.php'),
         'name' => 'Stöd Oss',
         'class' => 'support',
     ),
 );
+
+function array_any(array $array, callable $fn) {
+    foreach ($array as $value) {
+        if($fn($value)) {
+            return true;
+        }
+    }
+    return false;
+}
 ?>
 
 <!-- General navigation -->
@@ -49,12 +58,16 @@ $navigationLinks = array(
             </div>
             <ul class="nav-list">
                 <?php
+                $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+
                 foreach ($navigationLinks as $navigationPage) {
-                    $active = $_SERVER['REQUEST_URI'] == $navigationPage['uri'];
+                    $active = array_any($navigationPage['uri'], function ($val) use($request_uri) {
+                        return $val == $request_uri;
+                    });
                     $activeString = $active ? ' active-nav ' : '';
-                    ?>
+                ?>
                     <li class="list-item <?php echo($navigationPage['class']); ?>">
-                        <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri']); ?>">
+                        <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri'][0]); ?>">
                             <?php echo($navigationPage['name']); ?>
                         </a>
                     </li>

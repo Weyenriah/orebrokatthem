@@ -1,31 +1,41 @@
 <?php
 $footerLinks = array(
     array(
-        'uri' => BASE_URL . 'index.php',
+        'uri' => array(BASE_URL . 'index.php', substr(BASE_URL,0, -1), BASE_URL),
         'name' => 'Hem',
         'class' => 'home',
     ),
     array(
-        'uri' => BASE_URL . 'adopt.php',
+        'uri' => array(BASE_URL . 'adopt.php'),
         'name' => 'Adoptera',
         'class' => 'adopt',
     ),
     array(
-        'uri' => BASE_URL . 'jour.php',
+        'uri' => array(BASE_URL . 'jour.php'),
         'name' => 'Bli Jourhem',
         'class' => 'jour',
     ),
     array(
-        'uri' => BASE_URL . 'about.php',
+        'uri' => array(BASE_URL . 'about.php'),
         'name' => 'Om Oss',
         'class' => 'about',
     ),
     array(
-        'uri' => BASE_URL . 'support.php',
+        'uri' => array(BASE_URL . 'support.php'),
         'name' => 'Stöd Oss',
         'class' => 'support',
     ),
 );
+
+function any_array(array $array, callable $fn) {
+    foreach ($array as $value) {
+        if($fn($value)) {
+            return true;
+        }
+    }
+    return false;
+};
+
 ?>
 
 <!-- The outside companies that ÖKH linked on their first page -->
@@ -67,12 +77,16 @@ $footerLinks = array(
     <section class="explore">
         <h2>Utforska</h2>
         <?php
+        $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+        
         foreach ($footerLinks as $footerPage) {
-            $active = $_SERVER['REQUEST_URI'] == $footerPage['uri'];
+            $active = any_array($footerPage['uri'], function ($val) use($request_uri) {
+                return $val == $request_uri;
+            });
             $activeString = $active ? ' active-foot ' : '';
-            ?>
+        ?>
             <li class="footer-item <?php echo($footerPage['class']); ?>">
-                <a class="footer-link<?php echo($activeString); ?>" href="<?php echo($footerPage['uri']); ?>">
+                <a class="footer-link<?php echo($activeString); ?>" href="<?php echo($footerPage['uri'][0]); ?>">
                     <?php echo($footerPage['name']); ?>
                 </a>
             </li>
