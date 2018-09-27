@@ -1,0 +1,308 @@
+/* === FILTER STYLING === */
+/* The search part of page */
+.search-field {
+    height: 60px;
+    width: 100%;
+    z-index: 20000;
+    display: flex;
+    grid-row: 2;
+}
+
+.searches {
+    display: flex;
+    width: 70%;
+    height: 30px;
+}
+
+/* Layout for search input/label */
+.searches input {
+    width: 100%;
+    padding-left: 3px;
+}
+.searches label {
+    width: 20px;
+    padding-top: 5px;
+    text-align: center;
+    margin-right: 5px;
+}
+.search-button {
+    width: 100px;
+    background-color: #5e788f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 16px;
+}
+
+.search-button:hover {
+    animation-name: button-blue;
+    animation-duration: 0.5s;
+    background-color: #415463;
+}
+
+/* === FILTER STYLE === */
+.filter {
+    width: 30%;
+}
+
+.all-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Layout for filters-button */
+.filters {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    color: #5e788f;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 25px;
+    float: right;
+}
+
+.filters:hover {
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+
+#filter-choices {
+    width: 100%;
+    margin-top: -25px;
+    margin-bottom: 10px;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-form h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* Hide ordinary checkbox */
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkbox label {
+    position: relative;
+    font-size: 16px;
+}
+
+/* Outer-box for custom checkbox */
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    top: 2px;
+    left: -21px;
+    height: 14px;
+    width: 14px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+/* Checkmark for custom checkbox */
+.checkbox label::after {
+    content: "";
+    display: inline-block;
+    left: -18px;
+    top: 6px;
+    height: 4px;
+    width: 8px;
+    border-left: 2px solid #415463;
+    border-bottom: 2px solid #415463;
+    transform: rotate(-45deg);
+}
+.checkbox label::before, .checkbox label::after {
+    position: absolute;
+}
+
+/* Hide checkmark by default */
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/* Show checkmark when checked */
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/* Focus on the checkbox when checked */
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+/* Filter-button style */
+.filter-submit {
+    margin-top: 5px;
+    width: 100%;
+    height: 25px;
+    background-color: #5e788f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.filter-submit:hover {
+    background-color: #415463;
+    animation-duration: 0.5s;
+    animation-name: button-blue;
+}
+
+/* Not displaying when not onclick */
+.not-display {
+    display: none;
+}
+
+/* === OUR CATS FLOW === */
+/* Layout when not expanded */
+#cats {
+    grid-row: 3;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Layout when expanded and animation */
+#cats.expanded {
+    height: 100%;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+/* Layout for cat-cards */
+.small-change {
+    margin-bottom: 30px;
+}
+
+/* No bottom margin-styling */
+.no-margin {
+    margin-bottom: 0;
+}
+
+.cat-style {
+    height: auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
+.cat-img {
+    grid-column: 1;
+    height: auto;
+    margin-right: 15px;
+    max-width: 260px;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    border: 1px solid #415463;
+}
+.cat-img img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    vertical-align: top;
+}
+.cat-text {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+.cat-text h3 {
+    margin: 0;
+    font-family: "Georgia", serif;
+    font-size: 33px;
+}
+
+.cat-title {
+    display: flex;
+}
+.cat-title img {
+    height: 27px;
+    margin-top: 3px;
+    margin-right: 7px;
+}
+
+.cat-text small {
+    margin: 0;
+}
+
+.cat-text p {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.links a {
+    font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #5e788f;
+    font-size: 17px;
+}
+
+/* Hover over link in cat-card */
+.links a:hover {
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+
+.read-more {
+    padding: 0;
+    margin-right: 20px;
+    border: none;
+    background-color: transparent;
+    font-family: "Georgia", serif;
+    font-size: 17px;
+    text-decoration: none;
+    color: #5e788f;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media only screen and (max-width: 750px) {
+    /* Cat styling */
+    .cat-style {
+        grid-template-columns: 100%;
+    }
+
+    .cat-img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cat-text {
+        grid-column: 1;
+    }
+
+    .cat-title {
+        justify-content: center;
+    }
+
+    .small-info {
+        justify-content: center;
+    }
+}
