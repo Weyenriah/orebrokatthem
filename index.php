@@ -39,11 +39,11 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </header>
 
     <!-- Carousel -->
-    <section class="carousel-container red-background" id="carousel">
+    <section class="carousel-container blue-background" id="carousel">
         <?php
         foreach($slideCats as $slideCat) {
         ?>
-            <div class="slide fade red-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
+            <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
                         <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
@@ -116,10 +116,10 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- Minneslunden/Remember Cats -->
-    <section class="general-grid red-background" id="remember">
+    <section class="general-grid blue-background" id="remember">
         <h2> Minneslunden </h2>
         <div class="all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
-            <p class="red-paragraph"> Sov gott små vänner, vila nu, för smärtan är över <br/>
+            <p class="blue-paragraph"> Sov gott små vänner, vila nu, för smärtan är över <br/>
                 Era tappra små själar ej kämpa mer behöver <br/>
                 <br/>
                 Ni var så perfekta, alla underbara på sitt eget lilla sätt <br/>
@@ -169,7 +169,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                     </article>
                 <?php } ?>
             </div>
-            <div class="red-paragraph prev-next remem-pagination">
+            <div class="blue-paragraph prev-next remem-pagination">
                 <?php if($rememPage > 0) { ?>
                     <div class="previous-page">
                         <a class="prev-arrow prev-arrow-red" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
@@ -186,7 +186,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <?php } ?>
             </div>
         </div>
-        <div id="remem-hide-show">
+        <div id="blue-hide-show">
             <button class="<?php if (count($remember) < 2) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>

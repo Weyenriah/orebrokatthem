@@ -11,6 +11,11 @@ $footerLinks = array(
         'class' => 'adopt',
     ),
     array(
+        'uri' => array(BASE_URL . 'our-cats.php'),
+        'name' => 'Våra katter',
+        'class' => 'cats',
+    ),
+    array(
         'uri' => array(BASE_URL . 'jour.php'),
         'name' => 'Bli Jourhem',
         'class' => 'jour',
@@ -78,7 +83,7 @@ function any_array(array $array, callable $fn) {
         <h2>Utforska</h2>
         <?php
         $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
-        
+
         foreach ($footerLinks as $footerPage) {
             $active = any_array($footerPage['uri'], function ($val) use($request_uri) {
                 return $val == $request_uri;

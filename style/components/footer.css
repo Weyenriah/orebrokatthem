@@ -26,14 +26,14 @@
 /* General footer styling */
 .first-footer {
     width: 100%;
-    height: 150px;
-    background-color: #591c1c;
+    height: 170px;
+    background-color: #a0cdf3;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: 150px;
     justify-items: center;
     grid-column-gap: 10px;
-    color: #fff;
+    color: #415463;
     z-index: 20000;
     padding-bottom: 10px;
 }
@@ -72,30 +72,30 @@
 
 .footer-link {
     text-decoration: none;
-    color: #ca8a8a;
+    color: #5e788f;
     font-size: 15px;
 }
 
 /* Social media links */
 .social-media a {
     text-decoration: none;
-    color: #ca8a8a;
+    color: #5e788f;
 }
 
 /* Hover over non-active footer-links */
 .footer-link:hover:not(.active-foot) {
-    animation-name: link-red;
+    animation-name: link-blue;
     animation-duration: 0.5s;
-    color: white;
+    color: #415463;
 }
 .active-foot {
-    color: white;
+    color: #415463;
 }
 
 .social-media a:hover {
-    animation-name: link-red;
+    animation-name: link-blue;
     animation-duration: 0.5s;
-    color: white;
+    color: #415463;
 }
 
 /* Styling for the icons */
@@ -118,8 +118,8 @@
 .second-footer {
     font-family: "Calibri", sans-serif;
     height: auto;
-    background-color: #2d0707;
-    color: #e9f5e5;
+    background-color: #415463;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;

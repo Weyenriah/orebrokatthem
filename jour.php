@@ -27,9 +27,9 @@ if(isset($_POST['jour-contact'])) {
     </header>
 
     <!-- Section for "How it is to be an emergency home?" -->
-    <section class="red-background general-grid" id="how">
+    <section class="blue-background general-grid" id="how">
         <h2> Hur är det att vara jourhem? </h2>
-        <div class="red-paragraph how-text"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
+        <div class="blue-paragraph how-text"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
             <p> för en eller fler hemlösa katter som inte kan tas in på katthemmet eller som är i behov av extra omsorg. </p>
 
             <h5 class="second-row-heading"> Det handlar ofta om lite rädda/skygga katter </h5>
@@ -146,9 +146,9 @@ if(isset($_POST['jour-contact'])) {
     </section>
 
     <!-- Double sided, report-form on left and contact on right -->
-    <section class="red-background general-grid" id="report">
+    <section class="blue-background general-grid" id="report">
         <h2>Anmälning</h2>
-        <div class="report-info red-paragraph">
+        <div class="report-info blue-paragraph">
             <form method="post">
                 <label for="name" class="second-row-heading">
                     Ditt namn

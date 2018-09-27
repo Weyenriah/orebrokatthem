@@ -35,6 +35,7 @@ body {
     justify-content: center;
     margin-right: 20%;
     margin-left: 20%;
+    margin-top: 30px;
 }
 
 /* RESPONSIVE for header */
@@ -50,14 +51,14 @@ body {
     margin: 0;
     width: 100%;
     font-family: "Georiga", serif;
-    color: #76292a;
+    color: #415463;
     text-align: center;
     font-size: 260%;
 }
 
 /* Styling for the general text in Header */
 .header p {
-    color: #6a1111;
+    color: #415463;
     font-family: "Calibri", sans-serif;
     margin: 0;
 }
@@ -105,90 +106,163 @@ body {
 /* Coloring of next/prev arrows */
 /* Next/prev arrow on red background */
 .next-arrow-red, .prev-arrow-red {
-    color: #ca8a8a;
+    color: #5e788f;
 }
 .next-arrow-red:hover, .prev-arrow-red:hover {
     color: white;
-    animation-name: link-red;
-        -webkit-animation-name: link-red; /* For Safari */
+    animation-name: link-blue;
+        -webkit-animation-name: link-blue; /* For Safari */
     animation-duration: 0.5s;
         -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 /* Next/prev on white background */
 .next-arrow-white, .prev-arrow-white {
-    color: #ca8a8a;
+    color: #5e788f;
 }
 .next-arrow-white:hover, .prev-arrow-white:hover {
-    color: #762a2a;
-    animation-name: link-white;
-        -webkit-animation-name: link-white; /* For Safari */
+    color: #415463;
+    animation-name: link-blue;
+        -webkit-animation-name: link-blue; /* For Safari */
     animation-duration: 0.5s;
         -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 
 /* === DESIGN RULES: RED PAGES === */
-.red-background {
+.blue-background {
     margin-top: 30px;
     height: auto;
-    background-color: #591c1c;
-    color: #faf3f3;
+    background-color: #a0cdf3;
+    color: #415463;
     /* The border-design */
-    border-top: 20px solid #591c1c;
-    border-bottom: 20px solid #591c1c;
-    /* The CSS grid on every red page */
-    display: grid;
-    grid-template-rows: 20px 61px auto 20px;
+    border-top: 20px solid #a0cdf3;
+    border-bottom: 20px solid #a0cdf3;
 }
 
 /* H2 headings styling */
-.red-background h2 {
-    grid-row: 2;
+.blue-background h2 {
     grid-column: 2;
-    margin: 0;
+    margin-top: 0;
     font-family: "Georgia", serif;
+    margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 420px) {
-    .red-background h2 {
+    .blue-background h2 {
         font-size: 7vw;
         text-align: center;
     }
 }
 
 /* Grid positioning for "main"-content */
-.red-paragraph {
-    grid-row: 3;
+.blue-paragraph {
     grid-column: 2;
 }
 
 /* P styling */
-.red-background p {
+.blue-background p {
     margin-top: 0;
     margin-bottom: 25px;
     font-family: "Calibri", sans-serif;
 }
 
 @media only screen and (max-width: 498px) {
-    .red-background p {
+    .blue-background p {
         margin-bottom: 15px;
     }
 }
 
-.red-background small {
+/* Small text styling */
+.blue-background small {
     font-style: italic;
 }
 
+/* List styling */
+.blue-paragraph ul {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+}
+.blue-paragraph li {
+    margin-top: 3px;
+    color: #415463;
+}
+
 /* Animation for link */
-@keyframes link-red {
-    from {color: #ca8a8a;}
-    to {color: white;}
+@keyframes link-blue {
+    from {color: #5e788f;}
+    to {color: #415463;}
 }
 /* For Safari */
-@-webkit-keyframes link-red {
-    from {color: #ca8a8a;}
-    to {color: white;}
+@-webkit-keyframes link-blue {
+    from {color: #5e788f;}
+    to {color: #415463;}
+}
+
+/* General button-style for white-background */
+@keyframes button-blue {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes button-blue {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+
+
+/* Blue hide-show */
+#blue-hide-show {
+    position: relative;
+    grid-column: 2;
+    grid-row: 4;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a0cdf3;
+    border-top: 1px solid #415463;
+}
+
+#blue-hide-show button {
+    background-color: transparent;
+    border: none;
+    color: #5e788f;
+    font-family: "Georgia", serif;
+    cursor: pointer;
+}
+
+#blue-hide-show button:hover {
+    color: #415463;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+}
+
+/* CAT DISPLAYING RULES, RED BACKGROUND */
+/* First image */
+.red-img-border {
+    height: 300px;
+    width: 250px;
+    margin-right: 15px;
+    overflow: hidden;
+    border: 1px solid #415463;
+}
+.red-img-border img {
+    width: 250px;
+}
+
+/* Small info style */
+.small-info {
+    grid-row: 2;
+    font-family: "Calibri", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+}
+
+.small-info small:not(:first-child) {
+    margin-left: 4px;
 }
 
 
@@ -197,7 +271,7 @@ body {
 .white-background h2 {
     grid-column: 2;
     margin-bottom: 25px;
-    color: #76292a;
+    color: #415463;
     font-family: "Georgia", serif;
     margin-top: 30px;
 }
@@ -212,7 +286,7 @@ body {
 /* Styling for "main"-content */
 .white-paragraph {
     grid-column: 2;
-    color: #76292a;
+    color: #415463;
     font-family: "Calibri", sans-serif;
     width: 100%;
 }
@@ -230,49 +304,22 @@ body {
 
 /* General button-style for white-background */
 @keyframes button-white {
-    from {background-color: #ca8a8a;}
-    to {background-color: #762a2a;}
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
 }
 /* For Safari */
 @-webkit-keyframes button-white {
-    from {background-color: #ca8a8a;}
-    to {background-color: #762a2a;}
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
 }
 
 /* Animation for link in cat-card */
 @keyframes link-white {
-    from {color: #ca8a8a;}
-    to {color: #762a2a;}
+    from {color: #5e788f;}
+    to {color: #415463;}
 }
 /* For Safari */
 @-webkit-keyframes link-white {
-    from {color: #ca8a8a;}
-    to {color: #762a2a;}
-}
-
-
-/* CAT DISPLAYING RULES, RED BACKGROUND */
-/* First image */
-.red-img-border {
-    height: 300px;
-    width: 250px;
-    margin-right: 15px;
-    overflow: hidden;
-    border: 1px solid white;
-}
-.red-img-border img {
-    width: 250px;
-}
-
-/* Small info style */
-.small-info {
-    grid-row: 2;
-    font-family: "Calibri", sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    width: auto;
-}
-
-.small-info small:not(:first-child) {
-    margin-left: 4px;
+    from {color: #5e788f;}
+    to {color: #415463;}
 }

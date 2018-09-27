@@ -20,7 +20,7 @@ $employees = $database->getEmployees();
     </header>
 
     <!-- Section for employees -->
-    <section class="red-background general-grid" id="workers">
+    <section class="blue-background general-grid" id="workers">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <!-- Employee cards -->
@@ -89,9 +89,9 @@ $employees = $database->getEmployees();
     </section>
 
     <!-- Section for how to apply to be a volonteer -->
-    <section class="red-background general-grid" id="volonteer">
+    <section class="blue-background general-grid" id="volonteer">
         <h2> Bli volontär </h2>
-        <div class="red-paragraph become">
+        <div class="blue-paragraph become">
             <div class="volonteer-img">
                 <img src="uploads/images/ashild.jpg">
             </div>

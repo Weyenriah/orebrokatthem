@@ -15,9 +15,9 @@
         <p> Utöver att adoptera katter, bli jourhem och arbeta hos oss som volontär finns det fler saker du kan göra för att stötta vår verksamhet! </p>
     </header>
 
-    <section class="red-background general-grid" id="membership">
+    <section class="blue-background general-grid" id="membership">
         <h2> Bli medlem </h2>
-        <p class="red-paragraph"> Information om hur man blir medlem/ett kontaktformulär, beroende på hur det går till. </p>
+        <p class="blue-paragraph"> Att bli medlem i Örebro Katthem kostar 200 kr för huvudmedlem, 50 kr per övrig familjemedlem och 25 kr per husdjur. Medlemskapet gäller för 1 kalenderår i taget. Betalar du efter 1 november gäller medlemskapet även påföljande år. Betala in medlemsavgiften på vårt postgirokonto: 28 88 67-5 eller Swish-konto: 123 082 21 55 och märk insättningen med "medlemsavgift". Glöm inte att skriva ditt namn, adress och gärna mailadress. Om du inte får plats med informationen på avin, skicka ett kompletterande mail till vår kassör. </p>
     </section>
 
     <section class="white-background general-grid" id="insurance">
@@ -38,9 +38,9 @@
         </div>
     </section>
 
-    <section class="red-background general-grid" id="wishlist">
+    <section class="blue-background general-grid" id="wishlist">
         <h2> Önskelista </h2>
-        <div class="red-paragraph">
+        <div class="blue-paragraph">
             <p> Det är också möjligt att skänka saker till oss på Örebro Katthem. Detta är vad vi behöver just nu. </p>
             <div class="needs">
                 <div class="cat-need">

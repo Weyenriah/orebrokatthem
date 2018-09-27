@@ -12,6 +12,7 @@ body {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 100%;
+    height: 355px;
 }
 
 /* General slide-styling */
@@ -31,7 +32,7 @@ body {
     margin-right: 15px;
     height: 350px;
     width: 250px;
-    border: 1px solid #feefef;
+    border: 1px solid #415463;
     overflow: hidden;
 }
 .image-carousel img {
@@ -80,7 +81,7 @@ body {
     grid-row: 4;
     font-family: "Georgia", serif;
     text-decoration: none;
-    color: #ca8a8a;
+    color: #5e788f;
     font-size: 18px;
     background-color: transparent;
     border: none;
@@ -89,9 +90,9 @@ body {
 }
 /* Hover over link in carousel */
 .caro-read-more:hover {
-    animation-name: link-red;
+    animation-name: link-blue;
     animation-duration: 0.5s;
-    color: white;
+    color: #415463;
 }
 
 /* Fading animation for slideshow */
@@ -118,24 +119,22 @@ body {
     grid-row: 1;
     align-self: center;
     justify-self: center;
-    color: #feefef;
     cursor: pointer;
 }
 .previous img {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    height: 100px;
+    height: 60px;
 }
 .next {
     grid-column: 3;
     grid-row: 1;
     align-self: center;
     justify-self: center;
-    color: #feefef;
     cursor: pointer;
 }
 .next img {
-    height: 100px;
+    height: 60px;
 }
 
 /* === GENERAL STYLING FOR NEWSFLOW === */
@@ -167,7 +166,7 @@ body {
     height: 200px;
     width: 200px;
     overflow: hidden;
-    border: 1px solid #76292a;
+    border: 1px solid #415463;
     margin-left: 10px;
 }
 .news-img img {
@@ -186,7 +185,7 @@ body {
     width: 100%;
     height: 40px;
     background-color: #fff;
-    border-top: 1px solid #762a2a;
+    border-top: 1px solid #415463;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,12 +197,12 @@ body {
     background-color: #fff;
     border: none;
     font-family: "Georgia", serif;
-    color: #ca8a8a;
+    color: #5e788f;
     cursor: pointer;
 }
 
 #hide-show button:hover {
-    color: #762a2a;
+    color: #415463;
     animation-name: link-white;
     animation-duration: 0.5s;
 }
@@ -277,6 +276,9 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+.circle-of-cathome {
+    margin-bottom: 10px;
+}
 .push-title {
     margin-left: 5px !important;
 }
@@ -298,37 +300,10 @@ body {
     margin-top: 8px;
 }
 
-/* Hide and show/expand-button to Minneslunden/remember cats */
-#remem-hide-show {
-    position: relative;
-    grid-column: 2;
-    grid-row: 4;
-    width: 100%;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #591c1c;
-    border-top: 1px solid white;
-}
-
-#remem-hide-show button {
-    background-color: transparent;
-    border: none;
-    color: #ca8a8a;
-    font-family: "Georgia", serif;
-    cursor: pointer;
-}
-
-#remem-hide-show button:hover {
-    color: white;
-    animation-name: link-red;
-    animation-duration: 0.5s;
-}
-
 @media only screen and (max-width: 733px) {
     .carousel-container {
         grid-template-columns: 10% 80% 10%;
+        height: auto;
     }
 
     /* Image styling for carousel */

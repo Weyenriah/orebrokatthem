@@ -14,6 +14,7 @@
     <!-- Specific CSS for pages -->
     <link rel="stylesheet" type="text/css" href="style/pages/home.css"> <!-- Homepage -->
     <link rel="stylesheet" type="text/css" href="style/pages/adopt.css"> <!-- Adopt-page -->
+    <link rel="stylesheet" type="text/css" href="style/pages/our-cats.css"> <!-- Cat-page popup -->
     <link rel="stylesheet" type="text/css" href="style/pages/jour.css"> <!-- Emergency home-page -->
     <link rel="stylesheet" type="text/css" href="style/pages/about.css"> <!-- About Us-page -->
     <link rel="stylesheet" type="text/css" href="style/pages/support.css"> <!-- Support Us-page -->

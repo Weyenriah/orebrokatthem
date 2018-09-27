@@ -15,21 +15,14 @@
 
 .insurance a {
     text-decoration: none;
-    color: #ca8a8a;
+    color: #5e788f;
 }
 
 .insurance a:hover {
-    color: #762a2a;
-    animation-name: link-animation;
+    color: #415463;
+    animation-name: link-blue;
     animation-duration: 0.5s;
 }
-
-/* Animation for link */
-@keyframes link-animation {
-    from {color: #ca8a8a;}
-    to {color: #762a2a;}
-}
-
 
 .insurance-img {
     grid-column: 2;
@@ -37,7 +30,7 @@
     height: 300px;
     width: 250px;
     overflow: hidden;
-    border: 1px solid #762a2a;
+    border: 1px solid #415463;
 }
 
 .insurance-img img {
