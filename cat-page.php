@@ -22,7 +22,7 @@
 
         <div class="cat-info-text">
             <div class="cat-title">
-                <img src="images/white-paw.png">
+                <img src="images/paw-icon.png">
                 <h2 class="cat-name"> Name </h2>
             </div>
             <div class="small-info">

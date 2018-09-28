@@ -16,7 +16,7 @@
     overflow-y: auto;
     width: auto;
     margin-top: 100px;
-    background-color: #762a2a;
+    background-color: #a0cdf3;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000000;
@@ -33,15 +33,17 @@
 
 .close-button i {
     font-size: 30px;
-    color: #ca8a8a;
+    color: #5e788f;
 }
 
 .close-button i:hover {
-    color: #fff;
+    color: #415463;
+    animation-name: close-open;
+    animation-duration: 0.5s;
 }
 
 hr {
-    border: 2px solid #fff;
+    border: 2px solid #415463;
     margin-top: 19px;
 }
 
@@ -58,11 +60,14 @@ hr {
 }
 
 .cat-info-text img {
-    width: 27px;
+    height: 33px;
+    margin-top: 0;
+    margin-right: 5px;
+    margin-bottom: 0;
 }
 
 .cat-info-text h2 {
-    color: #fff;
+    color: #415463;
     font-size: 33px;
     font-family: "Georgia", serif;
     margin-top: 0;
@@ -70,12 +75,12 @@ hr {
 }
 
 .cat-info-text small {
-    color: #fff;
+    color: #415463;
 }
 
 .cat-info-text p {
     margin-top: 7px;
-    color: #fff;
+    color: #415463;
     font-family: "Calibri", sans-serif;
 }
 
@@ -89,17 +94,19 @@ hr {
 
 .adopt-me a {
     text-decoration: none;
-    color: #ca8a8a;
+    color: #5e788f;
 }
 
 .adopt-me a:hover {
-    color: white;
+    color: #415463;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
 }
 
 .popup-slide {
     width: 300px;
     display: none;
-    border: 1px solid white;
+    border: 1px solid #415463;
     border-bottom: none;
 }
 
@@ -108,13 +115,13 @@ hr {
     width: 300px;
     height: 110px;
     overflow: hidden;
-    border: 1px solid white;
+    border: 1px solid #415463;
 }
 
 .demo {
     width: 100px;
     cursor: pointer;
-    border-right: 1px solid white;
+    border-right: 1px solid #415463;
 }
 
 @media only screen and (max-width: 719px) {
