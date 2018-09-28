@@ -6,7 +6,6 @@ body {
     position: relative;
 }
 
-
 /* Styling for subheadings */
 .second-row-heading {
     font-family: "Calibri", sans-serif;
@@ -27,6 +26,18 @@ body {
         grid-template-columns: 10% 80% 10%;
     }
 }
+
+/* Styling for close and open-buttons */
+@keyframes close-open {
+    from {color: #566e83;}
+    to {color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes close-open {
+    from {color: #566e83;}
+    to {color: #415463;}
+}
+
 
 /* === HEADER === */
 .header {
@@ -143,7 +154,7 @@ body {
 /* H2 headings styling */
 .blue-background h2 {
     grid-column: 2;
-    margin-top: 0;
+    margin-top: 20px;
     font-family: "Georgia", serif;
     margin-bottom: 30px;
 }

@@ -59,25 +59,15 @@
 /* Specific styles for opening menu icon */
 #collapsing {
     margin-right: 20%;
-    color: #415463;
+    color: #566e83;
 }
 
 #collapsing:hover {
-    color: #566e83;
-    animation-name: closed-nav-ani;
-    -webkit-animation-name: closed-nav-ani; /* For Safari */
+    color: #415463;
+    animation-name: close-open;
+    -webkit-animation-name: close-open; /* For Safari */
     animation-duration: 0.5s;
     -webkit-animation-duration: 0.5s; /* For Safari */
-}
-
-@keyframes closed-nav-ani {
-    from {color: #415463;}
-    to {color: #566e83;}
-}
-/* For Safari */
-@-webkit-keyframes closed-nav-ani {
-    from {color: #415463;}
-    to {color: #566e83;}
 }
 
 /* === THE POPUP NAVIGATION === */
@@ -212,22 +202,11 @@
 
 #close-menu:hover {
     color: #415463;
-    -webkit-animation-name: open-nav-ani; /* For Safari */
-        animation-name: open-nav-ani;
+    -webkit-animation-name: close-open; /* For Safari */
+        animation-name: close-open;
     -webkit-animation-duration: 0.5s; /* For Safari */
         animation-duration: 0.5s;
 }
-
-@keyframes open-nav-ani {
-    from {color: #566e83;}
-    to {color: #415463;}
-}
-/* For Safari */
-@-webkit-keyframes open-nav-ani {
-    from {color: #566e83;}
-    to {color: #415463;}
-}
-
 
 /* === STYLES FOR JS === */
 .display {

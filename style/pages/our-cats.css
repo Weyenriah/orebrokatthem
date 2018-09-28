@@ -1,4 +1,7 @@
 /* === FILTER STYLING === */
+.filter-search {
+    margin-top: 25px;
+}
 /* The search part of page */
 .search-field {
     height: 60px;
