@@ -97,7 +97,17 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <label for="male"> Hane </label>
                     </span>
 
-                <span class="living checkbox">
+                    <span class="age checkbox">
+                        <h3 class="checkbox-title"> Ålder </h3>
+                        <input type="checkbox" name="kitten" value="true" id="kitten">
+                        <label for="kitten"> Kattunge </label>
+                        <input type="checkbox" name="young" value="true" id="young">
+                        <label for="young"> Ungkatt </label>
+                        <input type="checkbox" name="senior" value="true" id="senior">
+                        <label for="senior"> Senior </label>
+                    </span>
+
+                    <span class="living checkbox">
                         <h3 class="checkbox-title"> Boende </h3>
                         <input type="checkbox" name="cathome" <?php echo((isset($_GET['cathome'])) ? 'checked' : '')?> value="true" id="cathome">
                         <label for="cathome"> Katthem </label>
