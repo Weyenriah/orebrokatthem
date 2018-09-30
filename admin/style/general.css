@@ -20,7 +20,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #3f5737;
+    background-color: #a0cdf3;
 }
 
 .header-title {
@@ -28,13 +28,13 @@ header {
     font-size: 25px;
     font-family: "Georgia", serif;
     text-decoration: none;
-    color: #fff;
+    color: #415463;
 }
 
 .logout {
     margin-right: 13px;
     font-size: 25px;
-    color: #fff;
+    color: #5e788f;
 }
 
 /* === NAVIGATION STYLING === */
@@ -55,7 +55,7 @@ nav h3 {
     margin-top: 6px;
     margin-bottom: 6px;
     font-family: "Georgia", serif;
-    color: #3f5737;
+    color: #415463;
 }
 
 nav hr {
@@ -76,11 +76,12 @@ nav hr {
 .page {
     font-family: "Calibri", sans-serif;
     text-decoration: none;
-    color: #739069;
+    color: #5e788f;
 }
 
 .page:hover {
-    color: #3f5737;
+    color: #415463;
+    font-weight: bold;
 }
 
 /* === BUTTON/LINK STYLE === */
