@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style/pages/cats.css">
     <link rel="stylesheet" type="text/css" href="style/pages/news.css">
     <link rel="stylesheet" type="text/css" href="style/pages/employees.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/remember.css">
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">

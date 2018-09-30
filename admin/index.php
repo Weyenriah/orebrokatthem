@@ -44,7 +44,7 @@
             <a href="#" class="page"> Medlemmar </a>
         </div>
         <div class="pages">
-            <a href="#" class="page"> Katter i minneslunden </a>
+            <a href="#" class="page" onclick="showRememberFlow()"> Katter i minneslunden </a>
         </div>
         <div class="pages">
             <a href="#" class="page"> <i class="fas fa-align-left"></i> Ändra textfält </a>
@@ -62,6 +62,9 @@
 
     <!-- Page for employee-flow -->
     <?php include(APP_FOLDER . '/admin/pages/employees.php') ?>
+
+    <!-- Page for employee-flow -->
+    <?php include(APP_FOLDER . '/admin/pages/remember.php') ?>
 
 </body>
 
@@ -87,11 +90,13 @@
         let page = document.getElementById('cats');
         let otherPage = document.getElementById('news');
         let anotherPage = document.getElementById('employees');
+        let yetAnotherPage = document.getElementById('remem-cats');
         let main = document.getElementById('welcome');
 
         page.style.display = 'block';
         otherPage.style.display = 'none';
         anotherPage.style.display = 'none';
+        yetAnotherPage.style.display = 'none';
         main.style.display = 'none';
     }
 
@@ -100,11 +105,13 @@
         let page = document.getElementById('news');
         let otherPage = document.getElementById('cats');
         let anotherPage = document.getElementById('employees');
+        let yetAnotherPage = document.getElementById('remem-cats');
         let main = document.getElementById('welcome');
 
         page.style.display = 'block';
         otherPage.style.display = 'none';
         anotherPage.style.display = 'none';
+        yetAnotherPage.style.display = 'none';
         main.style.display = 'none';
     }
 
@@ -113,11 +120,28 @@
         let page = document.getElementById('employees');
         let otherPage = document.getElementById('cats');
         let anotherPage = document.getElementById('news');
+        let yetAnotherPage = document.getElementById('remem-cats');
         let main = document.getElementById('welcome');
 
         page.style.display = 'block';
         otherPage.style.display = 'none';
         anotherPage.style.display = 'none';
+        yetAnotherPage.style.display = 'none';
+        main.style.display = 'none';
+    }
+
+    /* === SHOW REMEMBER-FLOW === */
+    function showRememberFlow() {
+        let page = document.getElementById('remem-cats');
+        let otherPage = document.getElementById('cats');
+        let anotherPage = document.getElementById('news');
+        let yetAnotherPage = document.getElementById('employees');
+        let main = document.getElementById('welcome');
+
+        page.style.display = 'block';
+        otherPage.style.display = 'none';
+        anotherPage.style.display = 'none';
+        yetAnotherPage.style.display = 'none';
         main.style.display = 'none';
     }
 </script>
