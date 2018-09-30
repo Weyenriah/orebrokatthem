@@ -1,8 +1,8 @@
-<div class="add-cat-container" id="popup">
+<div class="add-cat-container" id="popup-cat">
     <article class="add-cat">
         <div class="add-header">
             <h2> Lägg till ny Katt </h2>
-            <button type="button" onclick="hidePopup()"> <i class="fas fa-times"></i> </button>
+            <button type="button" onclick="hidePopupCat()"> <i class="fas fa-times"></i> </button>
         </div>
 
         <form class="add-form" method="POST" enctype="multipart/form-data">
@@ -49,16 +49,9 @@
 </div>
 
 <script>
-    /* === SHOW POPUP === */
-    function showPopup() {
-        let popup = document.getElementById("popup");
-
-        popup.style.display = "block";
-    }
-
     /* === HIDE POPUP === */
-    function hidePopup() {
-        let popup = document.getElementById("popup");
+    function hidePopupCat() {
+        let popup = document.getElementById("popup-cat");
 
         popup.style.display = "none";
     }

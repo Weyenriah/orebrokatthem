@@ -11,7 +11,10 @@
 
     <!-- General CSS -->
     <link rel="stylesheet" type="text/css" href="style/general.css">
+
+    <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/add-news.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style/admin-home.css">

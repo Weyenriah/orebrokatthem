@@ -1,5 +1,5 @@
 <?php
-require_once '../components/resources.php';
+    require_once '../components/resources.php';
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -11,16 +11,23 @@ require_once '../components/resources.php';
     <!-- Popup for cats -->
     <?php include(APP_FOLDER . '/admin/popups/add-cat.php') ?>
 
+    <!-- Popup for news -->
+    <?php include(APP_FOLDER . '/admin/popups/add-news.php') ?>
+
     <header>
         <a href="index.php" class="header-title"> Administratör </a>
         <p class="logout"> <i class="fas fa-sign-out-alt"></i> </p>
     </header>
     <nav>
         <div class="pages">
-            <a href="#" class="page" onclick="showPopup()"> <i class="fas fa-plus"></i> Lägg till ny Katt </a>
+            <a href="#" class="page" onclick="showPopupCats()">
+                <i class="fas fa-plus"></i> Lägg till ny Katt
+            </a>
         </div>
         <div class="pages">
-            <a href="#" class="page"> <i class="fas fa-plus"></i> Lägg till Nyhet </a>
+            <a href="#" class="page" onclick="showPopupNews()">
+                <i class="fas fa-plus"></i> Lägg till Nyhet
+            </a>
         </div>
         <hr/>
         <h3> Hantera </h3>
@@ -50,3 +57,19 @@ require_once '../components/resources.php';
 </body>
 
 </html>
+
+<script>
+    /* === SHOW CAT-POPUP === */
+    function showPopupCats() {
+        let popup = document.getElementById("popup-cat");
+
+        popup.style.display = "block";
+    }
+
+    /* === SHOW NEWS-POPUP === */
+    function showPopupNews() {
+        let popup = document.getElementById("popup-news");
+
+        popup.style.display = "block";
+    }
+</script>
