@@ -38,7 +38,7 @@
             <a href="#" class="page" onclick="showCatFlow()"> Katter </a>
         </div>
         <div class="pages">
-            <a href="#" class="page"> Anställda </a>
+            <a href="#" class="page" onclick="showEmployeeFlow()"> Anställda </a>
         </div>
         <div class="pages">
             <a href="#" class="page"> Medlemmar </a>
@@ -59,6 +59,9 @@
 
     <!-- Page for news-flow -->
     <?php include(APP_FOLDER . '/admin/pages/news.php') ?>
+
+    <!-- Page for employee-flow -->
+    <?php include(APP_FOLDER . '/admin/pages/employees.php') ?>
 
 </body>
 
@@ -83,10 +86,12 @@
     function showCatFlow() {
         let page = document.getElementById('cats');
         let otherPage = document.getElementById('news');
+        let anotherPage = document.getElementById('employees');
         let main = document.getElementById('welcome');
 
         page.style.display = 'block';
         otherPage.style.display = 'none';
+        anotherPage.style.display = 'none';
         main.style.display = 'none';
     }
 
@@ -94,10 +99,25 @@
     function showNewsFlow() {
         let page = document.getElementById('news');
         let otherPage = document.getElementById('cats');
+        let anotherPage = document.getElementById('employees');
         let main = document.getElementById('welcome');
 
         page.style.display = 'block';
         otherPage.style.display = 'none';
+        anotherPage.style.display = 'none';
+        main.style.display = 'none';
+    }
+
+    /* === SHOW EMPLOYEE-FLOW === */
+    function showEmployeeFlow() {
+        let page = document.getElementById('employees');
+        let otherPage = document.getElementById('cats');
+        let anotherPage = document.getElementById('news');
+        let main = document.getElementById('welcome');
+
+        page.style.display = 'block';
+        otherPage.style.display = 'none';
+        anotherPage.style.display = 'none';
         main.style.display = 'none';
     }
 </script>
