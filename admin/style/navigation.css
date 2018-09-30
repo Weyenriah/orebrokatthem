@@ -29,3 +29,43 @@ nav {
     grid-column: 1;
     height: calc(100vh - 50px);
 }
+
+.popups {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-family: "Georgia", serif;
+    color: #415463;
+}
+
+nav hr {
+    margin-bottom: 3px;
+    margin-top: 13px;
+    width: 80%;
+}
+
+.popups, .pages {
+    height: 25px;
+    text-align: center;
+}
+
+.popups i, .pages i {
+    font-size: 13px;
+}
+
+.page {
+    font-family: "Calibri", sans-serif;
+    text-decoration: none;
+    color: #5e788f;
+}
+
+.page:hover {
+    color: #415463;
+    font-weight: bold;
+}

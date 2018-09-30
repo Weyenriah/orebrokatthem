@@ -19,14 +19,19 @@
         <p class="logout"> <i class="fas fa-sign-out-alt"></i> </p>
     </header>
     <nav>
-        <div class="pages">
+        <div class="popups">
             <a href="#" class="page" onclick="showPopupCats()">
                 <i class="fas fa-plus"></i> Lägg till ny Katt
             </a>
         </div>
-        <div class="pages">
+        <div class="popups">
             <a href="#" class="page" onclick="showPopupNews()">
                 <i class="fas fa-plus"></i> Lägg till Nyhet
+            </a>
+        </div>
+        <div class="popups">
+            <a href="#" class="page">
+                <i class="fas fa-plus"></i> Lägg till ny Medlem
             </a>
         </div>
         <hr/>
