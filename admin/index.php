@@ -20,48 +20,59 @@
     </header>
     <nav>
         <div class="popups">
-            <a href="#" class="page" onclick="showPopupCats()">
+            <a href="#" onclick="showPopupCats()">
                 <i class="fas fa-plus"></i> Lägg till ny Katt
             </a>
         </div>
         <div class="popups">
-            <a href="#" class="page" onclick="showPopupNews()">
+            <a href="#" onclick="showPopupNews()">
                 <i class="fas fa-plus"></i> Lägg till Nyhet
             </a>
         </div>
         <hr/>
         <h3> Hantera </h3>
         <div class="pages">
-            <a href="#" class="page" onclick="showNewsFlow()"> Nyheter </a>
+            <a href="#" onclick="showPage('news')"> Nyheter </a>
         </div>
         <div class="pages">
-            <a href="#" class="page" onclick="showCatFlow()"> Katter </a>
+            <a href="#" onclick="showPage('cats')"> Katter </a>
         </div>
         <div class="pages">
-            <a href="#" class="page" onclick="showEmployeeFlow()"> Anställda </a>
+            <a href="#" onclick="showPage('employees')"> Anställda </a>
         </div>
         <div class="pages">
-            <a href="#" class="page" onclick="showRememberFlow()"> Katter i minneslunden </a>
+            <a href="#" onclick="showPage('remem-cats')"> Katter i minneslunden </a>
         </div>
         <div class="pages">
-            <a href="#" class="page"> <i class="fas fa-align-left"></i> Ändra textfält </a>
+            <a href="#" id="text" onclick="showPopupNav()"> <i class="fas fa-align-left"></i> Ändra textfält </a>
+        </div>
+        <div id="popup-nav">
+            <div class="pages">
+                <a href="#" onclick="showPage('home')"> Hem </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Adoptera </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Våra Katter </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Bli Jourhem </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Om Oss </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Stöd Oss </a>
+            </div>
+            <div class="pages">
+                <a href="#"> Footer </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Page for welcome -->
-    <?php include(APP_FOLDER . '/admin/pages/welcome.php') ?>
-
-    <!-- Page for cat-flow -->
-    <?php include(APP_FOLDER . '/admin/pages/cats.php') ?>
-
-    <!-- Page for news-flow -->
-    <?php include(APP_FOLDER . '/admin/pages/news.php') ?>
-
-    <!-- Page for employee-flow -->
-    <?php include(APP_FOLDER . '/admin/pages/employees.php') ?>
-
-    <!-- Page for employee-flow -->
-    <?php include(APP_FOLDER . '/admin/pages/remember.php') ?>
+    <!-- Include every page that's needed -->
+    <?php include(APP_FOLDER . '/admin/pages/include-pages.php') ?>
 
 </body>
 
@@ -82,63 +93,30 @@
         popup.style.display = 'block';
     }
 
+    /* === SHOW NEWS-POPUP === */
+    function showPopupNav() {
+        let popup = document.getElementById('popup-nav');
+        let link = document.getElementById('text');
+
+        if(popup.classList.contains('popup-nav-show')) {
+            popup.classList.remove('popup-nav-show');
+            link.classList.remove('link-selected');
+        } else {
+            popup.classList.add('popup-nav-show');
+            link.classList.add('link-selected');
+        }
+    }
+
     /* === SHOW CAT-FLOW === */
-    function showCatFlow() {
-        let page = document.getElementById('cats');
-        let otherPage = document.getElementById('news');
-        let anotherPage = document.getElementById('employees');
-        let yetAnotherPage = document.getElementById('remem-cats');
-        let main = document.getElementById('welcome');
+    function showPage(pageName) {
+        let pages = document.getElementsByClassName('page');
 
-        page.style.display = 'block';
-        otherPage.style.display = 'none';
-        anotherPage.style.display = 'none';
-        yetAnotherPage.style.display = 'none';
-        main.style.display = 'none';
-    }
+        /* Adds display = none om every page */
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
 
-    /* === SHOW NEWS-FLOW === */
-    function showNewsFlow() {
-        let page = document.getElementById('news');
-        let otherPage = document.getElementById('cats');
-        let anotherPage = document.getElementById('employees');
-        let yetAnotherPage = document.getElementById('remem-cats');
-        let main = document.getElementById('welcome');
-
-        page.style.display = 'block';
-        otherPage.style.display = 'none';
-        anotherPage.style.display = 'none';
-        yetAnotherPage.style.display = 'none';
-        main.style.display = 'none';
-    }
-
-    /* === SHOW EMPLOYEE-FLOW === */
-    function showEmployeeFlow() {
-        let page = document.getElementById('employees');
-        let otherPage = document.getElementById('cats');
-        let anotherPage = document.getElementById('news');
-        let yetAnotherPage = document.getElementById('remem-cats');
-        let main = document.getElementById('welcome');
-
-        page.style.display = 'block';
-        otherPage.style.display = 'none';
-        anotherPage.style.display = 'none';
-        yetAnotherPage.style.display = 'none';
-        main.style.display = 'none';
-    }
-
-    /* === SHOW REMEMBER-FLOW === */
-    function showRememberFlow() {
-        let page = document.getElementById('remem-cats');
-        let otherPage = document.getElementById('cats');
-        let anotherPage = document.getElementById('news');
-        let yetAnotherPage = document.getElementById('employees');
-        let main = document.getElementById('welcome');
-
-        page.style.display = 'block';
-        otherPage.style.display = 'none';
-        anotherPage.style.display = 'none';
-        yetAnotherPage.style.display = 'none';
-        main.style.display = 'none';
+        /* Changes display to block */
+        document.getElementById(pageName).style.display = 'block';
     }
 </script>

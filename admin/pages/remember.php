@@ -5,7 +5,7 @@ $rememCats = $database->getRememberCats();
 
 ?>
 
-<section id="remem-cats">
+<section class="page" id="remem-cats">
     <h2>Ändra Katter i Minneslunden</h2>
     <div class="remem-cats">
         <?php

@@ -15,8 +15,7 @@ $employees = $database->getEmployees();
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Om Oss </h1>
-        <p> Örebro Katthem drivs helt och hållet ideellt med privata medel och alla föreningsaktiva har mycket att göra och har höga telefonräkningar. Alla utom Christina använder helst mailkontakt i första hand. Vi ber er därför att sköta så mycket som möjligt av ärendet med mail i den mån ni har möjlighet till det. Välkommen att ta kontakt med oss!
-        </p>
+        <p> <?php echo($database->getContent('about-header')); ?> </p>
     </header>
 
     <!-- Section for employees -->
@@ -101,16 +100,7 @@ $employees = $database->getEmployees();
                     </p>
                     <h5 class="second-row-heading"> Krav </h5>
                     <ul>
-                        <li> Du är myndig, ska helst ha fyllt 20 år.
-                        </li>
-                        <li> Du är ansvarstagande. Det är oerhört viktigt, eftersom du ska ta hand om levande djur.
-                        </li>
-                        <li> Du kan ta minst ett arbetspass var 14:e dag. Helst fasta pass (samma pass varje gång).
-                        </li>
-                        <li> Du är inte rädd att slita lite - det är mycket städning.
-                        </li>
-                        <li> Du har kattvana, och är lugn och sansad. Det är viktigt, eftersom vi ständigt har många olika katter, varav många är skygga/blyga som behöver ha lugna och trygga människor omkring sig.
-                        </li>
+                        <?php echo($database->getContent('about-vol-demands')); ?>
                     </ul>
                     <p> <br/>
                         Varje dag har vi morgonpass och kvällspass på katthemmet och du bestämmer själv när och hur ofta du kan hjälpa till.
@@ -120,11 +110,13 @@ $employees = $database->getEmployees();
                 <div class="contact-become">
                     <div>
                         <h5 class="second-row-heading"> Ring till katthemmet </h5>
-                        <p> 019-26 00 86 </p>
+                        <p> <?php echo($database->getContent('about-vol-tele')); ?> </p>
                     </div>
                     <div>
                         <h5 class="second-row-heading"> Mejla personalansvarige </h5>
-                        <a href="mailto:intro@orebrokatthem.com"> intro@orebrokatthem.com </a>
+                        <a href="mailto:<?php echo($database->getContent('about-vol-email')); ?>">
+                            <?php echo($database->getContent('about-vol-email')); ?>
+                        </a>
                     </div>
                 </div>
             </div>

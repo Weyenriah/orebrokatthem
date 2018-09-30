@@ -34,8 +34,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Specific heading to this page -->
     <header class="header">
         <h1>Välkommen</h1>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu ex in nulla feugiat sollicitudin. Morbi feugiat facilisis enim quis aliquet. Nunc eu massa sit amet nisl euismod sollicitudin at sit amet est. Fusce vitae rhoncus ante, quis mattis dui. Nunc commodo pellentesque tortor, a ultrices ligula tincidunt quis. Nunc imperdiet sapien id sapien interdum, nec interdum odio convallis. Vestibulum id odio tortor.
-        </p>
+        <p> <?php echo($database->getContent('home-header')); ?> </p>
     </header>
 
     <!-- Carousel -->
@@ -119,21 +118,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <section class="general-grid blue-background" id="remember">
         <h2> Minneslunden </h2>
         <div class="all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
-            <p class="blue-paragraph"> Sov gott små vänner, vila nu, för smärtan är över <br/>
-                Era tappra små själar ej kämpa mer behöver <br/>
-                <br/>
-                Ni var så perfekta, alla underbara på sitt eget lilla sätt <br/>
-                Att ni hamnade i fel händer, det känns inte rätt <br/>
-                Och att vi ej hann er rädda det känns inte lätt <br/>
-                <br/>
-                Vi ville få ger er ett kärleksfullt hem <br/>
-                som alla andra katter, ni är unika precis som dem <br/>
-                Vem gjorde er så illa? Snälla säg oss vem <br/>
-                <br/>
-                Sov gott små vänner, vila nu, för smärtan är över <br/>
-                Era tappra små själar ej kämpa mer behöver <br/>
-                <br/>
-                <i>I ert minne räddar vi fler</i> </p>
+            <p class="blue-paragraph"> <?php echo($database->getContent('home-remember')); ?> </p>
             <div class="all-remem-cats">
                 <?php foreach($remember as $cat) {
                     $born = ($cat['born'] === null) ? '' : ('* ' . $cat['born'] . ' |');

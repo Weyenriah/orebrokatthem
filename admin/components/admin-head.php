@@ -19,6 +19,9 @@
     <link rel="stylesheet" type="text/css" href="style/pages/employees.css">
     <link rel="stylesheet" type="text/css" href="style/pages/remember.css">
 
+    <!-- Textfield CSS -->
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/home.css">
+
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-news.css">

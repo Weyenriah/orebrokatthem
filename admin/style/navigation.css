@@ -59,13 +59,27 @@ nav hr {
     font-size: 13px;
 }
 
-.page {
+.pages a, .popups a {
     font-family: "Calibri", sans-serif;
     text-decoration: none;
     color: #5e788f;
 }
 
-.page:hover {
+.pages a:hover, .popups a:hover {
     color: #415463;
     font-weight: bold;
+}
+
+/* === POPUP NAVIGATION === */
+#popup-nav {
+    display: none;
+}
+
+.popup-nav-show {
+    display: block !important;
+}
+
+.link-selected {
+    font-weight: bold;
+    color: #415463;
 }

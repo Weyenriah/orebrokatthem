@@ -6,7 +6,7 @@ $news = $database->getNews();
 
 ?>
 
-<section id="news">
+<section class="page" id="news">
     <h2>Ändra Nyheter</h2>
     <div class="news">
         <?php

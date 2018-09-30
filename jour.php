@@ -21,35 +21,14 @@ if(isset($_POST['jour-contact'])) {
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Bli Jourhem </h1>
-        <p> Ett sätt att hjälpa vår verksamhet är att anmäla sig som jourhem. Då tar du hand om en katt ifrån oss i väntan på att katten hittar ett permanent hem. Ett jourhem kan behövas för alla sorts katter, både keliga som rädda katter men störst är behovet av hem till katter som behöver tid på sig att lära sig att lita på människor. Detta tar i genomsnitt ca 3-4 månader. En fördel (ej krav) är om du har andra katter. Glöm inte att vaccinera dina egna katter. Örebro Katthem betalar vaccinering, ev. veterinärvård och kastrering av den omhändertagna katten. Mat och kattsand kan vi tyvärr inte bidra med, såvida du inte tagit hand om många katter.
-            Hör av dig så hjälper vi dig att hitta den katt eller de katter som passar bäst i ditt hem!
-        </p>
+        <p> <?php echo($database->getContent('jour-header')); ?> </p>
     </header>
 
     <!-- Section for "How it is to be an emergency home?" -->
     <section class="blue-background general-grid" id="how">
         <h2> Hur är det att vara jourhem? </h2>
-        <div class="blue-paragraph how-text"> <h5 class="second-row-heading"> Jourhem innebär ett tillfälligt hem </h5>
-            <p> för en eller fler hemlösa katter som inte kan tas in på katthemmet eller som är i behov av extra omsorg. </p>
-
-            <h5 class="second-row-heading"> Det handlar ofta om lite rädda/skygga katter </h5>
-            <p> som behöver lugn och ro samt en stabil människokontakt för att få förtroende för människor igen. Det kan också vara katter som akut behöver någonstans att ta vägen. </p>
-
-            <h5 class="second-row-heading"> Som jourhem kommer du att få en kontaktperson </h5>
-            <p> som kan ge dig råd, hjälp och stöd. I samråd med din kontaktperson tas alla beslut gällande katten. Du kommer att få så mycket information som möjligt av oss om kattens bakgrund för att ge er de bästa förutsättningarna inför den nya bekantskapen. </p>
-
-            <h5 class="second-row-heading"> Vi kommer att tilldela dig en katt som passar </h5>
-            <p> den kattvana du har, eftersom vissa katter kan vara mycket skygga och kan upplevas som lite aggressiva. I vissa fall behövs någon som är hemma hela dagarna för vård av sjukdom eller andra behov. </p>
-
-            <h5 class="second-row-heading"> Katterna behöver mer eller mindre veterinärvård. </h5>
-            <p> Alla könsmogna katter kastreras, ID-märks och vaccineras. Örebro Katthem samarbetar med veterinär Karin Simonsson i Fjugesta och kommer att stå för de kostnaderna. De flesta katter är i behov av behandling mot öronskabb samt avmaskas, något som sköts i jourhemmen. Är du ovan med att utföra detta kan du kontakta din respektive kontaktperson för att få råd, handledning och eventuell hjälp med åtgärden. All medicin som behövs står Örebro Katthem för. </p>
-
-
-            <h5 class="second-row-heading"> Som jourhem får du vid behov bidrag </h5>
-            <p> med kattmat och kattströ från katthemmet. Detta gäller först och främst dig som tagit hand om många katter. På grund av vår ansträngda ekonomi kan vi inte erbjuda dig något ekonomiskt stöd. Kattmaten kommer från våra sponsorer. </p>
-
-            <h5 class="second-row-heading"> Katten tillhör Örebro Katthem </h5>
-            <p> och det är genom oss som all utplacering i varaktiga hem sker. De bestämmelser som gäller för katter bosatta på katthemmet gäller även för katter placerade i jourhem. Din kontaktperson kommer att informera dig mer om detta och se till att missförstånd inte uppstår. (Du får mer än gärna leta efter permanenta hem till katten, eller kanske rentav adoptera den själv, men adoptionen måste godkännas av din kontaktperson.) </p>
+        <div class="blue-paragraph how-text">
+            <?php echo($database->getContent('jour-how')); ?>
         </div>
     </section>
 

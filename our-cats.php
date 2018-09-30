@@ -67,8 +67,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
 <!-- Specific heading to this page -->
 <header class="header">
     <h1> Våra katter </h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu ex in nulla feugiat sollicitudin. Morbi feugiat facilisis enim quis aliquet. Nunc eu massa sit amet nisl euismod sollicitudin at sit amet est. Fusce vitae rhoncus ante, quis mattis dui. Nunc commodo pellentesque tortor, a ultrices ligula tincidunt quis. Nunc imperdiet sapien id sapien interdum, nec interdum odio convallis. Vestibulum id odio tortor.
-    </p>
+    <p> <?php echo($database->getContent('ourcats-header')); ?> </p>
 </header>
 
 <section class="blue-background general-grid" id="our-cats">

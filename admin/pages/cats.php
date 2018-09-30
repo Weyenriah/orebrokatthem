@@ -5,7 +5,7 @@ $cats = $database->getCats();
 
 ?>
 
-<section id="cats">
+<section class="page" id="cats">
     <h2>Ändra Katter</h2>
     <div class="cats">
         <?php
