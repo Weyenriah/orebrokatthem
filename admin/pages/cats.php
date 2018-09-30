@@ -6,6 +6,7 @@ $cats = $database->getCats();
 ?>
 
 <section id="cats">
+    <h2>Ändra Katter</h2>
     <div class="cats">
         <?php
         foreach ($cats as $cat) {

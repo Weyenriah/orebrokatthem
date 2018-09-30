@@ -29,11 +29,6 @@
                 <i class="fas fa-plus"></i> Lägg till Nyhet
             </a>
         </div>
-        <div class="popups">
-            <a href="#" class="page">
-                <i class="fas fa-plus"></i> Lägg till ny Medlem
-            </a>
-        </div>
         <hr/>
         <h3> Hantera </h3>
         <div class="pages">
@@ -44,9 +39,6 @@
         </div>
         <div class="pages">
             <a href="#" class="page" onclick="showEmployeeFlow()"> Anställda </a>
-        </div>
-        <div class="pages">
-            <a href="#" class="page"> Medlemmar </a>
         </div>
         <div class="pages">
             <a href="#" class="page" onclick="showRememberFlow()"> Katter i minneslunden </a>

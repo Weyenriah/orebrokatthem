@@ -6,6 +6,7 @@ $rememCats = $database->getRememberCats();
 ?>
 
 <section id="remem-cats">
+    <h2>Ändra Katter i Minneslunden</h2>
     <div class="remem-cats">
         <?php
         foreach ($rememCats as $rememCat) {

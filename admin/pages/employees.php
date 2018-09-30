@@ -6,6 +6,7 @@ $employees = $database->getEmployees();
 ?>
 
 <section id="employees">
+    <h2>Ändra Anställda</h2>
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
