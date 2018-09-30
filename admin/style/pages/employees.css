@@ -1,0 +1,106 @@
+#employees {
+    grid-row: 2;
+    grid-column: 2;
+    display: none;
+}
+
+#employees h2 {
+    margin-left: 30px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: "Georgia", serif;
+}
+
+.employees {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color: white;
+}
+
+.employee {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.employee:not(:last-child) {
+    border-bottom: 1px solid #415463;
+}
+
+.employee-img {
+    height: 180px;
+    width: 170px;
+    overflow: hidden;
+    border: 1px solid #415463;
+    margin: 0 15px 15px 1px;
+}
+
+.employee-img img {
+    height: auto;
+    width: 170px;
+}
+
+.employee-info-text {
+    width: 75%;
+}
+
+.change-employee {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.change-employee a {
+    text-decoration: none;
+    font-family: "Calibri", sans-serif;
+    color: #5e788f;
+    margin-right: 30px;
+}
+
+.change-employee a:hover {
+    color: #415463;
+    font-weight: bold;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+}
+
+.change-employee a i {
+    font-size: 15px;
+}
+
+.employee-information {
+    font-family: "Calibri", sans-serif;
+}
+
+.employee-information h3 {
+    font-family: "Georgia", serif;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 1px;
+    color: #415463;
+}
+
+.employee-information p {
+    margin-top: 4px;
+    color: #415463;
+}
+
+.employee-information p:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.employee-information a {
+    text-decoration: none;
+    color: #5e788f;
+}
+
+.employee-information a:hover {
+    color: #415463;
+    font-weight: bold;
+}
+
+.employee-information .fas {
+    font-size: 15px;
+}
