@@ -61,6 +61,7 @@
 
 .change-cat a:hover {
     color: #415463;
+    font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
