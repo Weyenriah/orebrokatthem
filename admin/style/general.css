@@ -6,35 +6,9 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: auto auto;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px auto;
     position: relative;
-}
-
-
-/* === HEADER STYLING === */
-header {
-    grid-row: 1;
-    grid-column: 1 / span 4;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #a0cdf3;
-}
-
-.header-title {
-    margin-left: 13px;
-    font-size: 25px;
-    font-family: "Georgia", serif;
-    text-decoration: none;
-    color: #415463;
-}
-
-.logout {
-    margin-right: 13px;
-    font-size: 25px;
-    color: #5e788f;
 }
 
 /* === NAVIGATION STYLING === */

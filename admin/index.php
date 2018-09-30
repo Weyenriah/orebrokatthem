@@ -32,10 +32,10 @@
         <hr/>
         <h3> Hantera </h3>
         <div class="pages">
-            <a href="news.php" class="page"> Nyheter </a>
+            <a href="#" class="page" onclick="showNewsFlow()"> Nyheter </a>
         </div>
         <div class="pages">
-            <a href="cats.php" class="page"> Katter </a>
+            <a href="#" class="page" onclick="showCatFlow()"> Katter </a>
         </div>
         <div class="pages">
             <a href="#" class="page"> Anställda </a>
@@ -50,10 +50,16 @@
             <a href="#" class="page"> <i class="fas fa-align-left"></i> Ändra textfält </a>
         </div>
     </nav>
-    <section>
-        <h2>Välkommen!</h2>
-        <p> Till vänster ser du varje sida som du kan ändra på. </p>
-    </section>
+
+    <!-- Page for welcome -->
+    <?php include(APP_FOLDER . '/admin/pages/welcome.php') ?>
+
+    <!-- Page for cat-flow -->
+    <?php include(APP_FOLDER . '/admin/pages/cats.php') ?>
+
+    <!-- Page for news-flow -->
+    <?php include(APP_FOLDER . '/admin/pages/news.php') ?>
+
 </body>
 
 </html>
@@ -61,15 +67,37 @@
 <script>
     /* === SHOW CAT-POPUP === */
     function showPopupCats() {
-        let popup = document.getElementById("popup-cat");
+        let popup = document.getElementById('popup-cat');
 
-        popup.style.display = "block";
+        popup.style.display = 'block';
     }
 
     /* === SHOW NEWS-POPUP === */
     function showPopupNews() {
-        let popup = document.getElementById("popup-news");
+        let popup = document.getElementById('popup-news');
 
-        popup.style.display = "block";
+        popup.style.display = 'block';
+    }
+
+    /* === SHOW CAT-FLOW === */
+    function showCatFlow() {
+        let page = document.getElementById('cats');
+        let otherPage = document.getElementById('news');
+        let main = document.getElementById('welcome');
+
+        page.style.display = 'block';
+        otherPage.style.display = 'none';
+        main.style.display = 'none';
+    }
+
+    /* === SHOW NEWS-FLOW === */
+    function showNewsFlow() {
+        let page = document.getElementById('news');
+        let otherPage = document.getElementById('cats');
+        let main = document.getElementById('welcome');
+
+        page.style.display = 'block';
+        otherPage.style.display = 'none';
+        main.style.display = 'none';
     }
 </script>

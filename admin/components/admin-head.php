@@ -12,12 +12,17 @@
     <!-- General CSS -->
     <link rel="stylesheet" type="text/css" href="style/general.css">
 
+    <!-- Pages CSS -->
+    <link rel="stylesheet" type="text/css" href="style/pages/welcome.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/cats.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/news.css">
+
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-news.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="style/admin-home.css">
+    <link rel="stylesheet" type="text/css" href="style/navigation.css">
 
     <!-- Webpage title -->
     <title>Admin: Örebro Katthem</title>

@@ -1,71 +1,74 @@
-section {
+#news {
     grid-row: 2;
     grid-column: 2 / span 4;
+    display: none;
 }
 
-section h2 {
+#news h2 {
     margin-left: 30px;
     margin-bottom: 5px;
     font-size: 20px;
     font-family: "Georgia", serif;
 }
 
-.cats {
+.new {
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     margin-left: 30px;
 }
 
-.cat {
+.a-new {
     display: flex;
-    width: auto;
+    width: 100%;
     margin-bottom: 20px;
     margin-right: 30px;
 }
 
-.cat-img {
+.a-new:not(:last-child) {
+    border-bottom: 1px solid #415463;
+}
+
+.news-img {
     height: 180px;
     width: 170px;
     overflow: hidden;
-    border: 1px solid #3f5737;
+    border: 1px solid #415463;
     margin-right: 15px;
 }
 
-.cat-img img {
+.news-img img {
     height: auto;
     width: 170px;
 }
 
-.cat-info-text {
-    width: 75%;
-}
-
-.change-cat {
+.change-news {
     margin-bottom: 10px;
     display: flex;
 }
 
-.change-cat a {
+.change-news a {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
-    color: #739069;
+    color: #5e788f;
     margin-right: 30px;
 }
 
-.change-cat a:hover {
-    color: #3f5737;
+.change-news a:hover {
+    color: #415463;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
 }
 
-.change-cat a i {
+.change-news a i {
     font-size: 15px;
 }
 
-.cat-information {
+.news-information {
     font-family: "Calibri", sans-serif;
 }
 
-.cat-information h3 {
+.news-information h3 {
     font-family: "Georgia", serif;
     font-size: 25px;
     margin: 0;
