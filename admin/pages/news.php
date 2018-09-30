@@ -7,11 +7,11 @@ $news = $database->getNews();
 ?>
 
 <section id="news">
-    <div class="new">
+    <div class="news">
         <?php
         foreach ($news as $new) {
             ?>
-            <article class="a-new">
+            <article class="new">
                 <?php if ($new['image'] !== '') { ?>
                     <div class="news-img">
                         <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">

@@ -5,12 +5,12 @@ $cats = $database->getCats();
 
 ?>
 
-<section class="cats" id="cats">
-    <div class="cat">
+<section id="cats">
+    <div class="cats">
         <?php
         foreach ($cats as $cat) {
         ?>
-        <article class="a-cat">
+        <article class="cat">
             <?php if ($cat['image'] !== '') { ?>
                 <div class="cat-img">
                     <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
