@@ -1,6 +1,7 @@
-<?php require_once 'components/resources.php';
+<?php
+    require_once 'components/resources.php';
 
-$employees = $database->getEmployees();
+    $employees = $database->getEmployees();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
