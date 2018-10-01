@@ -334,3 +334,55 @@ body {
     from {color: #5e788f;}
     to {color: #415463;}
 }
+
+/* === WHITE LIST/GENERAL LIST STYLING === */
+/* Styling to list */
+.white-background ol {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    counter-reset: custom-counter;
+}
+.white-background ol li {
+    position: relative;
+    margin-bottom: 40px;
+    counter-increment: custom-counter;
+}
+.white-background ol li p {
+    margin-top: 0;
+}
+
+/* Styling to the numbers in list */
+.white-background ol li:before {
+    content: counter(custom-counter);
+    position: absolute;
+    line-height: 25px;
+    font-size: 350%;
+    font-family: "Georgia", serif;
+    margin-top: 5px;
+}
+.white-background ol li:nth-child(n+10):before {
+    left: -32px;
+}
+.white-background ol li:nth-child(11):before {
+    left: -22px;
+}
+
+/* Moves the text to the left */
+.adjust-main-left {
+    padding-left: 60px;
+}
+
+/* Adjusting the image */
+.tips-img {
+    height: 300px;
+    width: 250px;
+    overflow: hidden;
+    float: right;
+    margin-left: 15px;
+    border: 1px solid #415463;
+}
+.tips-img img {
+    height: auto;
+    width: 250px;
+}
