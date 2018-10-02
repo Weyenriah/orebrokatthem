@@ -1,16 +1,16 @@
-.active-button-home {
+.active-button-adopt {
     color: #415463;
     font-weight: bold;
 }
 
-#commando-home {
+#commando-adopt {
     display: none;
     width: 90%;
     margin-left: 10%;
     margin-right: 10%;
 }
 
-#commando-home h3 {
+#commando-adopt h3 {
     font-family: "Calibri", sans-serif;
     font-size: 19px;
     font-weight: bold;
@@ -18,7 +18,7 @@
     color: #415463;
 }
 
-#commando-home p {
+#commando-adopt p {
     font-family: "Calibri", sans-serif;
     font-size: 16px;
     margin-top: 0;
@@ -26,6 +26,6 @@
 }
 
 /* Display commando */
-.display-home {
+.display-adopt {
     display: block !important;
 }

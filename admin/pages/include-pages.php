@@ -17,4 +17,7 @@
     // === TEXTFIELD PAGES ===
     // Home page
     include(APP_FOLDER . '/admin/pages/textfield-pages/home.php');
+
+    // Adopt page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/adopt.php');
 ?>

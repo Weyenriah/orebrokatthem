@@ -51,7 +51,7 @@
                 <a href="#" onclick="showPage('home')"> Hem </a>
             </div>
             <div class="pages">
-                <a href="#"> Adoptera </a>
+                <a href="#" onclick="showPage('adopt')"> Adoptera </a>
             </div>
             <div class="pages">
                 <a href="#"> Våra Katter </a>
@@ -119,4 +119,6 @@
         /* Changes display to block */
         document.getElementById(pageName).style.display = 'block';
     }
+
+
 </script>

@@ -1,9 +1,9 @@
 <section class="textfield page" id="home">
     <div class="textfield-header">
         <h2> Ändra på sida: Hem </h2>
-        <button type="button" id="code-help" onclick="commando()"> Kodhjälp </button>
+        <button type="button" id="code-help-home" onclick="commandoHome()"> Kodhjälp </button>
     </div>
-    <div id="commando">
+    <div id="commando-home">
         <h3> Kortkommandon </h3>
         <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
             &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
@@ -30,16 +30,16 @@
 
 <script>
     /* === SHOW AND HIDE CODE HELP === */
-    function commando() {
-        let commando = document.getElementById('commando');
-        let button = document.getElementById('code-help');
+    function commandoHome() {
+        let commando = document.getElementById('commando-home');
+        let button = document.getElementsByClassName('code-help-home');
 
-        if(commando.classList.contains('display')) {
-            commando.classList.remove('display');
-            button.classList.remove('active-button');
+        if (commando.classList.contains('display-home')) {
+            commando.classList.remove('display-home');
+            button.classList.remove('active-button-home');
         } else {
-            commando.classList.add('display');
-            button.classList.add('active-button');
+            commando.classList.add('display-home');
+            button.classList.add('active-button-home');
         }
     }
 </script>

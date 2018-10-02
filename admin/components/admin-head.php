@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="style/pages/remember.css">
 
     <!-- Textfield CSS -->
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/general-textfield.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/adopt.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/home.css">
 
     <!-- Popup CSS -->
