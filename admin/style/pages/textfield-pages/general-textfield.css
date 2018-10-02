@@ -4,6 +4,10 @@
     display: none;
 }
 
+.textfield div:last-of-type {
+    margin-bottom: 20px;
+}
+
 .textfield-header {
     display: flex;
     justify-content: space-between;
@@ -38,16 +42,28 @@
     width: 100%;
 }
 
+.form {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.form h3 {
+    font-family: "Calibri", sans-serif;
+    color: #415463;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
 .text-form {
     margin-top: 20px;
 }
 
 .text-form {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .text-form label {
@@ -71,6 +87,124 @@
 }
 
 .text-form button:hover {
+    background-color: #415463;
+    animation-name: button-blue;
+    animation-duration: 0.5s;
+}
+
+/* Styling for multiple forms at once */
+.multiple label:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+/* === STYLING FOR THE LISTS === */
+.not-forms {
+    width: 100%;
+}
+
+/* Styling to list */
+.list-handler {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.list-handler h3 {
+    font-family: "Calibri", sans-serif;
+    color: #415463;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.list-handler ol {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    counter-reset: custom-counter;
+}
+.list-handler ol li {
+    position: relative;
+    margin-bottom: 20px;
+    counter-increment: custom-counter;
+}
+.list-handler ol li:not(:last-child) {
+    border-bottom: 1px solid #415463;
+}
+.list-handler ol li p {
+    margin-top: 0;
+    color: #415463;
+    font-family: "Calibri", sans-serif;
+    width: 100%;
+}
+
+/* Styling to the numbers in list */
+.list-handler ol li:before {
+    content: counter(custom-counter);
+    position: absolute;
+    line-height: 25px;
+    font-size: 350%;
+    font-family: "Georgia", serif;
+    margin-top: 5px;
+    color: #415463;
+}
+.list-handler ol li:nth-child(n+10):before {
+    left: -32px;
+}
+.list-handler ol li:nth-child(11):before {
+    left: -22px;
+}
+
+/* Styling to the header */
+.list-handler ol li h5 {
+    font-family: "Calibri", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0;
+    color: #415463;
+}
+
+/* Moves the text to the left */
+.adjust-main-left {
+    padding-left: 60px;
+}
+
+/* The buttons for changing the already existing listitems */
+.change-list {
+    float: right;
+}
+
+.change-list a {
+    text-decoration: none;
+}
+
+.change-list i {
+    color: #5e788f;
+}
+
+.change-list i:first-of-type {
+    margin-right: 10px;
+}
+
+.change-list i:hover {
+    color: #415463;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+}
+
+/* Add to list button styling */
+.add-to-list {
+    margin-top: 10px;
+    height: 35px;
+    background-color: #5e788f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 18px;
+    width: 100%;
+}
+
+.add-to-list:hover {
     background-color: #415463;
     animation-name: button-blue;
     animation-duration: 0.5s;
