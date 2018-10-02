@@ -20,4 +20,10 @@
 
     // Adopt page
     include(APP_FOLDER . '/admin/pages/textfield-pages/adopt.php');
+
+    // Our Cats page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/our-cats.php');
+
+    // Our Cats page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/jour.php');
 ?>

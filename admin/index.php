@@ -54,10 +54,10 @@
                 <a href="#" onclick="showPage('adopt')"> Adoptera </a>
             </div>
             <div class="pages">
-                <a href="#"> Våra Katter </a>
+                <a href="#" onclick="showPage('our-cats')"> Våra Katter </a>
             </div>
             <div class="pages">
-                <a href="#"> Bli Jourhem </a>
+                <a href="#" onclick="showPage('jour')"> Bli Jourhem </a>
             </div>
             <div class="pages">
                 <a href="#"> Om Oss </a>

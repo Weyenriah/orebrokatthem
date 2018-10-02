@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/general-textfield.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/adopt.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/home.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/our-cats.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/jour.css">
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
