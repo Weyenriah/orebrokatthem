@@ -1,3 +1,6 @@
+<?php
+    $jourListitems = $database->getJourList();
+?>
 <section class="textfield page" id="jour">
     <div class="textfield-header">
         <h2> Ändra på sida: Bli Jourhem </h2>
@@ -18,6 +21,25 @@
                 <button type="submit" value="Ändra"> Ändra </button>
             </div>
         </form>
+    </div>
+
+    <div class="not-forms">
+        <div class="list-handler">
+            <h3> Ändra listan i "Tips" </h3>
+            <ol>
+                <?php foreach($jourListitems as $jourListitem) { ?>
+                    <li>
+                        <div class="change-list">
+                            <a href="#"> <i class="fas fa-pencil-alt"></i> </a>
+                            <a href="#"> <i class="fas fa-times"></i> </a>
+                        </div>
+                        <h5 class="adjust-main-left"> <?php echo($jourListitem['title']) ?> </h5>
+                        <p class="adjust-main-left"> <?php echo($jourListitem['content']) ?> </p>
+                    </li>
+                <?php } ?>
+            </ol>
+            <button type="button" class="add-to-list"> Lägg till i listan </button>
+        </div>
     </div>
 </section>
 
