@@ -17,7 +17,9 @@
 
                 <button type="submit" value="Ändra"> Ändra </button>
             </div>
+        </form>
 
+        <form class="form">
             <div class="text-form">
                 <label for="text"> Ändra text i Minneslunden </label>
                 <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('home-remember')); ?></textarea>
