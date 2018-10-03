@@ -10,7 +10,9 @@
         <h3> Kortkommandon </h3>
         <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
             &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
-            &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> </p>
+            &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> <br/>
+            &lt;h5&gt; Text &lt;/h5&gt; = Rubrik <br/>
+            &lt;p&gt; Text &lt;/p&gt; = Text efter rubrik </p>
     </div>
     <div class="forms">
         <form class="form">
@@ -21,11 +23,20 @@
                 <button type="submit" value="Ändra"> Ändra </button>
             </div>
         </form>
+
+        <form class="form">
+            <div class="text-form">
+                <label for="text"> Ändra "Hur är det att vara jourhem?" </label>
+                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('jour-how')); ?></textarea>
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
     </div>
 
     <div class="not-forms">
         <div class="list-handler">
-            <h3> Ändra listan i "Tips" </h3>
+            <h3> Ändra listan i "Tips för dig med skygg jourhemskatt" </h3>
             <ol>
                 <?php foreach($jourListitems as $jourListitem) { ?>
                     <li>
@@ -40,6 +51,21 @@
             </ol>
             <button type="button" class="add-to-list"> Lägg till i listan </button>
         </div>
+    </div>
+
+    <div class="forms">
+        <form class="form">
+            <div class="text-form multiple">
+                <h3> Ändra kontaktinformation för "Anmälning" </h3>
+                <label for="name"> Namn </label>
+                <input type="text" id="name" value="<?php echo($database->getContent('jour-contact-name')); ?>">
+
+                <label for="tele"> Telefonnummer </label>
+                <input type="text" id="tele" value="<?php echo($database->getContent('jour-contact-tele')); ?>">
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
     </div>
 </section>
 
