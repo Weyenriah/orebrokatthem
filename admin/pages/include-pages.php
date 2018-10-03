@@ -32,4 +32,7 @@
 
     // Support page
     include(APP_FOLDER . '/admin/pages/textfield-pages/support.php');
+
+    // Footer page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/footer.php');
 ?>

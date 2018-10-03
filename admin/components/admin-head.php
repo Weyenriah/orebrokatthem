@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/jour.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/about.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/support.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/footer.css">
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">

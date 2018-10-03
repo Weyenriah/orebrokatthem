@@ -66,7 +66,7 @@
                 <a href="#" onclick="showPage('support')"> Stöd Oss </a>
             </div>
             <div class="pages">
-                <a href="#"> Footer </a>
+                <a href="#" onclick="showPage('footer')"> Footer </a>
             </div>
         </div>
     </nav>
