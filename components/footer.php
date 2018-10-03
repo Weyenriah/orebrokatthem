@@ -63,21 +63,19 @@ function any_array(array $array, callable $fn) {
 <footer class="first-footer">
     <section class="contact">
         <h2>Kontakt</h2>
-        <p class="contact-p">Örebro Katthem <br/>
-            Sockengatan 5 <br/>
-            702 16 Örebro <br/>
+        <p class="contact-p"> <?php echo($database->getContent('footer-visit')); ?>
         </p>
-        <a class="footer-link contact-foot-link" href="mailto:info@orebrokatthem.com">
-            <i class="fas fa-envelope"></i> info@orebrokatthem.com
+        <a class="footer-link contact-foot-link" href="mailto:<?php echo($database->getContent('footer-visit-email')); ?>">
+            <i class="fas fa-envelope"></i> <?php echo($database->getContent('footer-visit-email')); ?>
         </a>
         <p class="contact-p">
-            <i class="fas fa-phone"></i> 019-26 00 86
+            <i class="fas fa-phone"></i> <?php echo($database->getContent('footer-visit-tele')); ?>
         </p>
     </section>
     <section class="social-media">
         <h2>Hitta oss på sociala medier!</h2>
-        <a href="https://www.facebook.com/orebrokatthem/" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
-        <a href="https://www.instagram.com/orebrokatthem/" target="_blank"> <i class="fab fa-instagram"></i> </a>
+        <a href="<?php echo($database->getContent('footer-fb-link')); ?>" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
+        <a href="<?php echo($database->getContent('footer-ig-link')); ?>" target="_blank"> <i class="fab fa-instagram"></i> </a>
     </section>
     <section class="explore">
         <h2>Utforska</h2>
