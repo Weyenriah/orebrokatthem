@@ -24,9 +24,12 @@
     // Our Cats page
     include(APP_FOLDER . '/admin/pages/textfield-pages/our-cats.php');
 
-    // Our Cats page
+    // Jour page
     include(APP_FOLDER . '/admin/pages/textfield-pages/jour.php');
 
-    // Our Cats page
+    // About page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/about.php');
+
+    // Support page
     include(APP_FOLDER . '/admin/pages/textfield-pages/support.php');
 ?>

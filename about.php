@@ -69,20 +69,18 @@
             <div class="contact-info">
                 <section>
                     <h5 class="second-row-heading"> Besök oss </h5>
-                    <p> Örebro Katthem <br/>
-                        Sockengatan 5 <br/>
-                        702 16 <br/>
-                        <i class="fas fa-phone"></i> 019-26 00 86
+                    <p> <?php echo($database->getContent('about-visit')); ?>
+                        <i class="fas fa-phone"></i> <?php echo($database->getContent('about-visit-tele')); ?>
                     </p>
                 </section>
                 <section>
                     <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
-                    <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
-                    <small> Christina "Kicki" Åbladh </small>
+                    <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('about-tell-tele')); ?> </p>
+                    <small> <?php echo($database->getContent('about-tell-name')); ?> </small>
                 </section>
                 <section>
                     <h5 class="second-row-heading"> Adoptera katt </h5>
-                    <p> Kontakta respektive kontaktperson i kattens annons. </p>
+                    <p> <?php echo($database->getContent('about-adopt-info')); ?> </p>
                 </section>
             </div>
         </div>

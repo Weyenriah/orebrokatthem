@@ -60,7 +60,7 @@
                 <a href="#" onclick="showPage('jour')"> Bli Jourhem </a>
             </div>
             <div class="pages">
-                <a href="#"> Om Oss </a>
+                <a href="#" onclick="showPage('about')"> Om Oss </a>
             </div>
             <div class="pages">
                 <a href="#" onclick="showPage('support')"> Stöd Oss </a>
