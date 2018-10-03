@@ -12,7 +12,7 @@
         <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
             &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
             &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> <br/>
-            &lt;li&gt; Text &lt;/li&gt; = Lista </p>
+            &lt;li&gt; Text &lt;/li&gt; = Ny punkt i lista </p>
     </div>
     <div class="forms">
         <form class="form">
