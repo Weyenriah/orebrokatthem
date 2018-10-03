@@ -26,7 +26,7 @@
 
         <form class="form">
             <div class="text-form">
-                <label for="text"> Ändra text i "Hur adopterar jag?" </label>
+                <label for="text"> Ändra "Hur adopterar jag?" </label>
                 <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-how')); ?></textarea>
 
                 <button type="submit" value="Ändra"> Ändra </button>
