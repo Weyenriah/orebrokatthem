@@ -26,4 +26,7 @@
 
     // Our Cats page
     include(APP_FOLDER . '/admin/pages/textfield-pages/jour.php');
+
+    // Our Cats page
+    include(APP_FOLDER . '/admin/pages/textfield-pages/support.php');
 ?>

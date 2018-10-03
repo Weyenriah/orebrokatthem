@@ -63,7 +63,7 @@
                 <a href="#"> Om Oss </a>
             </div>
             <div class="pages">
-                <a href="#"> Stöd Oss </a>
+                <a href="#" onclick="showPage('support')"> Stöd Oss </a>
             </div>
             <div class="pages">
                 <a href="#"> Footer </a>

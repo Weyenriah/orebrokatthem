@@ -4,7 +4,7 @@
 <section class="textfield page" id="jour">
     <div class="textfield-header">
         <h2> Ändra på sida: Bli Jourhem </h2>
-        <button type="button" id="code-help-jour" onclick="commandoCats()"> Kodhjälp </button>
+        <button type="button" id="code-help-jour" onclick="commandoJour()"> Kodhjälp </button>
     </div>
     <div id="commando-jour">
         <h3> Kortkommandon </h3>
@@ -71,7 +71,7 @@
 
 <script>
     /* === SHOW AND HIDE CODE HELP === */
-    function commandoCats() {
+    function commandoJour() {
         let commando = document.getElementById('commando-jour');
         let button = document.getElementsByClassName('code-help-jour');
 

@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/home.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/our-cats.css">
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/jour.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/support.css">
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">

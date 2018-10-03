@@ -71,8 +71,12 @@
     color: #415463;
 }
 
-.text-form textarea {
+.text-form textarea, .text-form input {
     padding-left: 5px;
+}
+
+.text-form input {
+    height: 25px;
 }
 
 .text-form button {
