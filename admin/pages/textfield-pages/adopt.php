@@ -49,7 +49,7 @@
                     </li>
                 <?php } ?>
             </ol>
-            <button type="button" class="add-to-list"> Lägg till i listan </button>
+            <button type="button" class="add-to-list" onclick="showPopupAddListAdopt(); topFunction();"> Lägg till i listan </button>
         </div>
     </div>
 
@@ -95,5 +95,18 @@
             commando.classList.add('display-adopt');
             button.classList.add('active-button-adopt');
         }
+    }
+
+    /* === SHOW CAT-POPUP === */
+    function showPopupAddListAdopt() {
+        let popup = document.getElementById('add-list-adopt');
+
+        popup.style.display = 'block';
+    }
+
+    /* === SCROLL TO TOP === */
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 </script>
