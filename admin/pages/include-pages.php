@@ -35,4 +35,14 @@
 
     // Footer page
     include(APP_FOLDER . '/admin/pages/textfield-pages/footer.php');
+
+    // === POPUPS ===
+    // Popup for cats
+    include(APP_FOLDER . '/admin/popups/add-cat.php');
+
+    // Popup for news
+    include(APP_FOLDER . '/admin/popups/add-news.php');
+
+    // Popup for Add List item
+    include(APP_FOLDER . '/admin/popups/add-list-jour.php');
 ?>

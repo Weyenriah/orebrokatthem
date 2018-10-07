@@ -8,11 +8,8 @@
 <?php include(APP_FOLDER . '/admin/components/admin-head.php') ?>
 
 <body class="grid">
-    <!-- Popup for cats -->
-    <?php include(APP_FOLDER . '/admin/popups/add-cat.php') ?>
-
-    <!-- Popup for news -->
-    <?php include(APP_FOLDER . '/admin/popups/add-news.php') ?>
+    <!-- Include every page that's needed -->
+    <?php include(APP_FOLDER . '/admin/pages/include-pages.php') ?>
 
     <header>
         <a href="index.php" class="header-title"> Administratör </a>
@@ -70,10 +67,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Include every page that's needed -->
-    <?php include(APP_FOLDER . '/admin/pages/include-pages.php') ?>
-
 </body>
 
 </html>

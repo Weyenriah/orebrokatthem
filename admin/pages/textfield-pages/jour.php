@@ -49,7 +49,7 @@
                     </li>
                 <?php } ?>
             </ol>
-            <button type="button" class="add-to-list"> Lägg till i listan </button>
+            <button type="button" class="add-to-list" onclick="showPopupAddListJour(); topFunction();"> Lägg till i listan </button>
         </div>
     </div>
 
@@ -82,5 +82,18 @@
             commando.classList.add('display-jour');
             button.classList.add('active-button-jour');
         }
+    }
+
+    /* === SHOW CAT-POPUP === */
+    function showPopupAddListJour() {
+        let popup = document.getElementById('add-list-jour');
+
+        popup.style.display = 'block';
+    }
+
+    /* === SCROLL TO TOP === */
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 </script>
