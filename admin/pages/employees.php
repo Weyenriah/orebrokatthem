@@ -7,6 +7,7 @@ $employees = $database->getEmployees();
 
 <section class="page" id="employees">
     <h2>Ändra Anställda</h2>
+    <button type="button"> Lägg till </button>
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
