@@ -1,7 +1,5 @@
 <?php
     require_once 'components/resources.php';
-
-    $adoptListitems = $database->getAdoptList();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -34,12 +32,7 @@
                 <img src="uploads/images/ashild.jpg">
             </div>
             <ol>
-                <?php foreach($adoptListitems as $adoptListitem) { ?>
-                    <li>
-                        <h5 class="adjust-main-left second-row-heading"> <?php echo($adoptListitem['title']) ?> </h5>
-                        <p class="adjust-main-left"> <?php echo($adoptListitem['content']) ?> </p>
-                    </li>
-                <?php } ?>
+                <?php echo($database->getContent('adopt-tips')); ?>
             </ol>
         </div>
     </section>

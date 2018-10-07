@@ -7,8 +7,6 @@ if(isset($_POST['jour-contact'])) {
 
     // TODO send mail
 }
-
-$jourListitems = $database->getJourList();
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -42,12 +40,7 @@ $jourListitems = $database->getJourList();
                 <img src="uploads/images/ashild.jpg">
             </div>
             <ol>
-                <?php foreach($jourListitems as $jourListitem) { ?>
-                    <li>
-                        <h5 class="adjust-main-left second-row-heading"> <?php echo($jourListitem['title']) ?> </h5>
-                        <p class="adjust-main-left"> <?php echo($jourListitem['content']) ?> </p>
-                    </li>
-                <?php } ?>
+                <?php echo($database->getContent('jour-tips')); ?>
             </ol>
         </div>
     </section>

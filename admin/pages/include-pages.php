@@ -42,8 +42,4 @@
 
     // Popup for news
     include(APP_FOLDER . '/admin/popups/add-news.php');
-
-    // Popup for Add List item
-    include(APP_FOLDER . '/admin/popups/add-list-jour.php');
-    include(APP_FOLDER . '/admin/popups/add-list-adopt.php');
 ?>

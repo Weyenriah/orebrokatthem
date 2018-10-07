@@ -169,4 +169,18 @@ class Database {
         // Grab the list
         return $stmt->fetchAll();
     }
+
+    // Get content
+    public function getContent($element) {
+        // Gets all information from database
+        $sql = 'SELECT * FROM textfields WHERE element = :element LIMIT 1';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute(array(
+            'element' => $element,
+        ));
+        // Grab the list
+        return $stmt->fetchObject()->content;
+    }
 }

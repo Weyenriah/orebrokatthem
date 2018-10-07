@@ -1,7 +1,3 @@
-<?php
-    $adoptListitems = $database->getAdoptList();
-?>
-
 <section class="textfield page" id="adopt">
     <div class="textfield-header">
         <h2> Ändra på sida: Adoptera </h2>
@@ -12,7 +8,9 @@
         <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
             &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
             &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> <br/>
-            &lt;li&gt; Text &lt;/li&gt; = Ny punkt i lista </p>
+            &lt;li&gt; Text &lt;/li&gt; = Ny punkt i lista <br/>
+            &lt;h5&gt; Text &lt;/h5&gt; = Rubrik <br/>
+            &lt;p&gt; Text &lt;/p&gt; = Text efter rubrik </p>
     </div>
     <div class="forms">
         <form class="form">
@@ -34,22 +32,12 @@
         </form>
     </div>
 
-    <div class="not-forms">
-        <div class="list-handler">
-            <h3> Ändra listan i "Tips" </h3>
-            <ol>
-                <?php foreach($adoptListitems as $adoptListitem) { ?>
-                    <li>
-                        <div class="change-list">
-                            <a href="#"> <i class="fas fa-pencil-alt"></i> </a>
-                            <a href="#"> <i class="fas fa-times"></i> </a>
-                        </div>
-                        <h5 class="adjust-main-left"> <?php echo($adoptListitem['title']) ?> </h5>
-                        <p class="adjust-main-left"> <?php echo($adoptListitem['content']) ?> </p>
-                    </li>
-                <?php } ?>
-            </ol>
-            <button type="button" class="add-to-list" onclick="showPopupAddListAdopt(); topFunction();"> Lägg till i listan </button>
+    <div class="form">
+        <div class="text-form">
+            <label for="text"> Ändra listan i "Tips" </label>
+            <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-tips')); ?></textarea>
+
+            <button type="submit" value="Ändra"> Ändra </button>
         </div>
     </div>
 
@@ -95,18 +83,5 @@
             commando.classList.add('display-adopt');
             button.classList.add('active-button-adopt');
         }
-    }
-
-    /* === SHOW CAT-POPUP === */
-    function showPopupAddListAdopt() {
-        let popup = document.getElementById('add-list-adopt');
-
-        popup.style.display = 'block';
-    }
-
-    /* === SCROLL TO TOP === */
-    function topFunction() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 </script>

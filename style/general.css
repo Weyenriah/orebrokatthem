@@ -368,8 +368,15 @@ body {
     left: -22px;
 }
 
-/* Moves the text to the left */
-.adjust-main-left {
+.white-background ol li h5 {
+    font-family: "Calibri", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0;
+    padding-left: 60px;
+}
+
+.white-background ol li p {
     padding-left: 60px;
 }
 

@@ -173,23 +173,23 @@
 }
 
 /* The buttons for changing the already existing listitems */
-.change-list {
+.change-lists {
     float: right;
 }
 
-.change-list a {
+.change-lists a {
     text-decoration: none;
 }
 
-.change-list i {
+.change-lists i {
     color: #5e788f;
 }
 
-.change-list i:first-of-type {
+.change-lists i:first-of-type {
     margin-right: 10px;
 }
 
-.change-list i:hover {
+.change-lists i:hover {
     color: #415463;
     animation-name: link-blue;
     animation-duration: 0.5s;

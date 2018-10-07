@@ -112,6 +112,4 @@
         /* Changes display to block */
         document.getElementById(pageName).style.display = 'block';
     }
-
-
 </script>
