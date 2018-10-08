@@ -34,7 +34,7 @@
 
     <div class="form">
         <div class="text-form">
-            <label for="text"> Ändra "Hur är det att vara jourhem?" </label>
+            <label for="text"> Ändra "Tips för dig med skygg jourhemskatt" </label>
             <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('jour-tips')); ?></textarea>
 
             <button type="submit" value="Ändra"> Ändra </button>

@@ -1,5 +1,10 @@
 <?php
     require_once 'components/resources.php';
+
+    function parse_includes_list($content) {
+        $content = str_replace(array("\r", "\n"), "\n", $content);
+        return '<li>'.implode("</li><li>", explode('\n \n', $content)).'</li>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -20,7 +25,7 @@
     <section class="blue-background general-grid" id="how">
         <h2> Hur adopterar jag? </h2>
         <div class="blue-paragraph">
-            <p> <?php echo($database->getContent('adopt-how')); ?> </p>
+            <p> <?php echo(nl2br($database->getContent('adopt-how'))); ?> </p>
         </div>
     </section>
 
@@ -57,7 +62,7 @@
             </div>
             <br/>
             <h5 class="second-row-heading"> Vad som ingår </h5>
-            <ul> <?php echo($database->getContent('adopt-includes')); ?> </ul>
+            <ul> <?php echo parse_includes_list(($database->getContent('adopt-includes'))); ?> </ul>
         </div>
     </section>
 

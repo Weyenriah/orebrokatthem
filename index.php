@@ -118,7 +118,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <section class="general-grid blue-background" id="remember">
         <h2> Minneslunden </h2>
         <div class="all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
-            <p class="blue-paragraph"> <?php echo($database->getContent('home-remember')); ?> </p>
+            <p class="blue-paragraph"> <?php echo(nl2br($database->getContent('home-remember'))); ?> </p>
             <div class="all-remem-cats">
                 <?php foreach($remember as $cat) {
                     $born = ($cat['born'] === null) ? '' : ('* ' . $cat['born'] . ' |');
