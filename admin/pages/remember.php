@@ -7,7 +7,7 @@ $rememCats = $database->getRememberCats();
 
 <section class="page" id="remem-cats">
     <h2>Ändra Katter i Minneslunden</h2>
-    <button type="button"> Lägg till </button>
+    <button type="button" onclick="showPopupRememberCat()"> Lägg till </button>
     <div class="remem-cats">
         <?php
         foreach ($rememCats as $rememCat) {
@@ -30,7 +30,7 @@ $rememCats = $database->getRememberCats();
                     <div class="remem-cat-information">
                         <small> <?php echo($born) ?> † <?php echo($death) ?> </small>
                         <h3> <?php echo($rememCat['name']) ?> </h3>
-                        <small> <?php echo($came) ?> | <?php echo($adopted) ?> </small>
+                        <small> Kom till katthem: <?php echo($came) ?> | Adopterad: <?php echo($adopted) ?> </small>
                         <p> <?php echo($rememCat['description']) ?> </p>
                         <small class="cause"> <?php echo($rememCat['cause']) ?> </small>
                     </div>
@@ -39,3 +39,12 @@ $rememCats = $database->getRememberCats();
         <?php } ?>
     </div>
 </section>
+
+<script>
+    /* === SHOW NEW CAT-POPUP === */
+    function showPopupRememberCat() {
+        let popup = document.getElementById('popup-remember-cat');
+
+        popup.style.display = 'block';
+    }
+</script>

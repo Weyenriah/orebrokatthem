@@ -32,6 +32,7 @@
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-news.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/add-remember-cat.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style/navigation.css">

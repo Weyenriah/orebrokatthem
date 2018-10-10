@@ -42,4 +42,7 @@
 
     // Popup for news
     include(APP_FOLDER . '/admin/popups/add-news.php');
+
+    // Popup for remember cat
+    include(APP_FOLDER . '/admin/popups/add-remember-cat.php');
 ?>
