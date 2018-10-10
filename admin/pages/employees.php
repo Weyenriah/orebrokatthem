@@ -6,7 +6,7 @@ $employees = $database->getEmployees();
 ?>
 
 <section class="page" id="employees">
-    <h2>Ändra Anställda</h2>
+    <h2>Hantera Anställda</h2>
     <button type="button" onclick="showPopupEmployee()"> Lägg till </button>
     <div class="employees">
         <?php

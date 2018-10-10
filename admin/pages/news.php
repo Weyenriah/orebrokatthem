@@ -7,7 +7,7 @@ $news = $database->getNews();
 ?>
 
 <section class="page" id="news">
-    <h2>Ändra Nyheter</h2>
+    <h2>Hantera Nyheter</h2>
     <div class="news">
         <?php
         foreach ($news as $new) {

@@ -6,7 +6,7 @@ $rememCats = $database->getRememberCats();
 ?>
 
 <section class="page" id="remem-cats">
-    <h2>Ändra Katter i Minneslunden</h2>
+    <h2>Hantera Katter i Minneslunden</h2>
     <button type="button" onclick="showPopupRememberCat()"> Lägg till </button>
     <div class="remem-cats">
         <?php
