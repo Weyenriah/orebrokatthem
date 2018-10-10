@@ -7,7 +7,7 @@ $employees = $database->getEmployees();
 
 <section class="page" id="employees">
     <h2>Ändra Anställda</h2>
-    <button type="button"> Lägg till </button>
+    <button type="button" onclick="showPopupEmployee()"> Lägg till </button>
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
@@ -36,3 +36,12 @@ $employees = $database->getEmployees();
         <?php } ?>
     </div>
 </section>
+
+<script>
+    /* === SHOW NEW CAT-POPUP === */
+    function showPopupEmployee() {
+        let popup = document.getElementById('popup-employee');
+
+        popup.style.display = 'block';
+    }
+</script>
