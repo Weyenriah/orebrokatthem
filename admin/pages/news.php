@@ -1,13 +1,20 @@
 <?php
 require_once '../components/resources.php';
 
-$news = $database->getNews();
+if (isset($_GET['removeNewsPost'])) {
+    $removed = $database->deleteNewsPost($_GET['removeNewsPost']);
+    $goToPage = 'news';
+}
 
+$news = $database->getNews();
 
 ?>
 
 <section class="page" id="news">
     <h2>Hantera Nyheter</h2>
+    <?php if (isset($removed)) {
+        echo(($removed)? "Nyhet borttagen": "Kunde inte ta bort nyheten");
+    } ?>
     <div class="news">
         <?php
         foreach ($news as $new) {
@@ -21,7 +28,7 @@ $news = $database->getNews();
                 <div class="news-text">
                     <div class="change-news">
                         <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra Nyhet </a>
-                        <a href="#"> <i class="fas fa-times"></i> Ta bort nyhet </a>
+                        <a href="?removeNewsPost=<?php echo($new['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </a>
                     </div>
                     <div class="news-information">
                         <h3> <?php echo($new['date']) ?> </h3>

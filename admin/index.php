@@ -29,10 +29,10 @@
         <hr/>
         <h3> Hantera </h3>
         <div class="pages">
-            <a href="#" onclick="showPage('news')"> Nyheter </a>
+            <a href="#" class="page-link" onclick="showPage('cats')"> Katter </a>
         </div>
         <div class="pages">
-            <a href="#" onclick="showPage('cats')"> Katter </a>
+            <a href="#" class="page-link" onclick="showPage('news')"> Nyheter </a>
         </div>
         <div class="pages">
             <a href="#" onclick="showPage('employees')"> Anställda </a>
@@ -68,8 +68,6 @@
         </div>
     </nav>
 </body>
-
-</html>
 
 <script>
     /* === SHOW CAT-POPUP === */
@@ -112,4 +110,8 @@
         /* Changes display to block */
         document.getElementById(pageName).style.display = 'block';
     }
+
+    showPage('<?php echo(isset($goToPage)? $goToPage: 'welcome'); ?>');
 </script>
+</html>
+

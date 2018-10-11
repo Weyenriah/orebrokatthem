@@ -183,4 +183,16 @@ class Database {
         // Grab the list
         return $stmt->fetchObject()->content;
     }
+
+    public function deleteNewsPost($id) {
+        // Gets all information from database
+        $sql = 'DELETE FROM news WHERE id = :id';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'id' => $id,
+        ));
+    }
+
 }
