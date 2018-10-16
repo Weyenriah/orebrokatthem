@@ -10,7 +10,12 @@ if (isset($_POST['removeCat'])) {
 // Pagination Cats
 $catsPages = $database->countCats();
 // Get page
-$catsPage = isset($_GET['catspage']) ? $_GET['catspage'] : 0;
+$catsPage = 0;
+
+if(isset($_GET['catspage'])) {
+    $catsPage = $_GET['catspage'];
+    $goToPage = 'cats';
+}
 
 // Get cats from DB
 $cats = $database->getCats($catsPage);

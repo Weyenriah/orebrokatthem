@@ -10,7 +10,12 @@ if (isset($_POST['removeRememberCat'])) {
 // Pagination (Minneslunden/remember cats)
 $rememPages = $database->countRememberPages();
 // Get page
-$rememPage = isset($_GET['remempage']) ? $_GET['remempage'] : 0;
+$rememPage = 0;
+
+if(isset($_GET['remempage'])) {
+    $rememPage = $_GET['remempage'];
+    $goToPage = 'remem-cats';
+}
 
 $rememCats = $database->getRememberCats($rememPage);
 
