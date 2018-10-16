@@ -11,6 +11,70 @@ body {
     position: relative;
 }
 
+/* === PAGINATION STYLING === */
+.prev-next {
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr 30%;
+    height: 25px;
+}
+
+/* Previous page specific styling */
+.previous-page {
+    grid-column: 2;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.prev-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.prev-arrow i {
+    margin-right: 4px;
+}
+
+/* Next page specific styling */
+.next-page {
+    grid-column: 3;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.next-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    float: right !important;
+}
+.next-arrow i {
+    margin-left: 4px;
+}
+
+/* Coloring of next/prev arrows */
+/* Next/prev arrow on red background */
+.next-arrow-red, .prev-arrow-red {
+    color: #5e788f;
+}
+.next-arrow-red:hover, .prev-arrow-red:hover {
+    color: white;
+    animation-name: link-blue;
+    -webkit-animation-name: link-blue; /* For Safari */
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s; /* For Safari */
+}
+
+/* Next/prev on white background */
+.next-arrow-white, .prev-arrow-white {
+    color: #5e788f;
+}
+.next-arrow-white:hover, .prev-arrow-white:hover {
+    color: #415463;
+    animation-name: link-blue;
+    -webkit-animation-name: link-blue; /* For Safari */
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s; /* For Safari */
+}
+
 /* === BUTTON/LINK STYLE === */
 /* General button-style for white-background */
 @keyframes button-blue {
