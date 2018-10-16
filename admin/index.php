@@ -110,6 +110,8 @@
         /* Changes display to block */
         document.getElementById(pageName).style.display = 'block';
     }
+
+    showPage('<?php echo(isset($goToPage) ? $goToPage : 'cats'); ?>');
 </script>
 </html>
 
