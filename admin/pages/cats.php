@@ -58,9 +58,7 @@ $cats = $database->getCats($catsPage);
         ?>
         <article class="cat">
             <?php if ($cat['image'] !== '') { ?>
-                <div class="cat-img">
-                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
-                </div>
+                <img class="cat-img" src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
             <?php } ?>
             <div class="cat-text">
                 <div class="change-cat">

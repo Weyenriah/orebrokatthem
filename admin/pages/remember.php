@@ -61,9 +61,7 @@ $rememCats = $database->getRememberCats($rememPage);
             ?>
             <article class="remem-cat">
                 <?php if ($rememCat['image'] !== '') { ?>
-                    <div class="remem-cat-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $rememCat['image']); ?>">
-                    </div>
+                    <img class="remem-cat-img" src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $rememCat['image']); ?>">
                 <?php } ?>
                 <div class="remem-cat-text">
                     <div class="change-remem-cat">

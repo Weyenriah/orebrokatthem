@@ -59,9 +59,7 @@ $news = $database->getNews($newsPage);
         ?>
             <article class="new">
                 <?php if ($new['image'] !== '') { ?>
-                    <div class="news-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
-                    </div>
+                    <img class="news-img" src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
                 <?php } ?>
                 <div class="news-text">
                     <div class="change-news">

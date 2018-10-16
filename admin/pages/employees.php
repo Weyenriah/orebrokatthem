@@ -29,9 +29,7 @@ $employees = $database->getEmployees();
         ?>
             <article class="employee">
                 <?php if ($employee['image'] !== '') { ?>
-                    <div class="employee-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
-                    </div>
+                    <img class="employee-img" src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
                 <?php } ?>
                 <div class="employee-text">
                     <div class="change-employee">
