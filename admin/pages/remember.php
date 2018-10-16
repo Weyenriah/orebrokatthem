@@ -1,7 +1,12 @@
 <?php
 require_once '../components/resources.php';
 
-$rememCats = $database->getRememberCats();
+// Pagination (Minneslunden/remember cats)
+$rememPages = $database->countRememberPages();
+// Get page
+$rememPage = isset($_GET['remempage']) ? $_GET['remempage'] : 0;
+
+$rememCats = $database->getRememberCats($rememPage);
 
 ?>
 
@@ -36,6 +41,22 @@ $rememCats = $database->getRememberCats();
                     </div>
                 </div>
             </article>
+        <?php } ?>
+    </div>
+    <div class="prev-next">
+        <?php if($rememPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($rememPage < $rememPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
         <?php } ?>
     </div>
 </section>
