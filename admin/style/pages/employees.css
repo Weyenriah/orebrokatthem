@@ -53,16 +53,21 @@
 }
 
 .employee-img {
-    height: 180px;
-    width: 170px;
+    width: auto;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    max-height: 180px;
     overflow: hidden;
+    display: inline-block;
+    float: left;
     border: 1px solid #415463;
-    margin: 0 15px 15px 1px;
 }
 
 .employee-img img {
+    max-width: 180px;
     height: auto;
-    width: 170px;
+    width: auto;
+    vertical-align: top;
 }
 
 .employee-info-text {

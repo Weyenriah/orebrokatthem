@@ -21,7 +21,6 @@
 }
 
 .cat {
-    display: flex;
     width: 100%;
     margin-bottom: 20px;
     margin-right: 30px;
@@ -32,16 +31,21 @@
 }
 
 .cat-img {
-    height: 180px;
-    width: 170px;
+    height: auto;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    max-width: 160px;
     overflow: hidden;
+    display: inline-block;
+    float: left;
     border: 1px solid #415463;
-    margin: 0 15px 15px 1px;
 }
 
 .cat-img img {
+    max-width: 100%;
     height: auto;
-    width: 170px;
+    width: auto;
+    vertical-align: top;
 }
 
 .cat-info-text {

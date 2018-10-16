@@ -41,7 +41,6 @@
 }
 
 .remem-cat {
-    display: flex;
     width: auto;
     margin-bottom: 20px;
     margin-right: 30px;
@@ -52,16 +51,21 @@
 }
 
 .remem-cat-img {
-    height: 180px;
-    width: 170px;
+    height: auto;
+    margin-right: 15px;
+    margin-bottom: 0px;
+    max-width: 160px;
     overflow: hidden;
+    display: inline-block;
+    float: left;
     border: 1px solid #415463;
-    margin: 0 15px 15px 1px;
 }
 
 .remem-cat-img img {
+    max-width: 100%;
     height: auto;
-    width: 170px;
+    width: auto;
+    vertical-align: top;
 }
 
 .remem-cat-info-text {
