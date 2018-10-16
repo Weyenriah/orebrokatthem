@@ -52,6 +52,11 @@ $cats = $database->getCats($catsPage);
                     <h3> <?php echo($cat['name']) ?> </h3>
                     <small> <?php echo($cat['age']) ?> | <?php echo($cat['gender'] ? 'Hane': 'Hona') ?> | <?php echo($cat['color']) ?> </small>
                     <p> <?php echo($cat['description']) ?> </p>
+                    <p class="showcase">
+                        <?php if($cat['showcase'] == 1) {
+                            echo('Visas på framsidan');
+                        } ?>
+                    </p>
                 </div>
             </div>
         </article>

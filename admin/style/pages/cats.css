@@ -93,3 +93,8 @@
 .cat-information p {
     margin-top: 4px;
 }
+
+.showcase {
+    float: right;
+    font-weight: bold;
+}
