@@ -11,6 +11,19 @@ body {
     position: relative;
 }
 
+/* === TEXT FOR WHEN STUFF IS REMOVED === */
+.removed {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #415463;
+    font-family: "Calibri", sans-serif;
+}
+
+.removed p {
+    margin-bottom: 0;
+}
+
 /* === PAGINATION STYLING === */
 .prev-next {
     display: grid;
