@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-#remem-cats button {
+.add-button-remember {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -26,7 +26,7 @@
     font-size: 18px;
 }
 
-#remem-cats button:hover {
+.add-button-remember:hover {
     background-color: #415463;
     animation-name: button-blue;
     animation-duration: 0.5s;
@@ -73,21 +73,25 @@
     display: flex;
 }
 
-.change-remem-cat a {
+.change-remem-cat button {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
+    font-size: 18px;
     color: #5e788f;
     margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.change-remem-cat a:hover {
+.change-remem-cat button:hover {
     color: #415463;
     font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
-.change-remem-cat a i {
+.change-remem-cat button i {
     font-size: 15px;
 }
 

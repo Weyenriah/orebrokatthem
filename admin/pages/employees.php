@@ -7,7 +7,7 @@ $employees = $database->getEmployees();
 
 <section class="page" id="employees">
     <h2>Hantera Anställda</h2>
-    <button type="button" onclick="showPopupEmployee()"> Lägg till </button>
+    <button class="add-button-employee" type="button" onclick="showPopupEmployee()"> Lägg till </button>
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
@@ -20,8 +20,8 @@ $employees = $database->getEmployees();
                 <?php } ?>
                 <div class="employee-text">
                     <div class="change-employee">
-                        <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra anställd </a>
-                        <a href="#"> <i class="fas fa-times"></i> Ta bort anställd </a>
+                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra anställd </button>
+                        <button type="button"> <i class="fas fa-times"></i> Ta bort anställd </button>
                     </div>
                     <div class="employee-information">
                         <h3> <?php echo($employee['name']) ?> </h3>

@@ -7,7 +7,7 @@ $rememCats = $database->getRememberCats();
 
 <section class="page" id="remem-cats">
     <h2>Hantera Katter i Minneslunden</h2>
-    <button type="button" onclick="showPopupRememberCat()"> Lägg till </button>
+    <button class="add-button-remember" type="button" onclick="showPopupRememberCat()"> Lägg till </button>
     <div class="remem-cats">
         <?php
         foreach ($rememCats as $rememCat) {
@@ -24,8 +24,8 @@ $rememCats = $database->getRememberCats();
                 <?php } ?>
                 <div class="remem-cat-text">
                     <div class="change-remem-cat">
-                        <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </a>
-                        <a href="#"> <i class="fas fa-times"></i> Ta bort katt </a>
+                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra katt </button>
+                        <button type="button"> <i class="fas fa-times"></i> Ta bort katt </button>
                     </div>
                     <div class="remem-cat-information">
                         <small> <?php echo($born) ?> † <?php echo($death) ?> </small>

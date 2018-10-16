@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-#employees button {
+.add-button-employee {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -26,7 +26,7 @@
     font-size: 18px;
 }
 
-#employees button:hover {
+.add-button-employee:hover {
     background-color: #415463;
     animation-name: button-blue;
     animation-duration: 0.5s;
@@ -74,21 +74,25 @@
     display: flex;
 }
 
-.change-employee a {
+.change-employee button {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
+    font-size: 18px;
     color: #5e788f;
     margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.change-employee a:hover {
+.change-employee button:hover {
     color: #415463;
     font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
-.change-employee a i {
+.change-employee button i {
     font-size: 15px;
 }
 
