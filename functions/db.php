@@ -195,4 +195,14 @@ class Database {
         ));
     }
 
+    public function deleteCat($id) {
+        // Gets all information from database
+        $sql = 'DELETE FROM cats WHERE id = :id';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'id' => $id,
+        ));
+    }
 }
