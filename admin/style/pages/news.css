@@ -49,21 +49,25 @@
     display: flex;
 }
 
-.change-news a {
+.change-news button {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
+    font-size: 18px;
     color: #5e788f;
     margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.change-news a:hover {
+.change-news button:hover {
     color: #415463;
     font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
-.change-news a i {
+.change-news button i {
     font-size: 15px;
 }
 

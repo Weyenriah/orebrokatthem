@@ -1,12 +1,26 @@
 <?php
 require_once '../components/resources.php';
 
-if (isset($_GET['removeNewsPost'])) {
-    $removed = $database->deleteNewsPost($_GET['removeNewsPost']);
+if (isset($_POST['removeNewsPost'])) {
+    $removed = $database->deleteNewsPost($_POST['removeNewsPost']);
     $goToPage = 'news';
 }
 
 $news = $database->getNews();
+
+// Pagination News
+$newsPages = $database->countNewsPages();
+// Get page
+$newsPage = isset($_GET['newspage']) ? $_GET['newspage'] : 0;
+
+if(isset($_GET['newspage'])) {
+    $_GET['newspage'];
+    $goToPage = 'news';
+} else {
+    null;
+}
+// Get news
+$news = $database->getNews($newsPage);
 
 ?>
 
@@ -18,7 +32,9 @@ $news = $database->getNews();
     <div class="news">
         <?php
         foreach ($news as $new) {
-            ?>
+
+        $date = date('Y-m-d', strtotime($new['date']));
+        ?>
             <article class="new">
                 <?php if ($new['image'] !== '') { ?>
                     <div class="news-img">
@@ -27,15 +43,34 @@ $news = $database->getNews();
                 <?php } ?>
                 <div class="news-text">
                     <div class="change-news">
-                        <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra Nyhet </a>
-                        <a href="?removeNewsPost=<?php echo($new['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </a>
+                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra Nyhet </button>
+                        <form method="post">
+                            <button type="submit" formmethod="post" name="removeNewsPost" value="<?php echo($new['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </button>
+                        </form>
                     </div>
                     <div class="news-information">
-                        <h3> <?php echo($new['date']) ?> </h3>
+                        <h3> <?php echo($date) ?> </h3>
                         <p> <?php echo($new['news']) ?> </p>
                     </div>
                 </div>
             </article>
+        <?php } ?>
+    </div>
+
+    <div class="prev-next">
+        <?php if($newsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow prev-arrow-white" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($newsPage < $newsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow next-arrow-white" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
         <?php } ?>
     </div>
 </section>
