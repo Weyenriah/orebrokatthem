@@ -51,24 +51,12 @@ body {
 }
 
 /* Coloring of next/prev arrows */
-/* Next/prev arrow on red background */
-.next-arrow-red, .prev-arrow-red {
+.next-arrow, .prev-arrow {
     color: #5e788f;
 }
-.next-arrow-red:hover, .prev-arrow-red:hover {
-    color: white;
-    animation-name: link-blue;
-    -webkit-animation-name: link-blue; /* For Safari */
-    animation-duration: 0.5s;
-    -webkit-animation-duration: 0.5s; /* For Safari */
-}
-
-/* Next/prev on white background */
-.next-arrow-white, .prev-arrow-white {
-    color: #5e788f;
-}
-.next-arrow-white:hover, .prev-arrow-white:hover {
+.next-arrow:hover, .prev-arrow:hover {
     color: #415463;
+    font-weight: bold;
     animation-name: link-blue;
     -webkit-animation-name: link-blue; /* For Safari */
     animation-duration: 0.5s;
