@@ -15,7 +15,7 @@
 .cats {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 30px;
     background-color: white;
 }
@@ -95,6 +95,6 @@
 }
 
 .showcase {
-    float: right;
     font-weight: bold;
+    float: right;
 }
