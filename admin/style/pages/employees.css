@@ -135,3 +135,16 @@
 .employee-information .fas {
     font-size: 15px;
 }
+
+/* === TEXT FOR WHEN STUFF IS REMOVED === */
+.removed-employee {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #415463;
+    font-family: "Calibri", sans-serif;
+}
+
+.removed-employee p {
+    margin-bottom: 0;
+}
