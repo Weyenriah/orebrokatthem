@@ -1,7 +1,6 @@
 #cats {
     grid-row: 2;
     grid-column: 2;
-    display: none;
 }
 
 #cats h2 {
@@ -23,7 +22,7 @@
 
 .cat {
     display: flex;
-    width: auto;
+    width: 100%;
     margin-bottom: 20px;
     margin-right: 30px;
 }
@@ -54,21 +53,25 @@
     display: flex;
 }
 
-.change-cat a {
+.change-cat button {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
+    font-size: 18px;
     color: #5e788f;
     margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.change-cat a:hover {
+.change-cat button:hover {
     color: #415463;
     font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
-.change-cat a i {
+.change-cat button i {
     font-size: 15px;
 }
 

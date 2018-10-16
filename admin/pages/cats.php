@@ -19,8 +19,8 @@ $cats = $database->getCats();
             <?php } ?>
             <div class="cat-text">
                 <div class="change-cat">
-                    <a href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </a>
-                    <a href="#"> <i class="fas fa-times"></i> Ta bort katt </a>
+                    <button href="#"> <i class="fas fa-pencil-alt"></i> Ändra katt </button>
+                    <button href="#"> <i class="fas fa-times"></i> Ta bort katt </button>
                 </div>
                 <div class="cat-information">
                     <h3> <?php echo($cat['name']) ?> </h3>
