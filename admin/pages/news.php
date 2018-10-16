@@ -1,24 +1,17 @@
 <?php
 require_once '../components/resources.php';
 
+// Remove news
 if (isset($_POST['removeNewsPost'])) {
     $removed = $database->deleteNewsPost($_POST['removeNewsPost']);
     $goToPage = 'news';
 }
-
-$news = $database->getNews();
 
 // Pagination News
 $newsPages = $database->countNewsPages();
 // Get page
 $newsPage = isset($_GET['newspage']) ? $_GET['newspage'] : 0;
 
-if(isset($_GET['newspage'])) {
-    $_GET['newspage'];
-    $goToPage = 'news';
-} else {
-    null;
-}
 // Get news
 $news = $database->getNews($newsPage);
 
