@@ -1,7 +1,4 @@
 <?php
-    // Page for welcome
-    include(APP_FOLDER . '/admin/pages/welcome.php');
-
     // Page for cat-flow
     include(APP_FOLDER . '/admin/pages/cats.php');
 
