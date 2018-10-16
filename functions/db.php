@@ -92,6 +92,19 @@ class Database {
         return ceil($numberOfCats / 8);
     }
 
+    // Count and return pages of news
+    public function countCats() {
+        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute();
+        // Grab the list
+        $numberOfCats = $stmt->fetchColumn(0);
+        // Return number of cats divided by number of pages
+        return ceil($numberOfCats / 8);
+    }
+
     // Slideshow cats
     public function getSlideCats() {
         // Gets all information from database

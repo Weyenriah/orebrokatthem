@@ -1,12 +1,19 @@
 <?php
 require_once '../components/resources.php';
 
+// Remove Cat
 if (isset($_POST['removeCat'])) {
     $removed = $database->deleteCat($_POST['removeCat']);
     $goToPage = 'news';
 }
 
-$cats = $database->getCats();
+// Pagination Cats
+$catsPages = $database->countCats();
+// Get page
+$catsPage = isset($_GET['catspage']) ? $_GET['catspage'] : 0;
+
+// Get cats from DB
+$cats = $database->getCats($catsPage);
 
 ?>
 
@@ -39,6 +46,22 @@ $cats = $database->getCats();
                 </div>
             </div>
         </article>
+        <?php } ?>
+    </div>
+    <div class="prev-next">
+        <?php if($catsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow prev-arrow-white" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($catsPage < $catsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow next-arrow-white" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
         <?php } ?>
     </div>
 </section>
