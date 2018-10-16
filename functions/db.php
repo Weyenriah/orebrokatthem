@@ -218,4 +218,15 @@ class Database {
             'id' => $id,
         ));
     }
+
+    public function deleteEmployee($id) {
+        // Gets all information from database
+        $sql = 'DELETE FROM employees WHERE id = :id';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'id' => $id,
+        ));
+    }
 }
