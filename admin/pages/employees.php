@@ -4,7 +4,7 @@ require_once '../components/resources.php';
 // Remove employee
 if (isset($_POST['removeEmployee'])) {
     $removed = $database->deleteEmployee($_POST['removeEmployee']);
-    $goToPage = 'news';
+    $goToPage = 'employees';
 }
 
 $employees = $database->getEmployees();
@@ -14,9 +14,13 @@ $employees = $database->getEmployees();
 <section class="page" id="employees">
     <h2>Hantera Anställda</h2>
     <button class="add-button-employee" type="button" onclick="showPopupEmployee()"> Lägg till </button>
-    <?php if (isset($removed)) {
-        echo(($removed)? "Anställd borttagen": "Kunde inte ta bort den anställda");
-    } ?>
+    <?php if (isset($removed)) { ?>
+        <div class="removed">
+            <p>
+                <?php echo(($removed)? "Anställd borttagen" : "Kunde inte ta bort den anställda"); ?>
+            </p>
+        </div>
+    <?php } ?>
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
@@ -24,7 +28,7 @@ $employees = $database->getEmployees();
             <article class="employee">
                 <?php if ($employee['image'] !== '') { ?>
                     <div class="employee-img">
-                        <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
+                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
                     </div>
                 <?php } ?>
                 <div class="employee-text">

@@ -4,7 +4,7 @@ require_once '../components/resources.php';
 // Remove Cat
 if (isset($_POST['removeCat'])) {
     $removed = $database->deleteCat($_POST['removeCat']);
-    $goToPage = 'news';
+    $goToPage = 'cats';
 }
 
 // Pagination Cats
@@ -19,9 +19,13 @@ $cats = $database->getCats($catsPage);
 
 <section class="page" id="cats">
     <h2>Hantera Katter</h2>
-    <?php if (isset($removed)) {
-        echo(($removed)? "Katt borttagen": "Kunde inte ta bort katten");
-    } ?>
+    <?php if (isset($removed)) { ?>
+        <div class="removed">
+            <p>
+                <?php echo(($removed) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
+            </p>
+        </div>
+    <?php } ?>
     <div class="cats">
         <?php
         foreach ($cats as $cat) {
@@ -29,7 +33,7 @@ $cats = $database->getCats($catsPage);
         <article class="cat">
             <?php if ($cat['image'] !== '') { ?>
                 <div class="cat-img">
-                    <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
                 </div>
             <?php } ?>
             <div class="cat-text">

@@ -4,7 +4,7 @@ require_once '../components/resources.php';
 // Remove news
 if (isset($_POST['removeRememberCat'])) {
     $removed = $database->deleteRememberCat($_POST['removeRememberCat']);
-    $goToPage = 'news';
+    $goToPage = 'remem-cats';
 }
 
 // Pagination (Minneslunden/remember cats)
@@ -19,9 +19,13 @@ $rememCats = $database->getRememberCats($rememPage);
 <section class="page" id="remem-cats">
     <h2>Hantera Katter i Minneslunden</h2>
     <button class="add-button-remember" type="button" onclick="showPopupRememberCat()"> Lägg till </button>
-    <?php if (isset($removed)) {
-        echo(($removed)? "Katt borttagen": "Kunde inte ta bort katten");
-    } ?>
+    <?php if (isset($removed)) { ?>
+        <div class="removed">
+            <p>
+                <?php echo(($removed) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
+            </p>
+        </div>
+    <?php } ?>
     <div class="remem-cats">
         <?php
         foreach ($rememCats as $rememCat) {
@@ -33,7 +37,7 @@ $rememCats = $database->getRememberCats($rememPage);
             <article class="remem-cat">
                 <?php if ($rememCat['image'] !== '') { ?>
                     <div class="remem-cat-img">
-                        <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $rememCat['image']); ?>">
+                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $rememCat['image']); ?>">
                     </div>
                 <?php } ?>
                 <div class="remem-cat-text">

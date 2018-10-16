@@ -10,7 +10,12 @@ if (isset($_POST['removeNewsPost'])) {
 // Pagination News
 $newsPages = $database->countNewsPages();
 // Get page
-$newsPage = isset($_GET['newspage']) ? $_GET['newspage'] : 0;
+$newsPage = 0;
+
+if(isset($_GET['newspage'])) {
+    $newsPage = $_GET['newspage'];
+    $goToPage = 'news';
+}
 
 // Get news
 $news = $database->getNews($newsPage);
@@ -19,9 +24,13 @@ $news = $database->getNews($newsPage);
 
 <section class="page" id="news">
     <h2>Hantera Nyheter</h2>
-    <?php if (isset($removed)) {
-        echo(($removed)? "Nyhet borttagen": "Kunde inte ta bort nyheten");
-    } ?>
+    <?php if (isset($removed)) { ?>
+        <div class="removed">
+            <p>
+                <?php echo(($removed)? "Nyhet borttagen": "Kunde inte ta bort nyheten"); ?>
+            </p>
+        </div>
+    <?php } ?>
     <div class="news">
         <?php
         foreach ($news as $new) {
@@ -31,7 +40,7 @@ $news = $database->getNews($newsPage);
             <article class="new">
                 <?php if ($new['image'] !== '') { ?>
                     <div class="news-img">
-                        <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
+                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
                     </div>
                 <?php } ?>
                 <div class="news-text">
