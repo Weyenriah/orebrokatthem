@@ -14,13 +14,15 @@ $employees = $database->getEmployees();
 <section class="page" id="employees">
     <h2>Hantera Anställda</h2>
     <button class="add-button-employee" type="button" onclick="showPopupEmployee()"> Lägg till </button>
+
     <?php if (isset($removed)) { ?>
-        <div class="removed">
+        <div class="removed-employee">
             <p>
                 <?php echo(($removed)? "Anställd borttagen" : "Kunde inte ta bort den anställda"); ?>
             </p>
         </div>
     <?php } ?>
+
     <div class="employees">
         <?php
         foreach ($employees as $employee) {
@@ -33,9 +35,11 @@ $employees = $database->getEmployees();
                 <?php } ?>
                 <div class="employee-text">
                     <div class="change-employee">
-                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra anställd </button>
+                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra Anställd </button>
                         <form method="post">
-                            <button type="submit" formmethod="post" name="removeEmployee" value="<?php echo($employee['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </button>
+                            <button type="submit" formmethod="post" name="removeEmployee" value="<?php echo($employee['id']); ?>">
+                                <i class="fas fa-times"></i> Ta bort Anställd
+                            </button>
                         </form>
                     </div>
                     <div class="employee-information">

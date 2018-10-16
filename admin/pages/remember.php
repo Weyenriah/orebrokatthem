@@ -3,7 +3,7 @@ require_once '../components/resources.php';
 
 // Remove news
 if (isset($_POST['removeRememberCat'])) {
-    $removed = $database->deleteRememberCat($_POST['removeRememberCat']);
+    $removedRemember = $database->deleteRememberCat($_POST['removeRememberCat']);
     $goToPage = 'remem-cats';
 }
 
@@ -23,14 +23,34 @@ $rememCats = $database->getRememberCats($rememPage);
 
 <section class="page" id="remem-cats">
     <h2>Hantera Katter i Minneslunden</h2>
+
     <button class="add-button-remember" type="button" onclick="showPopupRememberCat()"> Lägg till </button>
-    <?php if (isset($removed)) { ?>
+
+    <div class="prev-next">
+        <?php if($rememPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($rememPage < $rememPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
+
+    <?php if (isset($removedRemember)) { ?>
         <div class="removed">
             <p>
-                <?php echo(($removed) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
+                <?php echo(($removedRemember) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
             </p>
         </div>
     <?php } ?>
+
     <div class="remem-cats">
         <?php
         foreach ($rememCats as $rememCat) {
@@ -47,10 +67,10 @@ $rememCats = $database->getRememberCats($rememPage);
                 <?php } ?>
                 <div class="remem-cat-text">
                     <div class="change-remem-cat">
-                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra katt </button>
+                        <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra Katt </button>
                         <form method="post">
                             <button type="submit" formmethod="post" name="removeRememberCat" value="<?php echo($rememCat['id']); ?>">
-                                <i class="fas fa-times"></i> Ta bort nyhet
+                                <i class="fas fa-times"></i> Ta bort Katt
                             </button>
                         </form>
                     </div>
@@ -65,6 +85,7 @@ $rememCats = $database->getRememberCats($rememPage);
             </article>
         <?php } ?>
     </div>
+
     <div class="prev-next">
         <?php if($rememPage > 0) { ?>
             <div class="previous-page">

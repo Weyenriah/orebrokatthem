@@ -3,7 +3,7 @@ require_once '../components/resources.php';
 
 // Remove Cat
 if (isset($_POST['removeCat'])) {
-    $removed = $database->deleteCat($_POST['removeCat']);
+    $removedCat = $database->deleteCat($_POST['removeCat']);
     $goToPage = 'cats';
 }
 
@@ -24,13 +24,34 @@ $cats = $database->getCats($catsPage);
 
 <section class="page" id="cats">
     <h2>Hantera Katter</h2>
-    <?php if (isset($removed)) { ?>
+
+    <button class="add-button-employee" type="button" onclick="showPopupCats()"> Lägg till </button>
+
+    <div class="prev-next">
+        <?php if($catsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($catsPage < $catsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
+
+    <?php if (isset($removedCat)) { ?>
         <div class="removed">
             <p>
-                <?php echo(($removed) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
+                <?php echo(($removedCat) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
             </p>
         </div>
     <?php } ?>
+
     <div class="cats">
         <?php
         foreach ($cats as $cat) {
@@ -43,9 +64,11 @@ $cats = $database->getCats($catsPage);
             <?php } ?>
             <div class="cat-text">
                 <div class="change-cat">
-                    <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra katt </button>
+                    <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra Katt </button>
                     <form method="post">
-                        <button type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </button>
+                        <button type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>">
+                            <i class="fas fa-times"></i> Ta bort Katt
+                        </button>
                     </form>
                 </div>
                 <div class="cat-information">
@@ -62,6 +85,7 @@ $cats = $database->getCats($catsPage);
         </article>
         <?php } ?>
     </div>
+
     <div class="prev-next">
         <?php if($catsPage > 0) { ?>
             <div class="previous-page">

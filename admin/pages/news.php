@@ -3,7 +3,7 @@ require_once '../components/resources.php';
 
 // Remove news
 if (isset($_POST['removeNewsPost'])) {
-    $removed = $database->deleteNewsPost($_POST['removeNewsPost']);
+    $removedNews = $database->deleteNewsPost($_POST['removeNewsPost']);
     $goToPage = 'news';
 }
 
@@ -24,13 +24,33 @@ $news = $database->getNews($newsPage);
 
 <section class="page" id="news">
     <h2>Hantera Nyheter</h2>
-    <?php if (isset($removed)) { ?>
+    <button class="add-button-employee" type="button" onclick="showPopupNews()"> Lägg till </button>
+
+    <div class="prev-next">
+        <?php if($newsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($newsPage < $newsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
+
+    <?php if (isset($removedNews)) { ?>
         <div class="removed">
             <p>
-                <?php echo(($removed)? "Nyhet borttagen": "Kunde inte ta bort nyheten"); ?>
+                <?php echo(($removedNews)? "Nyhet borttagen": "Kunde inte ta bort nyheten"); ?>
             </p>
         </div>
     <?php } ?>
+
     <div class="news">
         <?php
         foreach ($news as $new) {
@@ -47,7 +67,9 @@ $news = $database->getNews($newsPage);
                     <div class="change-news">
                         <button type="button"> <i class="fas fa-pencil-alt"></i> Ändra Nyhet </button>
                         <form method="post">
-                            <button type="submit" formmethod="post" name="removeNewsPost" value="<?php echo($new['id']); ?>"> <i class="fas fa-times"></i> Ta bort nyhet </button>
+                            <button type="submit" formmethod="post" name="removeNewsPost" value="<?php echo($new['id']); ?>">
+                                <i class="fas fa-times"></i> Ta bort Nyhet
+                            </button>
                         </form>
                     </div>
                     <div class="news-information">
