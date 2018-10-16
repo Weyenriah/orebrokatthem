@@ -53,14 +53,14 @@ $news = $database->getNews($newsPage);
     <div class="prev-next">
         <?php if($newsPage > 0) { ?>
             <div class="previous-page">
-                <a class="prev-arrow prev-arrow-white" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
+                <a class="prev-arrow" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
                     <i class="fas fa-angle-left"></i> Föregående
                 </a>
             </div>
         <?php }
         if($newsPage < $newsPages - 1) { ?>
             <div class="next-page">
-                <a class="next-arrow next-arrow-white" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
+                <a class="next-arrow" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
                     Nästa <i class="fas fa-angle-right"></i>
                 </a>
             </div>

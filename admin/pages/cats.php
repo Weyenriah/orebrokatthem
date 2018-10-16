@@ -51,14 +51,14 @@ $cats = $database->getCats($catsPage);
     <div class="prev-next">
         <?php if($catsPage > 0) { ?>
             <div class="previous-page">
-                <a class="prev-arrow prev-arrow-white" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
+                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
                     <i class="fas fa-angle-left"></i> Föregående
                 </a>
             </div>
         <?php }
         if($catsPage < $catsPages - 1) { ?>
             <div class="next-page">
-                <a class="next-arrow next-arrow-white" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
+                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
                     Nästa <i class="fas fa-angle-right"></i>
                 </a>
             </div>
