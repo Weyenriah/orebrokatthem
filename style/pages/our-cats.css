@@ -185,12 +185,7 @@
 
 /* Layout for cat-cards */
 .small-change {
-    margin-bottom: 30px;
-}
-
-/* No bottom margin-styling */
-.no-margin {
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 .cat-style {
@@ -199,22 +194,20 @@
     grid-template-columns: 260px 1fr;
 }
 
+/* Cat images style */
 .cat-img {
-    grid-column: 1;
-    height: auto;
-    margin-right: 15px;
-    max-width: 260px;
+    height: 280px;
+    width: 240px;
     overflow: hidden;
-    display: inline-block;
-    float: left;
     border: 1px solid #415463;
 }
 .cat-img img {
-    max-width: 100%;
-    height: auto;
-    width: auto;
-    vertical-align: top;
+    object-fit: cover;
+    height: 280px;
+    width: 240px;
 }
+
+/* Cat text styling */
 .cat-text {
     grid-column: 2;
     display: flex;
@@ -225,7 +218,6 @@
     font-family: "Georgia", serif;
     font-size: 33px;
 }
-
 .cat-title {
     display: flex;
 }
@@ -234,29 +226,26 @@
     margin-top: 3px;
     margin-right: 7px;
 }
-
 .cat-text small {
     margin: 0;
 }
-
 .cat-text p {
     height: auto;
     margin-bottom: 10px;
 }
 
+/* Cat links styling */
 .links {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .links a {
     font-family: "Georgia", serif;
     text-decoration: none;
     color: #5e788f;
     font-size: 17px;
 }
-
 /* Hover over link in cat-card */
 .links a:hover {
     animation-name: link-blue;
@@ -264,6 +253,7 @@
     color: #415463;
 }
 
+/* Read more-link */
 .read-more {
     padding: 0;
     margin-right: 20px;
@@ -275,13 +265,13 @@
     color: #5e788f;
     cursor: pointer;
 }
-
 .read-more:hover {
     animation-name: link-blue;
     animation-duration: 0.5s;
     color: #415463;
 }
 
+/* === CSS FOR JS === */
 .hidden {
     display: none !important;
 }

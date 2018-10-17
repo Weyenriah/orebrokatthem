@@ -18,14 +18,17 @@
 /* Styling for picture in employee-card */
 .employee-pic {
     grid-column: 1;
-    height: 200px;
+    height: 190px;
+    width: 190px;
     overflow: hidden;
     border: 1px solid #415463;
+    margin-right: 20px;
+    float: left;
 }
 .employee-pic img {
-    max-height: 100%;
-    width: auto;
-    vertical-align: top;
+    object-fit: cover;
+    height: 190px;
+    width: 190px;
 }
 
 /* Info-box styling */
@@ -71,8 +74,13 @@
 /* Icon styling for employee-card */
 .employee-info i {
     font-size: 13px;
-    margin-right: 6px;
     margin-top: 5px;
+}
+.tele i {
+    margin-right: 6px;
+}
+.employee-info a i {
+    margin-right: 1px;
 }
 
 

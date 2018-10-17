@@ -29,14 +29,16 @@ body {
 
 /* Image styling for carousel */
 .image-carousel {
-    margin-right: 15px;
     height: 350px;
     width: 250px;
-    border: 1px solid #415463;
     overflow: hidden;
+    border: 1px solid #415463;
+    margin-right: 20px;
 }
 .image-carousel img {
+    object-fit: cover;
     height: 350px;
+    width: 250px;
 }
 
 /* Styling for text in carousel */
@@ -155,9 +157,18 @@ body {
 
 .news-card {
     overflow: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
     z-index: -20000;
+}
+
+.news-card:not(:last-of-type) {
+    border-bottom: 1px solid rgba(65, 84, 99, 0.3);
+    padding-bottom: 20px;
+}
+
+.news-card:last-of-type {
+    margin-bottom: 10px;
 }
 
 /* Styling for the image */
@@ -170,7 +181,8 @@ body {
     margin-left: 10px;
 }
 .news-img img {
-    height: auto;
+    object-fit: cover;
+    height: 200px;
     width: 200px;
 }
 
@@ -236,7 +248,9 @@ body {
 }
 
 .remem-cat:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(65, 84, 99, 0.3);
 }
 
 /* General positioning of title */
@@ -287,7 +301,17 @@ body {
     margin-top: 10px;
 }
 .remem-img {
+    height: 310px;
+    width: 260px;
+    overflow: hidden;
+    border: 1px solid #415463;
+    margin-right: 20px;
     float: left;
+}
+.remem-img img {
+    object-fit: cover;
+    height: 310px;
+    width: 260px;
 }
 
 /* Small text about cause of death */
@@ -355,11 +379,17 @@ body {
 
     .news-card {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
     }
 
+    .news-card h5 {
+        text-align: center;
+    }
+
     .news-img {
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

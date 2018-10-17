@@ -27,7 +27,7 @@
 .first-footer {
     width: 100%;
     height: 170px;
-    background-color: #a0cdf3;
+    background-color: #cce8ff;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: 150px;
@@ -118,8 +118,8 @@
 .second-footer {
     font-family: "Calibri", sans-serif;
     height: auto;
-    background-color: #415463;
-    color: white;
+    background-color: #cce8ff;
+    color: #415463;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,8 +127,13 @@
 }
 
 .second-footer p {
-    margin: 10px 0 10px 0;
+    margin: 0;
     font-size: 15px;
+    width: 90%;
+    height: auto;
+    padding: 10px 0 10px 0;
+    border-top: 1px solid #415463;
+    text-align: center;
 }
 
 @media screen and (max-width: 824px) {

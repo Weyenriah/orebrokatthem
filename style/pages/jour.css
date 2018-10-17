@@ -39,6 +39,7 @@
 #report input:not(:last-child) {
     height: 26px;
     padding-left: 7px;
+    border: none;
 }
 
 /* Submit button styling */

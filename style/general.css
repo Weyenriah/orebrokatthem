@@ -144,11 +144,11 @@ body {
 .blue-background {
     margin-top: 30px;
     height: auto;
-    background-color: #a0cdf3;
+    background-color: #cce8ff;
     color: #415463;
     /* The border-design */
-    border-top: 20px solid #a0cdf3;
-    border-bottom: 20px solid #a0cdf3;
+    border-top: 20px solid #cce8ff;
+    border-bottom: 20px solid #cce8ff;
 }
 
 /* H2 headings styling */
@@ -232,7 +232,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #a0cdf3;
+    background-color: #cce8ff;
     border-top: 1px solid #415463;
 }
 

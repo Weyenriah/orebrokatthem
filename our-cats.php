@@ -132,7 +132,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         foreach ($cats as $kittenPosition => $kitten) {
 
             ?>
-            <div class="small-change<?php echo(((!$hasPrevOrNext) && ($kittenPosition + 1 == count($cats)))? ' no-margin' : ''); ?>">
+            <div class="small-change">
                 <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
                     <div class="cat-img">
                         <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">

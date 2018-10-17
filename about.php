@@ -69,7 +69,7 @@
             <div class="contact-info">
                 <section>
                     <h5 class="second-row-heading"> Besök oss </h5>
-                    <p> <?php echo(nl2br($database->getContent('about-visit'))); ?>
+                    <p> <?php echo(nl2br($database->getContent('about-visit'))); ?> <br/>
                         <i class="fas fa-phone"></i> <?php echo($database->getContent('about-visit-tele')); ?>
                     </p>
                 </section>
