@@ -31,46 +31,47 @@ body {
     grid-row: 1;
 }
 
+/* For a quite smart js hack*/
+#carousel:hover {
+    border-right-style: hidden;
+}
+
 .carousel-style {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+/* CSS for the dots in carousel */
 .dots {
     grid-column: 2;
     display: flex;
     justify-content: center;
 }
-
 .dot {
     cursor: pointer;
     height: 12px;
     width: 12px;
     margin: -5px 0 14px 14px;
-    background-color: #5e788f;
+    background-color: rgba(94, 120 , 143, 0.5);
     border-radius: 50%;
     display: inline-block;
 }
-
 .dot:hover {
-    background-color: #415463;
+    background-color: #5e788f;
     animation-name: dot;
     animation-duration: 0.5s;
 }
-
 @-webkit-keyframes dot {
-    from {background-color: #5e788f;}
-    to {background-color: #415463;}
+    from {background-color: rgba(94, 120 , 143, 0.5);}
+    to {background-color: #5e788f;}
 }
-
 @keyframes dot {
-    from {background-color: #5e788f;}
-    to {background-color: #415463;}
+    from {background-color: rgba(94, 120 , 143, 0.5);}
+    to {background-color: #5e788f;}
 }
-
 .active-dot {
-    background-color: #415463;
+    background-color: #5e788f;
 }
 
 /* Image styling for carousel */

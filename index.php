@@ -74,9 +74,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 
         <div class="dots">
             <?php
-            $d = 1;
-            foreach($slideCats as $slideDot) { ?>
-                <span class="dot" onclick="currentSlide(<?php echo($d++); ?>)"></span>
+            for($d = 1; $d <= count($slideCats); $d++) { ?>
+                <span class="dot" onclick="currentSlide(<?php echo($d); ?>)"></span>
             <?php } ?>
         </div>
     </section>
@@ -194,7 +193,12 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     showSlides(slideIndex);
     // Changes slide every 4s
     setInterval(() => {
-        showSlides(slideIndex++);
+        // Make sure to not shift slide if the mouse is over it
+        // "border-right-style" is used to determine of the mouse is over or not
+        let mouseOverSlide = window.getComputedStyle(document.getElementById('carousel')).getPropertyValue('border-right-style') === 'hidden';
+        if (!mouseOverSlide) {
+            showSlides(slideIndex++);
+        }
     }, 4000);
 
     // Shows right "current" slide
