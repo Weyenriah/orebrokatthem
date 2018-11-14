@@ -48,9 +48,28 @@ function array_any(array $array, callable $fn) {
         <span class="divide-menu-elements">
             <div class="menu-elements">
                 <a href="index.php" id="logo"> <img src="images/white-logo.png"> </a>
-                <button type="button" class="menu-icons" id="collapsing" onclick="collapse(); ">
+                <button type="button" class="menu-icons" id="collapsing" onclick="collapse();" >
                     <span> MENY </span> <i class="fas fa-bars"></i>
                 </button>
+                <div class="navigation-links" id="big-page-nav">
+                    <ul class="big-page-nav">
+                        <?php
+                        $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+
+                        foreach ($navigationLinks as $navigationPage) {
+                            $active = array_any($navigationPage['uri'], function ($val) use($request_uri) {
+                                return $val == $request_uri;
+                            });
+                            $activeString = $active ? ' active-nav ' : '';
+                            ?>
+                            <li class="big-page-list-item <?php echo($navigationPage['class']); ?>">
+                                <a class="<?php echo($activeString); ?>" href="<?php echo($navigationPage['uri'][0]); ?>">
+                                    <?php echo($navigationPage['name']); ?>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
             </div>
             <hr class="menu-divider"/>
         </span>
@@ -91,6 +110,8 @@ function array_any(array $array, callable $fn) {
 <script>
     /* Show and collapse navigation */
     let collapsed = true;
+
+    toggleCollapsed();
 
     function collapse() {
         collapsed = !collapsed;

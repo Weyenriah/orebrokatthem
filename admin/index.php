@@ -12,7 +12,7 @@
     <?php include(APP_FOLDER . '/admin/pages/include-pages.php') ?>
 
     <header>
-        <a href="index.php" class="header-title"> Administratör </a>
+        <a href="admin.php" class="header-title"> Administratör </a>
         <p class="logout"> <i class="fas fa-sign-out-alt"></i> </p>
     </header>
     <nav>
@@ -79,7 +79,7 @@
 
     /* === SHOW NEWS-POPUP === */
     function showPopupNews() {
-        let popup = document.getElementById('popup-news');
+        let popup = document.getElementById('popup-add-news');
 
         popup.style.display = 'block';
     }
