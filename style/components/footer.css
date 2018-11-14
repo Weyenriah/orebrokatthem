@@ -129,10 +129,10 @@
 .second-footer p {
     margin: 0;
     font-size: 15px;
-    width: 90%;
+    width: 100%;
     height: auto;
     padding: 10px 0 10px 0;
-    border-top: 1px solid #415463;
+    border-top: 10px solid #415463;
     text-align: center;
 }
 

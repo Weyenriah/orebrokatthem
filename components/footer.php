@@ -51,11 +51,14 @@ function any_array(array $array, callable $fn) {
     <a href="http://www.vilse.nu/">
         <img class="vilse" src="images/vilse.png">
     </a>
+    <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
+        <img class="sverak" src="images/sverak.png">
+    </a>
     <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
         <img class="skk"  src="images/skk.gif">
     </a>
-    <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
-        <img class="sverak" src="images/sverak.png">
+    <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring">
+        <img class="sverak" src="images/if.png">
     </a>
 </section>
 
