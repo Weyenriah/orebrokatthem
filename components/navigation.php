@@ -111,8 +111,6 @@ function array_any(array $array, callable $fn) {
     /* Show and collapse navigation */
     let collapsed = true;
 
-    toggleCollapsed();
-
     function collapse() {
         collapsed = !collapsed;
         let collapseElements = document.getElementsByClassName("toggle-menu");
