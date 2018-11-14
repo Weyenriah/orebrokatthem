@@ -19,7 +19,6 @@
 
 /* Some styling to logo in nav */
 #logo {
-    margin-left: 20%;
     background-color: white;
 }
 
@@ -37,13 +36,24 @@
 .menu-elements {
     position: relative;
     z-index: 2;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-divider {
+    margin: 5px 0 0 0;
+    border: 5px solid #415463;
+    width: calc(100% - 10px);
+    position: absolute;
+    z-index: 1;
 }
 
 /* Styling for menu-icon */
 .menu-icons {
     grid-row: 1;
     float: right;
-    display: block;
+    display: none;
     width: 70px;
     height: 90px;
     background-color: transparent;
@@ -61,17 +71,27 @@
     font-family: "Calibri", sans-serif;
 }
 
-.menu-divider {
-    margin: -47px 0 0 0;
-    border: 5px solid #415463;
-    width: calc(100% - 10px);
-    position: absolute;
-    z-index: 1;
+.navigation-links {
+    margin-top: -75px;
+    margin-left: 140px;
+}
+.big-page-nav {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.big-page-list-item a {
+    text-decoration: none;
+    font-family: "Georgia", serif;
+    color: #5e788f;
+}
+.big-page-list-item a:hover:not(.active-nav) {
+    font-weight: 900;
+    color: #566e83;
 }
 
 /* Specific styles for opening menu icon */
 #collapsing {
-    margin-right: 20%;
     color: #566e83;
     background-color: white;
 }
@@ -138,7 +158,7 @@
 }
 
 .toggle-menu.display #showing-up {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 /* === STYLING FOR UPPER PART OF POPUP-NAV === */
@@ -238,15 +258,26 @@
 }
 
 /* === RESPONSIVENESS === */
-@media only screen and (max-width: 954px) {
-    /* Some styling to logo in nav */
-    #logo {
-        margin-left: 10%;
+@media only screen and (max-width: 1180px) {
+    .big-page-list-item a {
+        text-decoration: none;
+        font-family: "Georgia", serif;
+        color: #5e788f;
     }
+}
 
-    /* Specific styles for opening menu icon */
-    #collapsing {
-        margin-right: 10%;
+@media only screen and (max-width: 1180px) {
+    .menu-elements {
+        width: 80%;
+    }
+    .menu-icons {
+        display: block;
+    }
+    .big-page-nav {
+        display: none;
+    }
+    .menu-divider {
+        margin: 27px 0 0 0;
     }
 }
 
