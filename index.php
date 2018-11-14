@@ -31,6 +31,10 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Calls for navigation -->
     <?php include(APP_FOLDER . '/components/navigation.php') ?>
 
+    <section class="banner">
+        <img src="images/banner.png">
+    </section>
+
     <!-- Specific heading to this page -->
     <header class="header">
         <h1>Välkommen</h1>
@@ -68,8 +72,13 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             </div>
         <?php } ?>
 
-        <a onclick="changeSlide(-1)" class="previous"> <img src="images/arrow.png"> </a>
-        <a onclick="changeSlide(1)" class="next"> <img src="images/arrow.png"> </a>
+        <div class="dots">
+            <?php
+            $d = 1;
+            foreach($slideCats as $slideDot) { ?>
+                <span class="dot" onclick="currentSlide(<?php echo($d++); ?>)"></span>
+            <?php } ?>
+        </div>
     </section>
 
     <!-- News flow -->
@@ -183,19 +192,20 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     // === CAROUSEL ===
     let slideIndex = 1;
     showSlides(slideIndex);
-    // Changes slide every 3s
+    // Changes slide every 4s
     setInterval(() => {
         showSlides(slideIndex++);
-    }, 3000);
+    }, 4000);
 
-    // Next/Previous controls
-    function changeSlide(n) {
-        showSlides(slideIndex += n);
+    // Shows right "current" slide
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
     }
 
     function showSlides(n) {
         let i;
         let slide = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
 
         // Adds display none on every slide to hide it
         for(i = 0; i < slide.length; i++) {
@@ -211,7 +221,13 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             slideIndex = slide.length;
         }
 
+        // Managing the dots
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active-dot", "");
+        }
+
         slide[slideIndex - 1].style.display = "block";
+        dots[slideIndex-1].className += " active-dot";
     }
 
     // == SHOW POPUP ===

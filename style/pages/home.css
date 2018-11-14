@@ -5,6 +5,16 @@ body {
     padding: 0;
 }
 
+.banner img {
+    display: none;
+    background-color: #cce8ff;
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+    border-top: 1px solid #415463;
+    border-bottom: 1px solid #415463;
+    overflow: hidden;
+}
 
 /* === CAROUSEL STYLING === */
 .carousel-container {
@@ -12,7 +22,7 @@ body {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 100%;
-    height: 355px;
+    height: 370px;
 }
 
 /* General slide-styling */
@@ -25,6 +35,42 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.dots {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: -5px 0 14px 14px;
+    background-color: #5e788f;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot:hover {
+    background-color: #415463;
+    animation-name: dot;
+    animation-duration: 0.5s;
+}
+
+@-webkit-keyframes dot {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+
+@keyframes dot {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+
+.active-dot {
+    background-color: #415463;
 }
 
 /* Image styling for carousel */
@@ -44,7 +90,7 @@ body {
 /* Styling for text in carousel */
 .carousel-text {
     display: grid;
-    grid-template-rows: 55px auto 245px 30px;
+    grid-template-rows: 55px 45px auto 30px;
 }
 .carousel-text p {
     grid-row: 3;
@@ -321,6 +367,12 @@ body {
 
 .remem-pagination {
     margin-top: 8px;
+}
+
+@media only screen and (max-width: 794px) {
+    .carousel-container {
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 733px) {
