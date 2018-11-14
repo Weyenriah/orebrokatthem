@@ -6,6 +6,10 @@ body {
     position: relative;
 }
 
+body > section:nth-last-of-type(2) {
+    margin-bottom: 0 !important;
+}
+
 /* Styling for subheadings */
 .second-row-heading {
     font-family: "Calibri", sans-serif;
@@ -21,7 +25,7 @@ body {
 }
 
 /* RESPONSIVE for grid */
-@media only screen and (max-width: 954px) {
+@media only screen and (max-width: 1180px) {
     .general-grid {
         grid-template-columns: 10% 80% 10%;
     }
@@ -50,7 +54,7 @@ body {
 }
 
 /* RESPONSIVE for header */
-@media only screen and (max-width: 954px) {
+@media only screen and (max-width: 1180px) {
     .header {
         margin-right: 10%;
         margin-left: 10%;
