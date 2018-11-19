@@ -1,13 +1,4 @@
-/* === ADVICE SECTION STYLING === */
-#advice {
-    margin-top: 0;
-}
-
 /* === PRICES SECTION STYLING === */
-#prices {
-    margin-bottom: 30px;
-}
-
 .prices {
     display: flex;
     flex-wrap: wrap;

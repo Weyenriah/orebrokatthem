@@ -20,7 +20,7 @@
     </header>
 
     <!-- Section for employees -->
-    <section class="blue-background general-grid" id="workers">
+    <section class="general-grid text-box blue-background " id="workers">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <!-- Employee cards -->
@@ -43,7 +43,7 @@
     </section>
 
     <!-- Contact section -->
-    <section class="white-background general-grid" id="contact">
+    <section class="general-grid text-box" id="contact">
         <h2>Kontakta oss</h2>
         <div class="contact-us">
             <form>
@@ -62,7 +62,7 @@
                 </label>
                 <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
 
-                <input type="submit" value="Skicka" class="submit-button">
+                <input type="submit" value="Skicka" class="button submit-button">
             </form>
 
             <!-- Information where to contact otherwise -->
@@ -87,10 +87,10 @@
     </section>
 
     <!-- Section for how to apply to be a volonteer -->
-    <section class="blue-background general-grid" id="volonteer">
+    <section class="general-grid text-box blue-background" id="volonteer">
         <h2> Bli volontär </h2>
-        <div class="blue-paragraph become">
-            <div class="volonteer-img">
+        <div class="paragraph-position become">
+            <div class="decor-img">
                 <img src="uploads/images/ashild.jpg">
             </div>
             <div class="become-info">

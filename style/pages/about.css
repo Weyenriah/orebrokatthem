@@ -55,13 +55,13 @@
 }
 .employee-info a {
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
     font-size: 15px;
 }
 
 .employee-info a:hover {
     color: #415463;
-    animation-name: link-blue;
+    animation-name: link;
     animation-duration: 0.5s;
 }
 
@@ -121,25 +121,6 @@
     height: 26px;
 }
 
-/* Submit button styling */
-.submit-button {
-    height: 40px;
-    font-family: "Calibri", sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
-    background-color: #5e788f;
-    color: #e9f5e5;
-    border: none;
-    cursor: pointer;
-}
-.submit-button:hover {
-    background-color: #415463;
-    animation-name: button-blue;
-        -webkit-animation-name: button-blue; /* For Safari */
-    animation-duration: 0.5s;
-        -webkit-animation-duration: 0.5s; /* For Safari */
-}
-
 /* The other side of this page styling */
 .contact-info {
     grid-column: 3;
@@ -174,21 +155,6 @@
 
 
 /* === VOLONTEER PAGE STYLING === */
-/* Image styling */
-.volonteer-img {
-    height: 300px;
-    width: 250px;
-    overflow: hidden;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #415463;
-    float: right;
-}
-.volonteer-img img {
-    height: auto;
-    width: 250px;
-}
-
 /* Styling for contact information */
 .contact-become {
     display: flex;
@@ -203,13 +169,13 @@
 /* Contact information link styling */
 .contact-become div a {
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
     font-family: "Calibri", sans-serif;
 }
 .contact-become div a:hover {
     color: #415463;
-    animation-name: link-blue;
-        -webkit-animation-name: link-red; /* For Safari */
+    animation-name: link;
+        -webkit-animation-name: link; /* For Safari */
     animation-duration: 0.5s;
         -webkit-animation-duration: 0.5s; /* For Safari */
 }

@@ -22,18 +22,18 @@
         <p> <?php echo($database->getContent('adopt-header')); ?> </p>
     </header>
 
-    <section class="blue-background general-grid" id="how">
+    <section class="general-grid text-box blue-background" id="how">
         <h2> Hur adopterar jag? </h2>
-        <div class="blue-paragraph">
+        <div class="paragraph-position">
             <p> <?php echo(nl2br($database->getContent('adopt-how'))); ?> </p>
         </div>
     </section>
 
     <!-- Advice section -->
-    <section class="white-background general-grid" id="advice">
+    <section class="general-grid text-box" id="advice">
         <h2> Tips </h2>
-        <div class="white-paragraph">
-            <div class="tips-img">
+        <div class="paragraph-position">
+            <div class="decor-img">
                 <img src="uploads/images/ashild.jpg">
             </div>
             <ol>
@@ -43,9 +43,9 @@
     </section>
 
     <!-- Prices section -->
-    <section class="blue-background general-grid" id="prices">
+    <section class="general-grid text-box blue-background" id="prices">
         <h2> Adoptionspriser </h2>
-        <div class="blue-paragraph price-info">
+        <div class="paragraph-position price-info">
             <div class="prices">
                 <div class="price">
                     <h5 class="second-row-heading"> Katter upp till 12 år </h5>

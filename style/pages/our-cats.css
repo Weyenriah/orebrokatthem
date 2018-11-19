@@ -28,20 +28,11 @@
     text-align: center;
     margin-right: 5px;
 }
+
+/* Styling for search button */
 .search-button {
     width: 100px;
-    background-color: #5e788f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: "Calibri", sans-serif;
-    font-size: 16px;
-}
-
-.search-button:hover {
-    animation-name: button-blue;
-    animation-duration: 0.5s;
-    background-color: #415463;
+    font-size: 16px !important;
 }
 
 /* === FILTER STYLE === */
@@ -60,7 +51,7 @@
     height: 30px;
     width: 30px;
     background-color: transparent;
-    color: #5e788f;
+    color: #7595b2;
     border: none;
     cursor: pointer;
     font-family: "Calibri", sans-serif;
@@ -69,7 +60,7 @@
 }
 
 .filters:hover {
-    animation-name: link-blue;
+    animation-name: link;
     animation-duration: 0.5s;
     color: #415463;
 }
@@ -145,19 +136,11 @@
 }
 
 /* Filter-button style */
-.filter-submit {
+.filter-button {
     margin-top: 5px;
     width: 100%;
-    height: 25px;
-    background-color: #5e788f;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.filter-submit:hover {
-    background-color: #415463;
-    animation-duration: 0.5s;
-    animation-name: button-blue;
+    height: 28px;
+    font-size: 16px !important;
 }
 
 /* Not displaying when not onclick */
@@ -169,18 +152,11 @@
 /* Layout when not expanded */
 #cats {
     grid-row: 3;
-    height: 400px;
+    height: auto;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     z-index: 1;
-}
-
-/* Layout when expanded and animation */
-#cats.expanded {
-    height: 100%;
-    -webkit-transition: all ease 0.5s;
-    transition: all ease 0.5s;
 }
 
 /* Layout for cat-cards */
@@ -240,40 +216,34 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.links a {
+/* Styling for link */
+.adopt {
     font-family: "Georgia", serif;
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
     font-size: 17px;
 }
 /* Hover over link in cat-card */
-.links a:hover {
-    animation-name: link-blue;
+.adopt:hover {
+    animation-name: link;
     animation-duration: 0.5s;
     color: #415463;
 }
-
-/* Read more-link */
-.read-more {
-    padding: 0;
-    margin-right: 20px;
-    border: none;
+/* Styling for button */
+.about-cat {
     background-color: transparent;
+    border: none;
     font-family: "Georgia", serif;
-    font-size: 17px;
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
+    font-size: 17px;
     cursor: pointer;
+    padding: 0;
 }
-.read-more:hover {
-    animation-name: link-blue;
+.about-cat:hover {
+    animation-name: link;
     animation-duration: 0.5s;
     color: #415463;
-}
-
-/* === CSS FOR JS === */
-.hidden {
-    display: none !important;
 }
 
 @media only screen and (max-width: 750px) {

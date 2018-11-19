@@ -77,8 +77,9 @@
 }
 .big-page-nav {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style: none;
+    width: calc(100% - 40px);
 }
 .big-page-list-item a {
     text-decoration: none;
@@ -86,8 +87,8 @@
     color: #5e788f;
 }
 .big-page-list-item a:hover:not(.active-nav) {
-    font-weight: 900;
     color: #566e83;
+    font-weight: 900;
 }
 
 /* Specific styles for opening menu icon */

@@ -15,15 +15,15 @@
         <p> <?php echo($database->getContent('support-header')); ?> </p>
     </header>
 
-    <section class="blue-background general-grid" id="membership">
+    <section class="general-grid text-box blue-background " id="membership">
         <h2> Bli medlem </h2>
-        <p class="blue-paragraph"> <?php echo($database->getContent('support-member')); ?> </p>
+        <p class="paragraph-position"> <?php echo($database->getContent('support-member')); ?> </p>
     </section>
 
-    <section class="white-background general-grid" id="insurance">
+    <section class="general-grid text-box" id="insurance">
         <h2> Försäkra din katt </h2>
-        <div class="white-paragraph insurance">
-            <div class="insurance-img">
+        <div class="paragraph-position insurance">
+            <div class="decor-img" id="insurance-img">
                 <img src="uploads/images/ashild.jpg">
             </div>
             <div class="insurance-text">
@@ -41,9 +41,9 @@
         </div>
     </section>
 
-    <section class="blue-background general-grid" id="wishlist">
+    <section class="general-grid text-box blue-background" id="wishlist">
         <h2> Önskelista </h2>
-        <div class="blue-paragraph">
+        <div class="paragraph-position">
             <p> Det är också möjligt att skänka saker till oss på Örebro Katthem. Detta är vad vi behöver just nu. </p>
             <div class="needs">
                 <div class="cat-need">

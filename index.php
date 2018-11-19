@@ -31,9 +31,9 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Calls for navigation -->
     <?php include(APP_FOLDER . '/components/navigation.php') ?>
 
-    <section class="banner">
+    <article class="banner">
         <img src="images/banner.png">
-    </section>
+    </article>
 
     <!-- Specific heading to this page -->
     <header class="header">
@@ -42,7 +42,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </header>
 
     <!-- Carousel -->
-    <section class="carousel-container blue-background" id="carousel">
+    <section class="carousel-container text-box blue-background" id="carousel">
         <?php
         foreach($slideCats as $slideCat) {
         ?>
@@ -81,9 +81,9 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- News flow -->
-    <section class="white-background general-grid" id="newsflow">
+    <section class="general-grid text-box" id="newsflow">
         <h2> Nyheter </h2>
-        <div class="news white-paragraph<?php if($expanded) echo(' expanded'); ?>" id="news-container">
+        <div class="paragraph-position news<?php if($expanded) echo(' expanded'); ?>" id="news-container">
             <?php foreach($news as $new) {
 
                 $date = date('Y-m-d', strtotime($new['date']));
@@ -100,33 +100,33 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                     </div>
                 </article>
             <?php } ?>
-            <div class="white-paragraph prev-next">
+            <div class="white-paragraph pagination">
                 <?php if($newsPage > 0) { ?>
                     <div class="previous-page">
-                        <a class="prev-arrow prev-arrow-white" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
+                        <a class="prev-arrow prev-arrow" href="?newspage=<?php echo $newsPage - 1 ?>#newsflow">
                             <i class="fas fa-angle-left"></i> Föregående
                         </a>
                     </div>
                 <?php }
                 if($newsPage < $newsPages - 1) { ?>
                     <div class="next-page">
-                        <a class="next-arrow next-arrow-white" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
+                        <a class="next-arrow next-arrow" href="?newspage=<?php echo $newsPage + 1 ?>#newsflow">
                             Nästa <i class="fas fa-angle-right"></i>
                         </a>
                     </div>
                 <?php } ?>
             </div>
         </div>
-        <div id="hide-show">
+        <div class="hide-show" id="hide-show">
             <button class="<?php if (count($news) < 2) echo('hidden'); ?>" id="my-button" onclick="showNews()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
 
     <!-- Minneslunden/Remember Cats -->
-    <section class="general-grid blue-background" id="remember">
+    <section class="general-grid text-box blue-background" id="remember">
         <h2> Minneslunden </h2>
-        <div class="all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
-            <p class="blue-paragraph"> <?php echo(nl2br($database->getContent('home-remember'))); ?> </p>
+        <div class="paragraph-position all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
+            <p> <?php echo(nl2br($database->getContent('home-remember'))); ?> </p>
             <div class="all-remem-cats">
                 <?php foreach($remember as $cat) {
                     $born = ($cat['born'] === null) ? '' : ('* ' . $cat['born'] . ' |');
@@ -150,7 +150,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         </div>
                         <div class="img-info-remem">
                             <?php if ($cat['image'] !== '') { ?>
-                                <div class="red-img-border remem-img">
+                                <div class="img-border remem-img">
                                     <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
                                 </div>
                             <?php } ?>
@@ -162,24 +162,24 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                     </article>
                 <?php } ?>
             </div>
-            <div class="blue-paragraph prev-next remem-pagination">
+            <div class="pagination">
                 <?php if($rememPage > 0) { ?>
                     <div class="previous-page">
-                        <a class="prev-arrow prev-arrow-red" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
+                        <a class="prev-arrow" href="?remempage=<?php echo $rememPage - 1 ?>#remember">
                             <i class="fas fa-angle-left"></i> Föregående
                         </a>
                     </div>
                 <?php }
                 if($rememPage < $rememPages - 1) { ?>
                     <div class="next-page">
-                        <a class="next-arrow next-arrow-red" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
+                        <a class="next-arrow" href="?remempage=<?php echo $rememPage + 1 ?>#remember">
                             Nästa <i class="fas fa-angle-right"></i>
                         </a>
                     </div>
                 <?php } ?>
             </div>
         </div>
-        <div id="blue-hide-show">
+        <div class="hide-show" id="hide-show">
             <button class="<?php if (count($remember) < 2) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>

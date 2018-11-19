@@ -15,27 +15,18 @@
 
 .insurance a {
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
 }
 
 .insurance a:hover {
     color: #415463;
-    animation-name: link-blue;
+    animation-name: link;
     animation-duration: 0.5s;
 }
 
-.insurance-img {
+#insurance-img {
     grid-column: 2;
     grid-row: 1;
-    height: 300px;
-    width: 250px;
-    overflow: hidden;
-    border: 1px solid #415463;
-}
-
-.insurance-img img {
-    height: auto;
-    width: 250px;
 }
 
 /* === WISHING LIST STYLE === */

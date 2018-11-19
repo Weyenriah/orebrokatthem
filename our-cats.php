@@ -70,14 +70,14 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
     <p> <?php echo($database->getContent('ourcats-header')); ?> </p>
 </header>
 
-<section class="blue-background general-grid" id="our-cats">
+<section class="text-box blue-background" id="our-cats">
     <!-- Filter -->
-    <form method="GET" action="#our-cats" class="filter-search blue-paragraph">
+    <form method="GET" action="#our-cats" class="paragraph-position filter-search">
         <div class="search-field">
             <div class="searches" id="search-form">
                 <label for="search"> <i class="fas fa-search"></i> </label>
                 <input type="search" name="search" id="search" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
-                <button class="search-button" type="submit"> Sök </button>
+                <button class="button search-button" type="submit"> Sök </button>
             </div>
 
             <div class="filter">
@@ -114,12 +114,12 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <label for="jour"> Jourhem </label>
                     </span>
 
-                <button class="filter-submit" type="submit" value="submit"> Filtrera </button>
+                <button class="button filter-button" type="submit" value="submit"> Filtrera </button>
             </div>
         </div>
     </form>
     <!-- Cat-cards -->
-    <div class="blue-paragraph<?php if($expanded) echo(' expanded'); ?>" id="cats">
+    <div class="paragraph-position" id="cats">
         <?php
         // If there is no cats echo this
         if(count($cats) < 1) {
@@ -151,33 +151,29 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <p class="desc"> <?php echo(explode("<br/>", $kitten['description'], 2)[0]) ?> </p>
                         <p class="desc-long" hidden> <?php echo(explode("<br/>", $kitten['description'], 2)[1]) ?> </p>
                         <div class="links">
-                            <button class="read-more" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
+                            <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
                             <a class="adopt" href="mailto:<?php echo($kitten['contact']) ?>"> Adoptera mig! </a>
                         </div>
                     </div>
                 </article>
             </div>
         <?php } ?>
-        <div class="prev-next">
+        <div class="pagination">
             <?php if($page > 0 && !$search) { ?>
                 <div class="previous-page">
-                    <a class="prev-arrow prev-arrow-white" href="?page=<?php echo $page - 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
+                    <a class="prev-arrow prev-arrow" href="?page=<?php echo $page - 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
                         <i class="fas fa-angle-left"></i> Föregående
                     </a>
                 </div>
             <?php }
             if($page < $pages - 1 && !$search) { ?>
                 <div class="next-page">
-                    <a class="next-arrow next-arrow-white" href="?page=<?php echo $page + 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
+                    <a class="next-arrow next-arrow" href="?page=<?php echo $page + 1; if($filterString !== '') echo '&' . $filterString; ?>#our-cats">
                         Nästa <i class="fas fa-angle-right"></i>
                     </a>
                 </div>
             <?php } ?>
         </div>
-    </div>
-    <!-- Hide/show content -->
-    <div id="blue-hide-show">
-        <button class="<?php if (count($cats) < 2) echo('hidden'); ?>" id="my-button" onclick="show()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
     </div>
 </section>
 

@@ -25,18 +25,18 @@ if(isset($_POST['jour-contact'])) {
     </header>
 
     <!-- Section for "How it is to be an emergency home?" -->
-    <section class="blue-background general-grid" id="how">
+    <section class="general-grid text-box blue-background" id="how">
         <h2> Hur är det att vara jourhem? </h2>
-        <div class="blue-paragraph how-text">
+        <div class="paragraph-position how-text">
             <?php echo($database->getContent('jour-how')); ?>
         </div>
     </section>
 
     <!-- Section for advice when you take care of a cat -->
-    <section class="white-background general-grid" id="tips">
+    <section class="general-grid text-box" id="tips">
         <h2> Tips för dig med skygg jourhemskatt </h2>
-        <div class="white-paragraph">
-            <div class="tips-img">
+        <div class="paragraph-position">
+            <div class="decor-img">
                 <img src="uploads/images/ashild.jpg">
             </div>
             <ol>
@@ -46,9 +46,9 @@ if(isset($_POST['jour-contact'])) {
     </section>
 
     <!-- Double sided, report-form on left and contact on right -->
-    <section class="blue-background general-grid" id="report">
+    <section class="general-grid text-box blue-background" id="report">
         <h2>Anmälning</h2>
-        <div class="report-info blue-paragraph">
+        <div class="paragraph-position report-info">
             <form method="post">
                 <label for="name" class="second-row-heading">
                     Ditt namn
@@ -65,7 +65,7 @@ if(isset($_POST['jour-contact'])) {
                 </label>
                 <textarea id="msg" name="msg" placeholder="Skriv ditt meddelande här..."></textarea>
 
-                <input type="submit" name="jour-contact" value="Skicka" class="submit-button">
+                <input type="submit" name="jour-contact" value="Skicka" class="button submit-button">
             </form>
             <div class="report-contact">
                 <h5 class="second-row-heading"> Eller ring till </h5>
