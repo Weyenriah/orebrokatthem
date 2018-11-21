@@ -1,7 +1,7 @@
 <?php
 
 trait Cats {
-    // Add cat
+    // Add Cat
     public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $show){
         if ($this->changesLastHour('cats') > 20) {
             return false;
@@ -43,7 +43,7 @@ trait Cats {
         }
     }
 
-    // Change news
+    // Change Cat
     public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase) {
         $sql = 'UPDATE cats SET 
                   name = :name,
@@ -74,7 +74,7 @@ trait Cats {
         ));
     }
 
-    // Delete cats
+    // Delete Cat
     public function deleteCat($id) {
         // Gets all information from database
         $sql = 'DELETE FROM cats WHERE id = :id';
