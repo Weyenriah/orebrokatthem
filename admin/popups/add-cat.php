@@ -12,35 +12,47 @@
             <!-- Add cat information -->
             <div class="info">
                 <label for="catname"> Namn </label>
-                <input type="text" name="catname" id="catname" value="Kattens namn...">
+                <input type="text" name="catname" id="catname" placeholder="Kattens namn...">
             </div>
             <div class="info">
                 <label for="age"> Ålder </label>
-                <input type="text" name="age" id="age" value="Kattens ålder (yyyy)">
+                <input type="text" name="age" id="age" placeholder="Kattens ålder (yyyy)">
             </div>
+
             <div class="info">
                 <label for="gender"> Kön </label>
-                <input type="text" name="gender" id="gender" value="Kattens kön...">
+                <select name="gender">
+                    <option value="1"> Hane </option>
+                    <option value="0"> Hona </option>
+                </select>
             </div>
+
             <div class="info">
                 <label for="color"> Färg </label>
-                <input type="text" name="color" id="color" value="Kattens färg...">
+                <input type="text" name="color" id="color" placeholder="Kattens färg...">
             </div>
             <div class="info">
                 <label for="desc"> Beskrivning </label>
-                <textarea id="desc" rows="6" cols="50"></textarea>
+                <textarea name="desc" id="desc" rows="6" cols="50"></textarea>
+            </div>
+
+            <div class="info">
+                <label for="home"> Placering </label>
+                <select name="home">
+                    <option value="1"> Katthemmet </option>
+                    <option value="0"> Jourhem </option>
+                </select>
+            </div>
+
+            <div class="info">
+                <label for="contact"> Kontakt för adoption </label>
+                <input type="text" name="contact" id="contact" placeholder="E-postadress till kontakt...">
             </div>
 
             <!-- Hide or show cat on first page -->
-            <div class="show-in-slide">
-                <div>
-                    <input type="radio" id="show" name="show-in-slide" value="show">
-                    <label for="show"> Visa på första sida</label>
-                </div>
-                <div>
-                    <input type="radio" id="hide" name="show-in-slide" value="hide">
-                    <label for="show"> Göm på första sidan </label>
-                </div>
+            <div class="show-slide">
+                <input type="checkbox" id="show" name="show-slide" value="show">
+                <label for="show"> Visa på första sida</label>
             </div>
 
             <button class="add-button" type="submit" name="add-cat"> Lägg till </button>
