@@ -2,6 +2,7 @@
     grid-row: 2;
     grid-column: 2;
     display: none;
+    width: 100%;
 }
 
 #employees h2 {
@@ -49,31 +50,40 @@
 }
 
 .employee:not(:last-child) {
-    border-bottom: 1px solid #415463;
+    border-bottom: 1px solid rgba(65, 84, 99, 0.3);
 }
 
 .employee-img {
-    width: auto;
-    height: 100%;
-    max-height: 160px;
+    height: 190px;
+    width: 190px;
     border: 1px solid #415463;
     margin-right: 20px;
+}
+
+.employee-img img {
+    object-fit: cover;
+    height: 190px;
+    width: 190px;
 }
 
 .employee:not(:last-child) .employee-img {
     margin-bottom: 20px;
 }
 
+.employee-text {
+    width: inherit;
+}
+
 .employee-info-text {
     width: 75%;
 }
 
-.change-employee {
+.change-employees {
     margin-bottom: 10px;
     display: flex;
 }
 
-.change-employee button {
+.change-employees button {
     text-decoration: none;
     font-family: "Calibri", sans-serif;
     font-size: 18px;
@@ -84,14 +94,14 @@
     cursor: pointer;
 }
 
-.change-employee button:hover {
+.change-employees button:hover {
     color: #415463;
     font-weight: bold;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
-.change-employee button i {
+.change-employees button i {
     font-size: 15px;
 }
 
@@ -99,11 +109,21 @@
     font-family: "Calibri", sans-serif;
 }
 
-.employee-information h3 {
+.employee-title {
+    display: flex;
+}
+
+.employee-title h3 {
     font-family: "Georgia", serif;
     font-size: 25px;
     margin-top: 0;
     margin-bottom: 1px;
+    color: #415463;
+}
+
+.employee-title i {
+    margin-left: 20px;
+    margin-top: 7px;
     color: #415463;
 }
 
@@ -128,6 +148,11 @@
 
 .employee-information .fas {
     font-size: 15px;
+    margin-right: 5px;
+}
+
+.showcase {
+    font-family: "Calibri", sans-serif;
 }
 
 /* === TEXT FOR WHEN STUFF IS REMOVED === */
