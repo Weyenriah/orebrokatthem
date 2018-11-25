@@ -52,6 +52,8 @@ if(isset($_POST['add-employee'])) {
     if($canLogin) {
         if(!is_string($password) || strlen($password) === 0) {
             $password = null;
+        } else {
+            $password = password_hash($password . PASSWORD_SALT, PASSWORD_DEFAULT);
         }
     } else {
         $password = null;

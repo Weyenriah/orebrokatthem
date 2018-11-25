@@ -5,9 +5,9 @@
 
     if(isset($_POST['email']) && isset($_POST['password'])) {
        $email = htmlentities(trim($_POST['email']));
-       $password = htmlentities(trim($_POST['password']));
+       $password = $_POST['password'];
 
-       $login = $database->login($email, $password);
+       $login = $database->login($email, $password . PASSWORD_SALT);
 
        if($login !== NULL) {
            $_SESSION['user'] = $login;
