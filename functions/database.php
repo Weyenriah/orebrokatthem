@@ -1,4 +1,8 @@
 <?php
+require_once 'cats.php';
+require_once 'employees.php';
+require_once 'news.php';
+require_once 'remember.php';
 
 class Database {
 
@@ -19,8 +23,15 @@ class Database {
         $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
+    use Cats, Employees, News, Remember;
+
+    // Order differently when admin
+    public function  getAdminCats($page) {
+        return $this->getCats($page, 0, 0, '', true);
+    }
+
     // Get all cats
-    public function getCats($page = 0, $gender = 0, $living = 0, $name='') {
+    public function getCats($page = 0, $gender = 0, $living = 0, $name='', $orderById = false) {
         // Gets all information from database
         $sql = 'SELECT * FROM cats';
         $conditions = array();
@@ -42,7 +53,11 @@ class Database {
         }
 
         // Reversing the order
-        $sql .= ' ORDER BY name';
+        if($orderById) {
+            $sql .= ' ORDER BY id DESC';
+        } else {
+            $sql .= ' ORDER BY name';
+        }
         // Limit amount of cats per pages
         $sql .= ' LIMIT 8 OFFSET :offset';
         // Prepares a query
@@ -92,7 +107,7 @@ class Database {
         return ceil($numberOfCats / 8);
     }
 
-    // Count and return pages of news
+    // Count and return pages of cats
     public function countCats() {
         $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
         // Prepares a query
@@ -147,7 +162,7 @@ class Database {
     // Get all Remember Cats-cats
     public function getRememberCats($page = 0) {
         // Gets all information from database
-        $sql = 'SELECT * FROM remember LIMIT 8 OFFSET :offset';
+        $sql = 'SELECT * FROM remember ORDER BY id DESC LIMIT 8 OFFSET :offset';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -172,9 +187,12 @@ class Database {
     }
 
     // Get all employees
-    public function getEmployees() {
+    public function getEmployees($showHidden = false) {
         // Gets all information from database
         $sql = 'SELECT * FROM employees';
+        if(!$showHidden) {
+            $sql .= ' WHERE hidden = 0';
+        }
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -183,7 +201,7 @@ class Database {
         return $stmt->fetchAll();
     }
 
-    // Get content
+    // Get all text-content
     public function getContent($element) {
         // Gets all information from database
         $sql = 'SELECT * FROM textfields WHERE element = :element LIMIT 1';
@@ -197,47 +215,32 @@ class Database {
         return $stmt->fetchObject()->content;
     }
 
-    public function deleteNewsPost($id) {
-        // Gets all information from database
-        $sql = 'DELETE FROM news WHERE id = :id';
+    // Stops adding flow for a while after a few added in table
+    private function changesLastHour($table) {
+        $sql = "SELECT COUNT(*) AS count FROM `{$table}` WHERE date BETWEEN date_sub(NOW(), INTERVAL 1 HOUR) AND NOW();";
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
-        return $stmt->execute(array(
-            'id' => $id,
-        ));
+        $stmt->execute();
+
+        return $stmt->fetchObject()->count;
     }
 
-    public function deleteCat($id) {
-        // Gets all information from database
-        $sql = 'DELETE FROM cats WHERE id = :id';
+    // Log in
+    public function login($email, $password) {
+        $sql = 'SELECT id, `password` FROM employees WHERE email = :email AND `password` IS NOT NULL LIMIT 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
-        return $stmt->execute(array(
-            'id' => $id,
+        $result = $stmt->execute(array(
+            'email' => $email,
         ));
-    }
-
-    public function deleteEmployee($id) {
-        // Gets all information from database
-        $sql = 'DELETE FROM employees WHERE id = :id';
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
-        // Sends query to database
-        return $stmt->execute(array(
-            'id' => $id,
-        ));
-    }
-
-    public function deleteRememberCat($id) {
-        // Gets all information from database
-        $sql = 'DELETE FROM remember WHERE id = :id';
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
-        // Sends query to database
-        return $stmt->execute(array(
-            'id' => $id,
-        ));
+        if($result && $stmt->rowCount()) {
+            $user = $stmt->fetchObject();
+            if(password_verify($password, $user->password)) {
+                return $user->id;
+            }
+        }
+        return null;
     }
 }
