@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="../images/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../../public/assets/images/favicon.png"/>
 
     <!-- General CSS -->
     <link rel="stylesheet" type="text/css" href="../../public/admin/assets/css/general.css">
