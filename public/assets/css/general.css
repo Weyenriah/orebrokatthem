@@ -1,0 +1,335 @@
+/* === GENERAL DESIGN RULES === */
+/* Erases default 8px border */
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body > section:nth-last-of-type(2) {
+    margin-bottom: 0 !important;
+}
+
+
+/* === HEADER === */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+@media only screen and (max-width: 1180px) {
+    .header {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+/* Styling for heading in Header */
+.header h1 {
+    margin: 0;
+    width: 100%;
+    font-family: "Georiga", serif;
+    color: #415463;
+    text-align: center;
+    font-size: 260%;
+}
+
+/* Styling for the general text in Header */
+.header p {
+    color: #415463;
+    font-family: "Calibri", sans-serif;
+    margin: 0;
+}
+
+
+/* === TEXT BOX STYLING === */
+/* Styling for all text-boxes */
+.text-box {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    color: #415463;
+    height: auto;
+    padding: 15px 0 15px 0;
+}
+@media only screen and (max-width: 1180px) {
+    .text-box {
+        grid-template-columns: 10% 80% 10%;
+    }
+}
+
+.blue-background:first-of-type {
+    margin-top: 30px;
+}
+
+/* Grid positioning for main-content */
+.paragraph-position {
+    grid-column: 2;
+}
+
+
+/* TEXT STYLING FOR TEXT BOXES */
+/* H2-styling */
+.text-box h2 {
+    grid-column: 2;
+    margin-top: 20px;
+    font-family: "Georgia", serif;
+    margin-bottom: 30px;
+}
+@media only screen and (max-width: 420px) {
+    .text-box h2 {
+        font-size: 7vw;
+        text-align: center;
+    }
+}
+
+/* Styling for subheadings */
+.second-row-heading {
+    font-family: "Calibri", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0;
+}
+
+/* Styling for <p>-tags */
+.text-box p {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-family: "Calibri", sans-serif;
+}
+@media only screen and (max-width: 498px) {
+    .text-box p {
+        margin-bottom: 15px;
+    }
+}
+
+/* Small text styling */
+.text-box small {
+    font-style: italic;
+}
+
+/* List styling */
+.paragraph-position ul {
+    margin: 0;
+    font-family: "Calibri", sans-serif;
+}
+.paragraph-position li {
+    margin-top: 3px;
+    color: #415463;
+}
+
+/* === COLOR FOR BLUE TEXT BOXES === */
+.blue-background {
+    background-color: #cce8ff;
+}
+
+
+/* === STYLING / ANIMATIONS FOR LINKS / BUTTONS === */
+/* Link animation */
+@keyframes link {
+    from {color: #7595b2;}
+    to {color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes link {
+    from {color: #7595b2;}
+    to {color: #415463;}
+}
+
+/* Button styling */
+.button {
+    font-family: "Calibri", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #7595b2;
+    color: #e9f5e5;
+    border: none;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #415463;
+    animation-name: button;
+    animation-duration: 0.5s;
+}
+
+/* Button animation */
+@keyframes button {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes button {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+.submit-button {
+    height: 40px;
+}
+
+
+/* === HIDE/SHOW - BUTTON STYLING === */
+.hide-show {
+    position: relative;
+    grid-column: 2;
+    grid-row: 4;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #415463;
+    z-index: 20000;
+}
+.hide-show button {
+    background-color: transparent;
+    border: none;
+    color: #7595b2;
+    font-family: "Georgia", serif;
+    cursor: pointer;
+}
+
+.hide-show button:hover {
+    color: #415463;
+    animation-name: link;
+    animation-duration: 0.5s;
+}
+/* Specific background for blue text-boxes */
+.blue-background > .hide-show {
+    background-color: transparent !important;
+}
+
+
+/* === LIST STYLING === */
+/* Styling to list */
+.text-box ol {
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+    counter-reset: custom-counter;
+}
+.text-box ol li {
+    position: relative;
+    margin-bottom: 40px;
+    counter-increment: custom-counter;
+}
+.text-box ol li p {
+    margin-top: 0;
+}
+
+/* Styling to the numbers in list */
+.text-box ol li:before {
+    content: counter(custom-counter);
+    position: absolute;
+    line-height: 25px;
+    font-size: 350%;
+    font-family: "Georgia", serif;
+    margin-top: 5px;
+}
+.text-box ol li:nth-child(n+10):before {
+    left: -32px;
+}
+.text-box ol li:nth-child(11):before {
+    left: -22px;
+}
+
+.text-box ol li h5 {
+    font-family: "Calibri", sans-serif;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin: 0;
+    padding-left: 60px;
+}
+
+.text-box ol li p {
+    padding-left: 60px;
+}
+
+
+/* === DECOR IMAGE STYLING === */
+.decor-img {
+    height: 300px;
+    width: 250px;
+    overflow: hidden;
+    float: right;
+    margin-left: 15px;
+    border: 1px solid #415463;
+}
+.decor-img img {
+    height: auto;
+    width: 250px;
+}
+
+
+/* === PAGINATION STYLING === */
+.pagination {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 25px;
+    margin-top: 8px;
+}
+.previous-page, .next-page {
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.prev-arrow, .next-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #7595b2;
+}
+/* Hover of next/prev arrows */
+.next-arrow:hover, .prev-arrow:hover {
+    color: #415463;
+    animation-name: link;
+    -webkit-animation-name: link; /* For Safari */
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s; /* For Safari */
+}
+
+/* Previous page specific styling */
+.previous-page {
+    grid-column: 1;
+}
+.prev-arrow i {
+    margin-right: 4px;
+}
+
+/* Next page specific styling */
+.next-page {
+    grid-column: 2;
+}
+.next-arrow {
+    float: right !important;
+}
+.next-arrow i {
+    margin-left: 4px;
+}
+
+
+/* CAT DISPLAYING RULES, RED BACKGROUND */
+/* First image */
+.img-border {
+    height: 300px;
+    width: 250px;
+    margin-right: 15px;
+    overflow: hidden;
+    border: 1px solid #415463;
+}
+.img-border img {
+    width: 250px;
+}
+
+/* Small info css */
+.small-info {
+    grid-row: 2;
+    font-family: "Calibri", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+}
+
+.small-info small:not(:first-child) {
+    margin-left: 4px;
+}

@@ -1,0 +1,108 @@
+/* Erases default 8px border */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px auto;
+    position: relative;
+}
+
+/* === TEXT FOR WHEN STUFF IS REMOVED/ADDED === */
+.removed, .added {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Calibri", sans-serif;
+}
+
+.removed p, .added p {
+    margin: 0;
+}
+
+.removed {
+    color: darkred;
+}
+
+.added {
+    color: green;
+}
+
+/* === PAGINATION STYLING === */
+.pagination {
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr 30%;
+    height: 25px;
+    margin-top: 7px;
+}
+
+/* Previous page specific styling */
+.previous-page {
+    grid-column: 2;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.prev-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.prev-arrow i {
+    margin-right: 4px;
+}
+
+/* Next page specific styling */
+.next-page {
+    grid-column: 3;
+    width: 100%;
+    font-family: "Calibri", sans-serif;
+}
+.next-arrow {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    float: right !important;
+}
+.next-arrow i {
+    margin-left: 4px;
+}
+
+/* Coloring of next/prev arrows */
+.next-arrow, .prev-arrow {
+    color: #5e788f;
+}
+.next-arrow:hover, .prev-arrow:hover {
+    color: #415463;
+    font-weight: bold;
+    animation-name: link-blue;
+    -webkit-animation-name: link-blue; /* For Safari */
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s; /* For Safari */
+}
+
+/* === BUTTON/LINK STYLE === */
+/* General button-css for white-background */
+@keyframes button-blue {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes button-blue {
+    from {background-color: #5e788f;}
+    to {background-color: #415463;}
+}
+
+/* Animation for link */
+@keyframes link-blue {
+    from {color: #5e788f;}
+    to {color: #415463;}
+}
+/* For Safari */
+@-webkit-keyframes link-blue {
+    from {color: #5e788f;}
+    to {color: #415463;}
+}

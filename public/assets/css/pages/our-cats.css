@@ -1,0 +1,271 @@
+/* === FILTER STYLING === */
+.filter-search {
+    margin-top: 25px;
+}
+/* The search part of page */
+.search-field {
+    height: 60px;
+    width: 100%;
+    z-index: 20000;
+    display: flex;
+    grid-row: 2;
+}
+
+.searches {
+    display: flex;
+    width: 70%;
+    height: 30px;
+}
+
+/* Layout for search input/label */
+.searches input {
+    width: 100%;
+    padding-left: 3px;
+}
+.searches label {
+    width: 20px;
+    padding-top: 5px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+/* Styling for search button */
+.search-button {
+    width: 100px;
+    font-size: 16px !important;
+}
+
+/* === FILTER STYLE === */
+.filter {
+    width: 30%;
+}
+
+.all-filters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Layout for filters-button */
+.filters {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    color: #7595b2;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 25px;
+    float: right;
+}
+
+.filters:hover {
+    animation-name: link;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+
+#filter-choices {
+    width: 100%;
+    margin-top: -25px;
+    margin-bottom: 10px;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-form h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* Hide ordinary checkbox */
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
+
+.checkbox label {
+    position: relative;
+    font-size: 16px;
+}
+
+/* Outer-box for custom checkbox */
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    top: 2px;
+    left: -21px;
+    height: 14px;
+    width: 14px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+/* Checkmark for custom checkbox */
+.checkbox label::after {
+    content: "";
+    display: inline-block;
+    left: -18px;
+    top: 6px;
+    height: 4px;
+    width: 8px;
+    border-left: 2px solid #415463;
+    border-bottom: 2px solid #415463;
+    transform: rotate(-45deg);
+}
+.checkbox label::before, .checkbox label::after {
+    position: absolute;
+}
+
+/* Hide checkmark by default */
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/* Show checkmark when checked */
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/* Focus on the checkbox when checked */
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+/* Filter-button css */
+.filter-button {
+    margin-top: 5px;
+    width: 100%;
+    height: 28px;
+    font-size: 16px !important;
+}
+
+/* Not displaying when not onclick */
+.not-display {
+    display: none;
+}
+
+/* === OUR CATS FLOW === */
+/* Layout when not expanded */
+#cats {
+    grid-row: 3;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Layout for cat-cards */
+.small-change {
+    margin-bottom: 20px;
+}
+
+.cat-style {
+    height: auto;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+}
+
+/* Cat images css */
+.cat-img {
+    height: 280px;
+    width: 240px;
+    overflow: hidden;
+    border: 1px solid #415463;
+}
+.cat-img img {
+    object-fit: cover;
+    height: 280px;
+    width: 240px;
+}
+
+/* Cat text styling */
+.cat-text {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+.cat-text h3 {
+    margin: 0;
+    font-family: "Georgia", serif;
+    font-size: 33px;
+}
+.cat-title {
+    display: flex;
+}
+.cat-title img {
+    height: 27px;
+    margin-top: 3px;
+    margin-right: 7px;
+}
+.cat-text small {
+    margin: 0;
+}
+.cat-text p {
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Cat links styling */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* Styling for link */
+.adopt {
+    font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #7595b2;
+    font-size: 17px;
+}
+/* Hover over link in cat-card */
+.adopt:hover {
+    animation-name: link;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+/* Styling for button */
+.about-cat {
+    background-color: transparent;
+    border: none;
+    font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #7595b2;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 0;
+}
+.about-cat:hover {
+    animation-name: link;
+    animation-duration: 0.5s;
+    color: #415463;
+}
+
+@media only screen and (max-width: 750px) {
+    /* Cat styling */
+    .cat-style {
+        grid-template-columns: 100%;
+    }
+
+    .cat-img {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cat-text {
+        grid-column: 1;
+    }
+
+    .cat-title {
+        justify-content: center;
+    }
+
+    .small-info {
+        justify-content: center;
+    }
+}
