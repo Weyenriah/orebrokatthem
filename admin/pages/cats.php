@@ -128,7 +128,7 @@ if(isset($_GET['catspage'])) {
 }
 
 // Get cats from DB
-$cats = $database->getCats($catsPage);
+$cats = $database->getAdminCats($catsPage);
 
 ?>
 
