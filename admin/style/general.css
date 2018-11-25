@@ -11,21 +11,28 @@ body {
     position: relative;
 }
 
-/* === TEXT FOR WHEN STUFF IS REMOVED === */
-.removed {
+/* === TEXT FOR WHEN STUFF IS REMOVED/ADDED === */
+.removed, .added {
     width: 100%;
     display: flex;
     justify-content: center;
-    color: #415463;
     font-family: "Calibri", sans-serif;
 }
 
-.removed p {
+.removed p, .added p {
     margin: 0;
 }
 
+.removed {
+    color: darkred;
+}
+
+.added {
+    color: green;
+}
+
 /* === PAGINATION STYLING === */
-.prev-next {
+.pagination {
     display: grid;
     grid-template-columns: 30% 1fr 1fr 30%;
     height: 25px;
