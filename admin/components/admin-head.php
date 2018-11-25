@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="style/pages/news.css">
     <link rel="stylesheet" type="text/css" href="style/pages/employees.css">
     <link rel="stylesheet" type="text/css" href="style/pages/remember.css">
+    <link rel="stylesheet" type="text/css" href="style/pages/login.css">
 
     <!-- Textfield CSS -->
     <link rel="stylesheet" type="text/css" href="style/pages/textfield-pages/general-textfield.css">
@@ -30,9 +31,13 @@
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="style/popups/add-cat.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/change-cat.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-news.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/change-news.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-remember-cat.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/change-remember-cat.css">
     <link rel="stylesheet" type="text/css" href="style/popups/add-employee.css">
+    <link rel="stylesheet" type="text/css" href="style/popups/change-employee.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="style/navigation.css">
