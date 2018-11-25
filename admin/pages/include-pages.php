@@ -34,15 +34,23 @@
     include(APP_FOLDER . '/admin/pages/textfield-pages/footer.php');
 
     // === POPUPS ===
-    // Popup for cats
+    // Popup for add cats
     include(APP_FOLDER . '/admin/popups/add-cat.php');
+    // Popup for change cat
+    include(APP_FOLDER . '/admin/popups/change-cat.php');
 
-    // Popup for news
+    // Popup for add news
     include(APP_FOLDER . '/admin/popups/add-news.php');
+    // Popup for change news
+    include(APP_FOLDER . '/admin/popups/change-news.php');
 
-    // Popup for remember cat
+    // Popup for add remember cat
     include(APP_FOLDER . '/admin/popups/add-remember-cat.php');
+    // Popup for change remember cat
+    include(APP_FOLDER . '/admin/popups/change-remember-cat.php');
 
-    // Popup for employees
+    // Popup for add employees
     include(APP_FOLDER . '/admin/popups/add-employee.php');
+    // Popup for change employees
+    include(APP_FOLDER . '/admin/popups/change-employee.php');
 ?>
