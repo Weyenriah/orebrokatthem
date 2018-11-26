@@ -52,7 +52,7 @@ body > section:nth-last-of-type(2) {
     grid-template-columns: 20% 60% 20%;
     color: #415463;
     height: auto;
-    padding: 15px 0 15px 0;
+    padding: 15px 0 35px 0;
 }
 @media only screen and (max-width: 1180px) {
     .text-box {
@@ -83,6 +83,13 @@ body > section:nth-last-of-type(2) {
         font-size: 7vw;
         text-align: center;
     }
+}
+
+/* Styling for important text */
+.paragraph-position strong {
+    font-family: "Calibri", sans-serif;
+    font-size: 19px;
+    color: #1f303f;
 }
 
 /* Styling for subheadings */
@@ -118,6 +125,24 @@ body > section:nth-last-of-type(2) {
 .paragraph-position li {
     margin-top: 3px;
     color: #415463;
+}
+
+/* Link styling */
+.link-calibri {
+    font-family: "Calibri", sans-serif;
+    color: #7595b2;
+    text-decoration: none;
+}
+
+.link-calibri i {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.link-calibri:hover {
+    color: #415463;
+    animation-name: link;
+    animation-duration: 0.5s;
 }
 
 /* === COLOR FOR BLUE TEXT BOXES === */
