@@ -16,6 +16,7 @@
     grid-template-columns: 50px 1fr 50px;
     grid-template-rows: 100%;
     height: 370px;
+    padding-top: 35px;
 }
 
 /* General slide-styling */
@@ -211,6 +212,12 @@
 /* Styling for hide-show button */
 #hide-show {
 
+}
+
+/* === STYLING FOR RELOCATE-CAT === */
+.relocate-contact {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* === GENERAL STYLING FOR REMEMBER === */

@@ -124,7 +124,46 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         </div>
     </section>
 
-    <!-- Minneslunden/Remember Cats -->
+    <!-- Have you found a cat -->
+    <section class="general-grid text-box blue-background" id="found-cat">
+        <h2> Har du hittat en katt? </h2>
+        <div class="paragraph-position">
+            <div class="decor-img">
+                <img src="../storage/images/ashild.jpg">
+            </div>
+            <strong> <?php echo($database->getContent('found-important')); ?> </strong>
+            <p> <?php echo($database->getContent('found-text')); ?> </p>
+            <div class="found-contact">
+                <h3 class="second-row-heading"> Skicka in anmälan </h3>
+                <a class="link-calibri" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSedgA2l24ZJk6WMcGwPC_nVfs4PxgvFTStcVbs-FQ23IoQeNg/viewform?embedded=true&usp=embed_googleplus">
+                    <i class="fas fa-external-link-alt"></i> Formulär för hittad katt
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relocate cat -->
+    <section class="general-grid text-box">
+        <h2> Omplacering av katt </h2>
+        <div class="paragraph-position">
+            <strong> <?php echo($database->getContent('relocate-important')); ?> </strong>
+            <p> <?php echo($database->getContent('relocate-text')); ?> </p>
+            <div class="relocate-contact">
+                <div class="">
+                    <h3 class="second-row-heading"> Skicka in anmälan </h3>
+                    <a class="link-calibri" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfggjBksVu6Gkd33TYm4PMTHuMGIGJJHY62yV5tOfnfzLFXYA/viewform?embedded=true&usp=embed_googleplus">
+                        <i class="fas fa-external-link-alt"></i> Formulär för omplacering
+                    </a>
+                </div>
+                <div class="">
+                    <h3 class="second-row-heading"> Behövs inte en omplacering längre? </h3>
+                    <a class="link-calibri" href="mailto:info@orebrokatthem.com"><i class="fas fa-envelope"></i> info@orebrokatthem.com </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Remember Cats-flow -->
     <section class="general-grid text-box blue-background" id="remember">
         <h2> Minneslunden </h2>
         <div class="paragraph-position all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
