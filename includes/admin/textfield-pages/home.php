@@ -12,8 +12,8 @@
     <div class="forms">
         <form class="form">
             <div class="text-form">
-                <label for="text"> Ändra Header </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('home-header')); ?></textarea>
+                <label for="home-header"> Ändra Header </label>
+                <textarea id="home-header" rows="10" cols="50"><?php echo($database->getContent('home-header')); ?></textarea>
 
                 <button type="submit" value="Ändra"> Ändra </button>
             </div>
@@ -21,8 +21,44 @@
 
         <form class="form">
             <div class="text-form">
-                <label for="text"> Ändra text i Minneslunden </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('home-remember')); ?></textarea>
+                <label for="found-important"> Ändra "Viktig text" för "Har du hittat en katt?" </label>
+                <textarea id="found-important" rows="5" cols="50"><?php echo($database->getContent('found-important')); ?></textarea>
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
+
+        <form class="form">
+            <div class="text-form">
+                <label for="found-text"> Ändra allmän text för "Har du hittat en katt?" </label>
+                <textarea id="found-text" rows="10" cols="50"><?php echo($database->getContent('found-text')); ?></textarea>
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
+
+        <form class="form">
+            <div class="text-form">
+                <label for="relocate-important"> Ändra "Viktig text" för "Omplacering av katt" </label>
+                <textarea id="relocate-important" rows="5" cols="50"><?php echo($database->getContent('relocate-important')); ?></textarea>
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
+
+        <form class="form">
+            <div class="text-form">
+                <label for="relocate-text"> Ändra allmän text för "Omplacering av katt" </label>
+                <textarea id="relocate-text" rows="10" cols="50"><?php echo($database->getContent('relocate-text')); ?></textarea>
+
+                <button type="submit" value="Ändra"> Ändra </button>
+            </div>
+        </form>
+
+        <form class="form">
+            <div class="text-form">
+                <label for="home-remember"> Ändra text i Minneslunden </label>
+                <textarea id="home-remember" rows="10" cols="50"><?php echo($database->getContent('home-remember')); ?></textarea>
 
                 <button type="submit" value="Ändra"> Ändra </button>
             </div>
