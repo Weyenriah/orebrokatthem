@@ -1,94 +1,140 @@
+<?php
+
+$fields = [
+    [
+        'element' => 'about-header',
+        'text' => 'Ändra Header',
+        'rows' => 10
+    ],
+    [
+        'element' => 'about-adopt-info',
+        'text' => 'Ändra text för "Adoptera katt" under "Kontakta oss"',
+        'rows' => 5
+    ],
+    [
+        'element' => 'about-vol-demands',
+        'text' => 'Ändra kraven i "Bli volontär"',
+        'rows' => 10
+    ],
+    [
+        'text' => 'Ändra besöksinfo för "Kontakta oss"',
+        'fields' => [
+            [
+                'element' => 'about-visit',
+                'text' => 'Adress',
+                'rows' => 4
+            ],
+            [
+                'element' => 'about-visit-tele',
+                'text' => 'Telefonnummer',
+                'rows' => 1
+            ]
+        ]
+    ],
+    [
+        'text' => 'Ändra kontaktinformation för "Anmälning av hemlös katt" under "Kontakta oss"',
+        'fields' => [
+            [
+                'element' => 'about-tell-name',
+                'text' => 'Namn',
+                'rows' => 1
+            ],
+            [
+                'element' => 'about-tell-tele',
+                'text' => 'Telefonnummer',
+                'rows' => 1
+            ]
+        ]
+    ],
+    [
+        'text' => 'Ändra kontaktinformation för "Bli Volontär"',
+        'fields' => [
+            [
+                'element' => 'about-vol-tele',
+                'text' => 'Telefonnummer',
+                'rows' => 1
+            ],
+            [
+                'element' => 'about-vol-email',
+                'text' => 'E-post',
+                'rows' => 1
+            ]
+        ]
+    ],
+
+];
+
+foreach ($fields as $field) {
+    if (isset($field['fields'])){
+        foreach ($field['fields'] as $f) {
+            if(isset($_POST[$f['element']])) {
+                if(is_string($_POST[$f['element']])) {
+                    $data = htmlentities(trim($_POST[$f['element']]));
+
+                    $database->changeTextfield($f['element'], $data);
+
+                    $goToPage = 'about';
+                }
+            }
+        }
+    } else {
+        if(isset($_POST[$field['element']])) {
+            if(is_string($_POST[$field['element']])) {
+                $data = htmlentities(trim($_POST[$field['element']]));
+
+                $database->changeTextfield($field['element'], $data);
+
+                $goToPage = 'about';
+            }
+        }
+    }
+
+}
+
+?>
+
 <section class="textfield page" id="about">
     <div class="textfield-header">
         <h2> Ändra på sida: Om Oss </h2>
-        <button type="button" id="code-help-about" onclick="commandoAbout()"> Kodhjälp </button>
-    </div>
-    <div id="commando-about">
-        <h3> Kortkommandon </h3>
-        <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
-            &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
-            &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> <br/>
-            &lt;li&gt; Text &lt;/li&gt; = Ny punkt i lista </p>
     </div>
     <div class="forms">
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra Header </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('about-header')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form multiple">
-                <h3> Ändra besöksinfo för "Kontakta oss" </h3>
-                <label for="text"> Adress </label>
-                <textarea id="text" rows="4" cols="50"><?php echo($database->getContent('about-visit')); ?></textarea>
-
-                <label for="tele"> Telefonnummer </label>
-                <input type="text" id="tele" value="<?php echo($database->getContent('about-visit-tele')); ?>">
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form multiple">
-                <h3> Ändra kontaktinformation för "Anmälning av hemlös katt" under "Kontakta oss" </h3>
-                <label for="name"> Namn </label>
-                <input type="text" id="name" value="<?php echo($database->getContent('about-tell-name')); ?>">
-
-                <label for="tele"> Telefonnummer </label>
-                <input type="text" id="tele" value="<?php echo($database->getContent('about-tell-tele')); ?>">
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra text för "Adoptera katt" under "Kontakta oss" </label>
-                <textarea id="text" rows="4" cols="50"><?php echo($database->getContent('about-adopt-info')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra kraven i "Bli volontär" </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('about-vol-demands')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-
-            <div class="text-form multiple">
-                <h3> Ändra kontaktinformation för "Bli Volontär" </h3>
-                <label for="tele"> Telefonnummer </label>
-                <input type="text" id="tele" value="<?php echo($database->getContent('about-vol-tele')); ?>">
-
-                <label for="email"> E-post </label>
-                <input type="text" id="email" value="<?php echo($database->getContent('about-vol-email')); ?>">
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
+        <?php foreach ($fields as $field) {
+            if (isset($field['fields'])) {
+                echo "
+                    <form class='form' method='post'>
+                        <div class='text-form multiple'>
+                            <h3>{$field['text']}</h3>
+                ";
+                foreach ($field['fields'] as $f) {
+                    echo "
+                        <label for='{$f['element']}'>{$f['text']}</label>
+                        <textarea 
+                            id='{$f['element']}' 
+                            name='{$f['element']}' 
+                            rows='{$f['rows']}' 
+                            cols='50'>{$database->getContent($f['element'])}</textarea>
+                    ";
+                }
+                echo "
+                        <button type='submit' value='Ändra'> Ändra </button>
+                    </div>
+                </form>
+                ";
+            } else{
+                echo "
+                    <form class='form' method='post'>
+                        <div class='text-form'>
+                            <label for='{$field['element']}'>{$field['text']}</label>
+                            <textarea 
+                                id='{$field['element']}' 
+                                name='{$field['element']}' 
+                                rows='{$field['rows']}' 
+                                cols='50'>{$database->getContent($field['element'])}</textarea>
+                            <button type='submit' value='Ändra'> Ändra </button>
+                        </div>
+                    </form>
+                ";
+            }
+        } ?>
     </div>
 </section>
-
-<script>
-    /* === SHOW AND HIDE CODE HELP === */
-    function commandoAbout() {
-        let commando = document.getElementById('commando-about');
-        let button = document.getElementsByClassName('code-help-about');
-
-        if (commando.classList.contains('display-about')) {
-            commando.classList.remove('display-about');
-            button.classList.remove('active-button-about');
-        } else {
-            commando.classList.add('display-about');
-            button.classList.add('active-button-about');
-        }
-    }
-</script>

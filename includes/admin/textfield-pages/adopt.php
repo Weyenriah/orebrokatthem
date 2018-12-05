@@ -1,87 +1,123 @@
+<?php
+
+// All the changeable fields
+$fields = [
+    [
+        'element' => 'adopt-header',
+        'text' => 'Ändra Header',
+        'rows' => 10
+    ],
+    [
+        'element' => 'adopt-how',
+        'text' => 'Ändra "Hur adopterar jag?"',
+        'rows' => 10
+    ],
+    [
+        'element' => 'adopt-tips',
+        'text' => 'Ändra listan i "Tips"',
+        'rows' => 10
+    ],
+    [
+        'element' => 'adopt-includes',
+        'text' => 'Ändra text i "Vad som ingår"',
+        'rows' => 10
+    ],
+    [
+        'text' => 'Ändra priser',
+        'fields' => [
+            [
+                'element' => 'adopt-up-to',
+                'text' => 'Ändra "Katter upp till 12 år"',
+                'rows' => 1
+            ],
+            [
+                'element' => 'adopt-two-cats',
+                'text' => 'Ändra "Två katter vid samtidig adoption"',
+                'rows' => 1
+            ],
+            [
+                'element' => 'adopt-older',
+                'text' => 'Ändra "Katter 12 år eller äldre"',
+                'rows' => 1
+            ]
+        ]
+    ],
+];
+
+// Change fields
+foreach ($fields as $field) {
+    if (isset($field['fields'])){
+        foreach ($field['fields'] as $f) {
+            if(isset($_POST[$f['element']])) {
+                if(is_string($_POST[$f['element']])) {
+                    $data = htmlentities(trim($_POST[$f['element']]));
+
+                    $database->changeTextfield($f['element'], $data);
+
+                    $goToPage = 'adopt';
+                }
+            }
+        }
+    } else {
+        if(isset($_POST[$field['element']])) {
+            if(is_string($_POST[$field['element']])) {
+                $data = htmlentities(trim($_POST[$field['element']]));
+
+                $database->changeTextfield($field['element'], $data);
+
+                $goToPage = 'adopt';
+            }
+        }
+    }
+}
+
+?>
 <section class="textfield page" id="adopt">
     <div class="textfield-header">
         <h2> Ändra på sida: Adoptera </h2>
-        <button type="button" id="code-help-adopt" onclick="commandoAdopt()"> Kodhjälp </button>
-    </div>
-    <div id="commando-adopt">
-        <h3> Kortkommandon </h3>
-        <p> &lt;br/&gt; = Enter (2  på rad för nytt stycke) <br/>
-            &lt;i&gt; Text &lt;/i&gt; = <i>Kursiv text</i> <br/>
-            &lt;b&gt; Text &lt;/b&gt; = <b>Fetstilad text</b> <br/>
-            &lt;li&gt; Text &lt;/li&gt; = Ny punkt i lista <br/>
-            &lt;h5&gt; Text &lt;/h5&gt; = Rubrik <br/>
-            &lt;p&gt; Text &lt;/p&gt; = Text efter rubrik </p>
     </div>
     <div class="forms">
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra Header </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-header')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra "Hur adopterar jag?" </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-how')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-    </div>
-
-    <div class="form">
-        <div class="text-form">
-            <label for="text"> Ändra listan i "Tips" </label>
-            <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-tips')); ?></textarea>
-
-            <button type="submit" value="Ändra"> Ändra </button>
+        <div class="forms">
+            <?php
+            // First check if fields exist, then do multiple fields, if there's none: One field.
+            foreach ($fields as $field) {
+                if (isset($field['fields'])) {
+                    echo "
+                    <form class='form' method='post'>
+                        <div class='text-form multiple'>
+                            <h3>{$field['text']}</h3>
+                ";
+                    foreach ($field['fields'] as $f) {
+                        echo "
+                        <label for='{$f['element']}'>{$f['text']}</label>
+                        <textarea 
+                            id='{$f['element']}' 
+                            name='{$f['element']}' 
+                            rows='{$f['rows']}' 
+                            cols='50'>{$database->getContent($f['element'])}</textarea>
+                    ";
+                    }
+                    echo "
+                        <button type='submit' value='Ändra'> Ändra </button>
+                    </div>
+                </form>
+                ";
+                } else{
+                    echo "
+                    <form class='form' method='post'>
+                        <div class='text-form'>
+                            <label for='{$field['element']}'>{$field['text']}</label>
+                            <textarea 
+                                id='{$field['element']}' 
+                                name='{$field['element']}' 
+                                rows='{$field['rows']}' 
+                                cols='50'>{$database->getContent($field['element'])}</textarea>
+                            <button type='submit' value='Ändra'> Ändra </button>
+                        </div>
+                    </form>
+                ";
+                }
+            } ?>
         </div>
     </div>
-
-    <div class="forms">
-        <form class="form">
-            <div class="text-form multiple">
-                <h3> Ändra priser </h3>
-
-                <label for="text"> Ändra "Katter upp till 12 år" </label>
-                <textarea id="text" rows="1" cols="15"><?php echo($database->getContent('adopt-up-to')); ?></textarea>
-
-                <label for="text"> Ändra "Två katter vid samtidig adoption" </label>
-                <textarea id="text" rows="1" cols="15"><?php echo($database->getContent('adopt-two-cats')); ?></textarea>
-
-                <label for="text"> Ändra "Katter 12 år eller äldre" </label>
-                <textarea id="text" rows="1" cols="15"><?php echo($database->getContent('adopt-older')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-
-        <form class="form">
-            <div class="text-form">
-                <label for="text"> Ändra text i "Vad som ingår" </label>
-                <textarea id="text" rows="10" cols="50"><?php echo($database->getContent('adopt-includes')); ?></textarea>
-
-                <button type="submit" value="Ändra"> Ändra </button>
-            </div>
-        </form>
-    </div>
 </section>
-
-<script>
-    /* === SHOW AND HIDE CODE HELP === */
-    function commandoAdopt() {
-        let commando = document.getElementById('commando-adopt');
-        let button = document.getElementsByClassName('code-help-adopt');
-
-        if (commando.classList.contains('display-adopt')) {
-            commando.classList.remove('display-adopt');
-            button.classList.remove('active-button-adopt');
-        } else {
-            commando.classList.add('display-adopt');
-            button.classList.add('active-button-adopt');
-        }
-    }
-</script>
