@@ -53,7 +53,7 @@
     <div class="forms">
         <?php foreach ($fields as $field) {
         echo "<form class='form' method='post'>
-            <div class='text-form'>
+            <div class='{$field['type']}'>
                 <label for='{$field['element']}'>{$field['text']}</label>
                 <textarea 
                     id='{$field['element']}' 
@@ -66,19 +66,3 @@
         } ?>
     </div>
 </section>
-
-<script>
-    /* === SHOW AND HIDE CODE HELP === */
-    function commandoHome() {
-        let commando = document.getElementById('commando-home');
-        let button = document.getElementsByClassName('code-help-home');
-
-        if (commando.classList.contains('display-home')) {
-            commando.classList.remove('display-home');
-            button.classList.remove('active-button-home');
-        } else {
-            commando.classList.add('display-home');
-            button.classList.add('active-button-home');
-        }
-    }
-</script>
