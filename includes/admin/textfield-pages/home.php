@@ -1,5 +1,4 @@
 <?php
-
 // All the changeable fields
 $fields = [
     [
@@ -46,7 +45,6 @@ foreach ($fields as $field) {
         }
     }
 }
-
 ?>
 <section class="textfield page" id="home">
     <div class="textfield-header">
@@ -55,7 +53,7 @@ foreach ($fields as $field) {
     <div class="forms">
         <?php foreach ($fields as $field) {
         echo "<form class='form' method='post'>
-            <div class='{$field['type']}'>
+            <div class='text-form'>
                 <label for='{$field['element']}'>{$field['text']}</label>
                 <textarea 
                     id='{$field['element']}' 

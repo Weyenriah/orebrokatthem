@@ -1,5 +1,4 @@
 <?php
-
 // All the changeable fields
 $fields = [
     [
@@ -90,7 +89,6 @@ foreach ($fields as $field) {
         }
     }
 }
-
 ?>
 
 <section class="textfield page" id="about">
