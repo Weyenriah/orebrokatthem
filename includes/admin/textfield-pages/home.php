@@ -1,49 +1,51 @@
 <?php
 
-    $fields = [
-        [
-            'element' => 'home-header',
-            'text' => 'Ändra Header',
-            'rows' => 10
-        ],
-        [
-            'element' => 'found-important',
-            'text' => 'Ändra "Viktig text" för "Har du hittat en katt?',
-            'rows' => 5
-        ],
-        [
-            'element' => 'found-text',
-            'text' => 'Ändra allmän text för "Har du hittat en katt?"',
-            'rows' => 10
-        ],
-        [
-            'element' => 'relocate-important',
-            'text' => 'Ändra "Viktig text" för "Omplacering av katt"',
-            'rows' => 5
-        ],
-        [
-            'element' => 'relocate-text',
-            'text' => 'Ändra allmän text för "Omplacering av katt"',
-            'rows' => 10
-        ],
-        [
-            'element' => 'home-remember',
-            'text' => 'Ändra text i Minneslunden',
-            'rows' => 10
-        ]
-    ];
+// All the changeable fields
+$fields = [
+    [
+        'element' => 'home-header',
+        'text' => 'Ändra Header',
+        'rows' => 10
+    ],
+    [
+        'element' => 'found-important',
+        'text' => 'Ändra "Viktig text" för "Har du hittat en katt?',
+        'rows' => 5
+    ],
+    [
+        'element' => 'found-text',
+        'text' => 'Ändra allmän text för "Har du hittat en katt?"',
+        'rows' => 10
+    ],
+    [
+        'element' => 'relocate-important',
+        'text' => 'Ändra "Viktig text" för "Omplacering av katt"',
+        'rows' => 5
+    ],
+    [
+        'element' => 'relocate-text',
+        'text' => 'Ändra allmän text för "Omplacering av katt"',
+        'rows' => 10
+    ],
+    [
+        'element' => 'home-remember',
+        'text' => 'Ändra text i Minneslunden',
+        'rows' => 10
+    ]
+];
 
-    foreach ($fields as $field) {
-        if(isset($_POST[$field['element']])) {
-            if(is_string($_POST[$field['element']])) {
-                $data = htmlentities(trim($_POST[$field['element']]));
+// Change fields
+foreach ($fields as $field) {
+    if(isset($_POST[$field['element']])) {
+        if(is_string($_POST[$field['element']])) {
+            $data = htmlentities(trim($_POST[$field['element']]));
 
-                $database->changeTextfield($field['element'], $data);
+            $database->changeTextfield($field['element'], $data);
 
-                $goToPage = 'home';
-            }
+            $goToPage = 'home';
         }
     }
+}
 
 ?>
 <section class="textfield page" id="home">

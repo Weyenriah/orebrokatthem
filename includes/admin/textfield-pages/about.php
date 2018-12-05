@@ -1,5 +1,6 @@
 <?php
 
+// All the changeable fields
 $fields = [
     [
         'element' => 'about-header',
@@ -64,6 +65,7 @@ $fields = [
 
 ];
 
+// Change fields
 foreach ($fields as $field) {
     if (isset($field['fields'])){
         foreach ($field['fields'] as $f) {
@@ -88,7 +90,6 @@ foreach ($fields as $field) {
             }
         }
     }
-
 }
 
 ?>
@@ -98,7 +99,9 @@ foreach ($fields as $field) {
         <h2> Ändra på sida: Om Oss </h2>
     </div>
     <div class="forms">
-        <?php foreach ($fields as $field) {
+        <?php
+        // First check if fields exist, then do multiple fields, if there's none: One field.
+        foreach ($fields as $field) {
             if (isset($field['fields'])) {
                 echo "
                     <form class='form' method='post'>
