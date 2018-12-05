@@ -41,7 +41,7 @@ $fields = [
                 'rows' => 1
             ]
         ]
-    ],
+    ]
 ];
 
 // Change fields
