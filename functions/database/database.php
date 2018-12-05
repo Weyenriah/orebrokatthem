@@ -23,6 +23,7 @@ class Database {
         $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
+    // Traits
     use Cats, Employees, News, Remember;
 
     // Order differently when admin
@@ -242,5 +243,20 @@ class Database {
             }
         }
         return null;
+    }
+
+    // Change textfields
+    public function changeTextfield($element, $content) {
+        $sql = 'UPDATE textfields SET
+                  content = :content 
+                WHERE
+                  element = :element';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'element' => $element,
+            'content' => $content,
+        ));
     }
 }
