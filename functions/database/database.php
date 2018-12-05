@@ -216,6 +216,21 @@ class Database {
         return $stmt->fetchObject()->content;
     }
 
+    // Change textfields
+    public function changeTextfield($element, $content) {
+        $sql = 'UPDATE textfields SET
+                  content = :content 
+                WHERE
+                  element = :element';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'element' => $element,
+            'content' => $content,
+        ));
+    }
+
     // Stops adding flow for a while after a few added in table
     private function changesLastHour($table) {
         $sql = "SELECT COUNT(*) AS count FROM `{$table}` WHERE date BETWEEN date_sub(NOW(), INTERVAL 1 HOUR) AND NOW();";
@@ -245,18 +260,4 @@ class Database {
         return null;
     }
 
-    // Change textfields
-    public function changeTextfield($element, $content) {
-        $sql = 'UPDATE textfields SET
-                  content = :content 
-                WHERE
-                  element = :element';
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
-        // Sends query to database
-        return $stmt->execute(array(
-            'element' => $element,
-            'content' => $content,
-        ));
-    }
 }
