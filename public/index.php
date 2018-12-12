@@ -129,7 +129,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <h2> Har du hittat en katt? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="../storage/images/ashild.jpg">
+                <img src="storage/images/ashild.jpg">
             </div>
             <strong> <?php echo($database->getContent('found-important')); ?> </strong>
             <p> <?php echo($database->getContent('found-text')); ?> </p>

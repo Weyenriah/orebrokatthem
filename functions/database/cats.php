@@ -2,7 +2,7 @@
 
 trait Cats {
     // Add Cat
-    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $show){
+    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $show, $fileName = ""){
         if ($this->changesLastHour('cats') > 20) {
             return false;
         } else {
@@ -14,7 +14,8 @@ trait Cats {
               `description`,
               `home`,
               `contact`,
-              `showcase`
+              `showcase`,
+              `image`
             ) VALUES (
               :catName,
               :gender,
@@ -23,7 +24,8 @@ trait Cats {
               :description,
               :home,
               :contact,
-              :show
+              :show,
+              :image
             )";
 
             // Prepares a query
@@ -39,6 +41,7 @@ trait Cats {
                 'home' => $home,
                 'contact' => $contact,
                 'show' => $show,
+                'image' => $fileName,
             ));
         }
     }

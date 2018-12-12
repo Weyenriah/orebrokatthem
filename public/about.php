@@ -91,7 +91,7 @@
         <h2> Bli volontär </h2>
         <div class="paragraph-position become">
             <div class="decor-img">
-                <img src="../storage/images/ashild.jpg">
+                <img src="storage/images/ashild.jpg">
             </div>
             <div class="become-info">
                 <div class="become-text">

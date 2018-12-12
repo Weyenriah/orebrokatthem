@@ -17,6 +17,7 @@ if(isset($_POST['add-cat'])) {
     $contact = htmlentities(trim($_POST['contact']));
     $show = isset($_POST['show']);
     $home = $_POST['home'];
+    $file = isset($_FILES['cat-image']) ? $_FILES['cat-image'] : null;
 
     // Sets valid to true
     $valid = true;
@@ -52,9 +53,20 @@ if(isset($_POST['add-cat'])) {
         $show = 0;
     }
 
+
+
     // Adds if everything checks out
     if($valid) {
-        $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
+        if ($file !== null) {
+            $fileName = SaveFile($file);
+            if ($fileName != null) {
+                $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show, $fileName);
+            } else {
+                $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
+            }
+        } else {
+            $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
+        }
     } else {
         $addCat = false;
     }
@@ -209,7 +221,7 @@ $cats = $database->getAdminCats($catsPage);
         <article class="cat" id="cat-<?php echo($cat['id']) ?>">
             <?php if ($cat['image'] !== '') { ?>
                 <div class="cat-img">
-                    <img src="<?php echo('../../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
                 </div>
             <?php } ?>
             <div class="cat-text">

@@ -37,7 +37,7 @@ if(isset($_POST['jour-contact'])) {
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="../storage/images/ashild.jpg">
+                <img src="storage/images/ashild.jpg">
             </div>
             <ol>
                 <?php echo($database->getContent('jour-tips')); ?>

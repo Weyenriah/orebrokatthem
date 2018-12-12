@@ -1,9 +1,9 @@
 <?php
 
 function SaveFile($file, $prefix = "") {
-    $imageFileType = strtolower(pathinfo($file["tmp_name"],PATHINFO_EXTENSION));
+    $imageFileType = strtolower(pathinfo($file["name"],PATHINFO_EXTENSION));
     $id = uniqid($prefix, true);
-    $target_file = UPLOADS_FOLDER . "images/" . $id . '.' . $imageFileType;
+    $target_file = realpath(dirname(getcwd())) . DIRECTORY_SEPARATOR  . UPLOADS_FOLDER . "images". DIRECTORY_SEPARATOR  . $id . '.' . $imageFileType;
 
     $check = getimagesize($file["tmp_name"]);
     if ($check === false) {
