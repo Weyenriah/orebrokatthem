@@ -28,25 +28,45 @@ class Database {
 
     // Order differently when admin
     public function  getAdminCats($page) {
-        return $this->getCats($page, 0, 0, '', true);
+        return $this->getCats($page, 0, 0, '', 0,true);
     }
 
     // Get all cats
-    public function getCats($page = 0, $gender = 0, $living = 0, $name='', $orderById = false) {
+    public function getCats($page = 0, $gender = 0, $living = 0, $name='', $age = 0, $orderById = false) {
         // Gets all information from database
         $sql = 'SELECT * FROM cats';
         $conditions = array();
         // Filter cats
+        // Gender filter
         if ($gender == 1){
             $conditions[] = 'gender = 1';
         } elseif ($gender == 2) {
             $conditions[] = 'gender = 0';
         }
+        // Living filter
         if ($living == 1){
             $conditions[] = 'home = 1';
         } elseif ($living == 2) {
             $conditions[] = 'home = 0';
         }
+        // Age filter
+        $kitten = date('Y') - 1;
+        $young = date('Y') - 10;
+        if ($age == 1) { // Kitten
+            $conditions[] = 'age >= ' . $kitten;
+        } elseif ($age == 2) { // Young
+            $conditions[] = 'age < ' . $kitten;
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 3) { // Kitten + Young
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 4) { // Senior
+            $conditions[] = 'age < ' . $young;
+        } elseif ($age == 5) { // Kitten + Senior
+            $conditions[] = 'age >= ' . $kitten . ' OR age < ' . $young;
+        } elseif ($age == 6) { // Young + Senior
+            $conditions[] = 'age < ' . $kitten;
+        }
+
         $conditions[] = 'name LIKE :name';
 
         if (count($conditions) > 0) {
@@ -73,21 +93,41 @@ class Database {
     }
 
     // Count and return includes of cats
-    public function countCatPages($gender = 0, $living = 0, $name='') {
+    public function countCatPages($gender = 0, $living = 0, $name='', $age = 0) {
         // Gets all information from database
         $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
         $conditions = array();
         // Filter cats
+        // Gender filter
         if ($gender == 1){
             $conditions[] = 'gender = 1';
         } elseif ($gender == 2) {
             $conditions[] = 'gender = 0';
         }
+        // Living filter
         if ($living == 1){
             $conditions[] = 'home = 1';
         } elseif ($living == 2) {
             $conditions[] = 'home = 0';
         }
+        // Age filter
+        $kitten = date('Y') - 1;
+        $young = date('Y') - 10;
+        if ($age == 1) { // Kitten
+            $conditions[] = 'age >= ' . $kitten;
+        } elseif ($age == 2) { // Young
+            $conditions[] = 'age < ' . $kitten;
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 3) { // Kitten + Young
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 4) { // Senior
+            $conditions[] = 'age < ' . $young;
+        } elseif ($age == 5) { // Kitten + Senior
+            $conditions[] = 'age >= ' . $kitten . ' OR age < ' . $young;
+        } elseif ($age == 6) { // Young + Senior
+            $conditions[] = 'age < ' . $kitten;
+        }
+
         $conditions[] = 'name LIKE :name';
 
         if (count($conditions) > 0) {

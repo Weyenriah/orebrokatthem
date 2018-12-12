@@ -30,6 +30,22 @@ if (isset($_GET['cathome'])) {
     $filter[] = 'cathome=true';
 }
 
+$age = 0; // Age filter
+if(isset($_GET['kitten'])) {
+    $age += 1;
+    $filter[] = 'kitten=true';
+}
+if(isset($_GET['young'])) {
+    $age += 2;
+    $filter[] = 'young=true';
+}
+if(isset($_GET['senior'])) {
+    $age += 4;
+    $filter[] = 'senior=true';
+}
+
+var_dump($age);
+
 // Search cats according to name
 $name = "";
 
@@ -43,8 +59,8 @@ if($search) {
 $filterString = implode('&', $filter);
 
 // Get cats
-$cats = $database->getCats($page, $gender, $living, $name);
-$pages = $database->countCatPages($gender, $living, $name);
+$cats = $database->getCats($page, $gender, $living, $name, $age);
+$pages = $database->countCatPages($gender, $living, $name, $age);
 
 // Keep the expanded page throughout actions with cat flow
 $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
@@ -98,11 +114,11 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
 
                     <span class="age checkbox">
                         <h3 class="checkbox-title"> Ålder </h3>
-                        <input type="checkbox" name="kitten" value="true" id="kitten">
+                        <input type="checkbox" name="kitten" <?php echo((isset($_GET['kitten'])) ? 'checked' : '')?> value="true" id="kitten">
                         <label for="kitten"> Kattunge </label>
-                        <input type="checkbox" name="young" value="true" id="young">
+                        <input type="checkbox" name="young" <?php echo((isset($_GET['young'])) ? 'checked' : '')?> value="true" id="young">
                         <label for="young"> Ungkatt </label>
-                        <input type="checkbox" name="senior" value="true" id="senior">
+                        <input type="checkbox" name="senior" <?php echo((isset($_GET['senior'])) ? 'checked' : '')?> value="true" id="senior">
                         <label for="senior"> Senior </label>
                     </span>
 
