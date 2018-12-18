@@ -5,6 +5,10 @@ function SaveFile($file, $prefix = "") {
     $id = uniqid($prefix, true);
     $target_file = realpath(dirname(getcwd())) . DIRECTORY_SEPARATOR  . UPLOADS_FOLDER . "images". DIRECTORY_SEPARATOR  . $id . '.' . $imageFileType;
 
+    if(empty($file["tmp_name"])) {
+        return null;
+    }
+
     $check = getimagesize($file["tmp_name"]);
     if ($check === false) {
         return null;

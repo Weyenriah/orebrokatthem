@@ -7,7 +7,9 @@
 
         <form class="add-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="cat-image" class="cat-image">
+            <input type="file" name="cat-image0" class="cat-image">
+            <input type="file" name="cat-image1" class="cat-image">
+            <input type="file" name="cat-image2" class="cat-image">
 
             <!-- Add cat information -->
             <div class="info">

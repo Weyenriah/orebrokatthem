@@ -144,12 +144,15 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         $hasPrevOrNext = ($page < $pages - 1 && !$search) || ($page > 0 && !$search);
 
         foreach ($cats as $kittenPosition => $kitten) {
-
+            $images = $database->getCatImages($kitten['id']);
             ?>
             <div class="small-change">
                 <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
+
                     <div class="cat-img">
-                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . ((count($images) > 1) ? $images[1]['image'] : "cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . ((count($images) > 2) ? $images[2]['image'] : "cat-placeholder.jpg")); ?>" hidden>
                     </div>
                     <div class="cat-text">
                         <div class="cat-title">
@@ -161,10 +164,11 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                             <small class="cat-age"> <?php echo($kitten['age']) ?> | </small>
                             <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane': 'Hona') ?> | </small>
                             <small class="color"> <?php echo($kitten['color']) ?> </small>
-                            <small class="color"> | <?php $kitten['home'] ? 'Jourhem' : 'Katthem' ?> </small>
+                            <small class="color"> | <?php echo($kitten['home'] ? 'Jourhem' : 'Katthem') ?> </small>
                         </div>
-                        <p class="desc"> <?php echo(explode("<br/>", $kitten['description'], 2)[0]) ?> </p>
-                        <p class="desc-long" hidden> <?php echo(explode("<br/>", $kitten['description'], 2)[1]) ?> </p>
+                        <?php $desc = explode("<br/>", $kitten['description'], 2); ?>
+                        <p class="desc"> <?php echo(count($desc) > 0 ? $desc[0] : "") ?> </p>
+                        <p class="desc-long" hidden> <?php echo(count($desc) > 1 ? $desc[1] : "") ?> </p>
                         <div class="links">
                             <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
                             <a class="adopt" href="mailto:<?php echo($kitten['contact']) ?>"> Adoptera mig! </a>
@@ -238,6 +242,12 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
         popup.getElementsByClassName("adopt")[0].href = cat.getElementsByClassName("adopt")[0].href;
         popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent + '\r\n' + cat.getElementsByClassName("desc-long")[0].textContent;
+        popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+        popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+        popup.getElementsByClassName("popup-slide")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+        popup.getElementsByClassName("demo")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+        popup.getElementsByClassName("demo")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+        popup.getElementsByClassName("demo")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
 
         /* Show popup */
         popup.style.display = "block";

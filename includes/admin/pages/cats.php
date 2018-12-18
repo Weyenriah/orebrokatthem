@@ -17,7 +17,11 @@ if(isset($_POST['add-cat'])) {
     $contact = htmlentities(trim($_POST['contact']));
     $show = isset($_POST['show']);
     $home = $_POST['home'];
-    $file = isset($_FILES['cat-image']) ? $_FILES['cat-image'] : null;
+
+    $files = [];
+    $files[] = isset($_FILES['cat-image0']) ? $_FILES['cat-image0'] : null;
+    $files[] = isset($_FILES['cat-image1']) ? $_FILES['cat-image1'] : null;
+    $files[] = isset($_FILES['cat-image2']) ? $_FILES['cat-image2'] : null;
 
     // Sets valid to true
     $valid = true;
@@ -54,23 +58,33 @@ if(isset($_POST['add-cat'])) {
     }
 
 
+    $addCat = false;
 
     // Adds if everything checks out
     if($valid) {
-        if ($file !== null) {
-            $fileName = SaveFile($file);
-            if ($fileName != null) {
-                $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show, $fileName);
-            } else {
-                $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
-            }
-        } else {
-            $addCat = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
-        }
-    } else {
-        $addCat = false;
-    }
+        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
+        if ($id !== null) {
+            $addCat = true;
 
+            $filenames = [];
+
+            var_dump($files);
+
+            foreach ($files as $file) {
+                if($file !== null) {
+                    $filenames[] =  SaveFile($file);
+                }
+            }
+
+            var_dump($filenames);
+
+            foreach ($filenames as $filename) {
+                if ($filename !== null)
+                    $database->addCatImage($id, $filename);
+            }
+
+        }
+    }
     $goToPage = 'cats';
 }
 
@@ -217,13 +231,23 @@ $cats = $database->getAdminCats($catsPage);
     <div class="cats">
         <?php
         foreach ($cats as $cat) {
+
+            $images = $database->getCatImages($cat['id']);
         ?>
         <article class="cat" id="cat-<?php echo($cat['id']) ?>">
-            <?php if ($cat['image'] !== '') { ?>
-                <div class="cat-img">
-                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+            <div class="cat-display-images">
+                <div class="cat-img big-cat-img">
+                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg"));  ?>">
                 </div>
-            <?php } ?>
+                <div class="small-cat-pics">
+                    <div class="cat-img">
+                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 1) ? $images[1]['image'] : "cat-placeholder.jpg"));  ?>">
+                    </div>
+                    <div class="cat-img">
+                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 2) ? $images[2]['image'] : "cat-placeholder.jpg"));  ?>">
+                    </div>
+                </div>
+            </div>
             <div class="cat-text">
                 <div class="control-cat">
                     <button type="button" onclick="showPopupChangeCat(<?php echo($cat['id']) ?>)"> <i class="fas fa-pencil-alt"></i> Ändra Katt </button>

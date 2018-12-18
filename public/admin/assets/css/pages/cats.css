@@ -35,7 +35,7 @@
     height: 250px;
     width: 200px;
     overflow: hidden;
-    border: 1px solid #415463;
+    outline: 1px solid #415463;
     margin-right: 20px;
     float: left;
 }
@@ -130,4 +130,29 @@
     font-weight: bold;
     float: right;
     color: #415463;
+}
+
+/* Small pictures showing */
+.cat-display-images {
+    width: 200px;
+}
+
+.small-cat-pics {
+    width: 200px;
+}
+
+.small-cat-pics .cat-img {
+    width: 50%;
+    float: left;
+    height: 110px;
+    margin: 0;
+}
+
+.small-cat-pics .cat-img img {
+    width: 100%;
+    height: auto;
+}
+
+.big-cat-img {
+    margin-bottom: 0 !important;
 }

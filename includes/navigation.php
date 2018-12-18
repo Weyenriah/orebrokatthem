@@ -47,7 +47,7 @@ function array_any(array $array, callable $fn) {
     <ul class="responsive">
         <span class="divide-menu-elements">
             <div class="menu-elements">
-                <a href="index.php" id="logo"> <img src="../public/assets/images/white-logo.png"> </a>
+                <a href="index.php" id="logo"> <img src="<?php echo BASE_URL ?>assets/images/white-logo.png"> </a>
                 <button type="button" class="menu-icons" id="collapsing" onclick="collapse();" >
                     <span> MENY </span> <i class="fas fa-bars"></i>
                 </button>

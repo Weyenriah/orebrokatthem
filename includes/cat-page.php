@@ -4,7 +4,7 @@
     <section class="cat-info">
         <div class="img">
             <img class="popup-slide" src="../public/storage/images/ashild.jpg">
-            <img class="popup-slide" src="../public/storage/images/dollar.jpg">
+            <img class="popup-slide" src="../public/storage/images/cat-placeholder.jpg">
             <img class="popup-slide" src="../public/storage/images/mollyblom.jpg">
 
             <div class="demos">
@@ -12,7 +12,7 @@
                     <img class="demo" src="../public/storage/images/ashild.jpg" onclick="currentPicSlide(1)">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/dollar.jpg" onclick="currentPicSlide(2)">
+                    <img class="demo" src="../public/storage/images/cat-placeholder.jpg" onclick="currentPicSlide(2)">
                 </div>
                 <div class="styling-demos">
                     <img class="demo" src="../public/storage/images/mollyblom.jpg" onclick="currentPicSlide(3)">
