@@ -92,14 +92,14 @@ if(!isset($_SESSION['user'])) {
             <a href="#" onclick="showPage('footer')"> Footer </a>
         </div>
     </div>
-    <hr/>
+    <!-- <hr/>
     <form class="banner-upload" method="post" enctype="multipart/form-data">
         <label for="banner-upload">
             Ladda upp banner
         </label>
         <input class="banner" type="file" name="banner">
         <input class="submit-banner" type="submit" name="submit-banner" value="Ladda upp">
-    </form>
+    </form> -->
 </nav>
 </body>
 

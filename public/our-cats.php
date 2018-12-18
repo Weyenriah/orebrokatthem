@@ -44,8 +44,6 @@ if(isset($_GET['senior'])) {
     $filter[] = 'senior=true';
 }
 
-var_dump($age);
-
 // Search cats according to name
 $name = "";
 
@@ -151,7 +149,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
             <div class="small-change">
                 <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
                     <div class="cat-img">
-                        <img class="image-to-cat" src="<?php echo('../' .UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $kitten['image']); ?>">
                     </div>
                     <div class="cat-text">
                         <div class="cat-title">
@@ -163,6 +161,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                             <small class="cat-age"> <?php echo($kitten['age']) ?> | </small>
                             <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane': 'Hona') ?> | </small>
                             <small class="color"> <?php echo($kitten['color']) ?> </small>
+                            <small class="color"> | <?php $kitten['home'] ? 'Jourhem' : 'Katthem' ?> </small>
                         </div>
                         <p class="desc"> <?php echo(explode("<br/>", $kitten['description'], 2)[0]) ?> </p>
                         <p class="desc-long" hidden> <?php echo(explode("<br/>", $kitten['description'], 2)[1]) ?> </p>

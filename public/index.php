@@ -51,7 +51,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
-                        <img class="image-to-cat" src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
@@ -93,7 +93,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <article class="news-card">
                     <?php if ($new['image'] !== '') { ?>
                         <div class="news-img">
-                            <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
+                            <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
                         </div>
                     <?php } ?>
                     <div class="news-info">

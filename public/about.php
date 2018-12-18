@@ -28,7 +28,7 @@
                 <article class="employee-card">
                     <?php if ($employee['image'] !== '') { ?>
                         <div class="employee-pic">
-                            <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
+                            <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
                         </div>
                     <?php } ?>
                     <div class="employee-info">
