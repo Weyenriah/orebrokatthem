@@ -15,7 +15,7 @@ if(isset($_POST['add-cat'])) {
     $color = htmlentities(trim($_POST['color']));
     $description = htmlentities(trim($_POST['desc']));
     $contact = htmlentities(trim($_POST['contact']));
-    $show = isset($_POST['show']);
+    $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
 
     $files = [];
@@ -51,32 +51,27 @@ if(isset($_POST['add-cat'])) {
         $valid = false;
     }
 
-    if($show === true) {
-        $show = 1;
-    } else {
+    if($show == false) {
         $show = 0;
+    } else {
+        $show = 1;
     }
-
 
     $addCat = false;
 
     // Adds if everything checks out
     if($valid) {
-        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, !$show);
+        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, $show);
         if ($id !== null) {
             $addCat = true;
 
             $filenames = [];
-
-            var_dump($files);
 
             foreach ($files as $file) {
                 if($file !== null) {
                     $filenames[] =  SaveFile($file);
                 }
             }
-
-            var_dump($filenames);
 
             foreach ($filenames as $filename) {
                 if ($filename !== null)
@@ -135,7 +130,7 @@ if(isset($_POST['change-cat'])) {
     }
 
     if($valid) {
-        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase);
+        $changeCat = $database->$database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase);
     } else {
         $changeCat = false;
     }
