@@ -47,11 +47,12 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <section class="carousel-container text-box blue-background" id="carousel">
         <?php
         foreach($slideCats as $slideCat) {
+            $images = $database->getCatImages($slideCat['id']);
         ?>
             <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
-                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . $slideCat['image']); ?>">
+                        <img class="image-to-cat" src="<?php echo(UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg")); ?>">
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
@@ -66,6 +67,10 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         </div>
                         <p class="desc"> <?php echo(explode("<br/>", $slideCat['description'], 2)[0]) ?> </p>
                         <p class="desc-long" hidden> <?php echo(explode("<br/>", $slideCat['description'], 2)[1]) ?> </p>
+                        <div class="cat-home">
+                            <i class="fas fa-home"></i>
+                            <p class="home-cat"> <?php echo($slideCat['home'] ? 'Jourhem' : 'Katthem') ?> </p>
+                        </div>
                         <div class="carousel-link">
                             <button class="caro-read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
                         </div>

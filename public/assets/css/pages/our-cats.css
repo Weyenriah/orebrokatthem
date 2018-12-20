@@ -210,6 +210,14 @@
     margin-bottom: 10px;
 }
 
+/* Displaying the home of cat */
+.cat-home {
+    display: flex;
+}
+.cat-home i {
+    margin-right: 5px;
+}
+
 /* Cat links styling */
 .links {
     display: flex;

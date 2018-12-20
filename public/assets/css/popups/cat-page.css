@@ -124,6 +124,15 @@ hr {
     border-right: 1px solid #415463;
 }
 
+/* Displaying the home to cat */
+.home-popup {
+    margin: 0 !important;
+}
+
+.cat-home i {
+    color: #415463;
+}
+
 @media only screen and (max-width: 719px) {
     #cat-page {
         min-height: 0;

@@ -31,6 +31,10 @@
                 <small class="color"> Färg </small>
             </div>
             <p class="desc" style="white-space: pre-line;" > Text </p>
+            <div class="cat-home">
+                <i class="fas fa-home"></i>
+                <p class="home-popup"> Hem </p>
+            </div>
         </div>
     </section>
     <div class="adopt-me">

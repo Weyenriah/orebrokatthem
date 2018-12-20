@@ -164,11 +164,14 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                             <small class="cat-age"> <?php echo($kitten['age']) ?> | </small>
                             <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane': 'Hona') ?> | </small>
                             <small class="color"> <?php echo($kitten['color']) ?> </small>
-                            <small class="color"> | <?php echo($kitten['home'] ? 'Jourhem' : 'Katthem') ?> </small>
                         </div>
                         <?php $desc = explode("<br/>", $kitten['description'], 2); ?>
                         <p class="desc"> <?php echo(count($desc) > 0 ? $desc[0] : "") ?> </p>
                         <p class="desc-long" hidden> <?php echo(count($desc) > 1 ? $desc[1] : "") ?> </p>
+                        <div class="cat-home">
+                            <i class="fas fa-home"></i>
+                            <p class="home-cat"> <?php echo($kitten['home'] ? 'Jourhem' : 'Katthem') ?> </p>
+                        </div>
                         <div class="links">
                             <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
                             <a class="adopt" href="mailto:<?php echo($kitten['contact']) ?>"> Adoptera mig! </a>
@@ -248,6 +251,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         popup.getElementsByClassName("demo")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
         popup.getElementsByClassName("demo")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
         popup.getElementsByClassName("demo")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+        popup.getElementsByClassName("home-popup")[0].textContent = cat.getElementsByClassName("home-cat")[0].textContent;
 
         /* Show popup */
         popup.style.display = "block";
