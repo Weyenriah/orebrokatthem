@@ -24,7 +24,7 @@
         <h2> Försäkra din katt </h2>
         <div class="paragraph-position insurance">
             <div class="decor-img" id="insurance-img">
-                <img src="storage/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <div class="insurance-text">
                 <p> Ska du försäkra din katt? Om du tecknar försäkringen via vårt ombud på Agria och uppger att du vill stödja Örebro Katthem så får vi en viss provision. Katten behöver inte vara adopterad från oss!</p>

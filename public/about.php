@@ -28,7 +28,7 @@
                 <article class="employee-card">
                     <?php if ($employee['image'] !== '') { ?>
                         <div class="employee-pic">
-                            <img src="<?php echo(UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
+                            <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
                         </div>
                     <?php } ?>
                     <div class="employee-info">
@@ -91,7 +91,7 @@
         <h2> Bli volontär </h2>
         <div class="paragraph-position become">
             <div class="decor-img">
-                <img src="storage/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <div class="become-info">
                 <div class="become-text">
