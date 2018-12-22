@@ -37,13 +37,13 @@
 
 
             <div class="login-or-not">
-                <input type="checkbox" class="log-in" id="log-in" name="log-in" value="log-in" onclick="showChangePassword()">
+                <input type="checkbox" class="log-in" id="log-in" name="log-in" value="log-in" onclick="showChangePassword(true)">
                 <label for="log-in"> Inloggsbehörigheter </label>
             </div>
 
             <div class="info" id="logged-in">
-                <label for="password"> Lösenord </label>
-                <input type="text" class="password" name="password" id="password" value="Skriv in lösenord">
+                <label for="password">Byt lösenord </label>
+                <input type="text" class="password" name="password" id="password" placeholder="Skriv in nytt lösenord">
             </div>
 
             <input class="id-field" type="text" name="id" hidden>
@@ -61,9 +61,17 @@
         popup.style.display = "none";
     }
 
-    function showChangePassword() {
+    function showChangePassword(userAction) {
         let password = document.getElementById('logged-in');
         let checkbox = document.getElementById('log-in');
+
+        if (userAction) {
+            password.getElementsByTagName("label")[0].textContent = "Välj lösenord";
+            password.getElementsByTagName("input")[0].placeholder = "Skriv in lösenord";
+        } else {
+            password.getElementsByTagName("label")[0].textContent = "Byt lösenord";
+            password.getElementsByTagName("input")[0].placeholder = "Skriv in nytt lösenord";
+        }
 
         if(checkbox.checked) {
             password.style.display = "block";

@@ -37,8 +37,29 @@ trait Employees {
     }
 
     // Change Employee
-    public function changeEmployee($id, $name, $title, $telephone, $email, $password, $hidden) {
-        $sql = 'UPDATE employees SET
+    public function changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $hidden) {
+        if ($canLogin && $password === null) {
+            $sql = 'UPDATE employees SET
+                  name = :name,
+                  title = :title,
+                  telephone = :telephone,
+                  email = :email,
+                  hidden = :hidden
+                WHERE
+                  id = :id';
+            // Prepares a query
+            $stmt = $this->pdo->prepare($sql);
+
+            return $stmt->execute(array(
+                'id' => $id,
+                'name' => $name,
+                'title' => $title,
+                'telephone' => $telephone,
+                'email' => $email,
+                'hidden' => $hidden,
+            ));
+        }else {
+            $sql = 'UPDATE employees SET
                   name = :name,
                   title = :title,
                   telephone = :telephone,
@@ -47,18 +68,19 @@ trait Employees {
                   hidden = :hidden
                 WHERE
                   id = :id';
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
+            // Prepares a query
+            $stmt = $this->pdo->prepare($sql);
 
-        return $stmt->execute(array(
-            'id' => $id,
-            'name' => $name,
-            'title' => $title,
-            'telephone' => $telephone,
-            'email' => $email,
-            'password' => $password,
-            'hidden' => $hidden,
-        ));
+            return $stmt->execute(array(
+                'id' => $id,
+                'name' => $name,
+                'title' => $title,
+                'telephone' => $telephone,
+                'email' => $email,
+                'password' => $password,
+                'hidden' => $hidden,
+            ));
+        }
     }
 
     // Delete Employee

@@ -78,7 +78,7 @@ if(isset($_POST['change-employee'])) {
     $email = htmlentities(trim($_POST['email']));
     $password = $_POST['password'];
     $show = isset($_POST['show']);
-    $canLogin = isset($_POST['login']);
+    $canLogin = isset($_POST['log-in']);
 
     // Sets valid to true
     $valid = true;
@@ -115,13 +115,15 @@ if(isset($_POST['change-employee'])) {
     if($canLogin) {
         if(!is_string($password) || strlen($password) === 0) {
             $password = null;
+        } else {
+            $password = password_hash($password . PASSWORD_SALT, PASSWORD_DEFAULT);
         }
     } else {
         $password = null;
     }
 
     if($valid) {
-        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $password, !$show);
+        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, !$show);
 
         $goToPage = 'employees';
     } else {
@@ -222,6 +224,6 @@ $employees = $database->getEmployees(true);
         /* Scrolls up to top when button is clicked */
         window.scroll(0, 0);
 
-        showChangePassword();
+        showChangePassword(false);
     }
 </script>
