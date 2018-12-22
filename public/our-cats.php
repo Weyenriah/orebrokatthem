@@ -150,9 +150,9 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                 <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
 
                     <div class="cat-img">
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg")); ?>">
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 1) ? $images[1]['image'] : "cat-placeholder.jpg")); ?>" hidden>
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 2) ? $images[2]['image'] : "cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
                     </div>
                     <div class="cat-text">
                         <div class="cat-title">

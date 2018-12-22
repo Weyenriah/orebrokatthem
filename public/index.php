@@ -33,10 +33,6 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Calls for navigation -->
     <?php include(APP_FOLDER . '/includes/navigation.php') ?>
 
-    <article class="banner">
-        <img src="assets/images/banner.png">
-    </article>
-
     <!-- Specific heading to this page -->
     <header class="header">
         <h1>Välkommen</h1>
@@ -52,11 +48,11 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
-                            <img src="assets/images/paw-icon.png">
+                            <img src="<?php echo(BASE_URL) ?>assets/images/paw-icon.png">
                             <h3 class="cat-name"> <?php echo($slideCat['name']); ?> </h3>
                         </div>
 
@@ -134,7 +130,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <h2> Har du hittat en katt? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="storage/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <strong> <?php echo($database->getContent('found-important')); ?> </strong>
             <p> <?php echo($database->getContent('found-text')); ?> </p>
