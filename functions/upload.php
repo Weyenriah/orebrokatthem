@@ -31,3 +31,7 @@ function SaveFile($file, $prefix = "") {
         return null;
     }
 }
+
+function DeleteFile($file) {
+    return unlink(realpath(dirname(getcwd())) . DIRECTORY_SEPARATOR  . UPLOADS_FOLDER . "images". DIRECTORY_SEPARATOR  . $file);
+}
