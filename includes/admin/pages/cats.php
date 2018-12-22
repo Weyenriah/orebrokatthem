@@ -70,12 +70,14 @@ if(isset($_POST['add-cat'])) {
             foreach ($files as $file) {
                 if($file !== null) {
                     $filenames[] =  SaveFile($file);
+                } else {
+                    $file[] = null;
                 }
             }
 
-            foreach ($filenames as $filename) {
+            foreach ($filenames as $key => $filename) {
                 if ($filename !== null)
-                    $database->addCatImage($id, $filename);
+                    $database->addCatImage($id, $filename, $key);
             }
 
         }
@@ -94,6 +96,11 @@ if(isset($_POST['change-cat'])) {
     $contact = htmlentities(trim($_POST['contact']));
     $showcase = isset($_POST['show']);
     $home = $_POST['home'];
+
+    $files = [];
+    $files[] = isset($_FILES['cat-image0']) ? $_FILES['cat-image0'] : null;
+    $files[] = isset($_FILES['cat-image1']) ? $_FILES['cat-image1'] : null;
+    $files[] = isset($_FILES['cat-image2']) ? $_FILES['cat-image2'] : null;
 
     // Sets valid to true
     $valid = true;
@@ -130,7 +137,21 @@ if(isset($_POST['change-cat'])) {
     }
 
     if($valid) {
-        $changeCat = $database->$database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase);
+        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase);
+        $filenames = [];
+
+        foreach ($files as $file) {
+            if($file !== null) {
+                $filenames[] =  SaveFile($file);
+            } else {
+                $file[] = null;
+            }
+        }
+
+        foreach ($filenames as $key => $filename) {
+            if ($filename !== null)
+                $database->addCatImage($id, $filename, $key);
+        }
     } else {
         $changeCat = false;
     }

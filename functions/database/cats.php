@@ -104,20 +104,16 @@ trait Cats {
         return $stmt->fetchAll();
     }
 
-    public function addCatImage($id, $filename) {
-        $sql = 'INSERT INTO cat_images (
-                  `image`,
-                  `cat_id`
-                ) VALUES (
-                  :image,
-                  :cat_id
-                )';
-
+    public function addCatImage($id, $filename, $k) {
+        $sql = 'INSERT INTO cat_images (cat_id, image, k) VALUES(:cat_id, :image, :k) ON DUPLICATE KEY UPDATE image = :image2;';
+        // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
+        // Sends query to database
         return $stmt->execute(array(
             'image' => $filename,
+            'image2' => $filename,
             'cat_id' => $id,
+            'k' => $k,
         ));
     }
 }
