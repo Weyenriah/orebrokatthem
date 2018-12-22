@@ -46,19 +46,19 @@ function any_array(array $array, callable $fn) {
 <!-- The outside companies that ÖKH linked on their first page -->
 <section class="outsiders">
     <a href="http://www.svekatt.se/">
-        <img class="svekatt" src="../public/assets/images/svekatt-etisk.png">
+        <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png">
     </a>
     <a href="http://www.vilse.nu/">
-        <img class="vilse" src="../public/assets/images/vilse.png">
+        <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png">
     </a>
     <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
-        <img class="sverak" src="../public/assets/images/sverak.png">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png">
     </a>
     <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
-        <img class="skk"  src="../public/assets/images/skk.gif">
+        <img class="skk"  src="<?php echo(BASE_URL) ?>assets/images/skk.gif">
     </a>
     <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring">
-        <img class="sverak" src="../public/assets/images/if.png">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png">
     </a>
 </section>
 

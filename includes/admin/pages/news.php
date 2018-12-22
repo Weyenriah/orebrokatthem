@@ -109,7 +109,7 @@ $news = $database->getNews($newsPage);
             <article class="new" id="news-<?php echo($new['id']) ?>">
                 <?php if ($new['image'] !== '') { ?>
                     <div class="news-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
+                        <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
                     </div>
                 <?php } ?>
                 <div class="news-text">
