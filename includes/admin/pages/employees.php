@@ -16,6 +16,7 @@ if(isset($_POST['add-employee'])) {
     $password = $_POST['password'];
     $show = isset($_POST['show']);
     $canLogin = isset($_POST['login']);
+    $file = isset($_FILES['human-image']) ? $_FILES['human-image'] : null;
 
     // Sets valid to true
     $valid = true;
@@ -61,7 +62,8 @@ if(isset($_POST['add-employee'])) {
 
     // Adds if everything checks out
     if($valid) {
-        $addEmployee = $database->addEmployee($name, $title, $telephone, $email, $password, !$show);
+        $image = SaveFile($file);
+        $addEmployee = $database->addEmployee($name, $title, $telephone, $email, $password, !$show, $image);
 
         $goToPage = 'employees';
     } else {
@@ -79,6 +81,7 @@ if(isset($_POST['change-employee'])) {
     $password = $_POST['password'];
     $show = isset($_POST['show']);
     $canLogin = isset($_POST['log-in']);
+    $file = isset($_FILES['human-image']) ? $_FILES['human-image'] : null;
 
     // Sets valid to true
     $valid = true;
@@ -123,7 +126,9 @@ if(isset($_POST['change-employee'])) {
     }
 
     if($valid) {
-        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, !$show);
+
+        $image = SaveFile($file);
+        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, !$show, $image);
 
         $goToPage = 'employees';
     } else {
