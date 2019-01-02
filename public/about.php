@@ -16,7 +16,7 @@
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Om Oss </h1>
-        <p> <?php echo($database->getContent('about-header')); ?> </p>
+        <p> <?php echo(nl2br($database->getContent('about-header'))); ?> </p>
     </header>
 
     <!-- Section for employees -->
@@ -99,7 +99,7 @@
                     </p>
                     <h5 class="second-row-heading"> Krav </h5>
                     <ul>
-                        <?php echo($database->getContent('about-vol-demands')); ?>
+                        <?php echo($database->getContent('about-vol-demands')); //TODO Fix the list (normal dotted one) ?>
                     </ul>
                     <p> <br/>
                         Varje dag har vi morgonpass och kvällspass på katthemmet och du bestämmer själv när och hur ofta du kan hjälpa till.

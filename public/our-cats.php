@@ -81,7 +81,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
 <!-- Specific heading to this page -->
 <header class="header">
     <h1> Våra katter </h1>
-    <p> <?php echo($database->getContent('ourcats-header')); ?> </p>
+    <p> <?php echo(nl2br($database->getContent('ourcats-header'))); ?> </p>
 </header>
 
 <section class="text-box blue-background" id="our-cats">
@@ -165,9 +165,11 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                             <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane': 'Hona') ?> | </small>
                             <small class="color"> <?php echo($kitten['color']) ?> </small>
                         </div>
-                        <?php $desc = explode("<br/>", $kitten['description'], 2); ?>
-                        <p class="desc"> <?php echo(count($desc) > 0 ? $desc[0] : "") ?> </p>
-                        <p class="desc-long" hidden> <?php echo(count($desc) > 1 ? $desc[1] : "") ?> </p>
+                        <?php $text = nl2br($kitten['description']);
+                        $exploded = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $text, 2);
+                        ?>
+                        <p class="desc"> <?php echo($exploded[0]) ?> </p>
+                        <p class="desc-long" hidden> <?php if(count($exploded) > 1) echo($exploded[1]); ?> </p>
                         <div class="cat-home">
                             <i class="fas fa-home"></i>
                             <p class="home-cat"> <?php echo($kitten['home'] ? 'Jourhem' : 'Katthem') ?> </p>

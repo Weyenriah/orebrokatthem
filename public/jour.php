@@ -21,14 +21,30 @@ if(isset($_POST['jour-contact'])) {
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Bli Jourhem </h1>
-        <p> <?php echo($database->getContent('jour-header')); ?> </p>
+        <p> <?php echo(nl2br($database->getContent('jour-header'))); ?> </p>
     </header>
 
     <!-- Section for "How it is to be an emergency home?" -->
     <section class="general-grid text-box blue-background" id="how">
         <h2> Hur är det att vara jourhem? </h2>
         <div class="paragraph-position how-text">
-            <?php echo($database->getContent('jour-how')); ?>
+            <?php
+            $jourHow = nl2br($database->getContent('jour-how'));
+            $howItems = explode("*", $jourHow);
+
+            for ($i = 1; $i < count($howItems); $i++) {
+                $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $howItems[$i], 2);
+                $header = count($pieces) > 0 ? $pieces[0] : '';;
+                $text = count($pieces) > 1 ? $pieces[1] : '';
+                echo("
+                    <h5>
+                        $header
+                    </h5>
+                    <p>
+                        $text
+                    </p>
+                ");
+            } ?>
         </div>
     </section>
 
@@ -40,7 +56,25 @@ if(isset($_POST['jour-contact'])) {
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <ol>
-                <?php echo($database->getContent('jour-tips')); ?>
+                <?php
+                $jourTips = nl2br($database->getContent('jour-tips'));
+                $tipsItems = explode("*", $jourTips);
+
+                for ($i = 1; $i < count($tipsItems); $i++) {
+                    $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $tipsItems[$i], 2);
+                    $header = count($pieces) > 0 ? $pieces[0] : '';;
+                    $text = count($pieces) > 1 ? $pieces[1] : '';
+                    echo("
+                        <li>
+                            <h5>
+                                $header
+                            </h5>
+                            <p>
+                                $text
+                            </p>
+                        </li>
+                    ");
+                } ?>
             </ol>
         </div>
     </section>

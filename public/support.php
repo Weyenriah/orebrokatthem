@@ -12,12 +12,12 @@
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Stöd oss </h1>
-        <p> <?php echo($database->getContent('support-header')); ?> </p>
+        <p> <?php echo(nl2br($database->getContent('support-header'))); ?> </p>
     </header>
 
     <section class="general-grid text-box blue-background " id="membership">
         <h2> Bli medlem </h2>
-        <p class="paragraph-position"> <?php echo($database->getContent('support-member')); ?> </p>
+        <p class="paragraph-position"> <?php echo(nl2br($database->getContent('support-member'))); ?> </p>
     </section>
 
     <section class="general-grid text-box" id="insurance">
@@ -49,13 +49,13 @@
                 <div class="cat-need">
                     <h5 class="second-row-heading"> Katterna önskar sig </h5>
                     <ul>
-                        <?php echo($database->getContent('support-catneed')); ?>
+                        <?php echo($database->getContent('support-catneed')); //TODO Fix the lists (normal dotted ones) ?>
                     </ul>
                 </div>
                 <div class="human-need">
                     <h5 class="second-row-heading"> Personalen önskar sig </h5>
                     <ul>
-                        <?php echo($database->getContent('support-humanneed')); ?>
+                        <?php echo($database->getContent('support-humanneed')); //TODO Fix the lists (normal dotted ones) ?>
                     </ul>
                 </div>
             </div>

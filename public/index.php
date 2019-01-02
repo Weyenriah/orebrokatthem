@@ -36,7 +36,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Specific heading to this page -->
     <header class="header">
         <h1>Välkommen</h1>
-        <p> <?php echo($database->getContent('home-header')); ?> </p>
+        <p> <?php echo(nl2br($database->getContent('home-header'))); ?> </p>
     </header>
 
     <!-- Carousel -->
@@ -61,8 +61,11 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                             <small class="cat-gender"> | <?php echo($slideCat['gender'] ? 'Hane': 'Hona') ?> </small>
                             <small class="color"> | <?php echo($slideCat['color']) ?> </small>
                         </div>
-                        <p class="desc"> <?php echo(explode("<br/>", $slideCat['description'], 2)[0]) ?> </p>
-                        <p class="desc-long" hidden> <?php echo(explode("<br/>", $slideCat['description'], 2)[1]) ?> </p>
+                        <?php $text = nl2br($slideCat['description']);
+                        $exploded = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $text, 2);
+                        ?>
+                        <p class="desc"> <?php echo($exploded[0]) ?> </p>
+                        <p class="desc-long" hidden> <?php if(count($exploded) > 1) echo($exploded[1]); ?> </p>
                         <div class="cat-home">
                             <i class="fas fa-home"></i>
                             <p class="home-cat"> <?php echo($slideCat['home'] ? 'Jourhem' : 'Katthem') ?> </p>
@@ -99,7 +102,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                     <?php } ?>
                     <div class="news-info">
                         <h5 class="second-row-heading"> <?php echo($date); ?> </h5>
-                        <p> <?php echo($new['news']); ?> </p>
+                        <p> <?php echo(nl2br($new['news'])); ?> </p>
                     </div>
                 </article>
             <?php } ?>
@@ -132,8 +135,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="decor-img">
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
-            <strong> <?php echo($database->getContent('found-important')); ?> </strong>
-            <p> <?php echo($database->getContent('found-text')); ?> </p>
+            <strong> <?php echo(nl2br($database->getContent('found-important'))); ?> </strong>
+            <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>
             <div class="found-contact">
                 <h3 class="second-row-heading"> Skicka in anmälan </h3>
                 <a class="link-calibri" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSedgA2l24ZJk6WMcGwPC_nVfs4PxgvFTStcVbs-FQ23IoQeNg/viewform?embedded=true&usp=embed_googleplus">
@@ -147,8 +150,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <section class="general-grid text-box">
         <h2> Omplacering av katt </h2>
         <div class="paragraph-position">
-            <strong> <?php echo($database->getContent('relocate-important')); ?> </strong>
-            <p> <?php echo($database->getContent('relocate-text')); ?> </p>
+            <strong> <?php echo(nl2br($database->getContent('relocate-important'))); ?> </strong>
+            <p> <?php echo(nl2br($database->getContent('relocate-text'))); ?> </p>
             <div class="relocate-contact">
                 <div class="">
                     <h3 class="second-row-heading"> Skicka in anmälan </h3>
@@ -197,7 +200,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                                 </div>
                             <?php } ?>
                             <div class="remem-cat-info">
-                                <p> <?php echo($cat['description']) ?> </p>
+                                <p> <?php echo(nl2br($cat['description'])) ?> </p>
                                 <small class="cause-of-death"> <?php echo($cat['cause']) ?> </small>
                             </div>
                         </div>

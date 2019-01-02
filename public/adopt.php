@@ -19,7 +19,7 @@
     <!-- Specific heading to this page -->
     <header class="header">
         <h1> Adoptera </h1>
-        <p> <?php echo($database->getContent('adopt-header')); ?> </p>
+        <p> <?php echo(nl2br($database->getContent('adopt-header'))); ?> </p>
     </header>
 
     <section class="general-grid text-box blue-background" id="how">
@@ -37,7 +37,7 @@
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <ol>
-                <?php echo($database->getContent('adopt-tips')); ?>
+                <?php echo($database->getContent('adopt-tips')); //TODO Fix the list (special numbered one) ?>
             </ol>
         </div>
     </section>
@@ -62,7 +62,9 @@
             </div>
             <br/>
             <h5 class="second-row-heading"> Vad som ingår </h5>
-            <ul> <?php echo parse_includes_list(($database->getContent('adopt-includes'))); ?> </ul>
+            <ul>
+                <?php echo parse_includes_list(($database->getContent('adopt-includes'))); //TODO Fix the list (normal dotted one) ?>
+            </ul>
         </div>
     </section>
 
