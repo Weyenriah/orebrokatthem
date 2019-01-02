@@ -41,8 +41,6 @@ trait Employees {
 
     // Change Employee
     public function changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $hidden, $image) {
-
-
         $sql = 'UPDATE employees SET
               name = :name,
               title = :title,
@@ -66,8 +64,8 @@ trait Employees {
         }
 
         $sql .= ' hidden = :hidden
-            WHERE
-              id = :id';
+                  WHERE
+                  id = :id';
         $parameters['hidden'] = $hidden;
 
         // Prepares a query
