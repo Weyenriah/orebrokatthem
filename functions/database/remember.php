@@ -2,7 +2,7 @@
 
 trait Remember {
     // Add cat to Remember-flow
-    public function addRememberCat($name, $born, $came, $adopted, $death, $description, $cause) {
+    public function addRememberCat($name, $born, $came, $adopted, $death, $description, $cause, $image) {
         $sql = 'INSERT INTO remember(
                   `name`,
                   `born`,
@@ -10,7 +10,8 @@ trait Remember {
                   `adopted`,
                   `death`,
                   `description`,
-                  `cause`
+                  `cause`,
+                  `image`
                 ) VALUES (
                   :name,
                   :born,
@@ -18,7 +19,8 @@ trait Remember {
                   :adopted,
                   :death,
                   :description,
-                  :cause
+                  :cause,
+                  :image
                 )';
 
         // Prepares a query
@@ -33,11 +35,12 @@ trait Remember {
            'death' => $death,
            'description' => $description,
            'cause' => $cause,
+           'image' => $image,
         ));
     }
 
     // Change cat from Remember-flow
-    public function changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause) {
+    public function changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause, $image) {
         $sql = 'UPDATE remember SET
                   name = :name,
                   born = :born,
@@ -45,15 +48,9 @@ trait Remember {
                   adopted = :adopted,
                   death = :death,
                   description = :description,
-                  cause = :cause 
-                WHERE
-                  id = :id';
+                  cause = :cause';
 
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
-
-        // Sends query to database
-        return $stmt->execute(array(
+        $parameters = [
             'id' => $id,
             'name' => $name,
             'born' => $born,
@@ -62,7 +59,20 @@ trait Remember {
             'death' => $death,
             'description' => $description,
             'cause' => $cause,
-        ));
+        ];
+
+        if ($image != null) {
+            $sql .= ', image = :image';
+            $parameters['image'] = $image;
+        }
+
+        $sql .= ' WHERE id = :id';
+
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+
+        // Sends query to database
+        return $stmt->execute($parameters);
     }
 
     // Delete cats from Remember-flow

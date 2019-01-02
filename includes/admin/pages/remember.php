@@ -16,6 +16,7 @@ if(isset($_POST['add-remember-cat'])) {
     $death = htmlentities(trim($_POST['died']));
     $description = htmlentities(trim($_POST['desc']));
     $cause = htmlentities(trim($_POST['cause']));
+    $file = isset($_FILES['cat-image']) ? $_FILES['cat-image'] : null;
 
     $valid = true;
 
@@ -48,7 +49,9 @@ if(isset($_POST['add-remember-cat'])) {
     }
 
     if($valid) {
-        $addRememCat = $database->addRememberCat($name, $born, $came, $adopted, $death, $description, $cause);
+        $image = SaveFile($file);
+
+        $addRememCat = $database->addRememberCat($name, $born, $came, $adopted, $death, $description, $cause, $image);
     } else {
         $addRememCat = false;
     }
@@ -66,6 +69,7 @@ if(isset($_POST['change-remember-cat'])) {
     $death = htmlentities(trim($_POST['died']));
     $description = htmlentities(trim($_POST['desc']));
     $cause = htmlentities(trim($_POST['cause']));
+    $file = isset($_FILES['cat-image']) ? $_FILES['cat-image'] : null;
 
     $valid = true;
 
@@ -98,7 +102,9 @@ if(isset($_POST['change-remember-cat'])) {
     }
 
     if($valid) {
-        $changeRememCat = $database->changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause);
+        $image = SaveFile($file);
+
+        $changeRememCat = $database->changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause, $image);
     } else {
         $changeRememCat = false;
     }
