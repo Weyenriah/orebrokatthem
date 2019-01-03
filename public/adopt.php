@@ -37,7 +37,25 @@
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <ol>
-                <?php echo($database->getContent('adopt-tips')); //TODO Fix the list (special numbered one) ?>
+                <?php
+                $adoptTips = nl2br($database->getContent('adopt-tips'));
+                $adoptItems = explode("*", $adoptTips);
+
+                for ($i = 1; $i < count($adoptItems); $i++) {
+                    $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $adoptItems[$i], 2);
+                    $header = count($pieces) > 0 ? $pieces[0] : '';
+                    $text = count($pieces) > 1 ? $pieces[1] : '';
+                    echo("
+                        <li>
+                            <h5>
+                                $header
+                            </h5>
+                            <p>
+                                $text
+                            </p>
+                        </li>
+                    ");
+                } ?>
             </ol>
         </div>
     </section>
@@ -63,7 +81,19 @@
             <br/>
             <h5 class="second-row-heading"> Vad som ingår </h5>
             <ul>
-                <?php echo parse_includes_list(($database->getContent('adopt-includes'))); //TODO Fix the list (normal dotted one) ?>
+                <?php
+                $adoptIncludes = nl2br($database->getContent('adopt-includes'));
+                $adoptInclude = explode("*", $adoptIncludes);
+
+                for ($i = 1; $i < count($adoptInclude); $i++) {
+                    $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $adoptInclude[$i], 2);
+                    $text = count($pieces) > 0 ? $pieces[0] : '';
+                    echo("
+                        <li>
+                            $text
+                        </li>
+                    ");
+                } ?>
             </ul>
         </div>
     </section>

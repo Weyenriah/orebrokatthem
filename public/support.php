@@ -49,13 +49,46 @@
                 <div class="cat-need">
                     <h5 class="second-row-heading"> Katterna önskar sig </h5>
                     <ul>
-                        <?php echo($database->getContent('support-catneed')); //TODO Fix the lists (normal dotted ones) ?>
+                        <?php
+                        $catNeeds = $database->getContent('support-catneed');
+                        $catNeedItems = explode("*", $catNeeds);
+
+                        for ($i = 1; $i < count($catNeedItems); $i++) {
+                            $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', nl2br(trim($catNeedItems[$i])), 2);
+                            $header = count($pieces) > 0 ? $pieces[0] : '';
+                            $text = count($pieces) > 1 ? $pieces[1] : '';
+                            echo("
+                                <li>
+                                    $header
+                                    <small>
+                                        $text<br><br>
+                                    </small>
+                                </li>
+                            ");
+                        } ?>
                     </ul>
                 </div>
                 <div class="human-need">
                     <h5 class="second-row-heading"> Personalen önskar sig </h5>
                     <ul>
-                        <?php echo($database->getContent('support-humanneed')); //TODO Fix the lists (normal dotted ones) ?>
+                        <?php
+                        $humanNeeds = $database->getContent('support-humanneed');
+                        $humanNeedItems = explode("*", $humanNeeds);
+
+                        for ($i = 1; $i < count($humanNeedItems); $i++) {
+                            $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', nl2br(trim($humanNeedItems[$i])), 2);
+                            $header = count($pieces) > 0 ? $pieces[0] : '';
+                            $text = count($pieces) > 1 ? $pieces[1] : '';
+
+                            echo("
+                                <li>
+                                    $header
+                                    <small>
+                                        $text<br><br>
+                                    </small>
+                                </li>
+                            ");
+                        } ?>
                     </ul>
                 </div>
             </div>

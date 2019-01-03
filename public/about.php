@@ -99,7 +99,19 @@
                     </p>
                     <h5 class="second-row-heading"> Krav </h5>
                     <ul>
-                        <?php echo($database->getContent('about-vol-demands')); //TODO Fix the list (normal dotted one) ?>
+                        <?php
+                        $aboutDemands = nl2br($database->getContent('about-vol-demands'));
+                        $aboutDemand = explode("*", $aboutDemands);
+
+                        for ($i = 1; $i < count($aboutDemand); $i++) {
+                            $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $aboutDemand[$i], 2);
+                            $text = count($pieces) > 0 ? $pieces[0] : '';
+                            echo("
+                                <li>
+                                    $text
+                                </li>
+                            ");
+                        } ?>
                     </ul>
                     <p> <br/>
                         Varje dag har vi morgonpass och kvällspass på katthemmet och du bestämmer själv när och hur ofta du kan hjälpa till.

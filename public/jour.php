@@ -62,7 +62,7 @@ if(isset($_POST['jour-contact'])) {
 
                 for ($i = 1; $i < count($tipsItems); $i++) {
                     $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $tipsItems[$i], 2);
-                    $header = count($pieces) > 0 ? $pieces[0] : '';;
+                    $header = count($pieces) > 0 ? $pieces[0] : '';
                     $text = count($pieces) > 1 ? $pieces[1] : '';
                     echo("
                         <li>
