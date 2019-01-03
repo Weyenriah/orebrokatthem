@@ -1,7 +1,7 @@
 <?php
-    require_once '../../functions/load.php';
+    require_once dirname(__FILE__).'/../../functions/load.php';
 
-    require_once '../../functions/session.php';
+    require_once dirname(__FILE__).'/../../functions/session.php';
 
     if(isset($_POST['email']) && isset($_POST['password'])) {
        $email = htmlentities(trim($_POST['email']));

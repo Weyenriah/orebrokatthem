@@ -1,5 +1,5 @@
 <?php
-    require_once '../functions/load.php';
+    require_once dirname(__FILE__).'/../functions/load.php';
 
     function parse_includes_list($content) {
         $content = str_replace(array("\r", "\n"), "\n", $content);

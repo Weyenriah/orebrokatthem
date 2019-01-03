@@ -1,5 +1,5 @@
 <?php
-require_once '../functions/load.php';
+require_once dirname(__FILE__).'/../functions/load.php';
 
 $slideCats = $database->getSlideCats();
 

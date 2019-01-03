@@ -1,5 +1,5 @@
 <?php
-require_once '../functions/load.php';
+require_once dirname(__FILE__).'/../functions/load.php';
 
 // Reverse cat page flow
 $reversed = isset($_GET['oa']) ? $_GET['oa'] === "true" : false;

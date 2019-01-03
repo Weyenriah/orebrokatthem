@@ -1,8 +1,8 @@
 <?php
-require_once 'cats.php';
-require_once 'employees.php';
-require_once 'news.php';
-require_once 'remember.php';
+require_once dirname(__FILE__).'/cats.php';
+require_once dirname(__FILE__).'/employees.php';
+require_once dirname(__FILE__).'/news.php';
+require_once dirname(__FILE__).'/remember.php';
 
 class Database {
 

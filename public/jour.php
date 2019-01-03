@@ -1,4 +1,4 @@
-<?php require_once '../functions/load.php';
+<?php require_once dirname(__FILE__).'/../functions/load.php';
 
 if(isset($_POST['jour-contact'])) {
     $name = $_POST['name'];

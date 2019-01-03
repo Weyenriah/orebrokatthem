@@ -1,5 +1,5 @@
 <?php
-require_once '/../../../functions/load.php';
+require_once dirname(__FILE__).'/../../../functions/load.php';
 
 // Remove employee
 if (isset($_POST['removeEmployee'])) {
