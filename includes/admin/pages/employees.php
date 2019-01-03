@@ -126,9 +126,9 @@ if(isset($_POST['change-employee'])) {
     }
 
     if($valid) {
-
         $image = SaveFile($file);
-        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, !$show, $image);
+
+        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $show ? 0 : 1, $image);
 
         $goToPage = 'employees';
     } else {
