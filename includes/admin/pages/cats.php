@@ -253,14 +253,14 @@ $cats = $database->getAdminCats($catsPage);
         <article class="cat" id="cat-<?php echo($cat['id']) ?>">
             <div class="cat-display-images">
                 <div class="cat-img big-cat-img">
-                    <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg"));  ?>">
+                    <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 0) ? $images[0]['image'] : "cat-placeholder.jpg"));  ?>">
                 </div>
                 <div class="small-cat-pics">
                     <div class="cat-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 1) ? $images[1]['image'] : "cat-placeholder.jpg"));  ?>">
+                        <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 1) ? $images[1]['image'] : "cat-placeholder.jpg"));  ?>">
                     </div>
                     <div class="cat-img">
-                        <img src="<?php echo('../' . UPLOADS_FOLDER . 'images/' . ((count($images) > 2) ? $images[2]['image'] : "cat-placeholder.jpg"));  ?>">
+                        <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . ((count($images) > 2) ? $images[2]['image'] : "cat-placeholder.jpg"));  ?>">
                     </div>
                 </div>
             </div>

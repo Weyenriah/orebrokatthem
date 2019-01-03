@@ -9,23 +9,6 @@ if(!isset($_SESSION['user'])) {
     die();
 }
 
-/* if(isset($_POST['submit-banner'])) {
-    // Max 1MB
-    $max_file_size = 1048576;
-    // Accepted file types
-    $file_types = array('gif', 'jpg', 'png');
-    // Map for uploading
-    $upload_dir = realpath(dirname(__FILE__)) . '/images/';
-    // Creates array for error messages
-    $errors = array();
-
-    $file_tmp = $_FILES['photo']['tmp_name'];
-    $file_name = $_FILES['photo']['name'];
-    $file_size = $_FILES['photo']['size'];
-    $file_uniq = uniqid();
-
-}*/
-
 ?>
 <!DOCTYPE html>
 <html lang="sv">
