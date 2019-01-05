@@ -94,7 +94,7 @@ if(isset($_POST['change-cat'])) {
     $color = htmlentities(trim($_POST['color']));
     $description = htmlentities(trim($_POST['desc']));
     $contact = htmlentities(trim($_POST['contact']));
-    $showcase = isset($_POST['show']);
+    $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
 
     $files = [];
@@ -130,14 +130,14 @@ if(isset($_POST['change-cat'])) {
         $valid = false;
     }
 
-    if($showcase == false) {
-        $showcase = '0';
+    if($show == false) {
+        $show = '0';
     } else {
-        $showcase = '1';
+        $show = '1';
     }
 
     if($valid) {
-        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase);
+        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $show);
         $filenames = [];
 
         foreach ($files as $file) {
