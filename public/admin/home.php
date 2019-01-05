@@ -37,52 +37,44 @@ if(!isset($_SESSION['user'])) {
     </div>
     <hr/>
     <h3> Hantera </h3>
-    <div class="pages">
+    <div class="pages" id="cats-link">
         <a href="#" onclick="showPage('cats')"> Katter </a>
     </div>
-    <div class="pages">
+    <div class="pages" id="news-link">
         <a href="#" onclick="showPage('news')"> Nyheter </a>
     </div>
-    <div class="pages">
+    <div class="pages" id="employees-link">
         <a href="#" onclick="showPage('employees')"> Anställda </a>
     </div>
-    <div class="pages">
+    <div class="pages" id="remem-cats-link">
         <a href="#" onclick="showPage('remem-cats')"> Katter i minneslunden </a>
     </div>
     <div class="pages">
         <a href="#" id="text" onclick="showPopupNav()"> <i class="fas fa-align-left"></i> Ändra textfält </a>
     </div>
     <div id="popup-nav">
-        <div class="pages">
+        <div class="pages" id="home-link">
             <a href="#" onclick="showPage('home')"> Hem </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="adopt-link">
             <a href="#" onclick="showPage('adopt')"> Adoptera </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="our-cats-link">
             <a href="#" onclick="showPage('our-cats')"> Våra Katter </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="jour-link">
             <a href="#" onclick="showPage('jour')"> Bli Jourhem </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="about-link">
             <a href="#" onclick="showPage('about')"> Om Oss </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="support-link">
             <a href="#" onclick="showPage('support')"> Stöd Oss </a>
         </div>
-        <div class="pages">
+        <div class="pages" id="footer-link">
             <a href="#" onclick="showPage('footer')"> Footer </a>
         </div>
     </div>
-    <!-- <hr/>
-    <form class="banner-upload" method="post" enctype="multipart/form-data">
-        <label for="banner-upload">
-            Ladda upp banner
-        </label>
-        <input class="banner" type="file" name="banner">
-        <input class="submit-banner" type="submit" name="submit-banner" value="Ladda upp">
-    </form> -->
 </nav>
 </body>
 
@@ -101,7 +93,7 @@ if(!isset($_SESSION['user'])) {
         popup.style.display = 'block';
     }
 
-    /* === SHOW NEWS-POPUP === */
+    /* === SHOW -POPUP === */
     function showPopupNav() {
         let popup = document.getElementById('popup-nav');
         let link = document.getElementById('text');
@@ -118,17 +110,35 @@ if(!isset($_SESSION['user'])) {
     /* === SHOW CAT-FLOW === */
     function showPage(pageName) {
         let pages = document.getElementsByClassName('page');
+        let links = document.getElementsByClassName('pages');
 
         /* Adds display = none om every page */
         for (let i = 0; i < pages.length; i++) {
             pages[i].style.display = 'none';
+            links[i].classList.remove('marked');
         }
 
         /* Changes display to block */
         document.getElementById(pageName).style.display = 'block';
+        document.getElementById(pageName+ '-link').classList.add('marked');
     }
 
     showPage('<?php echo(isset($goToPage) ? $goToPage : 'cats'); ?>');
+
+    <?php
+    $pages = [
+        'home',
+        'adopt',
+        'our-cats',
+        'jour',
+        'about',
+        'support',
+        'footer',
+    ];
+
+    if(isset($goToPage) && in_array($goToPage, $pages)) {
+        echo('showPopupNav()');
+    } ?>
 </script>
 </html>
 
