@@ -45,19 +45,19 @@ function any_array(array $array, callable $fn) {
 
 <!-- The outside companies that ÖKH linked on their first page -->
 <section class="outsiders">
-    <a href="http://www.svekatt.se/">
+    <a href="http://www.svekatt.se/" target="_blank">
         <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png">
     </a>
-    <a href="http://www.vilse.nu/">
+    <a href="http://www.vilse.nu/" target="_blank">
         <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png">
     </a>
-    <a href="http://www.sverak.se/id-register/sok-din-katt-har/">
+    <a href="http://www.sverak.se/id-register/sok-din-katt-har/" target="_blank">
         <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png">
     </a>
-    <a href="https://hundar.skk.se/agarreg/katt_sok.aspx">
-        <img class="skk"  src="<?php echo(BASE_URL) ?>assets/images/skk.gif">
+    <a href="https://hundar.skk.se/agarreg/katt_sok.aspx" target="_blank">
+        <img class="skk" src="<?php echo(BASE_URL) ?>assets/images/skk.gif">
     </a>
-    <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring">
+    <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring" target="_blank">
         <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png">
     </a>
 </section>
