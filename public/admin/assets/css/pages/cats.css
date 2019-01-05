@@ -57,6 +57,7 @@
 .control-cat {
     margin-bottom: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .control-cat button {
@@ -135,6 +136,8 @@
 /* Small pictures showing */
 .cat-display-images {
     width: 200px;
+    margin-right: 20px;
+    float: left;
 }
 
 .small-cat-pics {
