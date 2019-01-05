@@ -7,9 +7,14 @@
 
         <form class="add-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="cat-image0" class="cat-image">
-            <input type="file" name="cat-image1" class="cat-image">
-            <input type="file" name="cat-image2" class="cat-image">
+            <div class="file-input">
+                <label for="cat-image0"> Välj bilder </label>
+                <div class="choose-file">
+                    <input type="file" name="cat-image0" class="cat-image">
+                    <input type="file" name="cat-image1" class="cat-image">
+                    <input type="file" name="cat-image2" class="cat-image">
+                </div>
+            </div>
 
             <!-- Add cat information -->
             <div class="info">
