@@ -74,6 +74,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         </div>
                         <div class="carousel-link">
                             <button class="caro-read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
+                            <a class="adopt" href="mailto:<?php echo($slideCat['contact']) ?>" hidden> </a>
                         </div>
                     </div>
                 </article>
@@ -293,6 +294,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
         popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
         popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
+        popup.getElementsByClassName("adopt")[0].href = cat.getElementsByClassName("adopt")[0].href;
         popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
         popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
         popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
