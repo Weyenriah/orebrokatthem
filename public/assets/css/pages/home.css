@@ -298,6 +298,10 @@
     margin-left: 5px !important;
 }
 
+.img-info-remem {
+    width: 100%;
+}
+
 /* The description and image */
 .remem-cat-info {
     margin-top: 10px;
