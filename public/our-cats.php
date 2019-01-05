@@ -21,13 +21,13 @@ if (isset($_GET['female'])) {
 }
 
 $living = 0; // Living filter
-if(isset($_GET['jourhome'])) {
-    $living += 1;
-    $filter[] = 'jourhome=true';
-}
 if (isset($_GET['cathome'])) {
-    $living += 2;
+    $living += 1;
     $filter[] = 'cathome=true';
+}
+if(isset($_GET['jourhome'])) {
+    $living += 2;
+    $filter[] = 'jourhome=true';
 }
 
 $age = 0; // Age filter
@@ -172,7 +172,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <p class="desc-long" hidden> <?php if(count($exploded) > 1) echo($exploded[1]); ?> </p>
                         <div class="cat-home">
                             <i class="fas fa-home"></i>
-                            <p class="home-cat"> <?php echo($kitten['home'] ? 'Jourhem' : 'Katthem') ?> </p>
+                            <p class="home-cat"> <?php echo($kitten['home'] ? 'Katthem' : 'Jourhem') ?> </p>
                         </div>
                         <div class="links">
                             <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
