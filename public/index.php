@@ -49,6 +49,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
                         <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
@@ -292,6 +294,13 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
         popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
         popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
+        popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+        popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+        popup.getElementsByClassName("popup-slide")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+        popup.getElementsByClassName("demo")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+        popup.getElementsByClassName("demo")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+        popup.getElementsByClassName("demo")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+        popup.getElementsByClassName("home-popup")[0].textContent = cat.getElementsByClassName("home-cat")[0].textContent;
 
         /* Show popup */
         popup.style.display = "block";
