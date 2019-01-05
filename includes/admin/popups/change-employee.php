@@ -1,13 +1,16 @@
-<div class="change-employee-container" id="popup-change-employee">
-    <article class="change-employee">
-        <div class="change-header">
+<div class="popup-container" id="popup-change-employee">
+    <article class="small-container">
+        <div class="header">
             <h2> Ändra anställd </h2>
             <button type="button" onclick="hidePopupChangeEmployee()"> <i class="fas fa-times"></i> </button>
         </div>
 
-        <form class="change-form" method="POST" enctype="multipart/form-data">
+        <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="human-image" class="human-image">
+            <div class="file-input">
+                <label for="human-image"> Ändra Bild </label>
+                <input type="file" name="human-image">
+            </div>
 
             <div class="show-employee">
                 <input type="checkbox" class="show-employ" id="show" name="show" value="show">
@@ -48,7 +51,7 @@
 
             <input class="id-field" type="text" name="id" hidden>
 
-            <button class="change-button" type="submit" name="change-employee"> Lägg till </button>
+            <button class="popup-button" type="submit" name="change-employee"> Lägg till </button>
         </form>
     </article>
 </div>

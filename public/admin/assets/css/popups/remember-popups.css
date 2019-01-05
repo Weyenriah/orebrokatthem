@@ -1,0 +1,33 @@
+/* Specific CSS for REMEMBER CAT-popups */
+.life {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.remem-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 45%;
+}
+
+.remem-info label {
+    font-family: "Calibri", sans-serif;
+}
+
+.remem-info input {
+    height: 24px;
+    padding-left: 6px;
+    width: 95%;
+}
+
+.show-in-slide {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.show-in-slide label {
+    font-size: 16px;
+}

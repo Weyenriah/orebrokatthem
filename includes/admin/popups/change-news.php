@@ -1,13 +1,16 @@
-<div class="change-news-container" id="popup-change-news">
-    <article class="popup-change-news">
-        <div class="change-header">
+<div class="popup-container" id="popup-change-news">
+    <article class="small-container">
+        <div class="header">
             <h2> Ändra Nyhet </h2>
             <button type="button" onclick="hidePopupChangeNews()"> <i class="fas fa-times"></i> </button>
         </div>
 
-        <form class="add-form" method="POST" enctype="multipart/form-data">
+        <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="news-image" class="news-image">
+            <div class="file-input">
+                <label for="human-image"> Ändra Bild </label>
+                <input type="file" name="news-image">
+            </div>
 
             <!-- Add cat information -->
             <div class="info">
@@ -17,7 +20,7 @@
 
             <input class="id-field" type="text" name="id" hidden>
 
-            <button class="change-button" type="submit" name="change-news"> Ändra </button>
+            <button class="popup-button" type="submit" name="change-news"> Ändra </button>
         </form>
     </article>
 </div>

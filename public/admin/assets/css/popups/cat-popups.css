@@ -1,0 +1,14 @@
+/* Specific CSS for CAT-popups */
+.show-slide {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.show-slide label {
+    font-size: 16px;
+}
+
+select {
+    height: 28px;
+    padding-left: 6px;
+}

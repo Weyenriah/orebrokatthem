@@ -1,13 +1,16 @@
-<div class="change-remember-container" id="popup-change-remember-cat">
-    <article class="change-remember">
-        <div class="change-header">
+<div class="popup-container" id="popup-change-remember-cat">
+    <article class="small-container">
+        <div class="header">
             <h2> Ändra Katt i Minneslunden </h2>
             <button type="button" onclick="hidePopupChangeRememberCat()"> <i class="fas fa-times"></i> </button>
         </div>
 
-        <form class="change-form" method="POST" enctype="multipart/form-data">
+        <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="cat-image" class="cat-image">
+            <div class="file-input">
+                <label for="human-image"> Ändra Bild </label>
+                <input type="file" name="cat-image">
+            </div>
 
             <!-- Add cat information -->
             <div class="info">
@@ -45,7 +48,7 @@
 
             <input class="id-field" type="text" name="id" hidden>
 
-            <button class="change-button" type="submit" name="change-remember-cat"> Lägg till </button>
+            <button class="popup-button" type="submit" name="change-remember-cat"> Lägg till </button>
         </form>
     </article>
 </div>

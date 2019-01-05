@@ -1,13 +1,16 @@
-<div class="add-employee-container" id="popup-add-employee">
-    <article class="add-employee">
-        <div class="add-header">
+<div class="popup-container" id="popup-add-employee">
+    <article class="small-container">
+        <div class="header">
             <h2> Lägg till ny anställd </h2>
             <button type="button" onclick="hidePopupAddEmployee()"> <i class="fas fa-times"></i> </button>
         </div>
 
-        <form class="add-form" method="POST" enctype="multipart/form-data">
+        <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
-            <input type="file" name="human-image" class="human-image">
+            <div class="file-input">
+                <label for="human-image"> Välj Bild </label>
+                <input type="file" name="human-image">
+            </div>
 
             <div class="show-employee">
                 <input type="checkbox" id="show" name="show" value="show" checked>
@@ -45,7 +48,7 @@
                 <input type="password" name="password" id="password" placeholder="Skriv in lösenord">
             </div>
 
-            <button class="add-button" type="submit" name="add-employee"> Lägg till </button>
+            <button class="popup-button" type="submit" name="add-employee"> Lägg till </button>
         </form>
     </article>
 </div>

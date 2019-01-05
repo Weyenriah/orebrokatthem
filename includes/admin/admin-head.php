@@ -30,14 +30,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/footer.css">
 
     <!-- Popup CSS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/add-cat.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/change-cat.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/add-news.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/change-news.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/add-remember-cat.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/change-remember-cat.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/add-employee.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/change-employee.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/cat-popups.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/employee-popups.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/remember-popups.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/navigation.css">

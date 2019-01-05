@@ -1,0 +1,33 @@
+/* Specific CSS for EMPLOYEE-popups */
+.life {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.show-employee, .login-or-not {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.show-employee label, .login-or-not label {
+    font-size: 16px;
+}
+
+/* CSS for "Change" */
+#logged-in {
+    display: none;
+}
+
+#logged-in input {
+    width: 98%;
+}
+
+/* CSS for "Add" */
+#can-login {
+    display: none;
+}
+
+#can-login input {
+    width: 98%;
+}

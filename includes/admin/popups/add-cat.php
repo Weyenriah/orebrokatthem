@@ -1,18 +1,18 @@
-<div class="add-cat-container" id="popup-cat">
-    <article class="add-cat">
-        <div class="add-header">
+<div class="popup-container" id="popup-cat">
+    <article class="small-container">
+        <div class="header">
             <h2> Lägg till ny Katt </h2>
             <button type="button" onclick="hidePopupCat()"> <i class="fas fa-times"></i> </button>
         </div>
 
-        <form class="add-form" method="POST" enctype="multipart/form-data">
+        <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
             <div class="file-input">
                 <label for="cat-image0"> Välj bilder </label>
                 <div class="choose-file">
-                    <input type="file" name="cat-image0" class="cat-image">
-                    <input type="file" name="cat-image1" class="cat-image">
-                    <input type="file" name="cat-image2" class="cat-image">
+                    <input type="file" name="cat-image0">
+                    <input type="file" name="cat-image1">
+                    <input type="file" name="cat-image2">
                 </div>
             </div>
 
@@ -62,7 +62,7 @@
                 <label for="show"> Visa på första sida</label>
             </div>
 
-            <button class="add-button" type="submit" name="add-cat"> Lägg till </button>
+            <button class="popup-button" type="submit" name="add-cat"> Lägg till </button>
         </form>
     </article>
 </div>
