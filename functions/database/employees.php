@@ -3,7 +3,7 @@
 trait Employees {
     // Add Employee
     public function addEmployee($name, $title, $telephone, $email, $password, $hidden, $image) {
-        if ($this->changesLastHour('employees') > 20) {
+        if ($this->changesLastHour('employees') > 20 || $this->emailExists($email)) {
             return false;
         } else {
             $sql = "INSERT INTO employees (
@@ -41,6 +41,9 @@ trait Employees {
 
     // Change Employee
     public function changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $hidden, $image) {
+        if ($this->emailExists($email, $id)) {
+            return false;
+        }
         $sql = 'UPDATE employees SET
               name = :name,
               title = :title,
@@ -84,5 +87,18 @@ trait Employees {
         return $stmt->execute(array(
             'id' => $id,
         ));
+    }
+
+    public function emailExists($email, $excludedUserId = 0) {
+        $sql = 'SELECT email FROM employees WHERE id != :id AND email = :email';
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute([
+            'id' => $excludedUserId,
+            'email' => $email
+        ]);
+
+        return count($stmt->fetchAll()) < 1 ? false : true;
     }
 }
