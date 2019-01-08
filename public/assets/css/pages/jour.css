@@ -28,7 +28,6 @@
 /* Change areas except submit-button (input:last-child) */
 #report textarea, .report input:not(:last-child) {
     margin-bottom: 10px;
-    background-color: #faf3f3;
     border: none;
     padding-left: 7px;
     font-family: "Calibri", sans-serif;
