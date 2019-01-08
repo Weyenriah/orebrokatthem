@@ -14,8 +14,8 @@
 
             <!-- Add cat information -->
             <div class="info">
-                <label for="desc"> Beskrivning </label>
-                <textarea name="desc" id="desc" rows="6" cols="50"></textarea>
+                <label for="change-desc-news"> Beskrivning </label>
+                <textarea name="desc" id="change-desc-news" rows="6" cols="50"></textarea>
             </div>
 
             <input class="id-field" type="text" name="id" hidden>

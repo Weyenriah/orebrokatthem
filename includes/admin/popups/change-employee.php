@@ -13,40 +13,40 @@
             </div>
 
             <div class="show-employee">
-                <input type="checkbox" class="show-employ" id="show" name="show" value="show">
-                <label for="show"> Visa på hemsidan </label>
+                <input type="checkbox" class="show-employ" id="change-show-employee" name="show" value="show">
+                <label for="change-show-employee"> Visa på hemsidan </label>
             </div>
 
             <!-- Add cat information -->
             <div class="info">
-                <label for="human-name"> Namn </label>
-                <input type="text" name="human-name" class="human-name" id="human-name" value="Lägg till namn...">
+                <label for="change-human-name"> Namn </label>
+                <input type="text" name="human-name" id="change-human-name" class="human-name" value="Lägg till namn...">
             </div>
 
             <div class="info">
-                <label for="human-title"> Yrkestitel </label>
-                <input type="text" name="human-title" class="human-title" id="human-title" value="Lägg till titel...">
+                <label for="change-human-title"> Yrkestitel </label>
+                <input type="text" name="human-title" class="human-title" id="change-human-title" value="Lägg till titel...">
             </div>
 
             <div class="info">
-                <label for="tele"> Telefonnummer </label>
-                <input type="text" name="tele" class="tele" id="tele" value="Lägg till telefonnummer...">
+                <label for="change-tele"> Telefonnummer </label>
+                <input type="text" name="tele" class="tele" id="change-tele" value="Lägg till telefonnummer...">
             </div>
 
             <div class="info">
-                <label for="email"> E-post </label>
-                <input type="text" name="email" class="email" id="email" value="Lägg till epost...">
+                <label for="change-email"> E-post </label>
+                <input type="text" name="email" class="email" id="change-email" value="Lägg till epost...">
             </div>
 
 
             <div class="login-or-not">
-                <input type="checkbox" class="log-in" id="log-in" name="log-in" value="log-in" onclick="showChangePassword(true)">
-                <label for="log-in"> Inloggsbehörigheter </label>
+                <input type="checkbox" class="log-in" id="change-log-in" name="log-in" value="log-in" onclick="showChangePassword(true)">
+                <label for="change-log-in"> Inloggsbehörigheter </label>
             </div>
 
             <div class="info" id="logged-in">
-                <label for="password">Byt lösenord </label>
-                <input type="text" class="password" name="password" id="password" placeholder="Skriv in nytt lösenord">
+                <label for="change-password">Byt lösenord </label>
+                <input type="text" class="password" id="change-password" name="password" placeholder="Skriv in nytt lösenord">
             </div>
 
             <input class="id-field" type="text" name="id" hidden>

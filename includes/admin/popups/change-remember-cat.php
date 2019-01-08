@@ -14,36 +14,36 @@
 
             <!-- Add cat information -->
             <div class="info">
-                <label for="catname"> Namn </label>
-                <input type="text" class="catname" name="catname" id="catname" value="Kattens namn...">
+                <label for="change-remem-catname"> Namn </label>
+                <input type="text" class="catname" id="change-remem-catname" name="catname" value="Kattens namn...">
             </div>
             <div class="life">
                 <div class="remem-info">
-                    <label for="born"> Född </label>
-                    <input type="text" class="born" name="born" id="born" value="(yyyy)">
+                    <label for="change-remem-born"> Född </label>
+                    <input type="text" class="born" id="change-remem-born" name="born" value="(yyyy)">
                 </div>
                 <div class="remem-info">
-                    <label for="died"> Död </label>
-                    <input type="text" class="died" name="died" id="died" value="(yyyy-mm-dd)">
+                    <label for="change-remem-died"> Död </label>
+                    <input type="text" class="died" id="change-remem-died" name="died" value="(yyyy-mm-dd)">
                 </div>
             </div>
             <div class="life">
                 <div class="remem-info">
-                    <label for="came"> Kom till katthem </label>
-                    <input type="text" class="came" name="came" id="came" value="(yyyy-mm-dd)">
+                    <label for="change-remem-came"> Kom till katthem </label>
+                    <input type="text" class="came" id="change-remem-came" name="came" value="(yyyy-mm-dd)">
                 </div>
                 <div class="remem-info">
-                    <label for="adopted"> Adopterad </label>
-                    <input type="text" class="adopted" name="adopted" id="adopted" value="(yyyy-mm-dd)">
+                    <label for="change-remem-adopted"> Adopterad </label>
+                    <input type="text" class="adopted" id="change-remem-adopted" name="adopted" value="(yyyy-mm-dd)">
                 </div>
             </div>
             <div class="info">
-                <label for="desc"> Beskrivning </label>
-                <textarea id="desc" name="desc" class="desc" rows="6" cols="50"></textarea>
+                <label for="change-remem-desc"> Beskrivning </label>
+                <textarea name="desc" class="desc" id="change-remem-desc" rows="6" cols="50"></textarea>
             </div>
             <div class="info">
-                <label for="cause"> Dödsorsak </label>
-                <input type="text" class="cause" name="cause" id="cause" value="Text här...">
+                <label for="change-remem-cause"> Dödsorsak </label>
+                <input type="text" class="cause" id="change-remem-cause" name="cause" value="Text här...">
             </div>
 
             <input class="id-field" type="text" name="id" hidden>
