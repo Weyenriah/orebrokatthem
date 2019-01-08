@@ -142,7 +142,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>
             <div class="found-contact">
                 <h3 class="second-row-heading"> Skicka in anmälan </h3>
-                <a class="link-calibri" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSedgA2l24ZJk6WMcGwPC_nVfs4PxgvFTStcVbs-FQ23IoQeNg/viewform?embedded=true&usp=embed_googleplus">
+                <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-found')); ?>">
                     <i class="fas fa-external-link-alt"></i> Formulär för hittad katt
                 </a>
             </div>
@@ -158,13 +158,15 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="relocate-contact">
                 <div class="">
                     <h3 class="second-row-heading"> Skicka in anmälan </h3>
-                    <a class="link-calibri" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfggjBksVu6Gkd33TYm4PMTHuMGIGJJHY62yV5tOfnfzLFXYA/viewform?embedded=true&usp=embed_googleplus">
+                    <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-replacement')); ?>">
                         <i class="fas fa-external-link-alt"></i> Formulär för omplacering
                     </a>
                 </div>
                 <div class="">
                     <h3 class="second-row-heading"> Behövs inte en omplacering längre? </h3>
-                    <a class="link-calibri" href="mailto:info@orebrokatthem.com"><i class="fas fa-envelope"></i> info@orebrokatthem.com </a>
+                    <a class="link-calibri" href="mailto:<?php echo($database->getContent('mail-replacement')); ?>">
+                        <i class="fas fa-envelope"></i> <?php echo($database->getContent('mail-replacement')); ?>
+                    </a>
                 </div>
             </div>
         </div>
