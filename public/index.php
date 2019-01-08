@@ -237,6 +237,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 
 <script>
     // === CAROUSEL ===
+    let catOpen = false;
+
     let slideIndex = 1;
     showSlides(slideIndex);
     // Changes slide every 4s
@@ -244,7 +246,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         // Make sure to not shift slide if the mouse is over it
         // "border-right-style" is used to determine of the mouse is over or not
         let mouseOverSlide = window.getComputedStyle(document.getElementById('carousel')).getPropertyValue('border-right-style') === 'hidden';
-        if (!mouseOverSlide) {
+
+        if (!mouseOverSlide && !catOpen) {
             showSlides(slideIndex++);
         }
     }, 4000);
@@ -284,6 +287,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 
     // == SHOW POPUP ===
     function showCat(id) {
+        catOpen = true;
+
         let popup = document.getElementById("cat-page");
         let background = document.getElementById("toned-down");
 
@@ -311,6 +316,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
 
     /* === HIDE POPUP === */
     function hideCat() {
+        catOpen = false;
+
         let popup = document.getElementById("cat-page");
         let background = document.getElementById("toned-down");
 
