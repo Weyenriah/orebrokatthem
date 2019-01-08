@@ -114,8 +114,8 @@ if(isset($_POST['jour-contact'])) {
             </form>
             <div class="report-contact">
                 <h5 class="second-row-heading"> Eller ring till </h5>
-                <p> <i class="fas fa-phone"></i> 0580-125 69 </p>
-                <small> Kikki </small>
+                <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('jour-contact-tele')); ?> </p>
+                <small> <?php echo($database->getContent('jour-contact-name')); ?> </small>
             </div>
         </div>
     </section>
