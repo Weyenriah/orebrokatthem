@@ -199,7 +199,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                             </div>
                         </div>
                         <div class="img-info-remem">
-                            <?php if ($cat['image'] !== '') { ?>
+                            <?php if ($cat['image'] !== '' && $cat['image'] !== NULL) { ?>
                                 <div class="img-border remem-img">
                                     <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
                                 </div>

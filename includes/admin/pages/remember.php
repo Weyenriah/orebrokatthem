@@ -199,7 +199,7 @@ $rememCats = $database->getRememberCats($rememPage);
             $death = date('Y-m-d', strtotime($rememCat['death']));
             ?>
             <article class="remem-cat" id="remember-<?php echo($rememCat['id']) ?>">
-                <?php if ($rememCat['image'] !== '') { ?>
+                <?php if ($rememCat['image'] !== '' && $rememCat['image'] !== NULL) { ?>
                     <div class="remem-cat-img">
                         <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $rememCat['image']); ?>">
                     </div>
