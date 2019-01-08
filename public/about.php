@@ -2,6 +2,16 @@
     require_once dirname(__FILE__) . '/../functions/load.php';
 
     $employees = $database->getEmployees();
+
+    if(isset($_POST['about-contact'])) {
+        $name = $_POST['firstname'];
+        $email = $_POST['email'];
+        $msg = $_POST['subject'];
+
+        // TODO send mail
+
+        $mailSent = true;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -11,7 +21,16 @@
 
 <body id="body">
     <!-- Calls for main navigation -->
-    <?php include(APP_FOLDER . '/includes/navigation.php') ?>
+    <?php include(APP_FOLDER . '/includes/navigation.php');
+
+    if(isset($mailSent)) {
+        if($mailSent) { ?>
+            <p class="sent-mail"> Mejl skickat! </p>
+        <?php } else { ?>
+            <p class="mail-not-sent"> Mejl ej skickat. </p>
+        <?php }
+    }
+    ?>
 
     <!-- Specific heading to this page -->
     <header class="header">
@@ -46,23 +65,23 @@
     <section class="general-grid text-box" id="contact">
         <h2>Kontakta oss</h2>
         <div class="contact-us">
-            <form>
+            <form method="post">
                 <label for="firstname" class="second-row-heading">
                     Ditt namn
                 </label>
                 <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
 
-                <label for="firstname" class="second-row-heading">
+                <label for="email" class="second-row-heading">
                     Din emailadress
                 </label>
-                <input type="text" id="firstname" name="firstname" placeholder="Ditt namn här..."/>
+                <input type="text" id="email" name="email" placeholder="Ditt namn här..."/>
 
                 <label for="subject" class="second-row-heading">
                     Meddelande
                 </label>
                 <textarea id="subject" name="subject" placeholder="Skriv ditt meddelande här..."></textarea>
 
-                <input type="submit" value="Skicka" class="button submit-button">
+                <input type="submit" name="about-contact" value="Skicka" class="button submit-button">
             </form>
 
             <!-- Information where to contact otherwise -->

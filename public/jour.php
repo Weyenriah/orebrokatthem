@@ -6,6 +6,8 @@ if(isset($_POST['jour-contact'])) {
     $msg = $_POST['msg'];
 
     // TODO send mail
+
+    $mailSent = true;
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +18,16 @@ if(isset($_POST['jour-contact'])) {
 
 <body id="body">
     <!-- Calls for main navigation -->
-    <?php include(APP_FOLDER . '/includes/navigation.php') ?>
+    <?php include(APP_FOLDER . '/includes/navigation.php');
+
+    if(isset($mailSent)) {
+        if($mailSent) { ?>
+            <p class="sent-mail"> Mejl skickat! </p>
+        <?php } else { ?>
+            <p class="mail-not-sent"> Mejl ej skickat. </p>
+        <?php }
+    }
+    ?>
 
     <!-- Specific heading to this page -->
     <header class="header">

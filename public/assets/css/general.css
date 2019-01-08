@@ -358,3 +358,14 @@ body > section:nth-last-of-type(2) {
 .small-info small:not(:first-child) {
     margin-left: 4px;
 }
+
+/* === SENT MAIL CSS (jour & about) === */
+.sent-mail {
+    text-align: center;
+    color: darkgreen;
+}
+
+.mail-not-sent {
+    text-align: center;
+    color: darkred;
+}
