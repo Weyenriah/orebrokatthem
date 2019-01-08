@@ -1,3 +1,25 @@
+/* === MEMBER STYLING === */
+.member-contact {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.member-payment p:first-of-type {
+    margin-bottom: 0;
+}
+
+.member-mail a {
+    text-decoration: none;
+    color: #7595b2;
+}
+.member-mail a:hover {
+    color: #415463;
+    animation-name: link;
+    animation-duration: 0.5s;
+}
+
 /* === INSURANCE STYLING === */
 .insurance {
     display: grid;

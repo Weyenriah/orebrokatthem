@@ -15,9 +15,21 @@
         <p> <?php echo(nl2br($database->getContent('support-header'))); ?> </p>
     </header>
 
-    <section class="general-grid text-box blue-background " id="membership">
+    <section class="general-grid text-box blue-background" id="membership">
         <h2> Bli medlem </h2>
         <p class="paragraph-position"> <?php echo(nl2br($database->getContent('support-member'))); ?> </p>
+        <div class="member-contact">
+            <div class="member-payment">
+                <h5 class="second-row-heading"> Betalningsmetoder </h5>
+                <p><i>Postgiro:</i> <?php echo($database->getContent('support-member-post')); ?> </p>
+                <p><i>Swish:</i> <?php echo($database->getContent('support-member-swish')); ?> </p>
+            </div>
+            <div class="member-mail">
+                <h5 class="second-row-heading"> Kontakt vid kompletterande mejl </h5>
+                <a href="<?php echo($database->getContent('support-member-mail')); ?>"> <?php echo($database->getContent('support-member-mail')); ?> </a>
+            </div>
+        </div>
+
     </section>
 
     <section class="general-grid text-box" id="insurance">
@@ -27,7 +39,7 @@
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <div class="insurance-text">
-                <p> Ska du försäkra din katt? Om du tecknar försäkringen via vårt ombud på Agria och uppger att du vill stödja Örebro Katthem så får vi en viss provision. Katten behöver inte vara adopterad från oss!</p>
+                <p> <?php echo($database->getContent('support-insuranceinfo')); ?> </p>
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
                 <p> <?php echo($database->getContent('support-insurance-name')); ?> <br/>
