@@ -39,7 +39,7 @@
                 <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
             </div>
             <div class="insurance-text">
-                <p> <?php echo($database->getContent('support-insuranceinfo')); ?> </p>
+                <p> <?php echo(nl2br($database->getContent('support-insuranceinfo'))); ?> </p>
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
                 <p> <?php echo($database->getContent('support-insurance-name')); ?> <br/>

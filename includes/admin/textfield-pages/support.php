@@ -12,13 +12,28 @@ $fields = [
         'rows' => 10
     ],
     [
-        'element' => 'support-catneed',
-        'text' => 'Ändra önskelista för katter',
-        'rows' => 10
+        'text' => 'Ändra betalningsmetodsinformation',
+        'fields' => [
+            [
+                'element' => 'support-member-post',
+                'text' => 'Postgiro',
+                'rows' => 1
+            ],
+            [
+                'element' => 'support-member-swish',
+                'text' => 'Swish',
+                'rows' => 1
+            ],
+        ]
     ],
     [
-        'element' => 'support-humanneed',
-        'text' => 'Ändra önskelista för personalen',
+        'element' => 'support-member-mail',
+        'text' => 'Ändra mail för kassör',
+        'rows' => 1
+    ],
+    [
+        'element' => 'support-insuranceinfo',
+        'text' => 'Ändra text i "Försäkra din katt"',
         'rows' => 10
     ],
     [
@@ -45,6 +60,16 @@ $fields = [
                 'rows' => 1
             ]
         ]
+    ],
+    [
+        'element' => 'support-catneed',
+        'text' => 'Ändra önskelista för katter',
+        'rows' => 10
+    ],
+    [
+        'element' => 'support-humanneed',
+        'text' => 'Ändra önskelista för personalen',
+        'rows' => 10
     ]
 ];
 
