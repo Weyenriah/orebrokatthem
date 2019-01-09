@@ -24,9 +24,9 @@
                 <p><i>Postgiro:</i> <?php echo($database->getContent('support-member-post')); ?> </p>
                 <p><i>Swish:</i> <?php echo($database->getContent('support-member-swish')); ?> </p>
             </div>
-            <div class="member-mail">
+            <div>
                 <h5 class="second-row-heading"> Kontakt vid kompletterande mejl </h5>
-                <a href="<?php echo($database->getContent('support-member-mail')); ?>"> <?php echo($database->getContent('support-member-mail')); ?> </a>
+                <a class="link-calibri" href="<?php echo($database->getContent('support-member-mail')); ?>"> <?php echo($database->getContent('support-member-mail')); ?> </a>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
                 <p> <?php echo($database->getContent('support-insurance-name')); ?> <br/>
-                    <i class="fas fa-envelope"></i> <a href="mailto:<?php echo($database->getContent('support-insurance-email')); ?>">
+                    <i class="fas fa-envelope"></i> <a class="link-calibri" href="mailto:<?php echo($database->getContent('support-insurance-email')); ?>">
                         <?php echo($database->getContent('support-insurance-email')); ?>
                     </a>
                     <br/>

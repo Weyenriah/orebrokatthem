@@ -53,17 +53,6 @@
     font-family: "Calibri", sans-serif;
     color: #415463;
 }
-.employee-info a {
-    text-decoration: none;
-    color: #7595b2;
-    font-size: 15px;
-}
-
-.employee-info a:hover {
-    color: #415463;
-    animation-name: link;
-    animation-duration: 0.5s;
-}
 
 /* Styling that overrides general.css (p) */
 .tele {
@@ -78,9 +67,6 @@
 }
 .tele i {
     margin-right: 6px;
-}
-.employee-info a i {
-    margin-right: 1px;
 }
 
 
@@ -164,20 +150,6 @@
 
 .contact-become div:first-child {
     margin-right: 20px;
-}
-
-/* Contact information link styling */
-.contact-become div a {
-    text-decoration: none;
-    color: #7595b2;
-    font-family: "Calibri", sans-serif;
-}
-.contact-become div a:hover {
-    color: #415463;
-    animation-name: link;
-        -webkit-animation-name: link; /* For Safari */
-    animation-duration: 0.5s;
-        -webkit-animation-duration: 0.5s; /* For Safari */
 }
 
 @media only screen and (max-width: 498px) {

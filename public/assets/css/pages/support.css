@@ -10,16 +10,6 @@
     margin-bottom: 0;
 }
 
-.member-mail a {
-    text-decoration: none;
-    color: #7595b2;
-}
-.member-mail a:hover {
-    color: #415463;
-    animation-name: link;
-    animation-duration: 0.5s;
-}
-
 /* === INSURANCE STYLING === */
 .insurance {
     display: grid;
@@ -33,17 +23,6 @@
 .insurance-text i {
     font-size: 15px;
     margin-right: 3px;
-}
-
-.insurance a {
-    text-decoration: none;
-    color: #7595b2;
-}
-
-.insurance a:hover {
-    color: #415463;
-    animation-name: link;
-    animation-duration: 0.5s;
 }
 
 #insurance-img {

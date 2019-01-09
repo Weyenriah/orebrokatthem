@@ -54,7 +54,7 @@
                         <h3> <?php echo($employee['name']); ?> </h3>
                         <small> <?php echo($employee['title']); ?> </small>
                         <p class="tele"><i class="fas fa-phone"></i> <?php echo($employee['telephone']); ?> </p>
-                        <a href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i> <?php echo($employee['email']); ?> </a>
+                        <a class="link-calibri" href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i> <?php echo($employee['email']); ?> </a>
                     </div>
                 </article>
             <?php } ?>
@@ -144,7 +144,7 @@
                     </div>
                     <div>
                         <h5 class="second-row-heading"> Mejla personalansvarige </h5>
-                        <a href="mailto:<?php echo($database->getContent('about-vol-email')); ?>">
+                        <a class="link-calibri" href="mailto:<?php echo($database->getContent('about-vol-email')); ?>">
                             <?php echo($database->getContent('about-vol-email')); ?>
                         </a>
                     </div>
