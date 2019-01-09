@@ -14,7 +14,7 @@
         <h1> Stöd oss </h1>
         <p> <?php echo(nl2br($database->getContent('support-header'))); ?> </p>
     </header>
-
+    <!-- Become Member -->
     <section class="general-grid text-box blue-background" id="membership">
         <h2> Bli medlem </h2>
         <p class="paragraph-position"> <?php echo(nl2br($database->getContent('support-member'))); ?> </p>
@@ -29,9 +29,8 @@
                 <a class="link-calibri" href="<?php echo($database->getContent('support-member-mail')); ?>"> <?php echo($database->getContent('support-member-mail')); ?> </a>
             </div>
         </div>
-
     </section>
-
+    <!-- Insurance for cat -->
     <section class="general-grid text-box" id="insurance">
         <h2> Försäkra din katt </h2>
         <div class="paragraph-position insurance">
@@ -52,7 +51,7 @@
             </div>
         </div>
     </section>
-
+    <!-- Wishinglist -->
     <section class="general-grid text-box blue-background" id="wishlist">
         <h2> Önskelista </h2>
         <div class="paragraph-position">
@@ -109,6 +108,5 @@
 
     <!-- Calls for footer -->
     <?php include(APP_FOLDER . '/includes/footer.php') ?>
-
 </body>
 </html>

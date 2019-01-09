@@ -119,7 +119,6 @@ if(isset($_POST['jour-contact'])) {
             </div>
         </div>
     </section>
-
     <!-- Calls for footer -->
     <?php include(APP_FOLDER . '/includes/footer.php') ?>
 </body>

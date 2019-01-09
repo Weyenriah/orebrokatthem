@@ -45,8 +45,8 @@ function array_any(array $array, callable $fn) {
 
 <!-- General navigation -->
 <nav class="navbar">
-    <ul class="responsive">
-        <span class="divide-menu-elements">
+    <div class="responsive">
+        <div class="divide-menu-elements">
             <div class="menu-elements">
                 <a href="index.php" id="logo"> <img src="<?php echo BASE_URL ?>assets/images/white-logo.png"> </a>
                 <button type="button" class="menu-icons" id="collapsing" onclick="collapse();" >
@@ -73,8 +73,8 @@ function array_any(array $array, callable $fn) {
                 </div>
             </div>
             <hr class="menu-divider"/>
-        </span>
-    </ul>
+        </div>
+    </div>
 </nav>
 <!-- Container that pops up with all the links -->
 <nav class="toggle-menu">

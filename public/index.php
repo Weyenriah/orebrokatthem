@@ -237,129 +237,129 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     <!-- Calls for footer -->
     <?php include(APP_FOLDER . '/includes/footer.php') ?>
 
-<script>
-    // === CAROUSEL ===
-    let catOpen = false;
+    <script>
+        // === CAROUSEL ===
+        let catOpen = false;
 
-    let slideIndex = 1;
-    showSlides(slideIndex);
-    // Changes slide every 4s
-    setInterval(() => {
-        // Make sure to not shift slide if the mouse is over it
-        // "border-right-style" is used to determine of the mouse is over or not
-        let mouseOverSlide = window.getComputedStyle(document.getElementById('carousel')).getPropertyValue('border-right-style') === 'hidden';
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        // Changes slide every 4s
+        setInterval(() => {
+            // Make sure to not shift slide if the mouse is over it
+            // "border-right-style" is used to determine of the mouse is over or not
+            let mouseOverSlide = window.getComputedStyle(document.getElementById('carousel')).getPropertyValue('border-right-style') === 'hidden';
 
-        if (!mouseOverSlide && !catOpen) {
-            showSlides(slideIndex++);
-        }
-    }, 4000);
+            if (!mouseOverSlide && !catOpen) {
+                showSlides(slideIndex++);
+            }
+        }, 4000);
 
-    // Shows right "current" slide
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slide = document.getElementsByClassName("slide");
-        let dots = document.getElementsByClassName("dot");
-
-        // Adds display none on every slide to hide it
-        for(i = 0; i < slide.length; i++) {
-            slide[i].style.display = "none";
+        // Shows right "current" slide
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
         }
 
-        // If slideIndex is greater than slide.length, add 1
-        if(slideIndex > slide.length) {
-            slideIndex = 1;
+        function showSlides(n) {
+            let i;
+            let slide = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            // Adds display none on every slide to hide it
+            for(i = 0; i < slide.length; i++) {
+                slide[i].style.display = "none";
+            }
+
+            // If slideIndex is greater than slide.length, add 1
+            if(slideIndex > slide.length) {
+                slideIndex = 1;
+            }
+            // If slideIndex is less than 1, slideIndex equals to slide.length
+            if(slideIndex < 1) {
+                slideIndex = slide.length;
+            }
+
+            // Managing the dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+
+            slide[slideIndex - 1].style.display = "block";
+            dots[slideIndex-1].className += " active-dot";
         }
-        // If slideIndex is less than 1, slideIndex equals to slide.length
-        if(slideIndex < 1) {
-            slideIndex = slide.length;
+
+        // == SHOW POPUP ===
+        function showCat(id) {
+            catOpen = true;
+
+            let popup = document.getElementById("cat-page");
+            let background = document.getElementById("toned-down");
+
+            let cat = document.getElementById("cat-" + id);
+
+            /* Matches the information from popup with cat */
+            popup.getElementsByClassName("cat-name")[0].textContent = cat.getElementsByClassName("cat-name")[0].textContent;
+            popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
+            popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
+            popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
+            popup.getElementsByClassName("adopt")[0].href = cat.getElementsByClassName("adopt")[0].href;
+            popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
+            popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+            popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+            popup.getElementsByClassName("popup-slide")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+            popup.getElementsByClassName("demo")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
+            popup.getElementsByClassName("demo")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
+            popup.getElementsByClassName("demo")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
+            popup.getElementsByClassName("home-popup")[0].textContent = cat.getElementsByClassName("home-cat")[0].textContent;
+
+            /* Show popup */
+            popup.style.display = "block";
+            background.style.display = "block";
         }
 
-        // Managing the dots
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active-dot", "");
+        /* === HIDE POPUP === */
+        function hideCat() {
+            catOpen = false;
+
+            let popup = document.getElementById("cat-page");
+            let background = document.getElementById("toned-down");
+
+            popup.style.display = "none";
+            background.style.display = "none";
         }
 
-        slide[slideIndex - 1].style.display = "block";
-        dots[slideIndex-1].className += " active-dot";
-    }
+        // === HIDE AND SHOW CONTENT ===
+        /* Hide and show/expand news flow */
+        let container = document.getElementById('news-container');
+        let buttonText = document.getElementById('my-button');
 
-    // == SHOW POPUP ===
-    function showCat(id) {
-        catOpen = true;
-
-        let popup = document.getElementById("cat-page");
-        let background = document.getElementById("toned-down");
-
-        let cat = document.getElementById("cat-" + id);
-
-        /* Matches the information from popup with cat */
-        popup.getElementsByClassName("cat-name")[0].textContent = cat.getElementsByClassName("cat-name")[0].textContent;
-        popup.getElementsByClassName("cat-age")[0].textContent = cat.getElementsByClassName("cat-age")[0].textContent;
-        popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
-        popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
-        popup.getElementsByClassName("adopt")[0].href = cat.getElementsByClassName("adopt")[0].href;
-        popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent;
-        popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
-        popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
-        popup.getElementsByClassName("popup-slide")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
-        popup.getElementsByClassName("demo")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
-        popup.getElementsByClassName("demo")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;
-        popup.getElementsByClassName("demo")[2].src = cat.getElementsByClassName("image-to-cat")[2].src;
-        popup.getElementsByClassName("home-popup")[0].textContent = cat.getElementsByClassName("home-cat")[0].textContent;
-
-        /* Show popup */
-        popup.style.display = "block";
-        background.style.display = "block";
-    }
-
-    /* === HIDE POPUP === */
-    function hideCat() {
-        catOpen = false;
-
-        let popup = document.getElementById("cat-page");
-        let background = document.getElementById("toned-down");
-
-        popup.style.display = "none";
-        background.style.display = "none";
-    }
-
-    // === HIDE AND SHOW CONTENT ===
-    /* Hide and show/expand news flow */
-    let container = document.getElementById('news-container');
-    let buttonText = document.getElementById('my-button');
-
-    /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
-    function showNews(){
-        if(container.classList.contains("expanded")) {
-            container.classList.remove("expanded");
-            /* Adds text so that the button is correct */
-            buttonText.innerHTML = 'Visa mer';
-        } else {
-            container.classList.add("expanded");
-            /* Adds text so that the button is correct */
-            buttonText.innerHTML = 'Dölj';
+        /* Checks if container contains class expanded, "if" it'll remove the class "else" it'll add it */
+        function showNews(){
+            if(container.classList.contains("expanded")) {
+                container.classList.remove("expanded");
+                /* Adds text so that the button is correct */
+                buttonText.innerHTML = 'Visa mer';
+            } else {
+                container.classList.add("expanded");
+                /* Adds text so that the button is correct */
+                buttonText.innerHTML = 'Dölj';
+            }
         }
-    }
 
-    /* Hide and show/expand remember-cats part */
-    let rememContainer = document.getElementById("remember-container");
-    let rememButtonText = document.getElementById("remem-button");
+        /* Hide and show/expand remember-cats part */
+        let rememContainer = document.getElementById("remember-container");
+        let rememButtonText = document.getElementById("remem-button");
 
-    function showRemem() {
-        if(rememContainer.classList.contains("expanded")) {
-            rememContainer.classList.remove("expanded");
-            /* Adds text so that the button is correct */
-            rememButtonText.innerHTML = 'Visa mer';
-        } else {
-            rememContainer.classList.add("expanded");
-            /* Adds text so that the button is correct */
-            rememButtonText.innerHTML = 'Dölj';
+        function showRemem() {
+            if(rememContainer.classList.contains("expanded")) {
+                rememContainer.classList.remove("expanded");
+                /* Adds text so that the button is correct */
+                rememButtonText.innerHTML = 'Visa mer';
+            } else {
+                rememContainer.classList.add("expanded");
+                /* Adds text so that the button is correct */
+                rememButtonText.innerHTML = 'Dölj';
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>

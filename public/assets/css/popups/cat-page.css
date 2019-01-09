@@ -1,3 +1,4 @@
+/* === BACKGROUND === */
 #toned-down {
     position: absolute;
     display: none;
@@ -8,6 +9,7 @@
     z-index: 1000000;
 }
 
+/* === MAIN POPUP-SQUARE === */
 #cat-page {
     position: fixed;
     display: none;
@@ -22,6 +24,7 @@
     z-index: 10000000;
 }
 
+/* === CLOSE BUTTON === */
 .close-button {
     float: right;
     background-color: transparent;
@@ -47,6 +50,7 @@ hr {
     margin-top: 19px;
 }
 
+/* === DISPLAY CAT === */
 .cat-info {
     display: flex;
     margin-top: 20px;
@@ -84,6 +88,7 @@ hr {
     font-family: "Calibri", sans-serif;
 }
 
+/* Adopt me-link CSS */
 .adopt-me {
     width: 100%;
     margin-top: 18px;
@@ -91,18 +96,17 @@ hr {
     text-align: center;
     font-family: "Georgia", serif;
 }
-
 .adopt-me a {
     text-decoration: none;
     color: #5e788f;
 }
-
 .adopt-me a:hover {
     color: #415463;
     animation-name: link-blue;
     animation-duration: 0.5s;
 }
 
+/* === IMAGE DISPLAY === */
 .popup-slide {
     width: 300px;
     display: none;
