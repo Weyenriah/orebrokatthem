@@ -78,8 +78,8 @@
 .big-page-nav {
     display: flex;
     justify-content: space-between;
-    list-style: none;
-    width: calc(100% - 40px);
+    list-style-type: none;
+    width: 100%;
 }
 .big-page-list-item a {
     text-decoration: none;
@@ -150,7 +150,7 @@
     grid-template-rows: 106px 1fr;
     height: 100%;
     width: 500px;
-    background-color: #a0cdf3;
+    background-color: #cce8ff;
     padding-bottom: 20px;
     z-index: 2;
     margin-left: 500px;
@@ -181,7 +181,7 @@
     color: #566e83;
     float: left;
     position: relative;
-    background-color: #a0cdf3;
+    background-color: #cce8ff;
 }
 
 #close-menu i {
