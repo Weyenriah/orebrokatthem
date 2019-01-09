@@ -82,21 +82,23 @@ function any_array(array $array, callable $fn) {
     </section>
     <section class="explore">
         <h2>Utforska</h2>
-        <?php
-        $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
+        <ul>
+            <?php
+            $request_uri = explode('?', $_SERVER['REQUEST_URI'])[0];
 
-        foreach ($footerLinks as $footerPage) {
-            $active = any_array($footerPage['uri'], function ($val) use($request_uri) {
-                return $val == $request_uri;
-            });
-            $activeString = $active ? ' active-foot ' : '';
-        ?>
-            <li class="footer-item <?php echo($footerPage['class']); ?>">
-                <a class="footer-link<?php echo($activeString); ?>" href="<?php echo($footerPage['uri'][0]); ?>">
-                    <?php echo($footerPage['name']); ?>
-                </a>
-            </li>
-        <?php } ?>
+            foreach ($footerLinks as $footerPage) {
+                $active = any_array($footerPage['uri'], function ($val) use($request_uri) {
+                    return $val == $request_uri;
+                });
+                $activeString = $active ? ' active-foot ' : '';
+                ?>
+                <li class="footer-item <?php echo($footerPage['class']); ?>">
+                    <a class="footer-link<?php echo($activeString); ?>" href="<?php echo($footerPage['uri'][0]); ?>">
+                        <?php echo($footerPage['name']); ?>
+                    </a>
+                </li>
+            <?php } ?>
+        </ul>
     </section>
 </footer>
 <footer class="second-footer">

@@ -72,7 +72,7 @@
 
 .footer-link {
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
     font-size: 15px;
     font-family: "Georiga", serif;
 }
@@ -80,22 +80,22 @@
 /* Social media links */
 .social-media a {
     text-decoration: none;
-    color: #5e788f;
+    color: #7595b2;
 }
 
 /* Hover over non-active footer-links */
 .footer-link:hover:not(.active-foot) {
-    animation-name: link-blue;
+    animation-name: link;
     animation-duration: 0.5s;
     color: #415463;
 }
 .active-foot {
-    color: #415463;
+    color: #7595b2;
     font-weight: bold;
 }
 
 .social-media a:hover {
-    animation-name: link-blue;
+    animation-name: link;
     animation-duration: 0.5s;
     color: #415463;
 }
@@ -112,6 +112,12 @@
 
 /* Styling for p on contact */
 .contact-p {
+    margin: 0;
+}
+
+/* Styling for ul in explore */
+.explore ul {
+    padding: 0;
     margin: 0;
 }
 
