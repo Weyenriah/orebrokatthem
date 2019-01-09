@@ -17,7 +17,7 @@
                 <label for="add-show-employee"> Visa på hemsidan </label>
             </div>
 
-            <!-- Add cat information -->
+            <!-- Add employee information -->
             <div class="info">
                 <label for="add-human-name"> Namn </label>
                 <input type="text" name="human-name" id="add-human-name" placeholder="Lägg till namn...">
@@ -61,6 +61,7 @@
         popup.style.display = "none";
     }
 
+    /* === SHOW PASSWORD === */
     function showPassword() {
         let password = document.getElementById('can-login');
         let checkbox = document.getElementById('login');

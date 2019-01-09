@@ -1,3 +1,4 @@
+/* === GENERAL TEXTFIELD CSS === */
 .textfield {
     grid-row: 2;
     grid-column: 2;
@@ -38,6 +39,7 @@
     animation-duration: 0.5s;
 }
 
+/* === GENERAL FORM CSS === */
 .forms {
     width: 100%;
 }
@@ -56,6 +58,7 @@
     margin: 0;
 }
 
+/* === MORE SPECIFIC CSS IN FORM === */
 .text-form {
     margin-top: 20px;
 }

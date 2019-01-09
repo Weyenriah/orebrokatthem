@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/general.css">
 
     <!-- Pages CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/general-pages.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/cats.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/news.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/employees.css">

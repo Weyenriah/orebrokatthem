@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <!-- Add cat information -->
+            <!-- Change cat information -->
             <div class="info">
                 <label for="change-catname"> Namn </label>
                 <input type="text" name="catname" id="change-catname" class="catname" value="Kattens namn...">

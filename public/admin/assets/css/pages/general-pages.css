@@ -1,0 +1,62 @@
+/* === GENERAL DISPLAYING CSS === */
+.page-display {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+/* === TEXT CSS === */
+.page-title {
+    margin-left: 30px;
+    margin-bottom: 5px;
+    font-size: 23px;
+    font-family: "Georgia", serif;
+    color: #415463;
+    text-align: center;
+}
+
+/* === BUTTONS CSS === */
+/* Add button CSS */
+.add-button {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 35px;
+    background-color: #5e788f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Calibri", sans-serif;
+    font-size: 18px;
+}
+.add-button:hover {
+    background-color: #415463;
+    animation-name: button-blue;
+    animation-duration: 0.5s;
+}
+
+/* Two buttons beside each other */
+.two-buttons-fix {
+    margin-bottom: 10px;
+    display: flex;
+}
+.two-buttons {
+    text-decoration: none;
+    font-family: "Calibri", sans-serif;
+    font-size: 18px;
+    color: #5e788f;
+    margin-right: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.two-buttons:hover {
+    color: #415463;
+    font-weight: bold;
+    animation-name: link-blue;
+    animation-duration: 0.5s;
+}
+.two-buttons i {
+    font-size: 15px;
+}

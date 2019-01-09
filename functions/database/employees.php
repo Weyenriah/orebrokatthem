@@ -3,9 +3,12 @@
 trait Employees {
     // Add Employee
     public function addEmployee($name, $title, $telephone, $email, $password, $hidden, $image) {
+        // Checks so that there's no spamming
+        // and if mail exists
         if ($this->changesLastHour('employees') > 20 || $this->emailExists($email)) {
             return false;
         } else {
+            // Insert information in database
             $sql = "INSERT INTO employees (
               `name`, 
               `title`, 
@@ -25,7 +28,6 @@ trait Employees {
             )";
             // Prepares a query
             $stmt = $this->pdo->prepare($sql);
-
             // Sends query to database
             return $stmt->execute(array(
                 'name' => $name,
@@ -41,9 +43,11 @@ trait Employees {
 
     // Change Employee
     public function changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $hidden, $image) {
+        // If email exists...
         if ($this->emailExists($email, $id)) {
             return false;
         }
+        // Update information in database
         $sql = 'UPDATE employees SET
               name = :name,
               title = :title,
@@ -56,30 +60,29 @@ trait Employees {
             'telephone' => $telephone,
             'email' => $email,
         ];
-
+        // Adds password if needed
         if (!($canLogin && $password === null)) {
             $sql .= ' password = :password,';
             $parameters['password'] = $password;
         }
+        // Adds image if needed
         if ($image != null) {
             $sql .= ' image = :image,';
             $parameters['image'] = $image;
         }
-
         $sql .= ' hidden = :hidden
                   WHERE
                   id = :id';
         $parameters['hidden'] = $hidden;
-
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
+        // Sends query to database
         return $stmt->execute($parameters);
     }
 
     // Delete Employee
     public function deleteEmployee($id) {
-        // Gets all information from database
+        // Deletes all information from database
         $sql = 'DELETE FROM employees WHERE id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
@@ -90,15 +93,16 @@ trait Employees {
     }
 
     public function emailExists($email, $excludedUserId = 0) {
+        // Gets right information from database
         $sql = 'SELECT email FROM employees WHERE id != :id AND email = :email';
-
+        // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
+        // Sends query to database
         $stmt->execute([
             'id' => $excludedUserId,
             'email' => $email
         ]);
-
+        // Returns and fetch if needed
         return count($stmt->fetchAll()) < 1 ? false : true;
     }
 }

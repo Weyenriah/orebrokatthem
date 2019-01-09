@@ -9,9 +9,10 @@ if (isset($_POST['removeNewsPost'])) {
 
 // Add news
 if(isset($_POST['add-news'])) {
+    //Security and checks files
     $desc = htmlentities(trim($_POST['desc']));
     $file = isset($_FILES['news-image']) ? $_FILES['news-image'] : null;
-
+    // If everything is fine, add to database
     if(is_string($desc) == true && $desc !== '' && strlen($desc) < 10000) {
         $image = SaveFile($file);
 
@@ -27,10 +28,11 @@ if(isset($_POST['add-news'])) {
 
 // Change news
 if(isset($_POST['change-news'])) {
+    //Security and checks files
     $id = $_POST['id'];
     $desc = htmlentities(trim($_POST['desc']));
     $file = isset($_FILES['news-image']) ? $_FILES['news-image'] : null;
-
+    // If everything is fine, change in database
     if(is_string($desc) == true && $desc !== '' && strlen($desc) < 10000) {
         $image = SaveFile($file);
 
@@ -60,9 +62,9 @@ $news = $database->getNews($newsPage);
 ?>
 
 <section class="page" id="news">
-    <h2>Hantera Nyheter</h2>
-    <button class="add-button-news" type="button" onclick="showPopupNews()"> Lägg till </button>
-
+    <h2 class="page-title">Hantera Nyheter</h2>
+    <button class="add-button" type="button" onclick="showPopupNews()"> Lägg till </button>
+    <!-- Pagination -->
     <div class="pagination">
         <?php if($newsPage > 0) { ?>
             <div class="previous-page">
@@ -79,7 +81,7 @@ $news = $database->getNews($newsPage);
             </div>
         <?php } ?>
     </div>
-
+    <!-- Added/Removed Text -->
     <?php if (isset($removedNews)) { ?>
         <div class="removed">
             <p>
@@ -87,7 +89,6 @@ $news = $database->getNews($newsPage);
             </p>
         </div>
     <?php } ?>
-
     <?php if (isset($newsAdded)) { ?>
         <div class="added">
             <p>
@@ -105,8 +106,8 @@ $news = $database->getNews($newsPage);
             </p>
         </div>
     <?php } ?>
-
-    <div class="news">
+    <!-- News-flow -->
+    <div class="page-display">
         <?php
         foreach ($news as $new) {
 
@@ -119,12 +120,12 @@ $news = $database->getNews($newsPage);
                     </div>
                 <?php } ?>
                 <div class="news-text">
-                    <div class="change-news">
-                        <button type="button" onclick="showPopupChangeNews(<?php echo($new['id']) ?>)">
+                    <div class="two-buttons-fix">
+                        <button class="two-buttons" type="button" onclick="showPopupChangeNews(<?php echo($new['id']) ?>)">
                             <i class="fas fa-pencil-alt"></i> Ändra Nyhet
                         </button>
                         <form method="post">
-                            <button type="submit" formmethod="post" name="removeNewsPost" value="<?php echo($new['id']); ?>">
+                            <button class="two-buttons" type="submit" formmethod="post" name="removeNewsPost" value="<?php echo($new['id']); ?>">
                                 <i class="fas fa-times"></i> Ta bort Nyhet
                             </button>
                         </form>
@@ -137,7 +138,7 @@ $news = $database->getNews($newsPage);
             </article>
         <?php } ?>
     </div>
-
+    <!-- Pagination -->
     <div class="pagination">
         <?php if($newsPage > 0) { ?>
             <div class="previous-page">

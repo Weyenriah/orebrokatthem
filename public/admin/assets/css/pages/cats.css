@@ -1,25 +1,10 @@
+/* === SPECIFIC CSS FOR CATS === */
 #cats {
     grid-row: 2;
     grid-column: 2;
 }
 
-#cats h2 {
-    margin-left: 30px;
-    margin-bottom: 5px;
-    font-size: 23px;
-    font-family: "Georgia", serif;
-    color: #415463;
-    text-align: center;
-}
-
-.cats {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    margin-left: 30px;
-    background-color: white;
-}
-
+/* Displaying the cats in flow */
 .cat {
     width: 100%;
     margin-bottom: 0;
@@ -52,34 +37,6 @@
 
 .cat-info-text {
     width: 75%;
-}
-
-.control-cat {
-    margin-bottom: 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.control-cat button {
-    text-decoration: none;
-    font-family: "Calibri", sans-serif;
-    font-size: 18px;
-    color: #5e788f;
-    margin-right: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.control-cat button:hover {
-    color: #415463;
-    font-weight: bold;
-    animation-name: link-blue;
-    animation-duration: 0.5s;
-}
-
-.control-cat button i {
-    font-size: 15px;
 }
 
 .cat-information {

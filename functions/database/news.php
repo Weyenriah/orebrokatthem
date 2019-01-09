@@ -3,9 +3,11 @@
 trait News {
     // Add News
     public function addNews($news, $image) {
+        // Checks no spamming
         if ($this->changesLastHour('news') > 20) {
             return false;
         } else {
+            // Insert into database
             $sql = 'INSERT INTO news (
                       `news`,
                       `image`
@@ -25,20 +27,18 @@ trait News {
 
     // Change News
     public function changeNews($id, $news, $image) {
+        // Updates database
         $sql = 'UPDATE news SET news = :news';
-
+        // Parameters needed
         $parameters = [
             'news' => $news,
             'id' => $id,
         ];
-
         if ($image != null) {
             $sql .= ', image = :image';
             $parameters['image'] = $image;
         }
-
         $sql .= ' WHERE id = :id';
-
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

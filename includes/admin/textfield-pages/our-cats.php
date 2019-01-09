@@ -27,6 +27,7 @@ foreach ($fields as $field) {
         <h2> Ändra på sida: Våra Katter </h2>
     </div>
     <div class="forms">
+        <!-- PHP puts in everything in the fields -->
         <?php foreach ($fields as $field) {
             echo "<form class='form' method='post'>
             <div class='text-form'>

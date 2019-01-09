@@ -175,11 +175,10 @@ $cats = $database->getAdminCats($catsPage);
 ?>
 
 <section class="page" id="cats">
-    <h2>Hantera Katter</h2>
-
-    <button class="add-button-employee" type="button" onclick="showPopupCats()"> Lägg till </button>
-
+    <h2 class="page-title">Hantera Katter</h2>
+    <button class="add-button" type="button" onclick="showPopupCats()"> Lägg till </button>
     <div class="pagination">
+        <!-- Pagination -->
         <?php if($catsPage > 0) { ?>
             <div class="previous-page">
                 <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
@@ -195,7 +194,7 @@ $cats = $database->getAdminCats($catsPage);
             </div>
         <?php } ?>
     </div>
-
+    <!-- Added/Removed text -->
     <?php if(isset($removedCat)) { ?>
         <div class="removed">
             <p>
@@ -209,7 +208,6 @@ $cats = $database->getAdminCats($catsPage);
             </p>
         </div>
     <?php } ?>
-
     <?php if(isset($addCat)) { ?>
         <div class="added">
             <p>
@@ -226,7 +224,6 @@ $cats = $database->getAdminCats($catsPage);
             </p>
         </div>
     <?php } ?>
-
     <?php if(isset($changeCat)) { ?>
         <div class="added">
             <p>
@@ -244,7 +241,8 @@ $cats = $database->getAdminCats($catsPage);
         </div>
     <?php } ?>
 
-    <div class="cats">
+    <!-- Show Cat-flow -->
+    <div class="page-display">
         <?php
         foreach ($cats as $cat) {
 
@@ -265,10 +263,12 @@ $cats = $database->getAdminCats($catsPage);
                 </div>
             </div>
             <div class="cat-text">
-                <div class="control-cat">
-                    <button type="button" onclick="showPopupChangeCat(<?php echo($cat['id']) ?>)"> <i class="fas fa-pencil-alt"></i> Ändra Katt </button>
+                <div class="two-buttons-fix">
+                    <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($cat['id']) ?>)">
+                        <i class="fas fa-pencil-alt"></i> Ändra Katt
+                    </button>
                     <form method="post">
-                        <button type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>">
+                        <button class="two-buttons" type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>">
                             <i class="fas fa-times"></i> Ta bort Katt
                         </button>
                     </form>
@@ -318,7 +318,7 @@ $cats = $database->getAdminCats($catsPage);
         </article>
         <?php } ?>
     </div>
-
+    <!-- Pagination -->
     <div class="pagination">
         <?php if($catsPage > 0) { ?>
             <div class="previous-page">

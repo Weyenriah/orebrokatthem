@@ -12,7 +12,7 @@
                 <input type="file" name="news-image">
             </div>
 
-            <!-- Add cat information -->
+            <!-- Add news information -->
             <div class="info">
                 <label for="change-desc-news"> Beskrivning </label>
                 <textarea name="desc" id="change-desc-news" rows="6" cols="50"></textarea>

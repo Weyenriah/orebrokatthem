@@ -142,9 +142,9 @@ $employees = $database->getEmployees(true);
 ?>
 
 <section class="page" id="employees">
-    <h2>Hantera Anställda</h2>
-    <button class="add-button-employee" type="button" onclick="showPopupAddEmployee()"> Lägg till </button>
-
+    <h2 class="page-title">Hantera Anställda</h2>
+    <button class="add-button" type="button" onclick="showPopupAddEmployee()"> Lägg till </button>
+    <!-- Removed Text -->
     <?php if (isset($removed)) { ?>
         <div class="removed-employee">
             <p>
@@ -152,8 +152,8 @@ $employees = $database->getEmployees(true);
             </p>
         </div>
     <?php } ?>
-
-    <div class="employees">
+    <!-- Employee-flow -->
+    <div class="page-display">
         <?php
         foreach ($employees as $employee) {
         ?>
@@ -164,10 +164,12 @@ $employees = $database->getEmployees(true);
                     </div>
                 <?php } ?>
                 <div class="employee-text">
-                    <div class="change-employees">
-                        <button type="button" onclick="showPopupChangeEmployee(<?php echo($employee['id']) ?>)"> <i class="fas fa-pencil-alt"></i> Ändra Anställd </button>
+                    <div class="two-buttons-fix">
+                        <button class="two-buttons" type="button" onclick="showPopupChangeEmployee(<?php echo($employee['id']) ?>)">
+                            <i class="fas fa-pencil-alt"></i> Ändra Anställd
+                        </button>
                         <form method="post">
-                            <button type="submit" formmethod="post" name="removeEmployee" value="<?php echo($employee['id']); ?>">
+                            <button class="two-buttons" type="submit" formmethod="post" name="removeEmployee" value="<?php echo($employee['id']); ?>">
                                 <i class="fas fa-times"></i> Ta bort Anställd
                             </button>
                         </form>

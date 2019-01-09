@@ -3,6 +3,7 @@ require_once dirname(__FILE__).'/../../functions/load.php';
 
 require_once dirname(__FILE__).'/../../functions/session.php';
 
+// Start session and stuff for login
 if(!isset($_SESSION['user'])) {
     header('Location: ' . BASE_URL . 'admin');
 
@@ -125,6 +126,7 @@ if(!isset($_SESSION['user'])) {
 
     showPage('<?php echo(isset($goToPage) ? $goToPage : 'cats'); ?>');
 
+    // Mark pages in nav
     <?php
     $pages = [
         'home',

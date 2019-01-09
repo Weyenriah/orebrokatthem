@@ -3,6 +3,7 @@
 trait Remember {
     // Add cat to Remember-flow
     public function addRememberCat($name, $born, $came, $adopted, $death, $description, $cause, $image) {
+        // Insert into database
         $sql = 'INSERT INTO remember(
                   `name`,
                   `born`,
@@ -22,10 +23,8 @@ trait Remember {
                   :cause,
                   :image
                 )';
-
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
         // Sends query to database
         return $stmt->execute(array(
            'name' => $name,
@@ -41,6 +40,7 @@ trait Remember {
 
     // Change cat from Remember-flow
     public function changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause, $image) {
+        // Updates database with information
         $sql = 'UPDATE remember SET
                   name = :name,
                   born = :born,
@@ -49,7 +49,7 @@ trait Remember {
                   death = :death,
                   description = :description,
                   cause = :cause';
-
+        // Parameters needed
         $parameters = [
             'id' => $id,
             'name' => $name,
@@ -60,17 +60,13 @@ trait Remember {
             'description' => $description,
             'cause' => $cause,
         ];
-
         if ($image != null) {
             $sql .= ', image = :image';
             $parameters['image'] = $image;
         }
-
         $sql .= ' WHERE id = :id';
-
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
         // Sends query to database
         return $stmt->execute($parameters);
     }

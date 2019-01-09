@@ -1,3 +1,4 @@
+/* === SPECIFIC CSS FOR EMPLOYEE === */
 #employees {
     grid-row: 2;
     grid-column: 2;
@@ -5,43 +6,7 @@
     width: 100%;
 }
 
-#employees h2 {
-    margin-left: 30px;
-    margin-bottom: 5px;
-    font-size: 23px;
-    font-family: "Georgia", serif;
-    color: #415463;
-    text-align: center;
-}
-
-.add-button-employee {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 35px;
-    background-color: #5e788f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: "Calibri", sans-serif;
-    font-size: 18px;
-}
-
-.add-button-employee:hover {
-    background-color: #415463;
-    animation-name: button-blue;
-    animation-duration: 0.5s;
-}
-
-
-.employees {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-left: 30px;
-    background-color: white;
-}
-
+/* Displaying the employees in flow */
 .employee {
     display: flex;
     width: 100%;
@@ -76,33 +41,6 @@
 
 .employee-info-text {
     width: 75%;
-}
-
-.change-employees {
-    margin-bottom: 10px;
-    display: flex;
-}
-
-.change-employees button {
-    text-decoration: none;
-    font-family: "Calibri", sans-serif;
-    font-size: 18px;
-    color: #5e788f;
-    margin-right: 30px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.change-employees button:hover {
-    color: #415463;
-    font-weight: bold;
-    animation-name: link-blue;
-    animation-duration: 0.5s;
-}
-
-.change-employees button i {
-    font-size: 15px;
 }
 
 .employee-information {

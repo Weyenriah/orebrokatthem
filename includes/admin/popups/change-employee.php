@@ -17,7 +17,7 @@
                 <label for="change-show-employee"> Visa på hemsidan </label>
             </div>
 
-            <!-- Add cat information -->
+            <!-- Change employee information -->
             <div class="info">
                 <label for="change-human-name"> Namn </label>
                 <input type="text" name="human-name" id="change-human-name" class="human-name" value="Lägg till namn...">
@@ -63,7 +63,7 @@
 
         popup.style.display = "none";
     }
-
+    /* === SHOW PASSWORD === */
     function showChangePassword(userAction) {
         let password = document.getElementById('logged-in');
         let checkbox = document.getElementById('log-in');

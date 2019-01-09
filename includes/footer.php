@@ -1,4 +1,5 @@
 <?php
+// Page selector
 $footerLinks = array(
     array(
         'uri' => array(BASE_URL . 'index.php', substr(BASE_URL,0, -1), BASE_URL),

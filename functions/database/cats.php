@@ -3,6 +3,7 @@
 trait Cats {
     // Add Cat
     public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $show){
+        // Checks so that there's no spamming
         if ($this->changesLastHour('cats') > 20) {
             return false;
         } else {
@@ -25,10 +26,8 @@ trait Cats {
               :contact,
               :show
             )";
-
             // Prepares a query
             $stmt = $this->pdo->prepare($sql);
-
             // Sends query to database
             $ok = $stmt->execute(array(
                 'catName' => $catName,
@@ -50,6 +49,7 @@ trait Cats {
 
     // Change Cat
     public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase) {
+        // Updates all information needed from database
         $sql = 'UPDATE cats SET 
                   name = :name,
                   age = :age,
@@ -61,10 +61,8 @@ trait Cats {
                   showcase = :showcase
                 WHERE 
                   id = :id';
-
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
-
         // Sends query to database
         return $stmt->execute(array(
             'id' => $id,
@@ -105,6 +103,7 @@ trait Cats {
     }
 
     public function addCatImage($id, $filename, $k) {
+        // Insert right information in database
         $sql = 'INSERT INTO cat_images (cat_id, image, k) VALUES(:cat_id, :image, :k) ON DUPLICATE KEY UPDATE image = :image2;';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);

@@ -127,10 +127,9 @@ $rememCats = $database->getRememberCats($rememPage);
 ?>
 
 <section class="page" id="remem-cats">
-    <h2>Hantera Katter i Minneslunden</h2>
-
-    <button class="add-button-remember" type="button" onclick="showPopupRememberCat()"> Lägg till </button>
-
+    <h2 class="page-title">Hantera Katter i Minneslunden</h2>
+    <button class="add-button" type="button" onclick="showPopupRememberCat()"> Lägg till </button>
+    <!-- Pagination -->
     <div class="pagination">
         <?php if($rememPage > 0) { ?>
             <div class="previous-page">
@@ -147,7 +146,7 @@ $rememCats = $database->getRememberCats($rememPage);
             </div>
         <?php } ?>
     </div>
-
+    <!-- Added/Removed Text -->
     <?php if (isset($removedRemember)) { ?>
         <div class="removed">
             <p>
@@ -155,7 +154,6 @@ $rememCats = $database->getRememberCats($rememPage);
             </p>
         </div>
     <?php } ?>
-
     <?php if(isset($addRememCat)) { ?>
         <div class="added">
             <p>
@@ -172,7 +170,6 @@ $rememCats = $database->getRememberCats($rememPage);
             </p>
         </div>
     <?php } ?>
-
     <?php if(isset($changeRememCat)) { ?>
         <div class="added">
             <p>
@@ -189,8 +186,8 @@ $rememCats = $database->getRememberCats($rememPage);
             </p>
         </div>
     <?php } ?>
-
-    <div class="remem-cats">
+    <!-- Remember Cat-flow -->
+    <div class="page-display">
         <?php
         foreach ($rememCats as $rememCat) {
             $born = ($rememCat['born'] === null) ? '-' : ($rememCat['born']);
@@ -205,10 +202,12 @@ $rememCats = $database->getRememberCats($rememPage);
                     </div>
                 <?php } ?>
                 <div class="remem-cat-text">
-                    <div class="change-remem-cat">
-                        <button type="button" onclick="showPopupChangeRememberCat(<?php echo($rememCat['id']) ?>)"> <i class="fas fa-pencil-alt"></i> Ändra Katt </button>
+                    <div class="two-buttons-fix">
+                        <button class="two-buttons" type="button" onclick="showPopupChangeRememberCat(<?php echo($rememCat['id']) ?>)">
+                            <i class="fas fa-pencil-alt"></i> Ändra Katt
+                        </button>
                         <form method="post">
-                            <button type="submit" formmethod="post" name="removeRememberCat" value="<?php echo($rememCat['id']); ?>">
+                            <button class="two-buttons" type="submit" formmethod="post" name="removeRememberCat" value="<?php echo($rememCat['id']); ?>">
                                 <i class="fas fa-times"></i> Ta bort Katt
                             </button>
                         </form>
@@ -226,7 +225,7 @@ $rememCats = $database->getRememberCats($rememPage);
             </article>
         <?php } ?>
     </div>
-
+    <!-- Pagination -->
     <div class="pagination">
         <?php if($rememPage > 0) { ?>
             <div class="previous-page">

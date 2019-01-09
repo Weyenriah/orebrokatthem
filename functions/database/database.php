@@ -284,6 +284,7 @@ class Database {
 
     // Log in
     public function login($email, $password) {
+        // Gets all information needed from database
         $sql = 'SELECT id, `password` FROM employees WHERE email = :email AND `password` IS NOT NULL LIMIT 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
@@ -291,6 +292,7 @@ class Database {
         $result = $stmt->execute(array(
             'email' => $email,
         ));
+        // Verifying password
         if($result && $stmt->rowCount()) {
             $user = $stmt->fetchObject();
             if(password_verify($password, $user->password)) {

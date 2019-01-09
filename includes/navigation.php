@@ -1,4 +1,5 @@
 <?php
+// Page selector
 $navigationLinks = array(
     array(
         'uri' => array(BASE_URL . 'index.php', substr(BASE_URL,0, -1), BASE_URL),
@@ -108,7 +109,7 @@ function array_any(array $array, callable $fn) {
 
 
 <script>
-    /* Show and collapse navigation */
+    /* === SHOW AND COLLAPSE NAV === */
     let collapsed = true;
 
     function collapse() {
@@ -122,7 +123,7 @@ function array_any(array $array, callable $fn) {
         webpageHidden();
     }
 
-    // Add Overflow: Hidden to body when navigation is covering page
+    // === Add Overflow: Hidden to body when navigation is covering page ===
     let body = document.getElementById("body");
 
     window.matchMedia("(max-width: 517px)").addListener(webpageHidden);

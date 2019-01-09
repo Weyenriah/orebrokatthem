@@ -2,6 +2,7 @@
     <button class="close-button" type="button" onclick="hideCat()"> <i class="fas fa-times"></i> </button>
     <hr/>
     <section class="cat-info">
+        <!-- Images, see slide -->
         <div class="img">
             <img class="popup-slide" src="../public/storage/images/ashild.jpg">
             <img class="popup-slide" src="../public/storage/images/cat-placeholder.jpg">
@@ -19,7 +20,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Information connects through JS on our-cats.php and index.php -->
         <div class="cat-info-text">
             <div class="cat-title">
                 <img src="assets/images/paw-icon.png">
@@ -44,7 +45,7 @@
 <div id="toned-down" onclick="hideCat()"></div>
 
 <script type="text/javascript">
-    /* Slide for cat images */
+    /* === SHOWS CAT IMAGES === */
     let slidePicIndex = 1;
     showPicSlides(slidePicIndex);
 
