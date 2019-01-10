@@ -160,7 +160,7 @@ $employees = $database->getEmployees(true);
             <article class="employee" id="employees-<?php echo($employee['id']) ?>">
                 <?php if ($employee['image'] !== '') { ?>
                     <div class="employee-img">
-                        <img class="employee-img" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>">
+                        <img class="employee-img" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>" alt="Bild på en från personalen">
                     </div>
                 <?php } ?>
                 <div class="employee-text">

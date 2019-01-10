@@ -4,26 +4,26 @@
     <section class="cat-info">
         <!-- Images, see slide -->
         <div class="img">
-            <img class="popup-slide" src="../public/storage/images/ashild.jpg">
-            <img class="popup-slide" src="../public/storage/images/cat-placeholder.jpg">
-            <img class="popup-slide" src="../public/storage/images/mollyblom.jpg">
+            <img class="popup-slide" src="../public/storage/images/ashild.jpg" alt="En bild på en katt">
+            <img class="popup-slide" src="../public/storage/images/cat-placeholder.jpg" alt="">
+            <img class="popup-slide" src="../public/storage/images/mollyblom.jpg" alt="">
 
             <div class="demos">
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/ashild.jpg" onclick="currentPicSlide(1)">
+                    <img class="demo" src="../public/storage/images/ashild.jpg" onclick="currentPicSlide(1)" alt="En bild på en katt">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/cat-placeholder.jpg" onclick="currentPicSlide(2)">
+                    <img class="demo" src="../public/storage/images/cat-placeholder.jpg" onclick="currentPicSlide(2)" alt="">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/mollyblom.jpg" onclick="currentPicSlide(3)">
+                    <img class="demo" src="../public/storage/images/mollyblom.jpg" onclick="currentPicSlide(3)" alt="">
                 </div>
             </div>
         </div>
         <!-- Information connects through JS on our-cats.php and index.php -->
         <div class="cat-info-text">
             <div class="cat-title">
-                <img src="assets/images/paw-icon.png">
+                <img src="<?php echo(BASE_URL) ?>assets/images/paw-icon.png" alt="">
                 <h2 class="cat-name"> Name </h2>
             </div>
             <div class="small-info">

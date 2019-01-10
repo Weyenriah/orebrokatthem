@@ -47,19 +47,19 @@ function any_array(array $array, callable $fn) {
 <!-- The outside companies that ÖKH linked on their first page -->
 <section class="outsiders">
     <a href="http://www.svekatt.se/" target="_blank">
-        <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png">
+        <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png" alt="Bild på Svekatts Logga som går till deras hemsida">
     </a>
     <a href="http://www.vilse.nu/" target="_blank">
-        <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png">
+        <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png" alt="Bild på Vilse.nus Logga som går till deras hemsida">
     </a>
     <a href="http://www.sverak.se/id-register/sok-din-katt-har/" target="_blank">
-        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png" alt="Bild på SVERAKs Logga som går till deras hemsida">
     </a>
     <a href="https://hundar.skk.se/agarreg/katt_sok.aspx" target="_blank">
-        <img class="skk" src="<?php echo(BASE_URL) ?>assets/images/skk.gif">
+        <img class="skk" src="<?php echo(BASE_URL) ?>assets/images/skk.gif" alt="Bild på SKKs Logga som går till deras hemsida">
     </a>
     <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring" target="_blank">
-        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png" alt="Bild på IFs Logga som går till deras hemsida">
     </a>
 </section>
 

@@ -35,7 +35,7 @@
         <h2> Försäkra din katt </h2>
         <div class="paragraph-position insurance">
             <div class="decor-img" id="insurance-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
             </div>
             <div class="insurance-text">
                 <p> <?php echo(nl2br($database->getContent('support-insuranceinfo'))); ?> </p>

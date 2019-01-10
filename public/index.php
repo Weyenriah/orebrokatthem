@@ -48,13 +48,13 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
-                        <img class="image-to-cat" src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" alt="En bild på en katt" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" alt="" src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
+                        <img class="image-to-cat" alt="" src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
                     </div>
                     <div class="carousel-text">
                         <div class="carousel-title">
-                            <img src="<?php echo(BASE_URL) ?>assets/images/paw-icon.png">
+                            <img src="<?php echo(BASE_URL) ?>assets/images/paw-icon.png" alt="">
                             <h3 class="cat-name"> <?php echo($slideCat['name']); ?> </h3>
                         </div>
 
@@ -100,7 +100,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <article class="news-card">
                     <?php if ($new['image'] !== '') { ?>
                         <div class="news-img">
-                            <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $new['image']); ?>">
+                            <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $new['image']); ?>" alt="Bild tillhörande nyheten">
                         </div>
                     <?php } ?>
                     <div class="news-info">
@@ -136,7 +136,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <h2> Har du hittat en katt? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
             </div>
             <strong> <?php echo(nl2br($database->getContent('found-important'))); ?> </strong>
             <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>
@@ -201,7 +201,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         <div class="img-info-remem">
                             <?php if ($cat['image'] !== '' && $cat['image'] !== NULL) { ?>
                                 <div class="img-border remem-img">
-                                    <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>">
+                                    <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $cat['image']); ?>" alt="En bild på en katt">
                                 </div>
                             <?php } ?>
                             <div class="remem-cat-info">

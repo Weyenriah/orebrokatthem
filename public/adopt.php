@@ -34,7 +34,7 @@
         <h2> Tips </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg">
+                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
             </div>
             <ol>
                 <?php
