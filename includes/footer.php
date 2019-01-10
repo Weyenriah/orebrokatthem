@@ -47,19 +47,19 @@ function any_array(array $array, callable $fn) {
 <!-- The outside companies that ÖKH linked on their first page -->
 <div class="outsiders">
     <a href="http://www.svekatt.se/" target="_blank">
-        <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png" alt="Bild på Svekatts Logga som går till deras hemsida">
+        <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png" alt="Bild på Svekatts Logga som går till deras hemsida" rel="noopener">
     </a>
     <a href="http://www.vilse.nu/" target="_blank">
-        <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png" alt="Bild på Vilse.nus Logga som går till deras hemsida">
+        <img class="vilse" src="<?php echo(BASE_URL) ?>assets/images/vilse.png" alt="Bild på Vilse.nus Logga som går till deras hemsida" rel="noopener">
     </a>
     <a href="http://www.sverak.se/id-register/sok-din-katt-har/" target="_blank">
-        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png" alt="Bild på SVERAKs Logga som går till deras hemsida">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/sverak.png" alt="Bild på SVERAKs Logga som går till deras hemsida" rel="noopener">
     </a>
     <a href="https://hundar.skk.se/agarreg/katt_sok.aspx" target="_blank">
-        <img class="skk" src="<?php echo(BASE_URL) ?>assets/images/skk.gif" alt="Bild på SKKs Logga som går till deras hemsida">
+        <img class="skk" src="<?php echo(BASE_URL) ?>assets/images/skk.gif" alt="Bild på SKKs Logga som går till deras hemsida" rel="noopener">
     </a>
     <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring" target="_blank">
-        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png" alt="Bild på IFs Logga som går till deras hemsida">
+        <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png" alt="Bild på IFs Logga som går till deras hemsida" rel="noopener">
     </a>
 </div>
 
@@ -78,10 +78,10 @@ function any_array(array $array, callable $fn) {
     </section>
     <section class="social-media">
         <h2>Hitta oss på sociala medier!</h2>
-        <a href="<?php echo($database->getContent('footer-fb-link')); ?>" target="_blank">
+        <a href="<?php echo($database->getContent('footer-fb-link')); ?>" target="_blank" rel="noopener">
             <i class="fab fa-facebook-square" title="Länk till Facebooksida"></i>
         </a>
-        <a href="<?php echo($database->getContent('footer-ig-link')); ?>" target="_blank">
+        <a href="<?php echo($database->getContent('footer-ig-link')); ?>" target="_blank" rel="noopener">
             <i class="fab fa-instagram" title="Länk till Instagramsida"></i>
         </a>
     </section>

@@ -45,7 +45,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         foreach($slideCats as $slideCat) {
             $images = $database->getCatImages($slideCat['id']);
         ?>
-            <div class="slide fade blue-paragraph" id="cat-<?php echo($slideCat['id']); ?>">
+            <div class="slide fade blue-paragraph" id="slide-cat-<?php echo($slideCat['id']); ?>">
                 <article class="carousel-style" id="cat-<?php echo($slideCat['id']); ?>">
                     <div class="image-carousel">
                         <img class="image-to-cat" alt="En bild på en katt" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
@@ -126,7 +126,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <?php } ?>
             </div>
         </div>
-        <div class="hide-show" id="hide-show">
+        <div class="hide-show">
             <button class="<?php if (count($news) < 2) echo('hidden'); ?>" id="my-button" onclick="showNews()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
@@ -142,7 +142,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>
             <div class="found-contact">
                 <h3 class="second-row-heading"> Skicka in anmälan </h3>
-                <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-found')); ?>">
+                <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-found')); ?>" rel="noopener">
                     <i class="fas fa-external-link-alt"></i> Formulär för hittad katt
                 </a>
             </div>
@@ -158,7 +158,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             <div class="relocate-contact">
                 <div class="">
                     <h3 class="second-row-heading"> Skicka in anmälan </h3>
-                    <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-replacement')); ?>">
+                    <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-replacement')); ?>" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> Formulär för omplacering
                     </a>
                 </div>
@@ -229,7 +229,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <?php } ?>
             </div>
         </div>
-        <div class="hide-show" id="hide-show">
+        <div class="hide-show">
             <button class="<?php if (count($remember) < 2) echo('hidden'); ?>" id="remem-button" onclick="showRemem()"> <?php echo($expanded ? 'Dölj' : 'Visa mer') ?> </button>
         </div>
     </section>
@@ -294,7 +294,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             let popup = document.getElementById("cat-page");
             let background = document.getElementById("toned-down");
 
-            let cat = document.getElementById("cat-" + id);
+            let cat = document.getElementById("slide-cat-" + id);
 
             /* Matches the information from popup with cat */
             popup.getElementsByClassName("cat-name")[0].textContent = cat.getElementsByClassName("cat-name")[0].textContent;
