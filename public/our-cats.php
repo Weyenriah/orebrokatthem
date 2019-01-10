@@ -102,15 +102,15 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         </div>
         <div id="filter-choices" class="<?php echo((isset($_GET['female']) || isset($_GET['male']) || isset($_GET['cathome']) || isset($_GET['jourhome'])) ? '' : 'not-display') ?>">
             <div class="filter-form" id="filter-form">
-                    <span class="gender checkbox">
+                    <div class="gender checkbox">
                         <h3 class="checkbox-title"> Kön </h3>
                         <input type="checkbox" name="female" <?php echo((isset($_GET['female'])) ? 'checked' : '')?> value="true" id="female">
                         <label for="female"> Hona </label>
                         <input type="checkbox" name="male" <?php echo((isset($_GET['male'])) ? 'checked' : '')?> value="true" id="male">
                         <label for="male"> Hane </label>
-                    </span>
+                    </div>
 
-                    <span class="age checkbox">
+                    <div class="age checkbox">
                         <h3 class="checkbox-title"> Ålder </h3>
                         <input type="checkbox" name="kitten" <?php echo((isset($_GET['kitten'])) ? 'checked' : '')?> value="true" id="kitten">
                         <label for="kitten"> Kattunge </label>
@@ -118,15 +118,15 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <label for="young"> Ungkatt </label>
                         <input type="checkbox" name="senior" <?php echo((isset($_GET['senior'])) ? 'checked' : '')?> value="true" id="senior">
                         <label for="senior"> Senior </label>
-                    </span>
+                    </div>
 
-                    <span class="living checkbox">
+                    <div class="living checkbox">
                         <h3 class="checkbox-title"> Boende </h3>
                         <input type="checkbox" name="cathome" <?php echo((isset($_GET['cathome'])) ? 'checked' : '')?> value="true" id="cathome">
                         <label for="cathome"> Katthem </label>
                         <input type="checkbox" name="jourhome" <?php echo((isset($_GET['jourhome'])) ? 'checked' : '')?> value="true" id="jour">
                         <label for="jour"> Jourhem </label>
-                    </span>
+                    </div>
 
                 <button class="button filter-button" type="submit" value="submit"> Filtrera </button>
             </div>
