@@ -78,8 +78,12 @@ function any_array(array $array, callable $fn) {
     </section>
     <section class="social-media">
         <h2>Hitta oss på sociala medier!</h2>
-        <a href="<?php echo($database->getContent('footer-fb-link')); ?>" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
-        <a href="<?php echo($database->getContent('footer-ig-link')); ?>" target="_blank"> <i class="fab fa-instagram"></i> </a>
+        <a href="<?php echo($database->getContent('footer-fb-link')); ?>" target="_blank">
+            <i class="fab fa-facebook-square" title="Länk till Facebooksida"></i>
+        </a>
+        <a href="<?php echo($database->getContent('footer-ig-link')); ?>" target="_blank">
+            <i class="fab fa-instagram" title="Länk till Instagramsida"></i>
+        </a>
     </section>
     <section class="explore">
         <h2>Utforska</h2>
