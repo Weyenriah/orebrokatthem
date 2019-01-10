@@ -45,7 +45,7 @@ function any_array(array $array, callable $fn) {
 ?>
 
 <!-- The outside companies that ÖKH linked on their first page -->
-<section class="outsiders">
+<div class="outsiders">
     <a href="http://www.svekatt.se/" target="_blank">
         <img class="svekatt" src="<?php echo(BASE_URL) ?>assets/images/svekatt-etisk.png" alt="Bild på Svekatts Logga som går till deras hemsida">
     </a>
@@ -61,7 +61,7 @@ function any_array(array $array, callable $fn) {
     <a href="https://www.if.se/privat/forsakringar/djurforsakring/kattforsakring" target="_blank">
         <img class="sverak" src="<?php echo(BASE_URL) ?>assets/images/if.png" alt="Bild på IFs Logga som går till deras hemsida">
     </a>
-</section>
+</div>
 
 <!-- Footer for the whole page -->
 <footer class="first-footer">

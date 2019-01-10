@@ -119,20 +119,5 @@ function array_any(array $array, callable $fn) {
         for (let i = 0; i < collapseElements.length; i++) {
             collapseElements[i].classList.toggle('display');
         }
-
-        webpageHidden();
-    }
-
-    // === Add Overflow: Hidden to body when navigation is covering page ===
-    let body = document.getElementById("body");
-
-    window.matchMedia("(max-width: 517px)").addListener(webpageHidden);
-
-    function webpageHidden() {
-        if(window.matchMedia("(max-width: 517px)").matches && !collapsed ) {
-            body.classList.add("bodyOverflow");
-        } else {
-            body.classList.remove("bodyOverflow");
-        }
     }
 </script>

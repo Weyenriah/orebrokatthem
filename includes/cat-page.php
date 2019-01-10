@@ -1,4 +1,4 @@
-<article id="cat-page">
+<div id="cat-page">
     <button class="close-button" type="button" onclick="hideCat()"> <i class="fas fa-times"></i> </button>
     <hr/>
     <section class="cat-info">
@@ -41,10 +41,10 @@
     <div class="adopt-me">
         <a class="adopt" href="mailto:"> Adoptera mig! </a>
     </div>
-</article>
+</div>
 <div id="toned-down" onclick="hideCat()"></div>
 
-<script type="text/javascript">
+<script>
     /* === SHOWS CAT IMAGES === */
     let slidePicIndex = 1;
     showPicSlides(slidePicIndex);

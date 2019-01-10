@@ -186,16 +186,16 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                     <article class="remem-cat">
                         <div class="all-remem-title">
                             <div class="circle-of-life">
-                                <h4 class="birth"> <?php echo($born) ?>  </h4>
-                                <h4 class="death push-title">  † <?php echo($death) ?> </h4>
+                                <span class="birth"> <?php echo($born) ?>  </span>
+                                <span class="death push-title">  † <?php echo($death) ?> </span>
                             </div>
                             <div class="remem-cat-title">
-                                <img src="assets/images/paw-icon.png">
+                                <img src="assets/images/paw-icon.png" alt="">
                                 <h3> <?php echo($cat['name']) ?> </h3>
                             </div>
                             <div class="circle-of-cathome">
-                                <h4 class="came"> <i>Inkom:</i> <?php echo($came) ?> | </h4>
-                                <h4 class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </h4>
+                                <span class="came"> <i>Inkom:</i> <?php echo($came) ?> | </span>
+                                <span class="adopted push-title"> <i>Adopterad:</i> <?php echo($adopted) ?> </span>
                             </div>
                         </div>
                         <div class="img-info-remem">

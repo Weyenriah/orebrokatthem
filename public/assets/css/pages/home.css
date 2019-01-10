@@ -158,10 +158,6 @@
 }
 
 /* === GENERAL STYLING FOR NEWSFLOW === */
-.white-background h2 {
-    margin-bottom: 30px !important;
-}
-
 #news-container {
     height: 400px;
     overflow: hidden;
@@ -281,7 +277,7 @@
     margin-right: 5px;
 }
 /* The small titling */
-.remem-cat h4 {
+.remem-cat span {
     margin: 0;
     font-size: 17px;
     font-weight: normal;
@@ -308,7 +304,7 @@
 }
 .remem-img {
     height: 310px;
-    width: 260px;
+    width: 240px;
     overflow: hidden;
     border: 1px solid #415463;
     margin-right: 20px;
