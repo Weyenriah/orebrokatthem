@@ -48,7 +48,7 @@
 
             <input class="id-field" type="text" name="id" hidden>
 
-            <button class="popup-button" type="submit" name="change-remember-cat"> Lägg till </button>
+            <button class="popup-button" type="submit" name="change-remember-cat"> Ändra </button>
         </form>
     </article>
 </div>

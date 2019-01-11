@@ -51,7 +51,7 @@
 
             <input class="id-field" type="text" name="id" hidden>
 
-            <button class="popup-button" type="submit" name="change-employee"> Lägg till </button>
+            <button class="popup-button" type="submit" name="change-employee"> Ändra </button>
         </form>
     </article>
 </div>
