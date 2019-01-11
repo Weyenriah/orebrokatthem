@@ -107,5 +107,5 @@ function any_array(array $array, callable $fn) {
     </section>
 </footer>
 <footer class="second-footer">
-    <p> Copyright © av Örebro Katthem 2018 |  </p>
+    <p> Copyright © av Örebro Katthem 2018 | <a class="link-calibri" href="<?php echo(BASE_URL) ?>humans.txt">Utvecklad av Felicia Wallin</a>  </p>
 </footer>
