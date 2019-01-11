@@ -9,7 +9,7 @@ trait Employees {
             return false;
         } else {
             // Insert information in database
-            $sql = "INSERT INTO employees (
+            $sql = 'INSERT INTO %1$semployees (
               `name`, 
               `title`, 
               `telephone`, 
@@ -25,7 +25,7 @@ trait Employees {
               :password, 
               :hidden,
               :image
-            )";
+            )';
             // Prepares a query
             $stmt = $this->pdo->prepare($sql);
             // Sends query to database
@@ -48,7 +48,7 @@ trait Employees {
             return false;
         }
         // Update information in database
-        $sql = 'UPDATE employees SET
+        $sql = 'UPDATE %1$semployees SET
               name = :name,
               title = :title,
               telephone = :telephone,
@@ -83,7 +83,7 @@ trait Employees {
     // Delete Employee
     public function deleteEmployee($id) {
         // Deletes all information from database
-        $sql = 'DELETE FROM employees WHERE id = :id';
+        $sql = 'DELETE FROM %1$semployees WHERE id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -94,7 +94,7 @@ trait Employees {
 
     public function emailExists($email, $excludedUserId = 0) {
         // Gets right information from database
-        $sql = 'SELECT email FROM employees WHERE id != :id AND email = :email';
+        $sql = 'SELECT email FROM %1$semployees WHERE id != :id AND email = :email';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

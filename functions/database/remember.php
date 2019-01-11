@@ -4,7 +4,7 @@ trait Remember {
     // Add cat to Remember-flow
     public function addRememberCat($name, $born, $came, $adopted, $death, $description, $cause, $image) {
         // Insert into database
-        $sql = 'INSERT INTO remember(
+        $sql = 'INSERT INTO %1$sremember(
                   `name`,
                   `born`,
                   `came`,
@@ -41,7 +41,7 @@ trait Remember {
     // Change cat from Remember-flow
     public function changeRememberCat($id, $name, $born, $came, $adopted, $death, $description, $cause, $image) {
         // Updates database with information
-        $sql = 'UPDATE remember SET
+        $sql = 'UPDATE %1$sremember SET
                   name = :name,
                   born = :born,
                   came = :came,
@@ -74,7 +74,7 @@ trait Remember {
     // Delete cats from Remember-flow
     public function deleteRememberCat($id) {
         // Gets all information from database
-        $sql = 'DELETE FROM remember WHERE id = :id';
+        $sql = 'DELETE FROM %1$sremember WHERE id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

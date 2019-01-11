@@ -7,7 +7,7 @@ trait Cats {
         if ($this->changesLastHour('cats') > 20) {
             return false;
         } else {
-            $sql = "INSERT INTO cats (
+            $sql = 'INSERT INTO %1$scats (
               `name`,
               `gender`,
               `color`,
@@ -25,7 +25,7 @@ trait Cats {
               :home,
               :contact,
               :show
-            )";
+            )';
             // Prepares a query
             $stmt = $this->pdo->prepare($sql);
             // Sends query to database
@@ -50,7 +50,7 @@ trait Cats {
     // Change Cat
     public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase) {
         // Updates all information needed from database
-        $sql = 'UPDATE cats SET 
+        $sql = 'UPDATE %1$scats SET 
                   name = :name,
                   age = :age,
                   gender = :gender,
@@ -80,7 +80,7 @@ trait Cats {
     // Delete Cat
     public function deleteCat($id) {
         // Gets all information from database
-        $sql = 'DELETE FROM cats WHERE id = :id';
+        $sql = 'DELETE FROM %1$scats WHERE id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -91,7 +91,7 @@ trait Cats {
 
     public function getCatImages($id) {
         // Gets all information from database
-        $sql = 'SELECT image FROM cat_images WHERE cat_id = :id';
+        $sql = 'SELECT image FROM %1$scat_images WHERE cat_id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Connects to variable
@@ -104,7 +104,7 @@ trait Cats {
 
     public function addCatImage($id, $filename, $k) {
         // Insert right information in database
-        $sql = 'INSERT INTO cat_images (cat_id, image, k) VALUES(:cat_id, :image, :k) ON DUPLICATE KEY UPDATE image = :image2;';
+        $sql = 'INSERT INTO %1$scat_images (cat_id, image, k) VALUES(:cat_id, :image, :k) ON DUPLICATE KEY UPDATE image = :image2;';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

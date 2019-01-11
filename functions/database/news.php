@@ -8,7 +8,7 @@ trait News {
             return false;
         } else {
             // Insert into database
-            $sql = 'INSERT INTO news (
+            $sql = 'INSERT INTO %1$snews (
                       `news`,
                       `image`
                     ) VALUES (
@@ -28,7 +28,7 @@ trait News {
     // Change News
     public function changeNews($id, $news, $image) {
         // Updates database
-        $sql = 'UPDATE news SET news = :news';
+        $sql = 'UPDATE %1$snews SET news = :news';
         // Parameters needed
         $parameters = [
             'news' => $news,
@@ -48,7 +48,7 @@ trait News {
     // Delete News
     public function deleteNewsPost($id) {
         // Gets all information from database
-        $sql = 'DELETE FROM news WHERE id = :id';
+        $sql = 'DELETE FROM %1$snews WHERE id = :id';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database

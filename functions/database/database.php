@@ -3,17 +3,20 @@ require_once dirname(__FILE__).'/cats.php';
 require_once dirname(__FILE__).'/employees.php';
 require_once dirname(__FILE__).'/news.php';
 require_once dirname(__FILE__).'/remember.php';
+require_once dirname(__FILE__).'/PDOWithPrefix.php';
 
 class Database {
 
     private $pdo;
 
-    public function __construct($host, $database, $username, $password) {
+    public function __construct($host, $database, $username, $password, $prefix) {
         // Connect to database
-        $this->pdo = new PDO(
+        $this->pdo = new PDOWithPrefix(
             'mysql:host=' . $host . ';dbname=' . $database . ';charset=utf8',
             $username,
-            $password
+            $password,
+            [],
+            $prefix
         );
 
         // Activate error messages
@@ -34,7 +37,7 @@ class Database {
     // Get all cats
     public function getCats($page = 0, $gender = 0, $living = 0, $name='', $age = 0, $orderById = false) {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats';
+        $sql = 'SELECT * FROM %1$scats';
         $conditions = array();
         // Filter cats
         // Gender filter
@@ -95,7 +98,7 @@ class Database {
     // Count and return includes of cats
     public function countCatPages($gender = 0, $living = 0, $name='', $age = 0) {
         // Gets all information from database
-        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
+        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM %1$scats';
         $conditions = array();
         // Filter cats
         // Gender filter
@@ -150,7 +153,7 @@ class Database {
 
     // Count and return includes of cats
     public function countCats() {
-        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM cats';
+        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM %1$scats';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -164,7 +167,7 @@ class Database {
     // Slideshow cats
     public function getSlideCats() {
         // Gets all information from database
-        $sql = 'SELECT * FROM cats WHERE showcase = 1';
+        $sql = 'SELECT * FROM %1$scats WHERE showcase = 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -176,7 +179,7 @@ class Database {
     // Get all news
     public function getNews($page = 0) {
         // Gets all information from database
-        $sql = 'SELECT * FROM news ORDER BY id DESC LIMIT 8 OFFSET :offset';
+        $sql = 'SELECT * FROM %1$snews ORDER BY id DESC LIMIT 8 OFFSET :offset';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -189,7 +192,7 @@ class Database {
 
     // Count and return includes of news
     public function countNewsPages() {
-        $sql = 'SELECT COUNT(id) AS NumberOfNews FROM news';
+        $sql = 'SELECT COUNT(id) AS NumberOfNews FROM %1$snews';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -203,7 +206,7 @@ class Database {
     // Get all Remember Cats-cats
     public function getRememberCats($page = 0) {
         // Gets all information from database
-        $sql = 'SELECT * FROM remember ORDER BY id DESC LIMIT 8 OFFSET :offset';
+        $sql = 'SELECT * FROM %1$sremember ORDER BY id DESC LIMIT 8 OFFSET :offset';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -216,7 +219,7 @@ class Database {
 
     // Count and return includes of rememeber cats
     public function countRememberPages() {
-        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM remember';
+        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM %1$sremember';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -230,9 +233,11 @@ class Database {
     // Get all employees
     public function getEmployees($showHidden = false) {
         // Gets all information from database
-        $sql = 'SELECT * FROM employees';
+        $sql = 'SELECT * FROM %1$semployees';
         if(!$showHidden) {
             $sql .= ' WHERE hidden = 0';
+        } else {
+            $sql .= ' ORDER BY id DESC';
         }
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
@@ -245,7 +250,7 @@ class Database {
     // Get all text-content
     public function getContent($element) {
         // Gets all information from database
-        $sql = 'SELECT * FROM textfields WHERE element = :element LIMIT 1';
+        $sql = 'SELECT * FROM %1$stextfields WHERE element = :element LIMIT 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -258,7 +263,7 @@ class Database {
 
     // Change textfields
     public function changeTextfield($element, $content) {
-        $sql = 'UPDATE textfields SET
+        $sql = 'UPDATE %1$stextfields SET
                   content = :content 
                 WHERE
                   element = :element';
@@ -273,7 +278,7 @@ class Database {
 
     // Stops adding flow for a while after a few added in table
     private function changesLastHour($table) {
-        $sql = "SELECT COUNT(*) AS count FROM `{$table}` WHERE date BETWEEN date_sub(NOW(), INTERVAL 1 HOUR) AND NOW();";
+        $sql = 'SELECT COUNT(*) AS count FROM %1$s' . $table . ' WHERE date BETWEEN date_sub(NOW(), INTERVAL 1 HOUR) AND NOW();';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
@@ -285,7 +290,7 @@ class Database {
     // Log in
     public function login($email, $password) {
         // Gets all information needed from database
-        $sql = 'SELECT id, `password` FROM employees WHERE email = :email AND `password` IS NOT NULL LIMIT 1';
+        $sql = 'SELECT id, `password` FROM %1$semployees WHERE email = :email AND `password` IS NOT NULL LIMIT 1';
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
