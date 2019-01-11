@@ -13,7 +13,7 @@
             </div>
 
             <div class="show-employee">
-                <input type="checkbox" id="show" name="add-show-employee" value="show" checked>
+                <input type="checkbox" id="add-show-employee" name="add-show-employee" value="show" checked>
                 <label for="add-show-employee"> Visa på hemsidan </label>
             </div>
 

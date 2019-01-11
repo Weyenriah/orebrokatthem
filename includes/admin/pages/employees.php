@@ -14,7 +14,7 @@ if(isset($_POST['add-employee'])) {
     $telephone = htmlentities(trim($_POST['tele']));
     $email = htmlentities(trim($_POST['email']));
     $password = $_POST['password'];
-    $show = isset($_POST['show']);
+    $show = isset($_POST['add-show-employee']);
     $canLogin = isset($_POST['login']);
     $file = isset($_FILES['human-image']) ? $_FILES['human-image'] : null;
 
@@ -158,7 +158,7 @@ $employees = $database->getEmployees(true);
         foreach ($employees as $employee) {
         ?>
             <article class="employee" id="employees-<?php echo($employee['id']) ?>">
-                <?php if ($employee['image'] !== '') { ?>
+                <?php if ($employee['image'] !== '' && $employee['image'] !== NULL) { ?>
                     <div class="employee-img">
                         <img class="employee-img" src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>" alt="Bild på en från personalen">
                     </div>
