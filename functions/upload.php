@@ -2,7 +2,11 @@
 
 function SaveFile($file, $prefix = "") {
     $imageFileType = strtolower(pathinfo($file["name"],PATHINFO_EXTENSION));
-    $id = uniqid($prefix, true);
+    $path = realpath(dirname(getcwd())) . DIRECTORY_SEPARATOR  . UPLOADS_FOLDER . "images". DIRECTORY_SEPARATOR  . date('Y') . DIRECTORY_SEPARATOR . date('m');
+    if ( ! is_dir($path)) {
+        mkdir($path, 0777, true);
+    }
+    $id = date('Y/m/') . uniqid($prefix, true);
     $target_file = realpath(dirname(getcwd())) . DIRECTORY_SEPARATOR  . UPLOADS_FOLDER . "images". DIRECTORY_SEPARATOR  . $id . '.' . $imageFileType;
     // Checks TMP_NAME
     if(empty($file["tmp_name"])) {
