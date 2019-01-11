@@ -22,13 +22,6 @@
 
     <!-- Textfield CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/general-textfield.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/adopt.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/home.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/our-cats.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/jour.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/about.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/support.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/textfield-pages/footer.css">
 
     <!-- Popup CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/popups/cat-popups.css">
