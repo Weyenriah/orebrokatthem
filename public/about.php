@@ -45,7 +45,7 @@
             <!-- Employee cards -->
             <?php foreach ($employees as $employee) { ?>
                 <article class="employee-card">
-                    <?php if ($employee['image'] !== '') { ?>
+                    <?php if ($employee['image'] !== '' && $employee['image'] !== NULL) { ?>
                         <div class="employee-pic">
                             <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>" alt="En bild på en person ur personalen">
                         </div>

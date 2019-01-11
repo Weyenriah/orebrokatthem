@@ -98,7 +98,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 $date = date('Y-m-d', strtotime($new['date']));
                 ?>
                 <article class="news-card">
-                    <?php if ($new['image'] !== '') { ?>
+                    <?php if ($new['image'] !== '' && $new['image'] !== NULL) { ?>
                         <div class="news-img">
                             <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $new['image']); ?>" alt="Bild tillhörande nyheten">
                         </div>

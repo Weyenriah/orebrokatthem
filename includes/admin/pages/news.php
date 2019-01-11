@@ -114,7 +114,7 @@ $news = $database->getNews($newsPage);
         $date = date('Y-m-d', strtotime($new['date']));
         ?>
             <article class="new" id="news-<?php echo($new['id']) ?>">
-                <?php if ($new['image'] !== '') { ?>
+                <?php if ($new['image'] !== '' && $new['image'] !== NULL) { ?>
                     <div class="news-img">
                         <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $new['image']); ?>" alt="Bild tillhörande nyheten">
                     </div>
