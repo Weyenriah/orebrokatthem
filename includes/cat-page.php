@@ -2,26 +2,25 @@
     <button class="close-button" type="button" onclick="hideCat()"> <i class="fas fa-times"></i> </button>
     <hr/>
     <section class="cat-info">
-        <!-- Images, see slide -->
-        <div class="img">
-            <img class="popup-slide" src="" alt="En bild på en katt">
-            <img class="popup-slide" src="" alt="">
-            <img class="popup-slide" src="" alt="">
+        <!-- Information connects through JS on our-cats.php and index.php -->
+            <!-- Images, see slide -->
+            <div class="img">
+                <img class="popup-slide" src="" alt="En bild på en katt">
+                <img class="popup-slide" src="" alt="">
+                <img class="popup-slide" src="" alt="">
 
-            <div class="demos">
-                <div class="styling-demos">
-                    <img class="demo" src="" onclick="currentPicSlide(1)" alt="En bild på en katt">
-                </div>
-                <div class="styling-demos">
-                    <img class="demo" src="" onclick="currentPicSlide(2)" alt="">
-                </div>
-                <div class="styling-demos">
-                    <img class="demo" src="" onclick="currentPicSlide(3)" alt="">
+                <div class="demos">
+                    <div class="styling-demos">
+                        <img class="demo" src="" onclick="currentPicSlide(1)" alt="En bild på en katt">
+                    </div>
+                    <div class="styling-demos">
+                        <img class="demo" src="" onclick="currentPicSlide(2)" alt="">
+                    </div>
+                    <div class="styling-demos">
+                        <img class="demo" src="" onclick="currentPicSlide(3)" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Information connects through JS on our-cats.php and index.php -->
-        <div class="cat-info-text">
             <div class="cat-title">
                 <img src="<?php echo(BASE_URL) ?>assets/images/paw-icon.png" alt="">
                 <h2 class="cat-name"> Name </h2>
@@ -36,7 +35,6 @@
                 <i class="fas fa-home"></i>
                 <p class="home-popup"> Hem </p>
             </div>
-        </div>
     </section>
     <div class="adopt-me">
         <a class="adopt" href="mailto:"> Adoptera mig! </a>

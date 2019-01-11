@@ -11,12 +11,9 @@
 
 /* === MAIN POPUP-SQUARE === */
 #cat-page {
-    position: fixed;
+    position: absolute;
     display: none;
-    min-height: 400px;
-    max-height: 100vh;
-    overflow-y: auto;
-    width: auto;
+    width: 700px;
     margin-top: 100px;
     background-color: #a0cdf3;
     left: 50%;
@@ -52,25 +49,19 @@ hr {
 
 /* === DISPLAY CAT === */
 .cat-info {
-    display: flex;
-    margin-top: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 100%;
+    position: relative;
+    margin: 20px;
 }
 
-.cat-info-text {
-    margin-left: 20px;
-    width: 380px;
-}
-
-.cat-info-text img {
+.cat-title img {
     height: 33px;
     margin-top: 0;
     margin-right: 5px;
     margin-bottom: 0;
 }
 
-.cat-info-text h2 {
+.cat-info h2 {
     color: #415463;
     font-size: 33px;
     font-family: "Georgia", serif;
@@ -78,14 +69,15 @@ hr {
     margin-bottom: 7px;
 }
 
-.cat-info-text small {
+.cat-info small {
     color: #415463;
 }
 
-.cat-info-text p {
+.cat-info p {
     margin-top: 7px;
     color: #415463;
     font-family: "Calibri", sans-serif;
+    width: 90%;
 }
 
 /* Adopt me-link CSS */
@@ -107,6 +99,12 @@ hr {
 }
 
 /* === IMAGE DISPLAY === */
+.img {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
 .popup-slide {
     width: 300px;
     display: none;
@@ -141,6 +139,7 @@ hr {
 
 /* === RESPONSIVENESS === */
 @media only screen and (max-width: 719px) {
+    /* The box */
     #cat-page {
         min-height: 0;
         width: 100%;
@@ -149,12 +148,19 @@ hr {
         margin-top: -20px;
     }
 
+    /* The box for IMG and TEXT */
     .cat-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         flex-wrap: wrap-reverse;
+        justify-content: center;
+        margin-left: 0;
     }
 
-    .cat-info-text {
-        margin-left: 0;
+    /* IMG and SLIDE */
+    .popup-slide {
+        width: 288px;
     }
 
     .img {
@@ -162,12 +168,17 @@ hr {
         margin-right: auto;
     }
 
-    .popup-slide {
+    .demos {
         width: 288px;
     }
 
-    .demos {
-        width: 288px;
+    .desc {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .cat-home {
+        margin-left: 30px;
     }
 }
 

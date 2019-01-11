@@ -148,7 +148,6 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
             ?>
             <div class="small-change">
                 <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
-
                     <div class="cat-img">
                         <img class="image-to-cat" alt="En bild på en katt" src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
                         <img class="image-to-cat" alt="" src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>" hidden>
@@ -175,7 +174,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                             <p class="home-cat"> <?php echo($kitten['home'] ? 'Katthem' : 'Jourhem') ?> </p>
                         </div>
                         <div class="links">
-                            <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>)"> Läs mer om mig! </button>
+                            <button class="about-cat" type="button" onclick="showCat(<?php echo($kitten['id']); ?>); window.scrollTo(0, 0);"> Läs mer om mig! </button>
                             <a class="adopt" href="mailto:<?php echo($kitten['contact']) ?>"> Adoptera mig! </a>
                         </div>
                     </div>
