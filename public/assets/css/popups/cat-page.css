@@ -124,8 +124,10 @@ hr {
 
 .demo {
     width: 100px;
+    height: 110px;
     cursor: pointer;
     border-right: 1px solid #415463;
+    object-fit: cover;
 }
 
 /* Displaying the home to cat */

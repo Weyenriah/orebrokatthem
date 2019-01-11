@@ -110,7 +110,8 @@
 
 .small-cat-pics .cat-img img {
     width: 100%;
-    height: auto;
+    height: 110px;
+    object-fit: cover;
 }
 
 .big-cat-img {
