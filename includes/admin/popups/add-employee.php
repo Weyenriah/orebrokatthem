@@ -64,7 +64,7 @@
     /* === SHOW PASSWORD === */
     function showPassword() {
         let password = document.getElementById('can-login');
-        let checkbox = document.getElementById('login');
+        let checkbox = document.getElementById('add-login');
 
         if(checkbox.checked) {
             password.style.display = "block";

@@ -46,7 +46,7 @@
 
             <div class="info" id="logged-in">
                 <label for="change-password">Byt lösenord </label>
-                <input type="text" class="password" id="change-password" name="password" placeholder="Skriv in nytt lösenord">
+                <input type="password" class="password" id="change-password" name="password" placeholder="Skriv in nytt lösenord">
             </div>
 
             <input class="id-field" type="text" name="id" hidden>
@@ -66,7 +66,7 @@
     /* === SHOW PASSWORD === */
     function showChangePassword(userAction) {
         let password = document.getElementById('logged-in');
-        let checkbox = document.getElementById('log-in');
+        let checkbox = document.getElementById('change-log-in');
 
         if (userAction) {
             password.getElementsByTagName("label")[0].textContent = "Välj lösenord";
