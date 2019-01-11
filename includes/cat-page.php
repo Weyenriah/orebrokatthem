@@ -4,19 +4,19 @@
     <section class="cat-info">
         <!-- Images, see slide -->
         <div class="img">
-            <img class="popup-slide" src="../public/storage/images/ashild.jpg" alt="En bild på en katt">
-            <img class="popup-slide" src="../public/storage/images/cat-placeholder.jpg" alt="">
-            <img class="popup-slide" src="../public/storage/images/mollyblom.jpg" alt="">
+            <img class="popup-slide" src="" alt="En bild på en katt">
+            <img class="popup-slide" src="" alt="">
+            <img class="popup-slide" src="" alt="">
 
             <div class="demos">
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/ashild.jpg" onclick="currentPicSlide(1)" alt="En bild på en katt">
+                    <img class="demo" src="" onclick="currentPicSlide(1)" alt="En bild på en katt">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/cat-placeholder.jpg" onclick="currentPicSlide(2)" alt="">
+                    <img class="demo" src="" onclick="currentPicSlide(2)" alt="">
                 </div>
                 <div class="styling-demos">
-                    <img class="demo" src="../public/storage/images/mollyblom.jpg" onclick="currentPicSlide(3)" alt="">
+                    <img class="demo" src="" onclick="currentPicSlide(3)" alt="">
                 </div>
             </div>
         </div>
