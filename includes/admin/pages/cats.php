@@ -286,7 +286,7 @@ $cats = $database->getAdminCats($catsPage);
                     </small>
                     <!-- Hidden element for JavaScript -->
                     <span class="gender" hidden><?php echo($cat['gender']) ?></span>
-                    <p class="description"><?php echo($cat['description']) ?></p>
+                    <p class="description"><?php echo(nl2br($cat['description'])) ?></p>
                     <div class="contact-cat">
                         <div class="cat-home">
                             <i class="fas fa-home"></i>
