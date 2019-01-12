@@ -276,5 +276,7 @@ $rememCats = $database->getRememberCats($rememPage);
 
         /* Scrolls up to top when button is clicked */
         window.scroll(0, 0);
+
+        updateTextCounter('change-desc-remem-counter', remember.getElementsByClassName("desc")[0].textContent);
     }
 </script>

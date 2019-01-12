@@ -39,8 +39,11 @@
                 </div>
             </div>
             <div class="info">
-                <label for="remem-desc"> Beskrivning </label>
-                <textarea id="remem-desc" name="desc" class="desc" rows="6" cols="50"></textarea>
+                <div class="divide-info">
+                    <label for="remem-desc"> Beskrivning </label>
+                    <small> (<span id="add-desc-remem-counter" >0</span>/3000) </small>
+                </div>
+                <textarea id="remem-desc" name="desc" class="desc" rows="6" cols="50" oninput="updateTextCounter('add-desc-remem-counter', this.value)"></textarea>
             </div>
             <div class="info">
                 <label for="remem-cause"> Dödsorsak </label>
