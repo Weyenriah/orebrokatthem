@@ -369,3 +369,10 @@ body > section:nth-last-of-type(2) {
     text-align: center;
     color: darkred;
 }
+
+/* Email @ security image */
+.hidden-email img {
+    height: 13px;
+    margin: 0 1px;
+    object-fit: cover;
+}

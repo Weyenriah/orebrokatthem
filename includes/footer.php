@@ -67,11 +67,11 @@ function any_array(array $array, callable $fn) {
 <footer class="first-footer">
     <section class="contact">
         <h2>Kontakt</h2>
-        <p class="contact-p"> <?php echo(nl2br($database->getContent('footer-visit'))); ?>
+        <p class="contact-p"> <?php echo(nl2br($database->getContent('footer-visit'))); ?></p>
+        <p class="contact-p">
+            <i class="fas fa-envelope"></i>
+            <?php echo(displayEmail($database->getContent('footer-visit-email'))); ?>
         </p>
-        <a class="footer-link contact-foot-link" href="mailto:<?php echo($database->getContent('footer-visit-email')); ?>">
-            <i class="fas fa-envelope"></i> <?php echo($database->getContent('footer-visit-email')); ?>
-        </a>
         <p class="contact-p">
             <i class="fas fa-phone"></i> <?php echo($database->getContent('footer-visit-tele')); ?>
         </p>

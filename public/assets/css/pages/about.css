@@ -62,10 +62,13 @@
 
 /* Icon styling for employee-card */
 .employee-info i {
-    margin-right: 3px;
+    margin-right: 4px;
 }
 .tele i {
     margin-right: 6px;
+}
+.employee-mail i {
+    margin-top: 3px;
 }
 
 

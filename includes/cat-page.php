@@ -37,7 +37,8 @@
             </div>
     </section>
     <div class="adopt-me">
-        <a class="adopt" href="mailto:"> Adoptera mig! </a>
+        <h4 class="second-row-heading"> Vill du adoptera mig? Maila! </h4>
+        <p class="adopt-me-mail"></p>
     </div>
 </div>
 <div id="toned-down" onclick="hideCat()"></div>

@@ -26,7 +26,7 @@
             </div>
             <div>
                 <h5 class="second-row-heading"> Kontakt vid kompletterande mejl </h5>
-                <a class="link-calibri" href="<?php echo($database->getContent('support-member-mail')); ?>"> <?php echo($database->getContent('support-member-mail')); ?> </a>
+                <p> <?php echo(displayEmail($database->getContent('support-member-mail'))); ?> </p>
             </div>
         </div>
     </section>
@@ -42,9 +42,7 @@
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
                 <p> <?php echo($database->getContent('support-insurance-name')); ?> <br/>
-                    <i class="fas fa-envelope"></i> <a class="link-calibri" href="mailto:<?php echo($database->getContent('support-insurance-email')); ?>">
-                        <?php echo($database->getContent('support-insurance-email')); ?>
-                    </a>
+                    <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('support-insurance-email'))); ?>
                     <br/>
                     <i class="fas fa-phone"></i> <?php echo($database->getContent('support-insurance-tele')); ?> <br/>
                     <?php echo($database->getContent('support-insurance-availab')); ?> </p>
