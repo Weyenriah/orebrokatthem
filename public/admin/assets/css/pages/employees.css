@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+#employees > .page-display {
+    margin-top: 42px;
+}
+
 /* Displaying the employees in flow */
 .employee {
     display: flex;
