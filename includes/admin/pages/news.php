@@ -174,5 +174,7 @@ $news = $database->getNews($newsPage);
 
         /* Scrolls up to top when button is clicked */
         window.scroll(0, 0);
+
+        updateTextCounter('change-desc-news-counter', news.getElementsByClassName("desc")[0].textContent)
     }
 </script>

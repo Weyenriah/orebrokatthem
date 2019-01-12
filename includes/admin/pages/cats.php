@@ -360,5 +360,7 @@ $cats = $database->getAdminCats($catsPage);
 
         /* Scrolls up to top when button is clicked */
         window.scroll(0, 0);
+
+        updateTextCounter('change-desc-cat-counter', cat.getElementsByClassName("description")[0].textContent);
     }
 </script>
