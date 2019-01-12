@@ -14,8 +14,11 @@
 
             <!-- Add news information -->
             <div class="info">
-                <label for="change-desc-news"> Beskrivning </label>
-                <textarea name="desc" id="change-desc-news" rows="6" cols="50"></textarea>
+                <div class="divide-info">
+                    <label for="change-desc-news"> Beskrivning </label>
+                    <small> <span id="change-desc-news-counter">0</span>/255 </small>
+                </div>
+                <textarea name="desc" id="change-desc-news" rows="6" cols="50"  oninput="updateTextCounter('change-desc-news-counter', this.value)"></textarea>
             </div>
 
             <input class="id-field" type="text" name="id" hidden>

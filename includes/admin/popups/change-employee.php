@@ -24,7 +24,7 @@
             </div>
 
             <div class="info">
-                <label for="change-human-title"> Yrkestitel </label>
+                <label for="change-human-title"> Yrkestitel <span class="red-asterisk">*</span> </label>
                 <input type="text" name="human-title" class="human-title" id="change-human-title" value="Lägg till titel...">
             </div>
 
@@ -34,8 +34,10 @@
             </div>
 
             <div class="info">
-                <label for="change-email"> E-post </label>
+                <label for="change-email"> E-post <span class="red-asterisk">*</span> </label>
                 <input type="text" name="email" class="email" id="change-email" value="Lägg till epost...">
+                <small> Det måste finnas en unik e-post. </small>
+                <small> <span class="red-asterisk">*</span> Måste finnas. </small>
             </div>
 
 

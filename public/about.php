@@ -49,6 +49,8 @@
                         <div class="employee-pic">
                             <img src="<?php echo(BASE_URL . UPLOADS_FOLDER . 'images/' . $employee['image']); ?>" alt="En bild på en person ur personalen">
                         </div>
+                    <?php } else { ?>
+                        <div style="display:none"></div>
                     <?php } ?>
                     <div class="employee-info">
                         <h3> <?php echo($employee['name']); ?> </h3>

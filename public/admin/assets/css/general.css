@@ -175,6 +175,11 @@ body {
     flex-direction: column;
 }
 
+.divide-info {
+    display: flex;
+    justify-content: space-between;
+}
+
 .file-input label {
     font-family: "Calibri", sans-serif;
     margin-bottom: 3px;
@@ -224,4 +229,17 @@ body {
 .info input {
     height: 24px;
     padding-left: 6px;
+}
+
+/* Small more-info text */
+.info small, .divide-info small {
+    margin-top: 2px;
+    color: #566e83;
+    font-size: 12px;
+    text-align: right;
+}
+
+/* Style for asterisk */
+.red-asterisk {
+    color: darkred;
 }

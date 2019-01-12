@@ -8,7 +8,10 @@
         <form class="popup-form" method="POST" enctype="multipart/form-data">
             <!-- Add picture -->
             <div class="file-input">
-                <label for="human-image"> Välj Bild </label>
+                <div class="divide-info">
+                    <label for="human-image"> Välj Bild </label>
+                    <small> Vid ingen bild blir det tomt. </small>
+                </div>
                 <input type="file" name="human-image">
             </div>
 
@@ -34,8 +37,10 @@
             </div>
 
             <div class="info">
-                <label for="add-email"> E-post </label>
-                <input type="text" name="email" id="add-email" placeholder="Lägg till epost...">
+                <label for="add-email"> E-post <span class="red-asterisk">*</span> </label>
+                <input type="text" name="email" id="add-email" placeholder="Lägg till e-post...">
+                <small> Det måste finnas en unik e-post. </small>
+                <small> <span class="red-asterisk">*</span> Måste finnas. </small>
             </div>
 
             <div class="login-or-not">

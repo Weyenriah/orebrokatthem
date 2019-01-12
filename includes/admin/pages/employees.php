@@ -28,20 +28,12 @@ if(isset($_POST['add-employee'])) {
 
     // Check title
     if(!is_string($name) || strlen($title) === 0) {
-        if($show) {
-           $valid = false;
-        } else {
-            $title = '-';
-        }
+        $title = '-';
     }
 
     // Checks telephone
     if(!is_string($telephone) || strlen($telephone) === 0) {
-        if($show) {
-            $valid = false;
-        } else {
-            $telephone = '-';
-        }
+        $telephone = '-';
     }
 
     // Check email-input
@@ -92,21 +84,13 @@ if(isset($_POST['change-employee'])) {
     }
 
     // Check title
-    if(!is_string($name) || strlen($title) === 0) {
-        if($show) {
-            $valid = false;
-        } else {
-            $title = '-';
-        }
+    if(!is_string($name) || strlen($title) === 0 || $title === NULL) {
+        $title = '-';
     }
 
     // Checks telephone
-    if(!is_string($telephone) || strlen($telephone) === 0) {
-        if($show) {
-            $valid = false;
-        } else {
-            $telephone = '-';
-        }
+    if(!is_string($telephone) || strlen($telephone) === 0 || $name === NULL) {
+        $telephone = '-';
     }
 
     // Check email-input
@@ -156,6 +140,8 @@ $employees = $database->getEmployees(true);
     <div class="page-display">
         <?php
         foreach ($employees as $employee) {
+            $title = ($employee['title'] === NULL) ? '-' : ($employee['title']);
+            $tele = ($employee['telephone'] === NULL) ? '-' : ($employee['telephone']);
         ?>
             <article class="employee" id="employees-<?php echo($employee['id']) ?>">
                 <?php if ($employee['image'] !== '' && $employee['image'] !== NULL) { ?>
@@ -184,8 +170,8 @@ $employees = $database->getEmployees(true);
                                 <span class="able-to-login" hidden><?php echo($employee['password'] !== null); ?></span>
                             </div>
                         </div>
-                        <small class="human-title"><?php echo($employee['title']) ?></small>
-                        <p class="tele"><i class="fas fa-phone"></i><?php echo($employee['telephone']) ?></p>
+                        <small class="human-title"><?php echo($title) ?></small>
+                        <p class="tele"><i class="fas fa-phone"></i><?php echo($tele) ?></p>
                         <a class="email" href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i><?php echo($employee['email']) ?></a>
                     </div>
                     <div>

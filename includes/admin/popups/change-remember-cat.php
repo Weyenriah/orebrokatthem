@@ -18,21 +18,22 @@
                 <input type="text" class="catname" id="change-remem-catname" name="catname" value="Kattens namn...">
             </div>
             <div class="life">
-                <div class="remem-info">
+                <div class="info">
                     <label for="change-remem-born"> Född </label>
                     <input type="text" class="born" id="change-remem-born" name="born" value="(yyyy)">
                 </div>
-                <div class="remem-info">
-                    <label for="change-remem-died"> Död </label>
+                <div class="info">
+                    <label for="change-remem-died"> Död <span class="red-asterisk">*</span> </label>
                     <input type="text" class="died" id="change-remem-died" name="died" value="(yyyy-mm-dd)">
+                    <small> <span class="red-asterisk">*</span> Måste finnas. </small>
                 </div>
             </div>
             <div class="life">
-                <div class="remem-info">
+                <div class="info">
                     <label for="change-remem-came"> Kom till katthem </label>
                     <input type="text" class="came" id="change-remem-came" name="came" value="(yyyy-mm-dd)">
                 </div>
-                <div class="remem-info">
+                <div class="info">
                     <label for="change-remem-adopted"> Adopterad </label>
                     <input type="text" class="adopted" id="change-remem-adopted" name="adopted" value="(yyyy-mm-dd)">
                 </div>

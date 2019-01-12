@@ -144,6 +144,12 @@ if(!isset($_SESSION['user'])) {
     if(isset($goToPage) && in_array($goToPage, $pages)) {
         echo('showPopupNav()');
     } ?>
+
+    /* === COUNT VALUE IN TEXTAREA === */
+    function updateTextCounter (id, val) {
+        let counter = document.getElementById(id);
+        counter.textContent = val.length;
+    }
 </script>
 </html>
 
