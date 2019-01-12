@@ -17,8 +17,22 @@ header {
     color: #415463;
 }
 
+.admin-login {
+    display: flex;
+}
+
+/* Text when logged in */
+.admin-login p {
+    font-family: "Calibri", sans-serif;
+    color: #415463;
+}
+.admin-login span {
+    font-weight: bold;
+}
+
+/* Logout <a> */
 .logout {
-    margin-right: 13px;
+    margin: 14px 13px 0 20px;
     font-size: 25px;
     color: #5e788f;
 }

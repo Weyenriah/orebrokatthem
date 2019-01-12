@@ -307,4 +307,16 @@ class Database {
         return null;
     }
 
+    // Get user email
+    public function getUserEmail($id) {
+        $sql = 'SELECT email FROM %1$semployees WHERE id = :id';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute(array(
+            'id' => $id,
+        ));
+        // Grab the list
+        return $stmt->fetchObject()->email;
+    }
 }

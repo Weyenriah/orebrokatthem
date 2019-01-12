@@ -23,7 +23,10 @@ if(!isset($_SESSION['user'])) {
 
 <header>
     <a href="home.php" class="header-title"> Administratör </a>
-    <a href="logout.php" class="logout"> <i class="fas fa-sign-out-alt"></i> </a>
+    <div class="admin-login">
+        <p><span>Inloggad:</span> <?php echo($database->getUserEmail($_SESSION['user'])); ?></p>
+        <a href="logout.php" class="logout"> <i class="fas fa-sign-out-alt"></i> </a>
+    </div>
 </header>
 <nav>
     <div class="popups">
