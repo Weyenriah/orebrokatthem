@@ -8,9 +8,7 @@
         $email = $_POST['email'];
         $msg = $_POST['subject'];
 
-        // TODO send mail
-
-        $mailSent = true;
+        $mailSent = mail(SEND_EMAIL_TO, "OKH-Kontakt: $name", str_replace("\n.", "\n..", $msg), ['From' => SEND_EMAIL_FROM, 'Reply-To' => $email]);
     }
 ?>
 <!DOCTYPE html>
@@ -76,7 +74,7 @@
                 <label for="email" class="second-row-heading">
                     Din emailadress
                 </label>
-                <input type="text" id="email" name="email" placeholder="Ditt namn här..."/>
+                <input type="text" id="email" name="email" placeholder="Din e-post här..."/>
 
                 <label for="subject" class="second-row-heading">
                     Meddelande

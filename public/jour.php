@@ -5,9 +5,7 @@ if(isset($_POST['jour-contact'])) {
     $email = $_POST['email'];
     $msg = $_POST['msg'];
 
-    // TODO send mail
-
-    $mailSent = true;
+    $mailSent = mail(SEND_EMAIL_TO, "OKH-Jourhem: $name", str_replace("\n.", "\n..", $msg), ['From' => SEND_EMAIL_FROM, 'Reply-To' => $email]);
 }
 ?>
 <!DOCTYPE html>
