@@ -17,8 +17,18 @@ $fields = [
         'rows' => 10
     ],
     [
+        'element' => 'jour-report',
+        'text' => 'Ändra "Anmälning"',
+        'rows' => 10
+    ],
+    [
         'text' => 'Ändra kontaktinformation för "Anmälning"',
         'fields' => [
+            [
+                'element' => 'jour-form',
+                'text' => 'Länk till formulär',
+                'rows' => 3
+            ],
             [
                 'element' => 'jour-contact-name',
                 'text' => 'Namn',
@@ -28,6 +38,11 @@ $fields = [
                 'element' => 'jour-contact-tele',
                 'text' => 'Telefonnummer',
                 'rows' => 1
+            ],
+            [
+            'element' => 'jour-contact-email',
+            'text' => 'E-post',
+            'rows' => 1
             ]
         ]
     ]
