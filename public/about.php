@@ -137,14 +137,14 @@
                         Om du inte varit på katthemmet tidigare är det jättebra att börja med att komma dit någon dag och se hur det ser ut och prata med personalen där. Antingen att du hoppar in på öppet hus (söndagar eller onsdagar) eller så bestämmer du med någon som jobbar att du kommer dit någon annan tid när det kanske är lite lugnare. </p>
                 </div>
                 <!-- Contact information -->
-                <div class="contact-become">
+                <div class="paragraph-double-text">
                     <div>
                         <h5 class="second-row-heading"> Ring till katthemmet </h5>
-                        <p> <?php echo($database->getContent('about-vol-tele')); ?> </p>
+                        <p><i class="fas fa-phone"></i> <?php echo($database->getContent('about-vol-tele')); ?> </p>
                     </div>
                     <div>
                         <h5 class="second-row-heading"> Mejla personalansvarige </h5>
-                        <p><?php echo(displayEmail($database->getContent('about-vol-email'))); ?></p>
+                        <p><i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('about-vol-email'))); ?></p>
                     </div>
                 </div>
             </div>

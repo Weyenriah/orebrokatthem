@@ -346,6 +346,12 @@ body > section:nth-last-of-type(2) {
     width: 250px;
 }
 
+@media only screen and (max-width: 571px) {
+    .decor-img {
+        display: none;
+    }
+}
+
 /* Small info css */
 .small-info {
     grid-row: 2;
@@ -375,4 +381,29 @@ body > section:nth-last-of-type(2) {
     height: 13px;
     margin: 0 1px;
     object-fit: cover;
+}
+
+/* === STYLING FOR DOUBLE TEXT IN DIVS === */
+.paragraph-double-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paragraph-double-text p {
+    margin-bottom: 0;
+}
+
+.paragraph-double-text .fas {
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+@media only screen and (max-width: 677px) {
+    .paragraph-double-text {
+        flex-direction: column;
+    }
+
+    .paragraph-double-text div:last-child {
+        margin-top: 10px;
+    }
 }

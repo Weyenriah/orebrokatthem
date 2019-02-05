@@ -1,15 +1,3 @@
-/* === MEMBER STYLING === */
-.member-contact {
-    grid-column: 2;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.member-payment p:first-of-type {
-    margin-bottom: 0;
-}
-
 /* === INSURANCE STYLING === */
 .insurance {
     display: grid;

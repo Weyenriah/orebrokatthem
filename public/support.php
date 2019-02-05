@@ -17,16 +17,18 @@
     <!-- Become Member -->
     <section class="general-grid text-box blue-background" id="membership">
         <h2> Bli medlem </h2>
-        <p class="paragraph-position"> <?php echo(nl2br($database->getContent('support-member'))); ?> </p>
-        <div class="member-contact">
-            <div class="member-payment">
-                <h5 class="second-row-heading"> Betalningsmetoder </h5>
-                <p><i>Postgiro:</i> <?php echo($database->getContent('support-member-post')); ?> </p>
-                <p><i>Swish:</i> <?php echo($database->getContent('support-member-swish')); ?> </p>
-            </div>
-            <div>
-                <h5 class="second-row-heading"> Kontakt vid kompletterande mejl </h5>
-                <p> <?php echo(displayEmail($database->getContent('support-member-mail'))); ?> </p>
+        <div class="paragraph-position">
+            <p> <?php echo(nl2br($database->getContent('support-member'))); ?> </p>
+            <div class="paragraph-double-text">
+                <div>
+                    <h5 class="second-row-heading"> Betalningsmetoder </h5>
+                    <p><i>Postgiro:</i> <?php echo($database->getContent('support-member-post')); ?> </p>
+                    <p><i>Swish:</i> <?php echo($database->getContent('support-member-swish')); ?> </p>
+                </div>
+                <div>
+                    <h5 class="second-row-heading"> Kontakt vid kompletterande mejl </h5>
+                    <p> <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('support-member-mail'))); ?> </p>
+                </div>
             </div>
         </div>
     </section>

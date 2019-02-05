@@ -155,8 +155,8 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <div class="paragraph-position">
             <strong> <?php echo(nl2br($database->getContent('relocate-important'))); ?> </strong>
             <p> <?php echo(nl2br($database->getContent('relocate-text'))); ?> </p>
-            <div class="relocate-contact">
-                <div class="">
+            <div class="paragraph-double-text">
+                <div>
                     <h3 class="second-row-heading"> Skicka in anmälan </h3>
                     <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-replacement')); ?>" rel="noopener">
                         <i class="fas fa-external-link-alt"></i> Formulär för omplacering
@@ -164,7 +164,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 </div>
                 <div>
                     <h3 class="second-row-heading"> Behövs inte en omplacering längre? </h3>
-                    <p><?php echo(displayEmail($database->getContent('mail-replacement'))); ?></p>
+                    <p><i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('mail-replacement'))); ?></p>
                 </div>
             </div>
         </div>

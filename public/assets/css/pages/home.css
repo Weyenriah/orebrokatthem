@@ -205,18 +205,6 @@
     margin-top: 0;
 }
 
-/* Styling for hide-show button */
-#hide-show {
-
-}
-
-/* === STYLING FOR RELOCATE-CAT === */
-.relocate-contact {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 /* === GENERAL STYLING FOR REMEMBER === */
 #remember-container {
     grid-row: 3;

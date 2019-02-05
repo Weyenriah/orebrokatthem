@@ -46,7 +46,7 @@ if(isset($_POST['jour-contact'])) {
                 $header = count($pieces) > 0 ? $pieces[0] : '';;
                 $text = count($pieces) > 1 ? $pieces[1] : '';
                 echo("
-                    <h5>
+                    <h5 class='second-row-heading'>
                         $header
                     </h5>
                     <p>
@@ -91,29 +91,20 @@ if(isset($_POST['jour-contact'])) {
     <!-- Double sided, report-form on left and contact on right -->
     <section class="general-grid text-box blue-background" id="report">
         <h2>Anmälning</h2>
-        <div class="paragraph-position report-info">
-            <form method="post">
-                <label for="name" class="second-row-heading">
-                    Ditt namn
-                </label>
-                <input type="text" id="name" name="name" placeholder="Ditt namn här..."/>
-
-                <label for="email" class="second-row-heading">
-                    Din emailadress
-                </label>
-                <input type="text" id="email" name="email" placeholder="Din e-post här..."/>
-
-                <label for="msg" class="second-row-heading">
-                    Meddelande
-                </label>
-                <textarea id="msg" name="msg" placeholder="Skriv ditt meddelande här..."></textarea>
-
-                <input type="submit" name="jour-contact" value="Skicka" class="button submit-button">
-            </form>
-            <div class="report-contact">
-                <h5 class="second-row-heading"> Eller ring till </h5>
-                <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('jour-contact-tele')); ?> </p>
-                <small> <?php echo($database->getContent('jour-contact-name')); ?> </small>
+        <div class="paragraph-position">
+            <p> <?php echo($database->getContent('jour-report')); ?> </p>
+            <div class="paragraph-double-text">
+                <div>
+                    <h5 class="second-row-heading"> Fyll i formulär </h5>
+                    <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('jour-form')); ?>" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Formulär för omplacering
+                    </a>
+                </div>
+                <div>
+                    <h5 class="second-row-heading"> Kontakt </h5>
+                    <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('jour-contact-name')); ?>: <?php echo($database->getContent('jour-contact-tele')); ?> <br/>
+                    <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('jour-contact-email'))) ?> </p>
+                </div>
             </div>
         </div>
     </section>
