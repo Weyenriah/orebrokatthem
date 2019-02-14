@@ -94,8 +94,9 @@
                 </section>
                 <section>
                     <h5 class="second-row-heading"> Anmälning av hemlös katt </h5>
-                    <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('about-tell-tele')); ?> </p>
-                    <small> <?php echo($database->getContent('about-tell-name')); ?> </small>
+                    <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('form-found')); ?>" rel="noopener">
+                        <i class="fas fa-external-link-alt"></i> Formulär för hittad katt
+                    </a>
                 </section>
                 <section>
                     <h5 class="second-row-heading"> Adoptera katt </h5>

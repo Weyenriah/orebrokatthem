@@ -97,7 +97,7 @@ if(isset($_POST['jour-contact'])) {
                 <div>
                     <h5 class="second-row-heading"> Fyll i formulär </h5>
                     <a class="link-calibri" target="_blank" href="<?php echo($database->getContent('jour-form')); ?>" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> Formulär för omplacering
+                        <i class="fas fa-external-link-alt"></i> Formulär för att bli jourhem
                     </a>
                 </div>
                 <div>
