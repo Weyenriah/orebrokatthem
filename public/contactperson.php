@@ -25,14 +25,14 @@
         <p> <?php echo(nl2br($database->getContent('contactperson-header'))); ?> </p>
     </header>
 
-    <section class="general-grid text-box blue-background" id="workers">
+    <section class="general-grid text-box blue-background">
         <h2> Vad gör en kontaktperson? </h2>
         <div class="paragraph-position">
             <p> <?php echo(nl2br($database->getContent('contactperson-doing'))); ?> </p>
         </div>
     </section>
 
-    <section class="general-grid text-box" id="workers">
+    <section class="general-grid text-box">
         <h2> Vad behöver en kontaktperson klara? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <section class="general-grid text-box blue-background" id="workers">
+    <section class="general-grid text-box blue-background">
         <h2>Anmälning</h2>
         <div class="general-form paragraph-position">
             <form method="post">
