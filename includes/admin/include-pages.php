@@ -25,6 +25,9 @@
     include(APP_FOLDER . '/includes/admin/textfield-pages/jour.php');
 
     // About page
+    include(APP_FOLDER . '/includes/admin/textfield-pages/contactperson.php');
+
+    // About page
     include(APP_FOLDER . '/includes/admin/textfield-pages/about.php');
 
     // Support page

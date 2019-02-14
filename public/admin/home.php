@@ -69,6 +69,9 @@ if(!isset($_SESSION['user'])) {
         <div class="pages" id="jour-link">
             <a href="#" onclick="showPage('jour')"> Bli Jourhem </a>
         </div>
+        <div class="pages" id="contactperson-link">
+            <a href="#" onclick="showPage('contactperson')"> Bli Kontaktperson </a>
+        </div>
         <div class="pages" id="about-link">
             <a href="#" onclick="showPage('about')"> Om Oss </a>
         </div>
@@ -136,6 +139,7 @@ if(!isset($_SESSION['user'])) {
         'adopt',
         'our-cats',
         'jour',
+        'contactperson',
         'about',
         'support',
         'footer',
