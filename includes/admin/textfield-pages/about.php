@@ -32,21 +32,6 @@ $fields = [
         ]
     ],
     [
-        'text' => 'Ändra kontaktinformation för "Anmälning av hemlös katt" under "Kontakta oss"',
-        'fields' => [
-            [
-                'element' => 'about-tell-name',
-                'text' => 'Namn',
-                'rows' => 1
-            ],
-            [
-                'element' => 'about-tell-tele',
-                'text' => 'Telefonnummer',
-                'rows' => 1
-            ]
-        ]
-    ],
-    [
         'text' => 'Ändra kontaktinformation för "Bli Volontär"',
         'fields' => [
             [
