@@ -22,6 +22,11 @@ $footerLinks = array(
         'class' => 'jour',
     ),
     array(
+        'uri' => array(BASE_URL . 'contactperson.php'),
+        'name' => 'Bli Kontaktperson',
+        'class' => 'contactperson',
+    ),
+    array(
         'uri' => array(BASE_URL . 'about.php'),
         'name' => 'Om Oss',
         'class' => 'about',

@@ -20,7 +20,7 @@ body > section:nth-last-of-type(2) {
     margin-left: 20%;
     margin-top: 30px;
 }
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: 1290px) {
     .header {
         margin-right: 10%;
         margin-left: 10%;
@@ -54,7 +54,7 @@ body > section:nth-last-of-type(2) {
     height: auto;
     padding: 15px 0 35px 0;
 }
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: 1290px) {
     .text-box {
         grid-template-columns: 10% 80% 10%;
     }

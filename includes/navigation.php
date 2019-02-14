@@ -13,13 +13,18 @@ $navigationLinks = array(
     ),
     array(
         'uri' => array(BASE_URL . 'our-cats.php'),
-        'name' => 'Våra katter',
+        'name' => 'Våra Katter',
         'class' => 'cats',
     ),
     array(
         'uri' => array(BASE_URL . 'jour.php'),
         'name' => 'Bli Jourhem',
         'class' => 'jour',
+    ),
+    array(
+        'uri' => array(BASE_URL . 'contactperson.php'),
+        'name' => 'Bli Kontaktperson',
+        'class' => 'contactperson',
     ),
     array(
         'uri' => array(BASE_URL . 'about.php'),

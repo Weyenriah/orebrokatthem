@@ -86,6 +86,7 @@
     text-decoration: none;
     font-family: "Georgia", serif;
     color: #5e788f;
+    font-size: 17px;
 }
 .big-page-list-item a:hover:not(.active-nav) {
     color: #566e83;
@@ -205,7 +206,7 @@
     padding: 0;
     height: calc(100vh - 86px);
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* Positioning for content of list-item */
@@ -228,11 +229,14 @@
 .jour {
     grid-row: 4;
 }
-.about {
+.contactperson {
     grid-row: 5;
 }
-.support {
+.about {
     grid-row: 6;
+}
+.support {
+    grid-row: 7;
 }
 
 /* Style for navigation-links (not when hovering) */
@@ -260,15 +264,7 @@
 }
 
 /* === RESPONSIVENESS === */
-@media only screen and (max-width: 1180px) {
-    .big-page-list-item a {
-        text-decoration: none;
-        font-family: "Georgia", serif;
-        color: #5e788f;
-    }
-}
-
-@media only screen and (max-width: 1180px) {
+@media only screen and (max-width: 1290px) {
     .menu-elements {
         width: 80%;
     }
@@ -280,6 +276,11 @@
     }
     .menu-divider {
         margin: 27px 0 0 0;
+    }
+    .big-page-list-item a {
+        text-decoration: none;
+        font-family: "Georgia", serif;
+        color: #5e788f;
     }
 }
 
