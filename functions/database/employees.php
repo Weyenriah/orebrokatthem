@@ -35,7 +35,7 @@ trait Employees {
                 'telephone' => $telephone,
                 'email' => $email,
                 'password' => $password,
-                'hidden' => $hidden,
+                'hidden' => $hidden ? 1 : 0,
                 'image' => $image,
             ));
         }
