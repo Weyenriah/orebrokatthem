@@ -407,3 +407,34 @@ body > section:nth-last-of-type(2) {
         margin-top: 10px;
     }
 }
+
+/* === FORM STYLING === */
+.general-form form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-form label {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #415463;
+    font-size: 17px;
+}
+
+/* Change areas except submit-button (input:last-child) */
+.general-form textarea, .general-form input:not(:last-child) {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border: 1px solid #415463;
+    padding-left: 7px;
+    font-family: "Calibri", sans-serif;
+    font-size: 15px;
+}
+.general-form textarea {
+    height: 200px;
+}
+.general-form input:not(:last-child) {
+    height: 26px;
+}
