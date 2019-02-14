@@ -37,7 +37,7 @@
     </header>
 
     <!-- Section for employees -->
-    <section class="general-grid text-box blue-background " id="workers">
+    <section class="general-grid text-box blue-background" id="workers">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <!-- Employee cards -->
@@ -64,7 +64,7 @@
     <!-- Contact section -->
     <section class="general-grid text-box" id="contact">
         <h2>Kontakta oss</h2>
-        <div class="contact-us">
+        <div class="general-form contact-us">
             <form method="post">
                 <label for="firstname" class="second-row-heading">
                     Ditt namn

@@ -74,35 +74,8 @@
     display: grid;
     grid-template-columns: 1fr 10% 30%;
 }
-#contact form {
+.contact-us .general-form form {
     grid-column: 1;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-#contact label {
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    color: #415463;
-    font-size: 17px;
-}
-
-/* Change areas except submit-button (input:last-child) */
-#contact textarea, #contact input:not(:last-child) {
-    margin-bottom: 10px;
-    background-color: #ffffff;
-    border: 1px solid #415463;
-    padding-left: 7px;
-    font-family: "Calibri", sans-serif;
-    font-size: 15px;
-}
-#contact textarea {
-    height: 200px;
-}
-#contact input:not(:last-child) {
-    height: 26px;
 }
 
 /* The other side of this page styling */
