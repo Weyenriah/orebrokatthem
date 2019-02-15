@@ -36,6 +36,11 @@ body > section:nth-last-of-type(2) {
     text-align: center;
     font-size: 240%;
 }
+@media only screen and (max-width: 430px) {
+    .header h1 {
+        font-size: 220%;
+    }
+}
 
 /* Styling for the general text in Header */
 .header p {
@@ -144,6 +149,7 @@ body > section:nth-last-of-type(2) {
     animation-name: link;
     animation-duration: 0.5s;
 }
+
 
 /* === COLOR FOR BLUE TEXT BOXES === */
 .blue-background {
