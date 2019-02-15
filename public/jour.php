@@ -34,7 +34,7 @@ if(isset($_POST['jour-contact'])) {
     </header>
 
     <!-- Section for "How it is to be an emergency home?" -->
-    <section class="general-grid text-box blue-background" id="how">
+    <section class="general-grid text-box blue-background">
         <h2> Hur är det att vara jourhem? </h2>
         <div class="paragraph-position how-text">
             <?php
@@ -58,7 +58,7 @@ if(isset($_POST['jour-contact'])) {
     </section>
 
     <!-- Section for advice when you take care of a cat -->
-    <section class="general-grid text-box" id="tips">
+    <section class="general-grid text-box">
         <h2> Tips för dig med skygg jourhemskatt </h2>
         <div class="paragraph-position">
             <div class="decor-img">
@@ -89,7 +89,7 @@ if(isset($_POST['jour-contact'])) {
     </section>
 
     <!-- Double sided, report-form on left and contact on right -->
-    <section class="general-grid text-box blue-background" id="report">
+    <section class="general-grid text-box blue-background">
         <h2>Anmälning</h2>
         <div class="paragraph-position">
             <p> <?php echo($database->getContent('jour-report')); ?> </p>

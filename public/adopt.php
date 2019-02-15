@@ -22,7 +22,7 @@
         <p> <?php echo(nl2br($database->getContent('adopt-header'))); ?> </p>
     </header>
 
-    <section class="general-grid text-box blue-background" id="how">
+    <section class="general-grid text-box blue-background">
         <h2> Hur adopterar jag? </h2>
         <div class="paragraph-position">
             <p> <?php echo(nl2br($database->getContent('adopt-how'))); ?> </p>
@@ -30,7 +30,7 @@
     </section>
 
     <!-- Advice section -->
-    <section class="general-grid text-box" id="advice">
+    <section class="general-grid text-box">
         <h2> Tips </h2>
         <div class="paragraph-position">
             <div class="decor-img">
@@ -61,7 +61,7 @@
     </section>
 
     <!-- Prices section -->
-    <section class="general-grid text-box blue-background" id="prices">
+    <section class="general-grid text-box blue-background">
         <h2> Adoptionspriser </h2>
         <div class="paragraph-position price-info">
             <div class="prices">

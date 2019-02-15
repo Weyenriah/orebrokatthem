@@ -90,7 +90,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- News flow -->
-    <section class="general-grid text-box" id="newsflow">
+    <section class="general-grid text-box">
         <h2> Nyheter </h2>
         <div class="paragraph-position news<?php if($expanded) echo(' expanded'); ?>" id="news-container">
             <?php foreach($news as $new) {
@@ -132,7 +132,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- Have you found a cat -->
-    <section class="general-grid text-box blue-background" id="found-cat">
+    <section class="general-grid text-box blue-background">
         <h2> Har du hittat en katt? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
@@ -171,7 +171,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
     </section>
 
     <!-- Remember Cats-flow -->
-    <section class="general-grid text-box blue-background" id="remember">
+    <section class="general-grid text-box blue-background">
         <h2> Minneslunden </h2>
         <div class="paragraph-position all-remem<?php echo(isset($_GET['remempage']) ? ' expanded' : '') ?>" id="remember-container">
             <p> <?php echo(nl2br($database->getContent('home-remember'))); ?> </p>

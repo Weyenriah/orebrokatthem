@@ -37,7 +37,7 @@
     </header>
 
     <!-- Section for employees -->
-    <section class="general-grid text-box blue-background" id="workers">
+    <section class="general-grid text-box blue-background">
         <h2> Vi som jobbar här! </h2>
         <div class="employee-cards">
             <!-- Employee cards -->
@@ -62,7 +62,7 @@
     </section>
 
     <!-- Contact section -->
-    <section class="general-grid text-box" id="contact">
+    <section class="general-grid text-box">
         <h2>Kontakta oss</h2>
         <div class="general-form contact-us">
             <form method="post">
@@ -107,7 +107,7 @@
     </section>
 
     <!-- Section for how to apply to be a volonteer -->
-    <section class="general-grid text-box blue-background" id="volonteer">
+    <section class="general-grid text-box blue-background">
         <h2> Bli volontär </h2>
         <div class="paragraph-position become">
             <div class="decor-img">
