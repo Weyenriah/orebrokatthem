@@ -89,6 +89,7 @@ trait Cats {
         ));
     }
 
+    // Get images for cat
     public function getCatImages($id) {
         // Gets all information from database
         $sql = 'SELECT image FROM %1$scat_images WHERE cat_id = :id';
@@ -102,6 +103,7 @@ trait Cats {
         return $stmt->fetchAll();
     }
 
+    // Add cat image
     public function addCatImage($id, $filename, $k) {
         // Insert right information in database
         $sql = 'INSERT INTO %1$scat_images (cat_id, image, k) VALUES(:cat_id, :image, :k) ON DUPLICATE KEY UPDATE image = :image2;';

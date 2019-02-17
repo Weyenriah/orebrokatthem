@@ -13,27 +13,27 @@ $navigationLinks = array(
     ),
     array(
         'uri' => array(BASE_URL . 'our-cats.php'),
-        'name' => 'Våra Katter',
+        'name' => 'Våra katter',
         'class' => 'cats',
     ),
     array(
         'uri' => array(BASE_URL . 'jour.php'),
-        'name' => 'Bli Jourhem',
+        'name' => 'Bli jourhem',
         'class' => 'jour',
     ),
     array(
         'uri' => array(BASE_URL . 'contactperson.php'),
-        'name' => 'Bli Kontaktperson',
+        'name' => 'Bli kontaktperson',
         'class' => 'contactperson',
     ),
     array(
         'uri' => array(BASE_URL . 'about.php'),
-        'name' => 'Om Oss',
+        'name' => 'Om oss',
         'class' => 'about',
     ),
     array(
         'uri' => array(BASE_URL . 'support.php'),
-        'name' => 'Stöd Oss',
+        'name' => 'Stöd oss',
         'class' => 'support',
     ),
 );

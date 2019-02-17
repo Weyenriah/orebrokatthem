@@ -66,7 +66,7 @@
         <div class="paragraph-position price-info">
             <div class="prices">
                 <div class="price">
-                    <h5 class="second-row-heading"> Katter upp till 12 år </h5>
+                    <h5 class="second-row-heading"> Katter upp till 10 år </h5>
                     <p> <?php echo($database->getContent('adopt-up-to')); ?> </p>
                 </div>
                 <div class="price">
@@ -74,7 +74,7 @@
                     <p> <?php echo($database->getContent('adopt-two-cats')); ?> </p>
                 </div>
                 <div class="price">
-                    <h5 class="second-row-heading"> Katter 12 år eller äldre </h5>
+                    <h5 class="second-row-heading"> Katter 10 år eller äldre </h5>
                     <p> <?php echo($database->getContent('adopt-older')); ?> </p>
                 </div>
             </div>

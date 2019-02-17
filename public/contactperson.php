@@ -21,7 +21,7 @@
 
     <!-- Specific heading to this page -->
     <header class="header">
-        <h1> Bli Kontaktperson </h1>
+        <h1> Bli kontaktperson </h1>
         <p> <?php echo(nl2br($database->getContent('contactperson-header'))); ?> </p>
     </header>
 

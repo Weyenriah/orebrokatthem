@@ -52,6 +52,7 @@
     display: flex;
     font-family: "Calibri", sans-serif;
     color: #415463;
+    margin-top: 18px;
 }
 
 /* Styling that overrides general.css (p) */

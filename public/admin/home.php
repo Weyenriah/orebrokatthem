@@ -119,6 +119,9 @@ if(!isset($_SESSION['user'])) {
         let pages = document.getElementsByClassName('page');
         let links = document.getElementsByClassName('pages');
 
+        console.log(pages);
+        console.log(links);
+
         /* Adds display = none om every page */
         for (let i = 0; i < pages.length; i++) {
             pages[i].style.display = 'none';

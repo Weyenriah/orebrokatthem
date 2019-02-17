@@ -22,10 +22,10 @@ function SaveFile($file, $prefix = "") {
         && $imageFileType != "gif" ) {
         return null;
     }
-    // Checks size
-    if ($file["size"] > 500000) {
+    /* Checks size
+    if ($file["size"] > 2000000) {
         return null;
-    }
+    } */
     // Move uploaded file
     $success = move_uploaded_file($file["tmp_name"], $target_file);
     // If success!

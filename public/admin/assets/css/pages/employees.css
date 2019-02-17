@@ -69,16 +69,13 @@
     color: #415463;
 }
 
-.employee-information p {
-    margin-top: 4px;
-    color: #415463;
-}
-
-.employee-information p:not(:last-child) {
-    margin-bottom: 5px;
+.employee-admininfo {
+    display: flex;
+    flex-direction: column;
 }
 
 .employee-information a {
+    margin-top: 18px;
     text-decoration: none;
     color: #5e788f;
 }

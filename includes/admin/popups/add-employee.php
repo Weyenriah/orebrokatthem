@@ -32,11 +32,6 @@
             </div>
 
             <div class="info">
-                <label for="add-tele"> Telefonnummer </label>
-                <input type="text" name="tele" id="add-tele" placeholder="Lägg till telefonnummer...">
-            </div>
-
-            <div class="info">
                 <label for="add-email"> E-post <span class="red-asterisk">*</span> </label>
                 <input type="text" name="email" id="add-email" placeholder="Lägg till e-post...">
                 <small> Det måste finnas en unik e-post. </small>

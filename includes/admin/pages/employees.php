@@ -11,7 +11,6 @@ if (isset($_POST['removeEmployee'])) {
 if(isset($_POST['add-employee'])) {
     $name = htmlentities(trim($_POST['human-name']));
     $title = htmlentities(trim($_POST['title']));
-    $telephone = htmlentities(trim($_POST['tele']));
     $email = htmlentities(trim($_POST['email']));
     $password = $_POST['password'];
     $show = isset($_POST['add-show-employee']);
@@ -29,11 +28,6 @@ if(isset($_POST['add-employee'])) {
     // Check title
     if(!is_string($name) || strlen($title) === 0) {
         $title = '-';
-    }
-
-    // Checks telephone
-    if(!is_string($telephone) || strlen($telephone) === 0) {
-        $telephone = '-';
     }
 
     // Check email-input
@@ -55,7 +49,7 @@ if(isset($_POST['add-employee'])) {
     // Adds if everything checks out
     if($valid) {
         $image = SaveFile($file);
-        $addEmployee = $database->addEmployee($name, $title, $telephone, $email, $password, !$show, $image);
+        $addEmployee = $database->addEmployee($name, $title, $email, $password, !$show, $image);
 
         $goToPage = 'employees';
     } else {
@@ -68,7 +62,6 @@ if(isset($_POST['change-employee'])) {
     $id = $_POST['id'];
     $name = htmlentities(trim($_POST['human-name']));
     $title = htmlentities(trim($_POST['human-title']));
-    $telephone = htmlentities(trim($_POST['tele']));
     $email = htmlentities(trim($_POST['email']));
     $password = $_POST['password'];
     $show = isset($_POST['show']);
@@ -86,11 +79,6 @@ if(isset($_POST['change-employee'])) {
     // Check title
     if(!is_string($name) || strlen($title) === 0 || $title === NULL) {
         $title = '-';
-    }
-
-    // Checks telephone
-    if(!is_string($telephone) || strlen($telephone) === 0 || $name === NULL) {
-        $telephone = '-';
     }
 
     // Check email-input
@@ -112,7 +100,7 @@ if(isset($_POST['change-employee'])) {
     if($valid) {
         $image = SaveFile($file);
 
-        $changeEmployee = $database->changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $show ? 0 : 1, $image);
+        $changeEmployee = $database->changeEmployee($id, $name, $title, $email, $canLogin, $password, $show ? 0 : 1, $image);
 
         $goToPage = 'employees';
     } else {
@@ -141,7 +129,6 @@ $employees = $database->getEmployees(true);
         <?php
         foreach ($employees as $employee) {
             $title = ($employee['title'] === NULL) ? '-' : ($employee['title']);
-            $tele = ($employee['telephone'] === NULL) ? '-' : ($employee['telephone']);
         ?>
             <article class="employee" id="employees-<?php echo($employee['id']) ?>">
                 <?php if ($employee['image'] !== '' && $employee['image'] !== NULL) { ?>
@@ -170,9 +157,10 @@ $employees = $database->getEmployees(true);
                                 <span class="able-to-login" hidden><?php echo($employee['password'] !== null); ?></span>
                             </div>
                         </div>
-                        <small class="human-title"><?php echo($title) ?></small>
-                        <p class="tele"><i class="fas fa-phone"></i><?php echo($tele) ?></p>
-                        <a class="email" href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i><?php echo($employee['email']) ?></a>
+                        <div class="employee-admininfo">
+                            <small class="human-title"><?php echo($title) ?></small>
+                            <a class="email" href="mailto:<?php echo($employee['email']) ?>"><i class="fas fa-envelope"></i><?php echo($employee['email']) ?></a>
+                        </div>
                     </div>
                     <div>
                         <p class="showcase">
@@ -205,7 +193,6 @@ $employees = $database->getEmployees(true);
         /* Matches the information from popup with employee */
         popup.getElementsByClassName('human-name')[0].value = employee.getElementsByClassName("human-name")[0].textContent;
         popup.getElementsByClassName('human-title')[0].value = employee.getElementsByClassName("human-title")[0].textContent;
-        popup.getElementsByClassName('tele')[0].value = employee.getElementsByClassName("tele")[0].textContent;
         popup.getElementsByClassName('email')[0].value = employee.getElementsByClassName("email")[0].textContent;
         popup.getElementsByClassName('show-employ')[0].checked = employee.getElementsByClassName("hidden-employee")[0].textContent === '0';
         popup.getElementsByClassName('log-in')[0].checked = employee.getElementsByClassName("able-to-login")[0].textContent === '1';

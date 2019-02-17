@@ -32,7 +32,7 @@
 
     <!-- Specific heading to this page -->
     <header class="header">
-        <h1> Om Oss </h1>
+        <h1> Om oss </h1>
         <p> <?php echo(nl2br($database->getContent('about-header'))); ?> </p>
     </header>
 
@@ -53,7 +53,6 @@
                     <div class="employee-info">
                         <h3> <?php echo($employee['name']); ?> </h3>
                         <small> <?php echo($employee['title']); ?> </small>
-                        <p class="tele"><i class="fas fa-phone"></i> <?php echo($employee['telephone']); ?> </p>
                         <p class="employee-mail"><i class="fas fa-envelope"></i> <?php echo(displayEmail($employee['email'])) ?> </p>
                     </div>
                 </article>

@@ -2,7 +2,7 @@
 
 trait Employees {
     // Add Employee
-    public function addEmployee($name, $title, $telephone, $email, $password, $hidden, $image) {
+    public function addEmployee($name, $title, $email, $password, $hidden, $image) {
         // Checks so that there's no spamming
         // and if mail exists
         if ($this->changesLastHour('employees') > 20 || $this->emailExists($email)) {
@@ -12,7 +12,6 @@ trait Employees {
             $sql = 'INSERT INTO %1$semployees (
               `name`, 
               `title`, 
-              `telephone`, 
               `email`, 
               `password`, 
               `hidden`,
@@ -20,7 +19,6 @@ trait Employees {
             ) VALUES (
               :name, 
               :title, 
-              :telephone, 
               :email, 
               :password, 
               :hidden,
@@ -32,7 +30,6 @@ trait Employees {
             return $stmt->execute(array(
                 'name' => $name,
                 'title' => $title,
-                'telephone' => $telephone,
                 'email' => $email,
                 'password' => $password,
                 'hidden' => $hidden ? 1 : 0,
@@ -42,7 +39,7 @@ trait Employees {
     }
 
     // Change Employee
-    public function changeEmployee($id, $name, $title, $telephone, $email, $canLogin, $password, $hidden, $image) {
+    public function changeEmployee($id, $name, $title, $email, $canLogin, $password, $hidden, $image) {
         // If email exists...
         if ($this->emailExists($email, $id)) {
             return false;
@@ -51,13 +48,11 @@ trait Employees {
         $sql = 'UPDATE %1$semployees SET
               name = :name,
               title = :title,
-              telephone = :telephone,
               email = :email,';
         $parameters = [
             'id' => $id,
             'name' => $name,
             'title' => $title,
-            'telephone' => $telephone,
             'email' => $email,
         ];
         // Adds password if needed

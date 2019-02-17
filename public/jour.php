@@ -29,7 +29,7 @@ if(isset($_POST['jour-contact'])) {
 
     <!-- Specific heading to this page -->
     <header class="header">
-        <h1> Bli Jourhem </h1>
+        <h1> Bli jourhem </h1>
         <p> <?php echo(nl2br($database->getContent('jour-header'))); ?> </p>
     </header>
 

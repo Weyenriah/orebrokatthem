@@ -29,17 +29,11 @@
             </div>
 
             <div class="info">
-                <label for="change-tele"> Telefonnummer </label>
-                <input type="text" name="tele" class="tele" id="change-tele" value="Lägg till telefonnummer...">
-            </div>
-
-            <div class="info">
                 <label for="change-email"> E-post <span class="red-asterisk">*</span> </label>
                 <input type="text" name="email" class="email" id="change-email" value="Lägg till epost...">
                 <small> Det måste finnas en unik e-post. </small>
                 <small> <span class="red-asterisk">*</span> Måste finnas. </small>
             </div>
-
 
             <div class="login-or-not">
                 <input type="checkbox" class="log-in" id="change-log-in" name="log-in" value="log-in" onclick="showChangePassword(true)">
