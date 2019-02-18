@@ -115,12 +115,46 @@ $employees = $database->getEmployees(true);
 
 <section class="page" id="employees">
     <h2 class="page-title">Hantera Anställda</h2>
-    <button class="add-button" type="button" onclick="showPopupAddEmployee()"> Lägg till </button>
-    <!-- Removed Text -->
+    <button class="add-button employee-add-button" type="button" onclick="showPopupAddEmployee()"> Lägg till </button>
+    <!-- Removed/Added/Changed Text -->
     <?php if (isset($removed)) { ?>
-        <div class="removed-employee">
+        <div class="removed">
             <p>
                 <?php echo(($removed)? "Anställd borttagen" : "Kunde inte ta bort den anställda"); ?>
+            </p>
+        </div>
+    <?php }
+
+    if(isset($addEmployee)) { ?>
+        <div class="added employee-confirm">
+            <p>
+                <?php if($addEmployee = true) {
+                    echo("Anställd tillagd!");
+                } ?>
+            </p>
+        </div>
+        <div class="removed">
+            <p>
+                <?php if($addEmployee = false) {
+                    echo("Kunde inte lägga till anställd");
+                } ?>
+            </p>
+        </div>
+    <?php }
+
+    if(isset($changeEmployee)) { ?>
+        <div class="added employee-confirm">
+            <p>
+                <?php if($changeEmployee = true) {
+                    echo("Anställd ändrad!");
+                } ?>
+            </p>
+        </div>
+        <div class="removed">
+            <p>
+                <?php if($changeEmployee = false) {
+                    echo("Anställd kunde inte ändras");
+                } ?>
             </p>
         </div>
     <?php } ?>

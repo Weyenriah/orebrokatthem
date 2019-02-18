@@ -146,15 +146,16 @@ $rememCats = $database->getRememberCats($rememPage);
             </div>
         <?php } ?>
     </div>
-    <!-- Added/Removed Text -->
+    <!-- Removed/Added/Changed Text -->
     <?php if (isset($removedRemember)) { ?>
         <div class="removed">
             <p>
                 <?php echo(($removedRemember) ? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
             </p>
         </div>
-    <?php } ?>
-    <?php if(isset($addRememCat)) { ?>
+    <?php }
+
+    if(isset($addRememCat)) { ?>
         <div class="added">
             <p>
                 <?php if($addRememCat === true) {
@@ -169,8 +170,9 @@ $rememCats = $database->getRememberCats($rememPage);
                 } ?>
             </p>
         </div>
-    <?php } ?>
-    <?php if(isset($changeRememCat)) { ?>
+    <?php }
+
+    if(isset($changeRememCat)) { ?>
         <div class="added">
             <p>
                 <?php if($changeRememCat === true) {

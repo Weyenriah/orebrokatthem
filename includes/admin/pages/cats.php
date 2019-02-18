@@ -177,8 +177,8 @@ $cats = $database->getAdminCats($catsPage);
 <section class="page" id="cats">
     <h2 class="page-title">Hantera Katter</h2>
     <button class="add-button" type="button" onclick="showPopupCats()"> Lägg till </button>
+    <!-- Pagination -->
     <div class="pagination">
-        <!-- Pagination -->
         <?php if($catsPage > 0) { ?>
             <div class="previous-page">
                 <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
@@ -194,21 +194,16 @@ $cats = $database->getAdminCats($catsPage);
             </div>
         <?php } ?>
     </div>
-    <!-- Added/Removed text -->
+    <!-- Removed/Added/Changed Text -->
     <?php if(isset($removedCat)) { ?>
         <div class="removed">
             <p>
-                <?php if($removedCat === true) {
-                    echo("Katt borttagen");
-                } ?>
-
-                <?php if($removedCat === false) {
-                    echo("Kunde inte ta bort katten");
-                } ?>
+                <?php echo(($removedCat)? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
             </p>
         </div>
-    <?php } ?>
-    <?php if(isset($addCat)) { ?>
+    <?php }
+
+    if(isset($addCat)) { ?>
         <div class="added">
             <p>
                 <?php if($addCat === true) {
@@ -223,8 +218,9 @@ $cats = $database->getAdminCats($catsPage);
                 } ?>
             </p>
         </div>
-    <?php } ?>
-    <?php if(isset($changeCat)) { ?>
+    <?php }
+
+    if(isset($changeCat)) { ?>
         <div class="added">
             <p>
                 <?php if($changeCat === true) {

@@ -36,11 +36,11 @@ if(isset($_POST['change-news'])) {
     if(is_string($desc) == true && $desc !== '' && strlen($desc) < 10000) {
         $image = SaveFile($file);
 
-        $newsAdded = $database->changeNews($id, $desc, $image);
+        $newsChanged = $database->changeNews($id, $desc, $image);
 
         $goToPage = 'news';
     } else {
-        $newsAdded = false;
+        $newsChanged = false;
 
         $goToPage = 'news';
     }
@@ -81,15 +81,16 @@ $news = $database->getNews($newsPage);
             </div>
         <?php } ?>
     </div>
-    <!-- Added/Removed Text -->
+    <!-- Removed/Added/Changed Text -->
     <?php if (isset($removedNews)) { ?>
         <div class="removed">
             <p>
                 <?php echo(($removedNews) ? "Nyhet borttagen" : "Kunde inte ta bort nyheten"); ?>
             </p>
         </div>
-    <?php } ?>
-    <?php if (isset($newsAdded)) { ?>
+    <?php }
+
+    if (isset($newsAdded)) { ?>
         <div class="added">
             <p>
                 <?php if($newsAdded == true) {
@@ -102,6 +103,24 @@ $news = $database->getNews($newsPage);
             <p>
                 <?php if($newsAdded == false) {
                     echo('Nyhet kunde inte läggas till');
+                } ?>
+            </p>
+        </div>
+    <?php }
+
+    if (isset($newsChanged)) { ?>
+        <div class="added">
+            <p>
+                <?php if($newsChanged == true) {
+                    echo('Nyhet ändrad!');
+                } ?>
+            </p>
+        </div>
+
+        <div class="removed">
+            <p>
+                <?php if($newsChanged == false) {
+                    echo('Nyhet kunde inte ändras');
                 } ?>
             </p>
         </div>

@@ -6,8 +6,9 @@
     width: 100%;
 }
 
-#employees > .page-display {
-    margin-top: 42px;
+/* Unique design for Employee */
+.employee-add-button {
+    margin-bottom: 32px;
 }
 
 /* Displaying the employees in flow */
@@ -92,17 +93,4 @@
 
 .showcase {
     font-family: "Calibri", sans-serif;
-}
-
-/* === TEXT FOR WHEN STUFF IS REMOVED === */
-.removed-employee {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    color: #415463;
-    font-family: "Calibri", sans-serif;
-}
-
-.removed-employee p {
-    margin-bottom: 0;
 }

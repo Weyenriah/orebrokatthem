@@ -81,7 +81,7 @@ foreach ($fields as $field) {
                 if(is_string($_POST[$f['element']])) {
                     $data = htmlentities(trim($_POST[$f['element']]));
 
-                    $database->changeTextfield($f['element'], $data);
+                    $textConfirmed = $database->changeTextfield($f['element'], $data);
 
                     $goToPage = 'support';
                 }
@@ -92,7 +92,7 @@ foreach ($fields as $field) {
             if(is_string($_POST[$field['element']])) {
                 $data = htmlentities(trim($_POST[$field['element']]));
 
-                $database->changeTextfield($field['element'], $data);
+                $textConfirmed = $database->changeTextfield($field['element'], $data);
 
                 $goToPage = 'support';
             }
@@ -105,6 +105,24 @@ foreach ($fields as $field) {
     <div class="textfield-header">
         <h2> Ändra på sida: Stöd Oss </h2>
     </div>
+    <?php
+    // Feedback for user when text change
+    if(isset($textConfirmed)) { ?>
+        <div class="added">
+            <p>
+                <?php if($textConfirmed = true) {
+                    echo("Text ändrad!");
+                } ?>
+            </p>
+        </div>
+        <div class="removed">
+            <p>
+                <?php if($textConfirmed = false) {
+                    echo("Text kunde inte ändras");
+                } ?>
+            </p>
+        </div>
+    <?php } ?>
     <div class="forms">
         <?php
         // First check if fields exist, then do multiple fields, if there's none: One field.
