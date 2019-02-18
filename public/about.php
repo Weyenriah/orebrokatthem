@@ -3,6 +3,7 @@
 
     $employees = $database->getEmployees();
 
+    // Email settings for ABOUT-page
     if(isset($_POST['about-contact'])) {
         $name = $_POST['firstname'];
         $email = $_POST['email'];
@@ -110,7 +111,7 @@
         <h2> Bli volontär </h2>
         <div class="paragraph-position become">
             <div class="decor-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
+                <img src="<?php echo(BASE_URL) ?>assets/images/volo-cat.jpg" alt="">
             </div>
             <div class="become-info">
                 <div class="become-text">

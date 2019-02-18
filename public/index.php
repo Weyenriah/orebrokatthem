@@ -136,7 +136,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <h2> Har du hittat en katt? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
+                <img src="<?php echo(BASE_URL) ?>assets/images/found-cat.jpg" alt="">
             </div>
             <strong> <?php echo(nl2br($database->getContent('found-important'))); ?> </strong>
             <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>

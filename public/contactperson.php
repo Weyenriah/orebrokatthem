@@ -1,4 +1,15 @@
-<?php require_once dirname(__FILE__).'/../functions/load.php';
+<?php
+    require_once dirname(__FILE__).'/../functions/load.php';
+
+    if(isset($_POST['about-contact'])) {
+        $name = $_POST['firstname'];
+        $email = $_POST['email'];
+        $telephone = $_POST['tele'];
+        $city = $_POST['city'];
+        $headers = 'From:' . SEND_EMAIL_FROM . "\r\n" . 'Reply-To:' . $email;
+
+        $mailSent = mail(SEND_EMAIL_TO, "OKH-Kontaktperson: $name", str_replace("\n.", "\n..", $telephone. "\r\n" . $city), $headers);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -36,7 +47,7 @@
         <h2> Vad behöver en kontaktperson klara? </h2>
         <div class="paragraph-position">
             <div class="decor-img">
-                <img src="<?php echo(BASE_URL) ?>assets/images/ashild.jpg" alt="">
+                <img src="<?php echo(BASE_URL) ?>assets/images/what-cat.jpg" alt="">
             </div>
              <ul>
                 <?php
@@ -75,15 +86,15 @@
                 </label>
                 <input type="text" id="email" name="email" placeholder="Din e-postadress..."/>
 
-                <label for="email" class="second-row-heading">
+                <label for="tele" class="second-row-heading">
                     Telefonnummer
                 </label>
-                <input type="text" id="email" name="email" placeholder="Ditt telefonnummer..."/>
+                <input type="text" id="tele" name="tele" placeholder="Ditt telefonnummer..."/>
 
-                <label for="email" class="second-row-heading">
+                <label for="city" class="second-row-heading">
                     Ort
                 </label>
-                <input type="text" id="email" name="email" placeholder="Var du bor..."/>
+                <input type="text" id="city" name="city" placeholder="Var du bor..."/>
 
                 <input type="submit" name="about-contact" value="Skicka" class="button submit-button">
             </form>
