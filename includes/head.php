@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/adopt.css"> <!-- Adopt-page -->
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/our-cats.css"> <!-- Cat-page popup -->
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/jour.css"> <!-- Emergency home-page -->
+    <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/contactperson.css"> <!-- Contactperson page -->
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/about.css"> <!-- About Us-page -->
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/pages/support.css"> <!-- Support Us-page -->
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL?>assets/css/popups/cat-page.css"> <!-- Cat-page popup -->

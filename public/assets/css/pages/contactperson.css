@@ -1,0 +1,4 @@
+/* === UNIQUE PARAGRAPH STYLING === */
+.contactperson-paragraph p:last-of-type {
+    margin-top: 25px;
+}

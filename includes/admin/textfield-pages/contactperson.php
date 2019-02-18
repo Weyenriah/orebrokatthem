@@ -8,7 +8,7 @@ $fields = [
     ],
     [
         'element' => 'contactperson-doing',
-        'text' => 'Ändra "Vad gör en kontaktperson?"',
+        'text' => 'Ändra "Vad gör en kontaktperson?" (Listor är OK)',
         'rows' => 10
     ],
     [

@@ -38,8 +38,45 @@
 
     <section class="general-grid text-box blue-background">
         <h2> Vad gör en kontaktperson? </h2>
-        <div class="paragraph-position">
-            <p> <?php echo(nl2br($database->getContent('contactperson-doing'))); ?> </p>
+        <div class="contactperson-paragraph paragraph-position">
+            <?php
+            $doing =  preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', nl2br($database->getContent('contactperson-doing')));
+            $openTag = false;
+            foreach ($doing as $d) {
+                $d = trim($d);
+                if (!empty($d)) {
+                    $isListItem = substr($d, 0, 1) === '*';
+                    if ($isListItem) {
+                        $d = substr($d,2);
+                        if ($openTag !== false && $openTag != '</ul>') {
+                            echo $openTag;
+                            $openTag = false;
+                        }
+                        if ($openTag === false) {
+                            echo '<ul>';
+                            $openTag = '</ul>';
+                        }
+                        echo "<li>$d</li>";
+                    } else {
+                        $firstLine = false;
+                        if ($openTag !== false && $openTag != '</p>') {
+                            echo $openTag;
+                            $openTag = false;
+                        }
+                        if ($openTag === false) {
+                            echo '<p>';
+                            $openTag = '</p>';
+                            $firstLine = true;
+                        }
+                        if (!$firstLine) {
+                            echo '<br/><br/>';
+                        }
+                        echo $d;
+                    }
+                }
+            }
+            echo $openTag;
+            ?>
         </div>
     </section>
 
@@ -52,10 +89,10 @@
              <ul>
                 <?php
                 $contactWhat = nl2br($database->getContent('contactperson-what'));
-                $contactWhatItem = explode("*", $contactWhat);
+                $contactWhatItems = explode("*", $contactWhat);
 
-                for ($i = 1; $i < count($contactWhatItem); $i++) {
-                    $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $contactWhatItem[$i], 2);
+                for ($i = 1; $i < count($contactWhatItems); $i++) {
+                    $pieces = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $contactWhatItems[$i], 2);
                     $text = count($pieces) > 0 ? $pieces[0] : '';
                     echo("
                             <li>
