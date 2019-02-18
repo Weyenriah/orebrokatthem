@@ -41,44 +41,44 @@ if(!isset($_SESSION['user'])) {
     </div>
     <hr/>
     <h3> Hantera </h3>
-    <div class="pages" id="cats-link">
+    <div class="nav-links pages" id="cats-link">
         <a href="#" onclick="showPage('cats')"> Katter </a>
     </div>
-    <div class="pages" id="news-link">
+    <div class="nav-links pages" id="news-link">
         <a href="#" onclick="showPage('news')"> Nyheter </a>
     </div>
-    <div class="pages" id="employees-link">
+    <div class="nav-links pages" id="employees-link">
         <a href="#" onclick="showPage('employees')"> Anställda </a>
     </div>
-    <div class="pages" id="remem-cats-link">
+    <div class="nav-links pages" id="remem-cats-link">
         <a href="#" onclick="showPage('remem-cats')"> Katter i minneslunden </a>
     </div>
-    <div class="pages">
+    <div class="nav-links">
         <a href="#" id="text" onclick="showPopupNav()"> <i class="fas fa-align-left"></i> Ändra textfält </a>
     </div>
     <div id="popup-nav">
-        <div class="pages" id="home-link">
+        <div class="nav-links pages" id="home-link">
             <a href="#" onclick="showPage('home')"> Hem </a>
         </div>
-        <div class="pages" id="adopt-link">
+        <div class="nav-links pages" id="adopt-link">
             <a href="#" onclick="showPage('adopt')"> Adoptera </a>
         </div>
-        <div class="pages" id="our-cats-link">
+        <div class="nav-links pages" id="our-cats-link">
             <a href="#" onclick="showPage('our-cats')"> Våra Katter </a>
         </div>
-        <div class="pages" id="jour-link">
+        <div class="nav-links pages" id="jour-link">
             <a href="#" onclick="showPage('jour')"> Bli Jourhem </a>
         </div>
-        <div class="pages" id="contactperson-link">
+        <div class="nav-links pages" id="contactperson-link">
             <a href="#" onclick="showPage('contactperson')"> Bli Kontaktperson </a>
         </div>
-        <div class="pages" id="about-link">
+        <div class="nav-links pages" id="about-link">
             <a href="#" onclick="showPage('about')"> Om Oss </a>
         </div>
-        <div class="pages" id="support-link">
+        <div class="nav-links pages" id="support-link">
             <a href="#" onclick="showPage('support')"> Stöd Oss </a>
         </div>
-        <div class="pages" id="footer-link">
+        <div class="nav-links pages" id="footer-link">
             <a href="#" onclick="showPage('footer')"> Footer </a>
         </div>
     </div>

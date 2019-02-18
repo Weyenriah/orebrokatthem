@@ -64,22 +64,22 @@ nav hr {
     width: 80%;
 }
 
-.popups, .pages {
+.popups, .nav-links {
     height: 25px;
     text-align: center;
 }
 
-.popups i, .pages i {
+.popups i, .nav-links i {
     font-size: 13px;
 }
 
-.pages a, .popups a {
+.nav-links a, .popups a {
     font-family: "Calibri", sans-serif;
     text-decoration: none;
     color: #5e788f;
 }
 
-.pages a:hover, .popups a:hover {
+.nav-links a:hover, .popups a:hover {
     color: #415463;
     font-weight: bold;
 }
