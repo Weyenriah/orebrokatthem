@@ -9,7 +9,7 @@ $defaults = [
     'UPLOADS_FOLDER' => "storage" . DIRECTORY_SEPARATOR,
     'PASSWORD_SALT' => "",
     'SEND_EMAIL_FROM' => "",
-    'SEND_EMAIL_TO' => "felicia.wallin@hotmail.com",
+    'SEND_EMAIL_TO' => "",
 ];
 
 define("BASE_URL", (isset($_ENV['BASE_URL'])) ? $_ENV['BASE_URL'] : $defaults['BASE_URL']);
