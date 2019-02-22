@@ -2,7 +2,7 @@
 
 trait Cats {
     // Add Cat
-    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $show){
+    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show){
         // Checks so that there's no spamming
         if ($this->changesLastHour('cats') > 20) {
             return false;
@@ -15,6 +15,7 @@ trait Cats {
               `description`,
               `home`,
               `contact`,
+              `contact_tele`,
               `showcase`
             ) VALUES (
               :catName,
@@ -24,6 +25,7 @@ trait Cats {
               :description,
               :home,
               :contact,
+              :contact_tele,
               :show
             )';
             // Prepares a query
@@ -37,6 +39,7 @@ trait Cats {
                 'description' => $description,
                 'home' => $home,
                 'contact' => $contact,
+                'contact_tele' => $contactTele,
                 'show' => $show,
             ));
             if ($ok) {
@@ -48,7 +51,7 @@ trait Cats {
     }
 
     // Change Cat
-    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $showcase) {
+    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $showcase) {
         // Updates all information needed from database
         $sql = 'UPDATE %1$scats SET 
                   name = :name,
@@ -58,6 +61,7 @@ trait Cats {
                   description = :description,
                   home = :home,
                   contact = :contact,
+                  contact_tele = :contact_tele,
                   showcase = :showcase
                 WHERE 
                   id = :id';
@@ -73,6 +77,7 @@ trait Cats {
             'description' => $description,
             'home' => $home,
             'contact' => $contact,
+            'contact_tele' => $contactTele,
             'showcase' => $showcase,
         ));
     }

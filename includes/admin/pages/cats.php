@@ -15,6 +15,7 @@ if(isset($_POST['add-cat'])) {
     $color = htmlentities(trim($_POST['color']));
     $description = htmlentities(trim($_POST['desc']));
     $contact = htmlentities(trim($_POST['contact']));
+    $contactTele = htmlentities(trim($_POST['contact-tele']));
     $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
 
@@ -61,7 +62,7 @@ if(isset($_POST['add-cat'])) {
 
     // Adds if everything checks out
     if($valid) {
-        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, $show);
+        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show);
         if ($id !== null) {
             $addCat = true;
 
@@ -94,6 +95,7 @@ if(isset($_POST['change-cat'])) {
     $color = htmlentities(trim($_POST['color']));
     $description = htmlentities(trim($_POST['desc']));
     $contact = htmlentities(trim($_POST['contact']));
+    $contactTele = htmlentities(trim($_POST['contact-tele']));
     $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
 
@@ -137,7 +139,7 @@ if(isset($_POST['change-cat'])) {
     }
 
     if($valid) {
-        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $show);
+        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact,$contactTele, $show);
         $filenames = [];
 
         foreach ($files as $file) {
@@ -297,10 +299,12 @@ $cats = $database->getAdminCats($catsPage);
                         </div>
                         <!-- Hidden element for JavaScript -->
                         <span class="home" hidden><?php echo($cat['home']); ?></span>
-                        <p>
+                        <div class="admin-icons">
                             <i class="fas fa-envelope"></i>
-                            <a class="cat-contact" href="mailto:<?php echo($cat['contact']); ?>"><?php echo ($cat['contact']); ?></a>
-                        </p>
+                            <a class="cat-contact" href="mailto:<?php echo($cat['contact']); ?>"><?php echo($cat['contact']); ?></a>
+                            <br/>
+                            <p class="cat-contact-tele"><?php echo($cat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $cat['contact_tele'] : 'Nummer till kontaktperson finns ej') ?></p>
+                        </div>
                     </div>
                     <p class="showcase">
                         <?php if($cat['showcase'] === 1) {
@@ -348,6 +352,7 @@ $cats = $database->getAdminCats($catsPage);
         popup.getElementsByClassName('description')[0].value = cat.getElementsByClassName("description")[0].textContent;
         popup.getElementsByClassName('home')[0].value = cat.getElementsByClassName('home')[0].textContent;
         popup.getElementsByClassName('contact')[0].value = cat.getElementsByClassName("cat-contact")[0].textContent;
+        popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
         popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
 
         popup.getElementsByClassName('id-field')[0].value = id;

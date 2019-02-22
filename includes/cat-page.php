@@ -39,6 +39,7 @@
     <div class="adopt-me">
         <h4 class="second-row-heading"> Vill du adoptera mig? Maila! </h4>
         <p class="adopt-me-mail"></p>
+        <p class="adopt-me-tele"> </p>
     </div>
 </div>
 <div id="toned-down" onclick="hideCat()"></div>

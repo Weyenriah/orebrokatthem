@@ -75,6 +75,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         <div class="carousel-link">
                             <button class="caro-read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
                             <p class="adopt" hidden> <?php echo(displayEmail($slideCat['contact'])); ?> </p>
+                            <p class="adopt-tele" hidden> <?php echo($slideCat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $slideCat['contact_tele'] : '') ?> </p>
                         </div>
                     </div>
                 </article>
@@ -302,6 +303,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
             popup.getElementsByClassName("cat-gender")[0].textContent = cat.getElementsByClassName("cat-gender")[0].textContent;
             popup.getElementsByClassName("color")[0].textContent = cat.getElementsByClassName("color")[0].textContent;
             popup.getElementsByClassName("adopt-me-mail")[0].innerHTML = cat.getElementsByClassName("adopt")[0].innerHTML;
+            popup.getElementsByClassName("adopt-me-tele")[0].innerHTML = cat.getElementsByClassName("adopt-tele")[0].innerHTML;
             popup.getElementsByClassName("desc")[0].textContent = cat.getElementsByClassName("desc")[0].textContent + '\r\n' + cat.getElementsByClassName("desc-long")[0].textContent;
             popup.getElementsByClassName("popup-slide")[0].src = cat.getElementsByClassName("image-to-cat")[0].src;
             popup.getElementsByClassName("popup-slide")[1].src = cat.getElementsByClassName("image-to-cat")[1].src;

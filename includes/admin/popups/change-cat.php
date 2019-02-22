@@ -41,6 +41,7 @@
                 <label for="change-color"> Färg <span class="red-asterisk">*</span> </label>
                 <input type="text" name="color" class="color" id="change-color" value="Kattens färg...">
             </div>
+
             <div class="info">
                 <div class="divide-info">
                     <label for="change-desc-cat"> Beskrivning <span class="red-asterisk">*</span> </label>
@@ -58,10 +59,16 @@
                 </select>
             </div>
 
-            <div class="info">
-                <label for="change-contact"> Kontakt för adoption <span class="red-asterisk">*</span> </label>
-                <input type="text" name="contact" id="change-contact" class="contact" value="E-postadress till kontakt...">
-                <small> <span class="red-asterisk">*</span> Måste finnas </small>
+            <div class="beside-inputs">
+                <div class="info">
+                    <label for="change-contact"> Mejl för kontaktperson <span class="red-asterisk">*</span> </label>
+                    <input type="text" class="contact" name="contact" id="change-contact" placeholder="E-postadress till kontakt...">
+                    <small> <span class="red-asterisk">*</span> Måste finnas. </small>
+                </div>
+                <div class="info">
+                    <label for="change-contact-tele"> Nummer för kontaktperson </label>
+                    <input type="text" class="contact-tele" name="contact-tele" id="change-contact-tele" placeholder="Telefonnummer till kontakt...">
+                </div>
             </div>
 
             <!-- Hide or show cat on first page -->

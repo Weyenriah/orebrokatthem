@@ -17,7 +17,7 @@
                 <label for="remem-catname"> Namn </label>
                 <input type="text" name="catname" id="remem-catname" placeholder="Kattens namn...">
             </div>
-            <div class="life">
+            <div class="beside-inputs">
                 <div class="info">
                     <label for="remem-born"> Född </label>
                     <input type="text" name="born" id="remem-born" placeholder="(yyyy)">
@@ -28,7 +28,7 @@
                     <small> <span class="red-asterisk">*</span> Måste finnas. </small>
                 </div>
             </div>
-            <div class="life">
+            <div class="beside-inputs">
                 <div class="info">
                     <label for="remem-came"> Kom till katthem </label>
                     <input type="text" name="came" id="remem-came" placeholder="(yyyy-mm-dd)">

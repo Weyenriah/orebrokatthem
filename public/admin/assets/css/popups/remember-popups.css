@@ -1,17 +1,4 @@
 /* Specific CSS for REMEMBER CAT-popups */
-.life {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.life > .info {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    width: 45%;
-}
-
 .remem-info label {
     font-family: "Calibri", sans-serif;
 }

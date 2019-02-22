@@ -58,10 +58,16 @@
                 </select>
             </div>
 
-            <div class="info">
-                <label for="add-contact"> Kontakt för adoption <span class="red-asterisk">*</span> </label>
-                <input type="text" name="contact" id="add-contact" placeholder="E-postadress till kontakt...">
-                <small> <span class="red-asterisk">*</span> Måste finnas. </small>
+            <div class="beside-inputs">
+                <div class="info">
+                    <label for="add-contact"> Mejl för kontaktperson <span class="red-asterisk">*</span> </label>
+                    <input type="text" name="contact" id="add-contact" placeholder="E-postadress till kontakt...">
+                    <small> <span class="red-asterisk">*</span> Måste finnas. </small>
+                </div>
+                <div class="info">
+                    <label for="add-contact-tele"> Nummer för kontaktperson </label>
+                    <input type="text" name="contact-tele" id="add-contact-tele" placeholder="Telefonnummer till kontakt...">
+                </div>
             </div>
 
             <!-- Hide or show cat on first page -->

@@ -89,7 +89,13 @@
     color: #415463;
 }
 .adopt-me p {
-    margin-top: 0;
+    margin: 0;
+}
+
+.adopt-me-tele i {
+    font-size: 15px;
+    margin-right: 3px;
+    margin-top: 4px;
 }
 
 /* === IMAGE DISPLAY === */

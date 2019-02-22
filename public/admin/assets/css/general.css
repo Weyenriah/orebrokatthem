@@ -12,6 +12,12 @@ body {
     position: relative;
 }
 
+/* === ADMIN SPECIFIC ICONS === */
+.admin-icons i {
+    font-size: 15px;
+    margin-right: 3px;
+    margin-top: 4px;
+}
 
 /* === TEXT FOR WHEN STUFF IS REMOVED/ADDED === */
 .removed, .added {
@@ -242,4 +248,18 @@ body {
 /* Style for asterisk */
 .red-asterisk {
     color: darkred;
+}
+
+/* === STYLING FOR INPUTS === */
+.beside-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.beside-inputs > .info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 45%;
 }
