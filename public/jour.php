@@ -102,8 +102,7 @@ if(isset($_POST['jour-contact'])) {
                 </div>
                 <div>
                     <h5 class="second-row-heading"> Kontakt </h5>
-                    <p> <i class="fas fa-phone"></i> <?php echo($database->getContent('jour-contact-name')); ?>: <?php echo($database->getContent('jour-contact-tele')); ?> <br/>
-                    <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('jour-contact-email'))) ?> </p>
+                    <p> <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('jour-contact-email'))) ?> </p>
                 </div>
             </div>
         </div>

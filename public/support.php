@@ -43,11 +43,7 @@
                 <p> <?php echo(nl2br($database->getContent('support-insuranceinfo'))); ?> </p>
                 <br/>
                 <h5 class="second-row-heading"> Kontakt </h5>
-                <p> <?php echo($database->getContent('support-insurance-name')); ?> <br/>
-                    <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('support-insurance-email'))); ?>
-                    <br/>
-                    <i class="fas fa-phone"></i> <?php echo($database->getContent('support-insurance-tele')); ?> <br/>
-                    <?php echo($database->getContent('support-insurance-availab')); ?> </p>
+                <p> <i class="fas fa-envelope"></i> <?php echo(displayEmail($database->getContent('support-insurance-email'))); ?> </p>
             </div>
         </div>
     </section>

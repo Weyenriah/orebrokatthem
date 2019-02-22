@@ -169,19 +169,12 @@
         margin-top: 5px;
         text-align: center;
     }
-    .tele {
-        margin-top: 5px !important;
-        display: flex;
-        justify-content: center;
-    }
-    .employee-info a {
-        display: flex;
+    .employee-info p {
         justify-content: center;
     }
 
     /* Styling for picture in employee-card */
     .employee-pic {
-        width: 200px;
         margin-left: auto;
         margin-right: auto;
     }

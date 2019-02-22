@@ -115,7 +115,7 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
                         <input type="checkbox" name="kitten" <?php echo((isset($_GET['kitten'])) ? 'checked' : '')?> value="true" id="kitten">
                         <label for="kitten"> Kattunge </label>
                         <input type="checkbox" name="young" <?php echo((isset($_GET['young'])) ? 'checked' : '')?> value="true" id="young">
-                        <label for="young"> Ungkatt </label>
+                        <label for="young"> Vuxen </label>
                         <input type="checkbox" name="senior" <?php echo((isset($_GET['senior'])) ? 'checked' : '')?> value="true" id="senior">
                         <label for="senior"> Senior </label>
                     </div>

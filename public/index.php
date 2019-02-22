@@ -139,6 +139,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                 <img src="<?php echo(BASE_URL) ?>assets/images/found-cat.jpg" alt="">
             </div>
             <strong> <?php echo(nl2br($database->getContent('found-important'))); ?> </strong>
+            <hr/>
             <p> <?php echo(nl2br($database->getContent('found-text'))); ?> </p>
             <div class="found-contact">
                 <h3 class="second-row-heading"> Skicka in anmälan </h3>
@@ -154,6 +155,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
         <h2> Omplacering av katt </h2>
         <div class="paragraph-position">
             <strong> <?php echo(nl2br($database->getContent('relocate-important'))); ?> </strong>
+            <hr/>
             <p> <?php echo(nl2br($database->getContent('relocate-text'))); ?> </p>
             <div class="paragraph-double-text">
                 <div>
