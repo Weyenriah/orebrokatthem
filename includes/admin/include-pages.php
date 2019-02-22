@@ -11,6 +11,9 @@
     // Page for remember-flow
     include(APP_FOLDER . '/includes/admin/pages/remember.php');
 
+    // Page for adopted cats-flow
+    include(APP_FOLDER . '/includes/admin/pages/adopted-cats.php');
+
     // === TEXTFIELD PAGES ===
     // Home page
     include(APP_FOLDER . '/includes/admin/textfield-pages/home.php');

@@ -40,6 +40,10 @@ if(!isset($_SESSION['user'])) {
         </a>
     </div>
     <hr/>
+    <div class="nav-links pages" id="adopted-link">
+        <a href="#" onclick="showPage('adopted-cats')"> <i class="fas fa-archive"></i> Adopterade katter </a>
+    </div>
+    <hr/>
     <h3> Hantera </h3>
     <div class="nav-links pages" id="cats-link">
         <a href="#" onclick="showPage('cats')"> Katter </a>
@@ -53,6 +57,7 @@ if(!isset($_SESSION['user'])) {
     <div class="nav-links pages" id="remem-cats-link">
         <a href="#" onclick="showPage('remem-cats')"> Katter i minneslunden </a>
     </div>
+    <!-- Handle textfields -->
     <div class="nav-links">
         <a href="#" id="text" onclick="showPopupNav()"> <i class="fas fa-align-left"></i> Ändra textfält </a>
     </div>
@@ -118,9 +123,6 @@ if(!isset($_SESSION['user'])) {
     function showPage(pageName) {
         let pages = document.getElementsByClassName('page');
         let links = document.getElementsByClassName('pages');
-
-        console.log(pages);
-        console.log(links);
 
         /* Adds display = none om every page */
         for (let i = 0; i < pages.length; i++) {

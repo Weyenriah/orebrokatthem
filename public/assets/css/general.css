@@ -75,6 +75,10 @@ body > section:nth-last-of-type(2) {
     grid-column: 2;
 }
 
+/* === DIVIDER IN PARAGRAPH POSITION === */
+.paragraph-position hr {
+    border: 0.5px solid rgba(65, 84, 99, 0.3);
+}
 
 /* TEXT STYLING FOR TEXT BOXES */
 /* H2-styling */
