@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/cats.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/news.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/employees.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/adopted-cats.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/remember.css">
     <link rel="stylesheet" type="text/css" href="<?php echo(BASE_URL) ?>admin/assets/css/pages/login.css">
 

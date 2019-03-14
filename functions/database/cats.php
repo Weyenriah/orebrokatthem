@@ -122,4 +122,52 @@ trait Cats {
             'k' => $k,
         ));
     }
+
+    // Get adopted cats
+    public function getAdoptedCats($gender = 0, $name='', $age = 0) {
+        // Insert right information in database
+        $sql = 'SELECT * FROM %1$scats';
+        $conditions = array();
+        // Filter cats
+        // Gender filter
+        if ($gender == 1){
+            $conditions[] = 'gender = 1';
+        } elseif ($gender == 2) {
+            $conditions[] = 'gender = 0';
+        }
+        // Age filter
+        $kitten = date('Y') - 1;
+        $young = date('Y') - 10;
+        if ($age == 1) { // Kitten
+            $conditions[] = 'age >= ' . $kitten;
+        } elseif ($age == 2) { // Young
+            $conditions[] = 'age < ' . $kitten;
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 3) { // Kitten + Young
+            $conditions[] = 'age >= ' . $young;
+        } elseif ($age == 4) { // Senior
+            $conditions[] = 'age < ' . $young;
+        } elseif ($age == 5) { // Kitten + Senior
+            $conditions[] = 'age >= ' . $kitten . ' OR age < ' . $young;
+        } elseif ($age == 6) { // Young + Senior
+            $conditions[] = 'age < ' . $kitten;
+        }
+
+        $conditions[] = 'name LIKE :name';
+
+        if (count($conditions) > 0) {
+            $sql .= ' WHERE ' . implode(' AND ', $conditions);
+        }
+
+        $sql .= ' AND adopted_cat is not NULL';
+
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        $stmt->execute(array(
+            'name' => '%'.$name.'%'
+        ));
+        // Grab the list
+        return $stmt->fetchAll();
+    }
 }
