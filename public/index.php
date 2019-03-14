@@ -70,7 +70,7 @@ $expanded = isset($_GET['remempage']) || isset($_GET['newspage']);
                         <p class="desc-long" hidden> <?php if(count($exploded) > 1) echo($exploded[1]); ?> </p>
                         <div class="cat-home">
                             <i class="fas fa-home"></i>
-                            <p class="home-cat"> <?php echo($slideCat['home'] ? 'Jourhem' : 'Katthem') ?> </p>
+                            <p class="home-cat"> <?php echo($slideCat['home'] ? 'Katthem' : 'Jourhem') ?> </p>
                         </div>
                         <div class="carousel-link">
                             <button class="caro-read-more" type="button" onclick="showCat(<?php echo($slideCat['id']); ?>)"> Läs mer om mig! </button>
