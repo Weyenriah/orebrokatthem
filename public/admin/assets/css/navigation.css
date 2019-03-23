@@ -77,6 +77,7 @@ nav hr {
     font-family: "Calibri", sans-serif;
     text-decoration: none;
     color: #5e788f;
+    cursor: pointer;
 }
 
 .nav-links a:hover, .popups a:hover {
@@ -93,18 +94,13 @@ nav hr {
     display: block !important;
 }
 
-.link-selected {
-    font-weight: bold;
-    color: #415463;
-}
-
 /* === WHEN SELECTED === */
-.marked {
+.marked a {
     color: #415463;
     font-weight: bold;
 }
 
 /* === SPECIFIC LINKS === */
-#adopted-link {
+#adopted-cats-link {
     margin-top: 13px;
 }

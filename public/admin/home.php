@@ -40,7 +40,7 @@ if(!isset($_SESSION['user'])) {
         </a>
     </div>
     <hr/>
-    <div class="nav-links pages" id="adopted-link">
+    <div class="nav-links pages" id="adopted-cats-link">
         <a href="#" onclick="showPage('adopted-cats')"> <i class="fas fa-archive"></i> Adopterade katter </a>
     </div>
     <hr/>
@@ -140,6 +140,7 @@ if(!isset($_SESSION['user'])) {
     // Mark pages in nav
     <?php
     $pages = [
+        'adopted-cats',
         'home',
         'adopt',
         'our-cats',
