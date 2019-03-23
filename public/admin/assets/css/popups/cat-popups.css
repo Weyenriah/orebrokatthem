@@ -1,14 +1,18 @@
 /* Specific CSS for CAT-popups */
-.show-slide {
+.show-slide, .adopted-box {
     display: flex;
     margin-bottom: 10px;
 }
 
-.show-slide label {
+.show-slide label, .adopted-box label {
     font-size: 16px;
 }
 
 select {
     height: 28px;
     padding-left: 6px;
+}
+
+.change-popup .show-slide {
+    text-decoration: line-through;
 }

@@ -1,8 +1,8 @@
 <div class="popup-container" id="popup-change-cat">
-    <article class="small-container">
+    <article class="small-container cat-container">
         <div class="header">
             <h2> Ändra Katt </h2>
-            <button type="button" onclick="hidePopupChangeCat()"> <i class="fas fa-times"></i> </button>
+            <button type="button" onclick="hidePopupChangeCat(); removeAdoptedStyle()"> <i class="fas fa-times"></i> </button>
         </div>
 
         <form class="popup-form" method="POST" enctype="multipart/form-data">
@@ -72,15 +72,29 @@
             </div>
 
             <!-- Hide or show cat on first page -->
-            <div class="show-slide">
-                <input type="checkbox" class="showcase" name="show-slide" id="change-show" value="show">
-                <label for="change-show"> Visas i karusell </label>
+            <div class="beside-inputs">
+                <div class="show-slide">
+                    <input type="checkbox" class="showcase" name="show-slide" id="change-show" value="show">
+                    <label for="change-show"> Visas i karusell </label>
+                </div>
+                <div class="adopted-box">
+                    <input type="checkbox" class="adopted" name="adopted" id="adopted" value="adopted">
+                    <label for="adopted"> Adopterad </label>
+                </div>
             </div>
 
             <input class="id-field" type="text" name="id" hidden>
 
+            <!-- When cat is adopted -->
+            <div class="cat-written-info">
+                <p class="catname"></p>
+                <p class="catname"></p>
+            </div>
+
             <button class="popup-button" type="submit" name="change-cat"> Ändra </button>
         </form>
+
+
     </article>
 </div>
 
@@ -90,5 +104,11 @@
         let popup = document.getElementById("popup-change-cat");
 
         popup.style.display = "none";
+    }
+
+    function removeAdoptedStyle() {
+        let popupContainer = document.getElementsByClassName('cat-container')[0];
+
+        popupContainer.classList.remove('change-popup');
     }
 </script>

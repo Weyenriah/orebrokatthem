@@ -1,6 +1,12 @@
 <?php
 require_once dirname(__FILE__).'/../../../functions/load.php';
 
+// Remove Cat
+if (isset($_POST['removeCat'])) {
+    $removedCat = $database->deleteCat($_POST['removeCat']);
+    $goToPage = 'adopted-cats';
+}
+
 $filter = array();
 
 // Filter
@@ -36,7 +42,7 @@ if(isset($_GET['senior'])) {
 // Search cats according to name
 $name = "";
 
-$search = isset($_GET['search']) && $_GET['search'] != '';
+$search = isset($_GET['search']);
 if($search) {
     $name = $_GET['search'];
     $filter[] = 'search=' . $name;
@@ -57,6 +63,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
 
 <section class="page" id="adopted-cats">
     <h2 class="page-title">Se/Hantera Adopterade katter</h2>
+
     <!-- Filter -->
     <form method="GET" action="#adopted-cats" class="paragraph-position filter-search">
         <div class="search-field">
@@ -72,7 +79,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                 </button>
             </div>
         </div>
-        <div id="filter-choices" class="<?php echo((isset($_GET['female']) || isset($_GET['male']) || isset($_GET['cathome']) || isset($_GET['jourhome'])) ? '' : 'not-display') ?>">
+        <div id="filter-choices" class="<?php echo((isset($_GET['female']) || isset($_GET['male']) || isset($_GET['kitten']) || isset($_GET['young'])|| isset($_GET['senior'])) ? '' : 'not-display') ?>">
             <div class="filter-form" id="filter-form">
                 <div class="gender checkbox">
                     <h3 class="checkbox-title"> Kön </h3>
@@ -96,6 +103,15 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
             </div>
         </div>
     </form>
+    <!-- Removed/Added/Changed Text -->
+    <?php if(isset($removedCat)) { ?>
+    <div class="removed">
+        <p>
+            <?php echo(($removedCat)? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
+        </p>
+    </div>
+    <?php } ?>
+
     <div class="page-display">
         <?php
         // If there is no cats echo this
@@ -106,6 +122,9 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
         foreach ($adoptedCats as $adoptedCat) {
 
             $images = $database->getCatImages($adoptedCat['id']);
+
+            $adoptedDate = $adoptedCat['adopted_cat'];
+            $newAdoptedDate = date("Y-m-d", strtotime($adoptedDate));
             ?>
             <article class="cat" id="cat-<?php echo($adoptedCat['id']) ?>">
                 <div class="cat-display-images">
@@ -123,7 +142,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                 </div>
                 <div class="cat-text">
                     <div class="two-buttons-fix">
-                        <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($adoptedCat['id']) ?>)">
+                        <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($adoptedCat['id']) ?>); whenAdopted()">
                             <i class="fas fa-pencil-alt"></i> Ändra Katt
                         </button>
                         <form method="post">
@@ -150,16 +169,13 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                             <div class="cat-home">
                                 <i class="fas fa-home"></i>
                                 <p>
-                                    <?php
-                                    if($adoptedCat['home'] === 1) {
-                                        echo('Katthemmet');
-                                    } else {
-                                        echo('Jourhem');
-                                    } ?>
+                                    <?php echo('Adopterad: ') ?> <span class="adopted-checker"> <?php echo($newAdoptedDate) ?></span>
                                 </p>
                             </div>
                             <!-- Hidden element for JavaScript -->
                             <span class="home" hidden><?php echo($adoptedCat['home']); ?></span>
+                            <span class="showcase-cat" hidden><?php echo($adoptedCat['showcase']) ?></span>
+
                             <div class="admin-icons">
                                 <i class="fas fa-envelope"></i>
                                 <a class="cat-contact" href="mailto:<?php echo($adoptedCat['contact']); ?>"><?php echo($adoptedCat['contact']); ?></a>
@@ -167,13 +183,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                                 <p class="cat-contact-tele"><?php echo($adoptedCat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $adoptedCat['contact_tele'] : 'Nummer till kontaktperson finns ej') ?></p>
                             </div>
                         </div>
-                        <p class="showcase">
-                            <?php if($adoptedCat['showcase'] === 1) {
-                                echo('Visas på framsidan');
-                            } ?>
-                        </p>
-                        <!-- Hidden element for JavaScript -->
-                        <span class="showcase-cat" hidden><?php echo($adoptedCat['showcase']) ?></span>
+
                     </div>
                 </div>
             </article>
@@ -191,5 +201,49 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
         } else {
             element.classList.add("not-display");
         }
+    }
+
+    function showPopupChangeCat(id) {
+        let popup = document.getElementById('popup-change-cat');
+
+        /* Selects the right cat */
+        let cat = document.getElementById("cat-" + id);
+
+        /* Matches the information from popup with employee */
+        popup.getElementsByClassName('catname')[0].value = cat.getElementsByClassName("catname")[0].textContent;
+        popup.getElementsByClassName('age')[0].value = cat.getElementsByClassName("age")[0].textContent;
+        popup.getElementsByClassName('gender')[0].value = cat.getElementsByClassName('gender')[0].textContent;
+        popup.getElementsByClassName('color')[0].value = cat.getElementsByClassName("color")[0].textContent;
+        popup.getElementsByClassName('description')[0].value = cat.getElementsByClassName("description")[0].textContent;
+        popup.getElementsByClassName('home')[0].value = cat.getElementsByClassName('home')[0].textContent;
+        popup.getElementsByClassName('contact')[0].value = cat.getElementsByClassName("cat-contact")[0].textContent;
+        popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
+        popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
+        popup.getElementsByClassName('adopted')[0].checked = cat.getElementsByClassName("adopted-checker")[0].textContent !== '';
+
+        popup.getElementsByClassName('id-field')[0].value = id;
+
+        popup.style.display = 'block';
+
+        /* Scrolls up to top when button is clicked */
+        window.scroll(0, 0);
+
+        updateTextCounter('change-desc-cat-counter', cat.getElementsByClassName("description")[0].textContent);
+    }
+
+    function whenAdopted() {
+        let popup = document.getElementById('popup-change-cat');
+
+        let popupContainer = document.getElementsByClassName('cat-container')[0];
+
+        if(popup.getElementsByClassName('adopted')[0].checked) {
+            popupContainer.classList.add('change-popup');
+
+        }
+
+        if(popupContainer.classList.contains('change-popup')) {
+            popupContainer.getElementsByClassName('showcase')[0].disabled = true;
+        }
+
     }
 </script>

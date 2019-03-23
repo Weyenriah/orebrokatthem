@@ -98,6 +98,7 @@ if(isset($_POST['change-cat'])) {
     $contactTele = htmlentities(trim($_POST['contact-tele']));
     $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
+    $adoptedCat = isset($_POST['adopted']) ? date('Y/m/d h:i:s') : null;
 
     $files = [];
     $files[] = isset($_FILES['cat-image0']) ? $_FILES['cat-image0'] : null;
@@ -139,7 +140,7 @@ if(isset($_POST['change-cat'])) {
     }
 
     if($valid) {
-        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact,$contactTele, $show);
+        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $show, $adoptedCat);
         $filenames = [];
 
         foreach ($files as $file) {
@@ -245,6 +246,7 @@ $cats = $database->getAdminCats($catsPage);
         foreach ($cats as $cat) {
 
             $images = $database->getCatImages($cat['id']);
+            if($cat['adopted_cat'] === NULL) {
         ?>
         <article class="cat" id="cat-<?php echo($cat['id']) ?>">
             <div class="cat-display-images">
@@ -313,10 +315,14 @@ $cats = $database->getAdminCats($catsPage);
                     </p>
                     <!-- Hidden element for JavaScript -->
                     <span class="showcase-cat" hidden><?php echo($cat['showcase']) ?></span>
+                    <span class="adopted-checker" hidden><?php echo($cat['adopted_cat']); ?></span>
                 </div>
             </div>
         </article>
-        <?php } ?>
+        <?php } else {
+                echo('');
+            }
+        } ?>
     </div>
     <!-- Pagination -->
     <div class="pagination">
@@ -338,10 +344,11 @@ $cats = $database->getAdminCats($catsPage);
 </section>
 
 <script>
+
     function showPopupChangeCat(id) {
         let popup = document.getElementById('popup-change-cat');
 
-        /* Selects the right newspost */
+        /* Selects the right cat */
         let cat = document.getElementById("cat-" + id);
 
         /* Matches the information from popup with employee */
@@ -354,6 +361,7 @@ $cats = $database->getAdminCats($catsPage);
         popup.getElementsByClassName('contact')[0].value = cat.getElementsByClassName("cat-contact")[0].textContent;
         popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
         popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
+        popup.getElementsByClassName('adopted')[0].checked = cat.getElementsByClassName("adopted-checker")[0].textContent !== '';
 
         popup.getElementsByClassName('id-field')[0].value = id;
 

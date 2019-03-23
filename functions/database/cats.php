@@ -51,7 +51,7 @@ trait Cats {
     }
 
     // Change Cat
-    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $showcase) {
+    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $showcase, $adoptedCat) {
         // Updates all information needed from database
         $sql = 'UPDATE %1$scats SET 
                   name = :name,
@@ -62,7 +62,8 @@ trait Cats {
                   home = :home,
                   contact = :contact,
                   contact_tele = :contact_tele,
-                  showcase = :showcase
+                  showcase = :showcase,
+                  adopted_cat = :adopted_cat
                 WHERE 
                   id = :id';
         // Prepares a query
@@ -79,6 +80,7 @@ trait Cats {
             'contact' => $contact,
             'contact_tele' => $contactTele,
             'showcase' => $showcase,
+            'adopted_cat' => $adoptedCat,
         ));
     }
 
@@ -159,7 +161,7 @@ trait Cats {
             $sql .= ' WHERE ' . implode(' AND ', $conditions);
         }
 
-        $sql .= ' AND adopted_cat is not NULL';
+        $sql .= ' AND adopted_cat is not NULL ORDER BY adopted_cat DESC';
 
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
