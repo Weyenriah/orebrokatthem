@@ -31,11 +31,11 @@ class Database {
 
     // Order differently when admin
     public function  getAdminCats($page) {
-        return $this->getCats($page, 0, 0, '', 0,true);
+        return $this->getCats($page, 0, 0, '', 0,true, true);
     }
 
     // Get all cats
-    public function getCats($page = 0, $gender = 0, $living = 0, $name='', $age = 0, $orderById = false) {
+    public function getCats($page = 0, $gender = 0, $living = 0, $name='', $age = 0, $orderById = false, $showHidden = false) {
         // Gets all information from database
         $sql = 'SELECT * FROM %1$scats';
         $conditions = array();
@@ -72,6 +72,12 @@ class Database {
 
         $conditions[] = 'name LIKE :name';
 
+        if(!$showHidden) {
+            $conditions[] = 'hide = 0';
+        }
+
+        $conditions[] = 'adopted_cat is null';
+
         if (count($conditions) > 0) {
             $sql .= ' WHERE ' . implode(' AND ', $conditions);
         }
@@ -95,8 +101,12 @@ class Database {
         return $stmt->fetchAll();
     }
 
+    public function countAdminCatPages() {
+        return $this->countCatPages(0, 0, '', 0, true);
+    }
+
     // Count and return includes of cats
-    public function countCatPages($gender = 0, $living = 0, $name='', $age = 0) {
+    public function countCatPages($gender = 0, $living = 0, $name='', $age = 0, $showHidden = false) {
         // Gets all information from database
         $sql = 'SELECT COUNT(id) AS NumberOfCats FROM %1$scats';
         $conditions = array();
@@ -133,6 +143,12 @@ class Database {
 
         $conditions[] = 'name LIKE :name';
 
+        if(!$showHidden) {
+            $conditions[] = 'hide = 0';
+        }
+
+        $conditions[] = 'adopted_cat is null';
+
         if (count($conditions) > 0) {
             $sql .= ' WHERE ' . implode(' AND ', $conditions);
         }
@@ -145,19 +161,6 @@ class Database {
         $stmt->execute(array(
             'name' => '%'.$name.'%'
         ));
-        // Grab the list
-        $numberOfCats = $stmt->fetchColumn(0);
-        // Return number of cats divided by number of includes
-        return ceil($numberOfCats / 8);
-    }
-
-    // Count and return includes of cats
-    public function countCats() {
-        $sql = 'SELECT COUNT(id) AS NumberOfCats FROM %1$scats';
-        // Prepares a query
-        $stmt = $this->pdo->prepare($sql);
-        // Sends query to database
-        $stmt->execute();
         // Grab the list
         $numberOfCats = $stmt->fetchColumn(0);
         // Return number of cats divided by number of includes

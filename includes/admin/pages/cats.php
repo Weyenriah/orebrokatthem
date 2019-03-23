@@ -165,7 +165,7 @@ if(isset($_POST['change-cat'])) {
 }
 
 // Pagination Cats
-$catsPages = $database->countCats();
+$catsPages = $database->countAdminCatPages();
 // Get page
 $catsPage = 0;
 
@@ -244,11 +244,10 @@ $cats = $database->getAdminCats($catsPage);
 
     <!-- Show Cat-flow -->
     <div class="page-display">
-        <?php
-        foreach ($cats as $cat) {
+    <?php
+    foreach ($cats as $cat) {
 
-            $images = $database->getCatImages($cat['id']);
-            if($cat['adopted_cat'] === NULL) {
+        $images = $database->getCatImages($cat['id']);
         ?>
         <article class="cat" id="cat-<?php echo($cat['id']) ?>">
             <div class="cat-display-images">
@@ -326,10 +325,7 @@ $cats = $database->getAdminCats($catsPage);
                 </div>
             </div>
         </article>
-        <?php } else {
-                echo('');
-            }
-        } ?>
+    <?php } ?>
     </div>
     <!-- Pagination -->
     <div class="pagination">

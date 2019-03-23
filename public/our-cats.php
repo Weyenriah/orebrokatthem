@@ -144,56 +144,54 @@ $expanded = isset($_GET['page']) || $search || isset($_GET['cathome']) ||
         $hasPrevOrNext = ($page < $pages - 1 && !$search) || ($page > 0 && !$search);
 
         foreach ($cats as $kittenPosition => $kitten) {
-            if ($kitten['adopted_cat'] === NULL && $kitten['hide'] === 0) {
 
-                $images = $database->getCatImages($kitten['id']);
-                ?>
-                <div class="small-change">
-                    <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
-                        <div class="cat-img">
-                            <img class="image-to-cat" alt="En bild på en katt"
-                                 src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
-                            <img class="image-to-cat" alt=""
-                                 src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>"
-                                 hidden>
-                            <img class="image-to-cat" alt=""
-                                 src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>"
-                                 hidden>
+            $images = $database->getCatImages($kitten['id']);
+            ?>
+            <div class="small-change">
+                <article class="cat-style" id="cat-<?php echo($kitten['id']); ?>">
+                    <div class="cat-img">
+                        <img class="image-to-cat" alt="En bild på en katt"
+                             src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg")); ?>">
+                        <img class="image-to-cat" alt=""
+                             src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg")); ?>"
+                             hidden>
+                        <img class="image-to-cat" alt=""
+                             src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg")); ?>"
+                             hidden>
+                    </div>
+                    <div class="cat-text">
+                        <div class="cat-title">
+                            <img src="assets/images/paw-icon.png" alt="">
+                            <h3 class="cat-name"> <?php echo($kitten['name']); ?> </h3>
                         </div>
-                        <div class="cat-text">
-                            <div class="cat-title">
-                                <img src="assets/images/paw-icon.png" alt="">
-                                <h3 class="cat-name"> <?php echo($kitten['name']); ?> </h3>
-                            </div>
 
-                            <div class="small-info">
-                                <small class="cat-age"> <?php echo($kitten['age']) ?> |</small>
-                                <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane' : 'Hona') ?> |</small>
-                                <small class="color"> <?php echo($kitten['color']) ?> </small>
-                            </div>
-                            <?php $text = nl2br($kitten['description']);
-                            $exploded = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $text, 2);
-                            ?>
-                            <p class="desc"> <?php echo($exploded[0]) ?> </p>
-                            <p class="desc-long" hidden> <?php if (count($exploded) > 1) echo($exploded[1]); ?> </p>
-                            <div class="cat-home">
-                                <i class="fas fa-home"></i>
-                                <p class="home-cat"> <?php echo($kitten['home'] ? 'Katthem' : 'Jourhem') ?> </p>
-                            </div>
-                            <div class="links">
-                                <button class="about-cat" type="button"
-                                        onclick="showCat(<?php echo($kitten['id']); ?>); window.scrollTo(0, 0);"> Läs
-                                    mer om mig!
-                                </button>
-                                <p class="adopt" hidden> <?php echo(displayEmail($kitten['contact'])); ?> </p>
-                                <p class="adopt-tele"
-                                   hidden> <?php echo($kitten['contact_tele'] ? '<i class="fas fa-phone"></i>' . $kitten['contact_tele'] : '') ?> </p>
-                            </div>
+                        <div class="small-info">
+                            <small class="cat-age"> <?php echo($kitten['age']) ?> |</small>
+                            <small class="cat-gender"> <?php echo($kitten['gender'] ? 'Hane' : 'Hona') ?> |</small>
+                            <small class="color"> <?php echo($kitten['color']) ?> </small>
                         </div>
-                    </article>
-                </div>
-            <?php }
-        }   ?>
+                        <?php $text = nl2br($kitten['description']);
+                        $exploded = preg_split('/(<br>)|(<br \/>)|(<br\/>)/m', $text, 2);
+                        ?>
+                        <p class="desc"> <?php echo($exploded[0]) ?> </p>
+                        <p class="desc-long" hidden> <?php if (count($exploded) > 1) echo($exploded[1]); ?> </p>
+                        <div class="cat-home">
+                            <i class="fas fa-home"></i>
+                            <p class="home-cat"> <?php echo($kitten['home'] ? 'Katthem' : 'Jourhem') ?> </p>
+                        </div>
+                        <div class="links">
+                            <button class="about-cat" type="button"
+                                    onclick="showCat(<?php echo($kitten['id']); ?>); window.scrollTo(0, 0);"> Läs
+                                mer om mig!
+                            </button>
+                            <p class="adopt" hidden> <?php echo(displayEmail($kitten['contact'])); ?> </p>
+                            <p class="adopt-tele"
+                               hidden> <?php echo($kitten['contact_tele'] ? '<i class="fas fa-phone"></i>' . $kitten['contact_tele'] : '') ?> </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <?php } ?>
         <div class="pagination">
             <?php if($page > 0 && !$search) { ?>
                 <div class="previous-page">

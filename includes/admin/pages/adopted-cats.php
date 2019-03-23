@@ -184,7 +184,6 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                                 <p class="cat-contact-tele"><?php echo($adoptedCat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $adoptedCat['contact_tele'] : 'Nummer till kontaktperson finns ej') ?></p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </article>
