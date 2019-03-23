@@ -81,6 +81,10 @@
                     <input type="checkbox" class="adopted" name="adopted" id="adopted" value="adopted">
                     <label for="adopted"> Adopterad </label>
                 </div>
+                <div class="not-adoptable">
+                    <input type="checkbox" class="adoptable" id="change-adoptable" name="change-adoptable" value="hide">
+                    <label for="change-adoptable"> Göm katt </label>
+                </div>
             </div>
 
             <input class="id-field" type="text" name="id" hidden>
@@ -93,8 +97,6 @@
 
             <button class="popup-button" type="submit" name="change-cat"> Ändra </button>
         </form>
-
-
     </article>
 </div>
 

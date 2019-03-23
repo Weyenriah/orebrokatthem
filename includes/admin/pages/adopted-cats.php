@@ -175,6 +175,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                             <!-- Hidden element for JavaScript -->
                             <span class="home" hidden><?php echo($adoptedCat['home']); ?></span>
                             <span class="showcase-cat" hidden><?php echo($adoptedCat['showcase']) ?></span>
+                            <span class="hide-cat" hidden><?php echo($adoptedCat['hide']); ?></span>
 
                             <div class="admin-icons">
                                 <i class="fas fa-envelope"></i>
@@ -220,6 +221,7 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
         popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
         popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
         popup.getElementsByClassName('adopted')[0].checked = cat.getElementsByClassName("adopted-checker")[0].textContent !== '';
+        popup.getElementsByClassName('adoptable')[0].checked = cat.getElementsByClassName("hide-cat")[0].textContent === '1';
 
         popup.getElementsByClassName('id-field')[0].value = id;
 

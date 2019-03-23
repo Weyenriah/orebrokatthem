@@ -2,7 +2,7 @@
 
 trait Cats {
     // Add Cat
-    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show){
+    public function addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show, $hide){
         // Checks so that there's no spamming
         if ($this->changesLastHour('cats') > 20) {
             return false;
@@ -16,7 +16,8 @@ trait Cats {
               `home`,
               `contact`,
               `contact_tele`,
-              `showcase`
+              `showcase`, 
+              `hide`
             ) VALUES (
               :catName,
               :gender,
@@ -26,7 +27,8 @@ trait Cats {
               :home,
               :contact,
               :contact_tele,
-              :show
+              :show,
+              :hide
             )';
             // Prepares a query
             $stmt = $this->pdo->prepare($sql);
@@ -41,6 +43,7 @@ trait Cats {
                 'contact' => $contact,
                 'contact_tele' => $contactTele,
                 'show' => $show,
+                'hide' => $hide,
             ));
             if ($ok) {
                 return $this->pdo->lastInsertId();
@@ -51,7 +54,7 @@ trait Cats {
     }
 
     // Change Cat
-    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $showcase, $adoptedCat) {
+    public function changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $showcase, $adoptedCat, $hide) {
         // Updates all information needed from database
         $sql = 'UPDATE %1$scats SET 
                   name = :name,
@@ -63,7 +66,8 @@ trait Cats {
                   contact = :contact,
                   contact_tele = :contact_tele,
                   showcase = :showcase,
-                  adopted_cat = :adopted_cat
+                  adopted_cat = :adopted_cat,
+                  hide = :hide
                 WHERE 
                   id = :id';
         // Prepares a query
@@ -81,6 +85,7 @@ trait Cats {
             'contact_tele' => $contactTele,
             'showcase' => $showcase,
             'adopted_cat' => $adoptedCat,
+            'hide' => $hide,
         ));
     }
 

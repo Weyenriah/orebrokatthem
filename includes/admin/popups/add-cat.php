@@ -71,9 +71,15 @@
             </div>
 
             <!-- Hide or show cat on first page -->
-            <div class="show-slide">
-                <input type="checkbox" id="add-show" name="show-slide" value="show">
-                <label for="add-show"> Visas i karusell </label>
+            <div class="beside-inputs">
+                <div class="show-slide">
+                    <input type="checkbox" id="add-show" name="show-slide" value="show">
+                    <label for="add-show"> Visas i karusell </label>
+                </div>
+                <div class="not-adoptable">
+                    <input type="checkbox" id="add-adoptable" name="add-adoptable" value="hide">
+                    <label for="add-adoptable"> Göm katt </label>
+                </div>
             </div>
 
             <button class="popup-button" type="submit" name="add-cat"> Lägg till </button>

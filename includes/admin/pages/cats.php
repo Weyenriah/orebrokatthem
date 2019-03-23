@@ -18,6 +18,7 @@ if(isset($_POST['add-cat'])) {
     $contactTele = htmlentities(trim($_POST['contact-tele']));
     $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
+    $hide = isset($_POST['add-adoptable']) ? 1 : 0;
 
     $files = [];
     $files[] = isset($_FILES['cat-image0']) ? $_FILES['cat-image0'] : null;
@@ -62,7 +63,7 @@ if(isset($_POST['add-cat'])) {
 
     // Adds if everything checks out
     if($valid) {
-        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show);
+        $id = $database->addCat($catName, $gender, $color, $age, $description, $home, $contact, $contactTele, $show, $hide);
         if ($id !== null) {
             $addCat = true;
 
@@ -99,6 +100,7 @@ if(isset($_POST['change-cat'])) {
     $show = isset($_POST['show-slide']);
     $home = $_POST['home'];
     $adoptedCat = isset($_POST['adopted']) ? date('Y/m/d h:i:s') : null;
+    $hide = isset($_POST['change-adoptable']) ? 1 : 0;
 
     $files = [];
     $files[] = isset($_FILES['cat-image0']) ? $_FILES['cat-image0'] : null;
@@ -140,7 +142,7 @@ if(isset($_POST['change-cat'])) {
     }
 
     if($valid) {
-        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $show, $adoptedCat);
+        $changeCat = $database->changeCat($id, $name, $age, $gender, $color, $description, $home, $contact, $contactTele, $show, $adoptedCat, $hide);
         $filenames = [];
 
         foreach ($files as $file) {
@@ -288,17 +290,21 @@ $cats = $database->getAdminCats($catsPage);
                     <span class="gender" hidden><?php echo($cat['gender']) ?></span>
                     <p class="description"><?php echo(nl2br($cat['description'])) ?></p>
                     <div class="contact-cat">
-                        <div class="cat-home">
-                            <i class="fas fa-home"></i>
-                            <p>
-                                <?php
-                                if($cat['home'] === 1) {
-                                    echo('Katthemmet');
-                                } else {
-                                    echo('Jourhem');
-                                } ?>
-                            </p>
+                        <div class="admin-icons">
+                            <div class="cat-home">
+                                <i class="fas fa-home"></i>
+                                <p>
+                                    <?php
+                                    if($cat['home'] === 1) {
+                                        echo('Katthemmet');
+                                    } else {
+                                        echo('Jourhem');
+                                    } ?>
+                                </p>
+                            </div>
+                            <p>Status: <?php echo($cat['hide'] ? 'Visas ej' : 'Visas') ?></p>
                         </div>
+
                         <!-- Hidden element for JavaScript -->
                         <span class="home" hidden><?php echo($cat['home']); ?></span>
                         <div class="admin-icons">
@@ -310,12 +316,13 @@ $cats = $database->getAdminCats($catsPage);
                     </div>
                     <p class="showcase">
                         <?php if($cat['showcase'] === 1) {
-                            echo('Visas på framsidan');
+                            echo('Visas i karusellen');
                         } ?>
                     </p>
                     <!-- Hidden element for JavaScript -->
                     <span class="showcase-cat" hidden><?php echo($cat['showcase']) ?></span>
                     <span class="adopted-checker" hidden><?php echo($cat['adopted_cat']); ?></span>
+                    <span class="hide-cat" hidden><?php echo($cat['hide']); ?></span> <?php var_dump($cat['hide']); ?>
                 </div>
             </div>
         </article>
@@ -362,6 +369,7 @@ $cats = $database->getAdminCats($catsPage);
         popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
         popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
         popup.getElementsByClassName('adopted')[0].checked = cat.getElementsByClassName("adopted-checker")[0].textContent !== '';
+        popup.getElementsByClassName('adoptable')[0].checked = cat.getElementsByClassName("hide-cat")[0].textContent === '1';
 
         popup.getElementsByClassName('id-field')[0].value = id;
 

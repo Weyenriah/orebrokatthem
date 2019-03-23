@@ -1,10 +1,10 @@
 /* Specific CSS for CAT-popups */
-.show-slide, .adopted-box {
+.show-slide, .adopted-box, .not-adoptable {
     display: flex;
     margin-bottom: 10px;
 }
 
-.show-slide label, .adopted-box label {
+.show-slide label, .adopted-box label, .not-adoptable label {
     font-size: 16px;
 }
 
@@ -15,4 +15,9 @@ select {
 
 .change-popup .show-slide {
     text-decoration: line-through;
+}
+
+#popup-change-cat .beside-inputs {
+    margin-top: 20px;
+    margin-bottom: -20px;
 }
