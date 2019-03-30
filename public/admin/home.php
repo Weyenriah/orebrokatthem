@@ -10,6 +10,8 @@ if(!isset($_SESSION['user'])) {
     die();
 }
 
+include dirname(__FILE__)."/../../includes/admin/formhandling/index.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="sv">

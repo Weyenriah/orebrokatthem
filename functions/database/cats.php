@@ -131,7 +131,7 @@ trait Cats {
     }
 
     // Get adopted cats
-    public function getAdoptedCats($gender = 0, $name='', $age = 0) {
+    public function getAdoptedCats($gender = 0, $name='', $age = 0, $page = 0) {
         // Insert right information in database
         $sql = 'SELECT * FROM %1$scats';
         $conditions = array();
@@ -168,13 +168,29 @@ trait Cats {
 
         $sql .= ' AND adopted_cat is not NULL ORDER BY adopted_cat DESC';
 
+        // Limit amount of cats per includes
+        $sql .= ' LIMIT 8 OFFSET :offset';
+
         // Prepares a query
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
         $stmt->execute(array(
+            'offset' => 8 * $page,
             'name' => '%'.$name.'%'
         ));
         // Grab the list
         return $stmt->fetchAll();
+    }
+
+    public function makeAdoptable($adoptedCat, $id) {
+        // Updates all information needed from database
+        $sql = 'UPDATE %1$scats SET adopted_cat = :adopted_cat WHERE id = :id';
+        // Prepares a query
+        $stmt = $this->pdo->prepare($sql);
+        // Sends query to database
+        return $stmt->execute(array(
+            'adopted_cat' => $adoptedCat,
+            'id' => $id,
+        ));
     }
 }

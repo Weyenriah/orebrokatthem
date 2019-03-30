@@ -1,12 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/../../../functions/load.php';
 
-// Remove Cat
-if (isset($_POST['removeCat'])) {
-    $removedCat = $database->deleteCat($_POST['removeCat']);
-    $goToPage = 'adopted-cats';
-}
-
 $filter = array();
 
 // Filter
@@ -57,8 +51,18 @@ if(isset($_GET['filter-button'])) {
 // Glue
 $filterString = implode('&', $filter);
 
+// Pagination Cats
+$catsPages = $database->countAdoptedCatPages($gender, $name, $age);
+// Get page
+$catsPage = 0;
+
+if(isset($_GET['catspage'])) {
+    $catsPage = $_GET['catspage'];
+    $goToPage = 'adopted-cats';
+}
+
 // Get cats from DB
-$adoptedCats = $database->getAdoptedCats($gender, $name, $age);
+$adoptedCats = $database->getAdoptedCats($gender, $name, $age, $catsPage);
 ?>
 
 <section class="page" id="adopted-cats">
@@ -103,6 +107,23 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
             </div>
         </div>
     </form>
+    <!-- Pagination -->
+    <div class="pagination">
+        <?php if($catsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#adoptedcatsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($catsPage < $catsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#adoptedcatsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
     <!-- Removed/Added/Changed Text -->
     <?php if(isset($removedCat)) { ?>
     <div class="removed">
@@ -142,9 +163,11 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
                 </div>
                 <div class="cat-text">
                     <div class="two-buttons-fix">
-                        <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($adoptedCat['id']) ?>); whenAdopted()">
-                            <i class="fas fa-pencil-alt"></i> Ändra Katt
-                        </button>
+                        <form method="post">
+                            <button class="two-buttons" type="submit" formmethod="post" name="adoptableCat" value="<?php echo($adoptedCat['id']); ?>">
+                                <i class="fas fa-backward"></i> Tillbaka på katthemmet
+                            </button>
+                        </form>
                         <form method="post">
                             <button class="two-buttons" type="submit" formmethod="post" name="removeCat" value="<?php echo($adoptedCat['id']); ?>">
                                 <i class="fas fa-times"></i> Ta bort Katt
@@ -189,6 +212,23 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
             </article>
         <?php } ?>
     </div>
+    <!-- Pagination -->
+    <div class="pagination">
+        <?php if($catsPage > 0) { ?>
+            <div class="previous-page">
+                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
+                    <i class="fas fa-angle-left"></i> Föregående
+                </a>
+            </div>
+        <?php }
+        if($catsPage < $catsPages - 1) { ?>
+            <div class="next-page">
+                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
+                    Nästa <i class="fas fa-angle-right"></i>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
 </section>
 
 <script>
@@ -201,50 +241,5 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age);
         } else {
             element.classList.add("not-display");
         }
-    }
-
-    function showPopupChangeCat(id) {
-        let popup = document.getElementById('popup-change-cat');
-
-        /* Selects the right cat */
-        let cat = document.getElementById("cat-" + id);
-
-        /* Matches the information from popup with employee */
-        popup.getElementsByClassName('catname')[0].value = cat.getElementsByClassName("catname")[0].textContent;
-        popup.getElementsByClassName('age')[0].value = cat.getElementsByClassName("age")[0].textContent;
-        popup.getElementsByClassName('gender')[0].value = cat.getElementsByClassName('gender')[0].textContent;
-        popup.getElementsByClassName('color')[0].value = cat.getElementsByClassName("color")[0].textContent;
-        popup.getElementsByClassName('description')[0].value = cat.getElementsByClassName("description")[0].textContent;
-        popup.getElementsByClassName('home')[0].value = cat.getElementsByClassName('home')[0].textContent;
-        popup.getElementsByClassName('contact')[0].value = cat.getElementsByClassName("cat-contact")[0].textContent;
-        popup.getElementsByClassName('contact-tele')[0].value = cat.getElementsByClassName("cat-contact-tele")[0].textContent;
-        popup.getElementsByClassName('showcase')[0].checked = cat.getElementsByClassName("showcase-cat")[0].textContent === '1';
-        popup.getElementsByClassName('adopted')[0].checked = cat.getElementsByClassName("adopted-checker")[0].textContent !== '';
-        popup.getElementsByClassName('adoptable')[0].checked = cat.getElementsByClassName("hide-cat")[0].textContent === '1';
-
-        popup.getElementsByClassName('id-field')[0].value = id;
-
-        popup.style.display = 'block';
-
-        /* Scrolls up to top when button is clicked */
-        window.scroll(0, 0);
-
-        updateTextCounter('change-desc-cat-counter', cat.getElementsByClassName("description")[0].textContent);
-    }
-
-    function whenAdopted() {
-        let popup = document.getElementById('popup-change-cat');
-
-        let popupContainer = document.getElementsByClassName('cat-container')[0];
-
-        if(popup.getElementsByClassName('adopted')[0].checked) {
-            popupContainer.classList.add('change-popup');
-
-        }
-
-        if(popupContainer.classList.contains('change-popup')) {
-            popupContainer.getElementsByClassName('showcase')[0].disabled = true;
-        }
-
     }
 </script>
