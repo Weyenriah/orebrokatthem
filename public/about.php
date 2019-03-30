@@ -9,7 +9,7 @@
         $email = $_POST['email'];
         $msg = $_POST['subject'];
 
-        $mailSent = mail(SEND_EMAIL_TO, "OKH-Kontakt: $name", str_replace("\n.", "\n..", $msg), ['From' => SEND_EMAIL_FROM, 'Reply-To' => $email]);
+        $mailSent = mail(SEND_EMAIL_TO, "OKH-Kontakt: $name", str_replace("\n.", "\n..", $msg), ['From' => SEND_EMAIL_FROM, 'Reply-To' => $email, 'Content-Type' => 'text/plain;charset=utf-8', 'Content-Transfer-Encoding' => '8bit', 'MIME-Version' => '1.0']);
     }
 ?>
 <!DOCTYPE html>

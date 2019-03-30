@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $telephone = $_POST['tele'];
         $city = $_POST['city'];
-        $headers = 'From:' . SEND_EMAIL_FROM . "\r\n" . 'Reply-To:' . $email;
+        $headers = ['From' => SEND_EMAIL_FROM, 'Reply-To' => $email, 'Content-Type' => 'text/plain;charset=utf-8', 'Content-Transfer-Encoding' => '8bit', 'MIME-Version' => '1.0'];
 
         $mailSent = mail(SEND_EMAIL_TO, "OKH-Kontaktperson: $name", str_replace("\n.", "\n..", $telephone. "\r\n" . $city), $headers);
     }
