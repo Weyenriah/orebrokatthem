@@ -131,7 +131,7 @@ trait Cats {
     }
 
     // Get adopted cats
-    public function getAdoptedCats($gender = 0, $name='', $age = 0, $page = 0) {
+    public function getAdoptedCats($gender = 0, $name='', $age = 0, $adoptedpage = 0) {
         // Insert right information in database
         $sql = 'SELECT * FROM %1$scats';
         $conditions = array();
@@ -175,7 +175,7 @@ trait Cats {
         $stmt = $this->pdo->prepare($sql);
         // Sends query to database
         $stmt->execute(array(
-            'offset' => 8 * $page,
+            'offset' => 8 * $adoptedpage,
             'name' => '%'.$name.'%'
         ));
         // Grab the list

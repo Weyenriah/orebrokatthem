@@ -52,17 +52,17 @@ if(isset($_GET['filter-button'])) {
 $filterString = implode('&', $filter);
 
 // Pagination Cats
-$catsPages = $database->countAdoptedCatPages($gender, $name, $age);
+$adoptedCatsPages = $database->countAdoptedCatPages($gender, $name, $age);
 // Get page
-$catsPage = 0;
+$adoptedCatsPage = 0;
 
-if(isset($_GET['catspage'])) {
-    $catsPage = $_GET['catspage'];
+if(isset($_GET['adoptedcatspage'])) {
+    $adoptedCatsPage = $_GET['adoptedcatspage'];
     $goToPage = 'adopted-cats';
 }
 
 // Get cats from DB
-$adoptedCats = $database->getAdoptedCats($gender, $name, $age, $catsPage);
+$adoptedCats = $database->getAdoptedCats($gender, $name, $age, $adoptedCatsPage);
 ?>
 
 <section class="page" id="adopted-cats">
@@ -109,16 +109,16 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age, $catsPage);
     </form>
     <!-- Pagination -->
     <div class="pagination">
-        <?php if($catsPage > 0) { ?>
+        <?php if($adoptedCatsPage > 0) { ?>
             <div class="previous-page">
-                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#adoptedcatsflow">
+                <a class="prev-arrow" href="?adoptedcatspage=<?php echo $adoptedCatsPage - 1 ?>#adopted">
                     <i class="fas fa-angle-left"></i> Föregående
                 </a>
             </div>
         <?php }
-        if($catsPage < $catsPages - 1) { ?>
+        if($adoptedCatsPage < $adoptedCatsPages - 1) { ?>
             <div class="next-page">
-                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#adoptedcatsflow">
+                <a class="next-arrow" href="?adoptedcatspage=<?php echo $adoptedCatsPage + 1 ?>#adopted">
                     Nästa <i class="fas fa-angle-right"></i>
                 </a>
             </div>
@@ -214,16 +214,16 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age, $catsPage);
     </div>
     <!-- Pagination -->
     <div class="pagination">
-        <?php if($catsPage > 0) { ?>
+        <?php if($adoptedCatsPage > 0) { ?>
             <div class="previous-page">
-                <a class="prev-arrow" href="?catspage=<?php echo $catsPage - 1 ?>#catsflow">
+                <a class="prev-arrow" href="?adoptedcatspage=<?php echo $adoptedCatsPage - 1 ?>#adoptedcatsflow">
                     <i class="fas fa-angle-left"></i> Föregående
                 </a>
             </div>
         <?php }
-        if($catsPage < $catsPages - 1) { ?>
+        if($adoptedCatsPage < $adoptedCatsPages - 1) { ?>
             <div class="next-page">
-                <a class="next-arrow" href="?catspage=<?php echo $catsPage + 1 ?>#catsflow">
+                <a class="next-arrow" href="?adoptedcatspage=<?php echo $adoptedCatsPage + 1 ?>#adoptedcatsflow">
                     Nästa <i class="fas fa-angle-right"></i>
                 </a>
             </div>
