@@ -131,15 +131,18 @@ $adoptedCats = $database->getAdoptedCats($gender, $name, $age, $adoptedCatsPage)
             <?php echo(($removedCat)? "Katt borttagen" : "Kunde inte ta bort katten"); ?>
         </p>
     </div>
+    <?php }
+
+    if(count($adoptedCats) < 1) { ?>
+        <div class="nothing-search">
+            <p>
+                <?php echo('Inga katter hittades'); ?>
+            </p>
+        </div>
     <?php } ?>
 
     <div class="page-display">
         <?php
-        // If there is no cats echo this
-        if(count($adoptedCats) < 1) {
-            echo('Inga katter hittades');
-        }
-
         foreach ($adoptedCats as $adoptedCat) {
 
             $images = $database->getCatImages($adoptedCat['id']);

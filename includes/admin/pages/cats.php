@@ -11,14 +11,39 @@ if(isset($_GET['catspage'])) {
     $goToPage = 'cats';
 }
 
+// Search cats according to name
+$name = "";
+
+$search = isset($_GET['catsearch']);
+if($search) {
+    $name = $_GET['catsearch'];
+    $filter[] = 'search=' . $name;
+    $goToPage = 'cats';
+}
+
 // Get cats from DB
-$cats = $database->getAdminCats($catsPage);
+$cats = $database->getAdminCats($catsPage, $name);
 
 ?>
 
 <section class="page" id="cats">
     <h2 class="page-title">Hantera Katter</h2>
-    <button class="add-button" type="button" onclick="showPopupCats()"> Lägg till </button>
+    <!-- Filter -->
+    <form method="GET" action="#cats" class="paragraph-position filter-search">
+        <div class="search-field">
+            <div class="searches" id="search-form">
+                <label for="catsearch"> <i class="fas fa-search"></i> </label>
+                <input type="search" name="catsearch" id="catsearch" placeholder="Sök efter katt..." aria-label="Sök" value="<?php echo($name) ?>">
+                <button class="admin-filter-search-button search-button" type="submit"> Sök </button>
+            </div>
+
+            <div class="add-cat-button">
+                <button class="add-button" type="button" onclick="showPopupCats()"> Lägg till ny katt </button>
+            </div>
+
+        </div>
+    </form>
+
     <!-- Pagination -->
     <div class="pagination">
         <?php if($catsPage > 0) { ?>
@@ -77,94 +102,104 @@ $cats = $database->getAdminCats($catsPage);
                 } ?>
             </p>
         </div>
+    <?php }
+
+    if(count($cats) < 1) { ?>
+        <div class="nothing-search">
+           <p>
+               <?php echo('Inga katter hittades'); ?>
+           </p>
+        </div>
     <?php } ?>
+
+
 
     <!-- Show Cat-flow -->
     <div class="page-display">
-    <?php
-    foreach ($cats as $cat) {
+        <?php
+        foreach ($cats as $cat) {
 
-        $images = $database->getCatImages($cat['id']);
-        ?>
-        <article class="cat" id="cat-<?php echo($cat['id']) ?>">
-            <div class="cat-display-images">
-                <div class="cat-img big-cat-img">
-                    <img src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="En bild på en katt">
-                </div>
-                <div class="small-cat-pics">
-                    <div class="cat-img">
-                        <img src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="">
+            $images = $database->getCatImages($cat['id']);
+            ?>
+            <article class="cat" id="cat-<?php echo($cat['id']) ?>">
+                <div class="cat-display-images">
+                    <div class="cat-img big-cat-img">
+                        <img src="<?php echo(BASE_URL . ((count($images) > 0) ? UPLOADS_FOLDER . 'images/' . $images[0]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="En bild på en katt">
                     </div>
-                    <div class="cat-img">
-                        <img src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="">
+                    <div class="small-cat-pics">
+                        <div class="cat-img">
+                            <img src="<?php echo(BASE_URL . ((count($images) > 1) ? UPLOADS_FOLDER . 'images/' . $images[1]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="">
+                        </div>
+                        <div class="cat-img">
+                            <img src="<?php echo(BASE_URL . ((count($images) > 2) ? UPLOADS_FOLDER . 'images/' . $images[2]['image'] : "assets/images/cat-placeholder.jpg"));  ?>" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="cat-text">
-                <div class="two-buttons-fix">
-                    <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($cat['id']) ?>)">
-                        <i class="fas fa-pencil-alt"></i> Ändra Katt
-                    </button>
-                    <form method="post">
-                        <button class="two-buttons" type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>">
-                            <i class="fas fa-times"></i> Ta bort Katt
+                <div class="cat-text">
+                    <div class="two-buttons-fix">
+                        <button class="two-buttons" type="button" onclick="showPopupChangeCat(<?php echo($cat['id']) ?>)">
+                            <i class="fas fa-pencil-alt"></i> Ändra Katt
                         </button>
-                    </form>
-                </div>
-                <div class="cat-information">
-                    <div class="cat-information-heading">
-                        <h3 class="catname"><?php echo($cat['name']) ?> </h3>
-                        <p> <?php echo($cat['hide'] ? '<i class="far fa-eye-slash"></i>' : '') ?></p>
+                        <form method="post">
+                            <button class="two-buttons" type="submit" formmethod="post" name="removeCat" value="<?php echo($cat['id']); ?>">
+                                <i class="fas fa-times"></i> Ta bort Katt
+                            </button>
+                        </form>
                     </div>
-                    <small>
-                        <span class="age"><?php echo($cat['age']) ?></span>
-                        | <span class="cat-gender"><?php if($cat['gender'] === 1) {
-                                echo('Hane');
-                            } else {
-                                echo('Hona');
-                            } ?></span>
-                        | <span class="color"><?php echo($cat['color']) ?></span>
-                    </small>
-                    <!-- Hidden element for JavaScript -->
-                    <span class="gender" hidden><?php echo($cat['gender']) ?></span>
-                    <p class="description"><?php echo(nl2br($cat['description'])) ?></p>
-                    <div class="contact-cat">
-                        <div class="admin-icons">
-                            <div class="cat-home">
-                                <i class="fas fa-home"></i>
-                                <p>
-                                    <?php
-                                    if($cat['home'] === 1) {
-                                        echo('Katthemmet');
-                                    } else {
-                                        echo('Jourhem');
-                                    } ?>
-                                </p>
+                    <div class="cat-information">
+                        <div class="cat-information-heading">
+                            <h3 class="catname"><?php echo($cat['name']) ?> </h3>
+                            <p> <?php echo($cat['hide'] ? '<i class="far fa-eye-slash"></i>' : '') ?></p>
+                        </div>
+                        <small>
+                            <span class="age"><?php echo($cat['age']) ?></span>
+                            | <span class="cat-gender"><?php if($cat['gender'] === 1) {
+                                    echo('Hane');
+                                } else {
+                                    echo('Hona');
+                                } ?></span>
+                            | <span class="color"><?php echo($cat['color']) ?></span>
+                        </small>
+                        <!-- Hidden element for JavaScript -->
+                        <span class="gender" hidden><?php echo($cat['gender']) ?></span>
+                        <p class="description"><?php echo(nl2br($cat['description'])) ?></p>
+                        <div class="contact-cat">
+                            <div class="admin-icons">
+                                <div class="cat-home">
+                                    <i class="fas fa-home"></i>
+                                    <p>
+                                        <?php
+                                        if($cat['home'] === 1) {
+                                            echo('Katthemmet');
+                                        } else {
+                                            echo('Jourhem');
+                                        } ?>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Hidden element for JavaScript -->
+                            <span class="home" hidden><?php echo($cat['home']); ?></span>
+                            <div class="admin-icons">
+                                <i class="fas fa-envelope"></i>
+                                <a class="cat-contact" href="mailto:<?php echo($cat['contact']); ?>"><?php echo($cat['contact']); ?></a>
+                                <br/>
+                                <p class="cat-contact-tele"><?php echo($cat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $cat['contact_tele'] : 'Nummer till kontaktperson finns ej') ?></p>
                             </div>
                         </div>
-
+                        <p class="showcase">
+                            <?php if($cat['showcase'] === 1) {
+                                echo('Visas i karusellen');
+                            } ?>
+                        </p>
                         <!-- Hidden element for JavaScript -->
-                        <span class="home" hidden><?php echo($cat['home']); ?></span>
-                        <div class="admin-icons">
-                            <i class="fas fa-envelope"></i>
-                            <a class="cat-contact" href="mailto:<?php echo($cat['contact']); ?>"><?php echo($cat['contact']); ?></a>
-                            <br/>
-                            <p class="cat-contact-tele"><?php echo($cat['contact_tele'] ? '<i class="fas fa-phone"></i>' . $cat['contact_tele'] : 'Nummer till kontaktperson finns ej') ?></p>
-                        </div>
+                        <span class="showcase-cat" hidden><?php echo($cat['showcase']) ?></span>
+                        <span class="adopted-checker" hidden><?php echo($cat['adopted_cat']); ?></span>
+                        <span class="hide-cat" hidden><?php echo($cat['hide']); ?></span>
                     </div>
-                    <p class="showcase">
-                        <?php if($cat['showcase'] === 1) {
-                            echo('Visas i karusellen');
-                        } ?>
-                    </p>
-                    <!-- Hidden element for JavaScript -->
-                    <span class="showcase-cat" hidden><?php echo($cat['showcase']) ?></span>
-                    <span class="adopted-checker" hidden><?php echo($cat['adopted_cat']); ?></span>
-                    <span class="hide-cat" hidden><?php echo($cat['hide']); ?></span>
                 </div>
-            </div>
-        </article>
-    <?php } ?>
+            </article>
+        <?php } ?>
     </div>
     <!-- Pagination -->
     <div class="pagination">

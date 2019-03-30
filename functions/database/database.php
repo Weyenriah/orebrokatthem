@@ -30,8 +30,8 @@ class Database {
     use Cats, Employees, News, Remember;
 
     // Order differently when admin
-    public function  getAdminCats($page) {
-        return $this->getCats($page, 0, 0, '', 0,true, true);
+    public function  getAdminCats($page, $name) {
+        return $this->getCats($page, 0, 0, $name, 0,true, true);
     }
 
     // Get all cats

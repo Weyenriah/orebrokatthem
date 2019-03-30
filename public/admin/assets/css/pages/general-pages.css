@@ -30,6 +30,9 @@
     font-family: "Calibri", sans-serif;
     font-size: 18px;
 }
+.page > button {
+    margin-top: 20px;
+}
 .add-button:hover {
     background-color: #415463;
     animation-name: button-blue;
@@ -59,4 +62,65 @@
 }
 .two-buttons i {
     font-size: 15px;
+}
+
+
+/* === SEARCH STYLING === */
+.filter-search {
+    margin-top: 25px;
+}
+/* The search part of page */
+.search-field {
+    width: 90%;
+    z-index: 20000;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row: 2;
+}
+
+.searches {
+    display: flex;
+    width: 70%;
+    height: 35px;
+}
+
+/* Layout for search input/label */
+.searches input {
+    width: 100%;
+    padding-left: 3px;
+}
+.searches label {
+    width: 20px;
+    padding-top: 5px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+/* Styling for search button */
+.search-button {
+    width: 100px;
+    font-size: 16px !important;
+}
+
+#catsearch, #search {
+    margin-left: 5px;
+}
+
+/* Search label */
+.searches label i {
+    font-size: 23px;
+    margin-top: 2px;
+    color: #415463;
+}
+
+/* === STYLING FOR NOTHING IN SEARCH-TEXT */
+.nothing-search {
+    width: 100%;
+    text-align: center;
+}
+
+/* === FILTER STYLING === */
+.filter, .add-cat-button {
+    width: 30%;
 }
