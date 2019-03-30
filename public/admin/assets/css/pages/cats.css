@@ -43,6 +43,14 @@
     font-family: "Calibri", sans-serif;
 }
 
+.cat-information-heading {
+    display: flex;
+}
+
+.cat-information-heading i {
+    margin-left: 10px;
+}
+
 .cat-information h3 {
     font-family: "Georgia", serif;
     font-size: 25px;

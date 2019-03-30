@@ -112,7 +112,10 @@ $cats = $database->getAdminCats($catsPage);
                     </form>
                 </div>
                 <div class="cat-information">
-                    <h3 class="catname"><?php echo($cat['name']) ?></h3>
+                    <div class="cat-information-heading">
+                        <h3 class="catname"><?php echo($cat['name']) ?> </h3>
+                        <p> <?php echo($cat['hide'] ? '<i class="far fa-eye-slash"></i>' : '') ?></p>
+                    </div>
                     <small>
                         <span class="age"><?php echo($cat['age']) ?></span>
                         | <span class="cat-gender"><?php if($cat['gender'] === 1) {
@@ -138,7 +141,6 @@ $cats = $database->getAdminCats($catsPage);
                                     } ?>
                                 </p>
                             </div>
-                            <p>Status: <?php echo($cat['hide'] ? 'Visas ej' : 'Visas') ?></p>
                         </div>
 
                         <!-- Hidden element for JavaScript -->
